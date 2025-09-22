@@ -26,8 +26,8 @@ Cet atelier est conçu pour les débutantes et débutants en analyse de données
 
 ## 🚀 Accès rapide
 
-- **[Présentation complète](https://username.github.io/R_intro_fss)** - Slides interactifs
-- **[Exercices pratiques](https://username.github.io/R_intro_fss/exercices.html)** - Mise en pratique
+- **[Présentation complète](https://etienneprx.github.io/R_intro_fss)** - Slides interactifs
+- **[Exercices pratiques](https://etienneprx.github.io/R_intro_fss/exercices.html)** - Mise en pratique
 
 ## 📁 Structure du projet
 
