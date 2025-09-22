@@ -684,5 +684,4 @@ taux_survie_global <- mean(titanic$Survived, na.rm = TRUE)
 :::
 
 
-
 **Prochaines étapes :** Continuez avec vos propres données et n'hésitez pas à expérimenter !
