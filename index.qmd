@@ -1,0 +1,688 @@
+---
+title: "Initiation à l'analyse des données avec R"
+subtitle: "Formation théorique | 9h à 12h"
+author: "Étienne Proulx"
+date: today
+date-format: "D MMMM YYYY"
+lang: fr
+format:
+  revealjs:
+    theme: simple
+    logo: https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Ulaval_Shield.svg/800px-Ulaval_Shield.svg.png
+    footer: "[Faculté des sciences sociales](https://www.fss.ulaval.ca)"
+    transition: slide
+    transition-speed: fast
+    code-fold: false
+    code-overflow: wrap
+    code-copy: true
+    incremental: false
+    slide-number: true
+    show-slide-number: all
+    
+execute:
+  echo: true
+  eval: true
+  warning: false
+  message: false
+---
+
+## Objectifs de l'atelier {.smaller}
+
+- Introduire R pour l'analyse de données
+  - Interface RStudio et console
+  - Les objets et types de données
+  - Les fonctions et packages
+  - Import et manipulation de données
+  - Analyse descriptive et graphiques
+
+> Le but est que vous puissiez sortir d'ici avec une compréhension de base de R et que vous soyez capable d'aller chercher des ressources pour continuer à apprendre.
+
+---
+
+## Qu'est-ce que R ? {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**R c'est :**
+- Un langage de programmation statistique
+- Gratuit et open-source  
+- Une communauté active mondiale
+- Des milliers de packages spécialisés
+:::
+
+::: {.column width="50%"}
+**Pourquoi R ?**
+- Reproductibilité des analyses
+- Très utilisé en sciences sociales
+- Extensible avec les packages
+- Permet l'automatisation
+:::
+:::
+
+> Aujourd'hui nous allons apprendre les bases pour analyser de vraies données !
+
+---
+
+## Avant de commencer : RStudio {.smaller}
+
+::: {.callout-tip}
+## Ouvrons RStudio ensemble !
+:::
+
+**Les 4 panneaux de RStudio :**
+
+1. **Console** (en bas à gauche) : où s'exécutent les commandes
+2. **Script** (en haut à gauche) : où on écrit notre code  
+3. **Environment** (en haut à droite) : nos objets
+4. **Files/Plots** (en bas à droite) : fichiers et graphiques
+
+::: {.fragment}
+```{r}
+#| eval: false
+#| code-copy: true
+# Notre première commande !
+print("Bonjour tout le monde!")
+```
+:::
+
+---
+
+## R comme calculatrice {.smaller}
+
+::: {.callout-tip}
+## À tester dans la console
+:::
+
+```{r}
+#| code-copy: true
+# Opérations de base
+2 + 3
+10 * 5
+15 / 3
+sqrt(16)
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Un peu plus complexe
+(10 + 5) * 2
+2^3  # puissance
+```
+:::
+
+---
+
+## Créer nos premiers objets {.smaller}
+
+En R, on sauvegarde tout dans des **objets** avec `<-`
+
+```{r}
+#| code-copy: true
+# Créer des objets simples
+mon_age <- 30
+mon_nom <- "Étienne" 
+ma_note <- 85.5
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Voir le contenu
+mon_age
+mon_nom
+ma_note
+```
+:::
+
+::: {.callout-note}
+**Important :** Les objets apparaissent dans le panneau Environment !
+:::
+
+---
+
+## Les vecteurs : groupes de valeurs {.smaller}
+
+```{r}
+#| code-copy: true
+# Créer des vecteurs avec c()
+ages <- c(23, 45, 31, 28, 35)
+noms <- c("Alice", "Bob", "Claire", "David", "Emma")
+notes <- c(85, 78, 92, 88, 90)
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Explorer nos vecteurs
+ages
+length(ages)  # nombre d'éléments
+mean(ages)    # moyenne
+```
+:::
+
+---
+
+## Types de données {.smaller}
+
+```{r}
+#| code-copy: true
+# Vérifier le type de nos objets
+class(ages)        # numérique
+class(noms)        # caractère (texte)
+class(c(TRUE, FALSE))  # logique
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# R convertit automatiquement si nécessaire
+melange <- c(1, 2, "trois")
+melange
+class(melange)  # tout devient du texte !
+```
+:::
+
+---
+
+## Notre premier tableau de données {.smaller}
+
+Un **data frame** = tableau avec lignes et colonnes
+
+```{r}
+#| code-copy: true
+# Créer notre tableau d'étudiants
+etudiants <- data.frame(
+  nom = c("Alice", "Bob", "Claire", "David", "Emma"),
+  age = c(23, 25, 22, 24, 26), 
+  note = c(85, 78, 92, 88, 90),
+  programme = c("Socio", "Éco", "Socio", "Psycho", "Éco")
+)
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Regarder notre tableau
+etudiants
+```
+:::
+
+---
+
+## Explorer un data frame {.smaller}
+
+```{r}
+#| code-copy: true
+# Informations générales
+dim(etudiants)       # dimensions (lignes x colonnes)
+nrow(etudiants)      # nombre de lignes
+ncol(etudiants)      # nombre de colonnes
+names(etudiants)     # noms des colonnes
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Aperçu du contenu
+head(etudiants, 3)   # premières lignes
+str(etudiants)       # structure détaillée
+```
+:::
+
+---
+
+## Accéder aux colonnes {.smaller}
+
+**Avec le symbole `$` (recommandé) :**
+```{r}
+#| code-copy: true
+etudiants$nom
+etudiants$note
+mean(etudiants$age)  # âge moyen
+```
+
+::: {.fragment}
+**Avec les crochets `[ ]` :**
+```{r}
+#| code-copy: true
+etudiants[, "nom"]          # par nom
+etudiants[, 1]              # par position
+etudiants[, c("nom", "age")] # plusieurs colonnes
+```
+:::
+
+---
+
+## Les fonctions : nos outils {.smaller}
+
+Une **fonction** fait une tâche : `fonction(argument1, argument2)`
+
+```{r}
+#| code-copy: true
+# Fonctions statistiques essentielles
+mean(etudiants$note)      # moyenne
+median(etudiants$note)    # médiane
+sd(etudiants$note)        # écart-type
+min(etudiants$note)       # minimum
+max(etudiants$note)       # maximum
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Résumé complet
+summary(etudiants$note)
+```
+:::
+
+---
+
+## Les packages : étendre R {.smaller}
+
+::: {.callout-important}
+## Installation vs Chargement
+- `install.packages("nom")` : installer (1 seule fois)
+- `library(nom)` : charger (à chaque session)
+:::
+
+```{r}
+#| eval: false
+#| code-copy: true
+# Installer les packages essentiels (à faire une fois)
+install.packages("readr")     # importer des données
+install.packages("dplyr")     # manipuler des données  
+install.packages("ggplot2")   # faire des graphiques
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Charger les packages (à chaque session)
+library(readr)
+library(dplyr) 
+library(ggplot2)
+```
+:::
+
+---
+
+## Charger de vraies données {.smaller}
+
+Utilisons les données **Titanic** pour pratiquer !
+
+```{r}
+#| code-copy: true
+# Charger les données Titanic (intégrées dans R)
+titanic <- read.csv("https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv")
+
+# Premiers coups d'œil
+head(titanic, 3)
+```
+
+---
+
+## Explorer les données Titanic {.smaller}
+
+```{r}
+#| code-copy: true
+# Informations générales
+dim(titanic)
+names(titanic)
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Résumé des variables
+summary(titanic)
+```
+:::
+
+---
+
+## Analyse des variables qualitatives {.smaller}
+
+```{r}
+#| code-copy: true
+# Compter les survivants
+table(titanic$Survived)
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# En pourcentages
+prop.table(table(titanic$Survived)) * 100
+```
+:::
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Survivants par classe
+table(titanic$Pclass, titanic$Survived)
+```
+:::
+
+---
+
+## Analyse des variables quantitatives {.smaller}
+
+```{r}
+#| code-copy: true
+# Statistiques sur l'âge
+mean(titanic$Age, na.rm = TRUE)   # na.rm = ignore les valeurs manquantes
+median(titanic$Age, na.rm = TRUE)
+sd(titanic$Age, na.rm = TRUE)
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Statistiques sur le prix du billet
+summary(titanic$Fare)
+```
+:::
+
+::: {.callout-note}
+**na.rm = TRUE** ignore les valeurs manquantes (NA)
+:::
+
+---
+
+## Notre premier graphique {.smaller}
+
+```{r}
+#| code-copy: true
+#| fig-height: 4
+#| fig-align: center
+# Graphique des survivants par classe
+ggplot(titanic, aes(x = factor(Pclass), fill = factor(Survived))) +
+  geom_bar() +
+  labs(title = "Survivants par classe sur le Titanic",
+       x = "Classe", y = "Nombre de passagers",
+       fill = "Survécu") +
+  theme_minimal()
+```
+
+---
+
+## Anatomie d'un graphique ggplot {.smaller}
+
+```{r}
+#| eval: false
+#| code-copy: true
+ggplot(titanic, aes(x = factor(Pclass), fill = factor(Survived))) +
+  geom_bar() +
+  labs(title = "Survivants par classe sur le Titanic",
+       x = "Classe", y = "Nombre de passagers", 
+       fill = "Survécu") +
+  theme_minimal()
+```
+
+**Décomposition :**
+- `ggplot()` : initialise le graphique
+- `aes()` : définit les variables (esthétiques)
+- `geom_bar()` : type de graphique (barres)
+- `labs()` : titres et étiquettes
+- `theme_minimal()` : style du graphique
+
+---
+
+## Histogramme des âges {.smaller}
+
+```{r}
+#| code-copy: true
+#| fig-height: 4
+#| fig-align: center
+# Distribution des âges
+ggplot(titanic, aes(x = Age)) +
+  geom_histogram(bins = 20, fill = "steelblue", alpha = 0.7) +
+  labs(title = "Distribution des âges sur le Titanic",
+       x = "Âge", y = "Nombre de passagers") +
+  theme_minimal()
+```
+
+---
+
+## Nuage de points : âge vs prix {.smaller}
+
+```{r}
+#| code-copy: true
+#| fig-height: 4
+#| fig-align: center
+# Relation âge-prix du billet
+ggplot(titanic, aes(x = Age, y = Fare, color = factor(Survived))) +
+  geom_point(alpha = 0.6) +
+  labs(title = "Âge vs Prix du billet",
+       x = "Âge", y = "Prix du billet", 
+       color = "Survécu") +
+  theme_minimal()
+```
+
+---
+
+## Filtrer et sélectionner {.smaller}
+
+```{r}
+#| code-copy: true
+# Sélectionner seulement certaines colonnes
+titanic_simple <- titanic %>%
+  select(Survived, Pclass, Sex, Age, Fare)
+
+head(titanic_simple, 3)
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Filtrer les passagers de première classe
+premiere_classe <- titanic %>%
+  filter(Pclass == 1)
+
+nrow(premiere_classe)  # combien de passagers ?
+```
+:::
+
+---
+
+## Grouper et résumer {.smaller}
+
+```{r}
+#| code-copy: true
+# Taux de survie par classe
+titanic %>%
+  group_by(Pclass) %>%
+  summarise(
+    nb_passagers = n(),
+    nb_survivants = sum(Survived),
+    taux_survie = mean(Survived) * 100
+  )
+```
+
+---
+
+## Taux de survie par sexe {.smaller}
+
+```{r}
+#| code-copy: true
+# Analyse par sexe
+titanic %>%
+  group_by(Sex) %>%
+  summarise(
+    nb_passagers = n(),
+    taux_survie = round(mean(Survived) * 100, 1)
+  )
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+#| fig-height: 3
+# Graphique correspondant
+ggplot(titanic, aes(x = Sex, fill = factor(Survived))) +
+  geom_bar(position = "fill") +
+  labs(title = "Taux de survie par sexe", 
+       y = "Proportion", fill = "Survécu") +
+  theme_minimal()
+```
+:::
+
+---
+
+## Sauvegarder notre travail {.smaller}
+
+```{r}
+#| eval: false
+#| code-copy: true
+# Sauvegarder un graphique
+ggsave("graphique_titanic.png", width = 10, height = 6)
+
+# Sauvegarder des données nettoyées
+write.csv(titanic_simple, "titanic_nettoye.csv", row.names = FALSE)
+
+# Sauvegarder notre analyse
+resultats <- titanic %>%
+  group_by(Pclass, Sex) %>%
+  summarise(taux_survie = mean(Survived) * 100)
+
+write.csv(resultats, "analyse_survie.csv", row.names = FALSE)
+```
+
+---
+
+## Messages d'erreur : pas de panique ! {.smaller}
+
+**Erreurs courantes :**
+
+```{r}
+#| eval: false
+#| code-copy: true
+# Objet non trouvé
+mean(donnees$age)
+# Error: object 'donnees' not found
+
+# Parenthèse manquante  
+mean(titanic$Age
+# Error: unexpected end of input
+
+# Colonne inexistante
+titanic$ages  # au lieu de Age
+# NULL
+```
+
+**Réflexes :**
+1. Lire le message d'erreur
+2. Vérifier l'orthographe
+3. Vérifier les parenthèses/guillemets
+4. Utiliser `names()` pour voir les colonnes
+
+---
+
+## Quelques fonctions très utiles {.smaller}
+
+```{r}
+#| code-copy: true
+# Explorer la structure
+str(titanic)           # structure complète
+glimpse(titanic)       # aperçu moderne (dplyr)
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Gérer les valeurs manquantes
+sum(is.na(titanic$Age))          # compter les NA
+titanic_sans_na <- na.omit(titanic)  # enlever toutes les lignes avec NA
+```
+:::
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Créer de nouvelles variables
+titanic$est_enfant <- ifelse(titanic$Age < 18, "Enfant", "Adulte")
+table(titanic$est_enfant)
+```
+:::
+
+---
+
+## Bonnes pratiques {.smaller}
+
+::: {.callout-tip}
+## Conseils pour bien débuter
+
+1. **Organisez votre travail :** utilisez des projets RStudio
+2. **Nommez bien vos objets :** `donnees_titanic` plutôt que `df1`
+3. **Commentez votre code :** utilisez `#` pour expliquer
+4. **Testez étape par étape :** vérifiez chaque ligne
+5. **Sauvegardez souvent :** scripts ET données nettoyées
+:::
+
+```{r}
+#| eval: false
+#| code-copy: true
+# Exemple de code bien documenté
+# Charger les données du Titanic
+titanic <- read.csv("titanic.csv")
+
+# Calculer le taux de survie moyen
+taux_survie_global <- mean(titanic$Survived, na.rm = TRUE)
+```
+
+---
+
+## Ce qu'on a appris aujourd'hui {.smaller}
+
+::: {.callout-note}
+## Récapitulatif
+
+✅ Interface RStudio et console  
+✅ Objets, vecteurs et data frames  
+✅ Types de données et fonctions  
+✅ Import et exploration de données  
+✅ Analyse descriptive (moyennes, tableaux)  
+✅ Premiers graphiques avec ggplot2  
+✅ Manipulation avec dplyr (filter, select, group_by)
+:::
+
+**Vous pouvez maintenant :**
+- Charger des données
+- Les explorer et les résumer
+- Créer des graphiques de base
+- Faire des analyses descriptives simples
+
+---
+
+## Ressources pour continuer {.smaller}
+
+**Documentation et aide :**
+- `?fonction` dans R (ex: `?mean`)
+- [R Documentation](https://www.rdocumentation.org/)
+- [RStudio Cheatsheets](https://posit.co/resources/cheatsheets/)
+
+**Apprentissage :**
+- [swirl](https://swirlstats.com/) - apprendre R dans R
+- [R for Data Science](https://r4ds.hadley.nz/) (gratuit en ligne)
+- ChatGPT pour déboguer vos erreurs !
+
+**Communauté :**
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/r)
+- [RStudio Community](https://community.rstudio.com/)
+
+---
+
+## Questions ? {.smaller}
+
+::: {.callout-tip appearance="simple"}
+## Merci pour votre attention !
+
+**Contact :** Étienne Proulx  
+**Tous les codes sont copiables depuis cette présentation**
+:::
+
+> *"Le meilleur moyen d'apprendre R, c'est de pratiquer avec de vraies données !"*
+
+**Prochaines étapes :** Continuez avec vos propres données et n'hésitez pas à expérimenter !

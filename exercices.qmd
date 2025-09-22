@@ -1,0 +1,146 @@
+---
+title: "Exercices pratiques"
+subtitle: "Mise en pratique des concepts R"
+---
+
+## Exercices pour débutants
+
+### Exercice 1 : Premiers pas avec R
+
+1. Créez trois objets :
+   - `mon_nom` avec votre prénom
+   - `mon_age` avec votre âge
+   - `ma_discipline` avec votre discipline d'études
+
+2. Affichez le contenu de chaque objet
+
+```{r}
+#| eval: false
+# Votre code ici
+
+```
+
+### Exercice 2 : Travailler avec des vecteurs
+
+1. Créez un vecteur `notes` avec les valeurs : 78, 85, 92, 67, 88, 91
+2. Calculez la moyenne, la médiane et l'écart-type
+3. Combien d'étudiants ont une note supérieure à 80 ?
+
+```{r}
+#| eval: false
+# Votre code ici
+
+```
+
+### Exercice 3 : Votre premier data frame
+
+Créez un data frame `mes_etudiants` avec :
+- 5 noms d'étudiants fictifs
+- Leurs âges (entre 20 et 30 ans)
+- Leurs notes (entre 60 et 100)
+- Leur programme d'études
+
+```{r}
+#| eval: false
+# Votre code ici
+
+```
+
+## Exercices avec données réelles
+
+### Exercice 4 : Analyser les données d'étudiants
+
+```{r}
+# Charger les données d'exemple
+etudiants <- read.csv("data/etudiants_exemple.csv")
+head(etudiants)
+```
+
+1. Combien d'étudiants y a-t-il au total ?
+2. Quelle est la note moyenne ?
+3. Quel est l'âge médian ?
+4. Combien d'étudiants par programme ?
+
+```{r}
+#| eval: false
+# Votre code ici
+
+```
+
+### Exercice 5 : Filtrer et résumer
+
+1. Créez un sous-ensemble avec seulement les étudiants en Sociologie
+2. Calculez la note moyenne par sexe
+3. Trouvez l'étudiant le plus jeune et le plus âgé
+
+```{r}
+#| eval: false
+# Votre code ici
+
+```
+
+### Exercice 6 : Vos premiers graphiques
+
+1. Créez un histogramme des notes
+2. Créez un graphique en barres du nombre d'étudiants par programme
+3. Créez un nuage de points âge vs note
+
+```{r}
+#| eval: false
+# Votre code ici
+
+```
+
+## Solutions
+
+::: {.callout-note collapse="true"}
+## Solutions Exercice 1
+
+```{r}
+#| eval: false
+mon_nom <- "Votre prénom"
+mon_age <- 25  # votre âge
+ma_discipline <- "Sciences sociales"
+
+# Afficher
+mon_nom
+mon_age
+ma_discipline
+```
+:::
+
+::: {.callout-note collapse="true"}
+## Solutions Exercice 2
+
+```{r}
+#| eval: false
+notes <- c(78, 85, 92, 67, 88, 91)
+
+# Statistiques
+mean(notes)
+median(notes)
+sd(notes)
+
+# Nombre d'étudiants avec note > 80
+sum(notes > 80)
+```
+:::
+
+::: {.callout-note collapse="true"}
+## Solutions Exercice 4
+
+```{r}
+#| eval: false
+# Nombre total d'étudiants
+nrow(etudiants)
+
+# Note moyenne
+mean(etudiants$note)
+
+# Âge médian
+median(etudiants$age)
+
+# Étudiants par programme
+table(etudiants$programme)
+```
+:::

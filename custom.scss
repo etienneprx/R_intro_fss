@@ -1,0 +1,61 @@
+/*-- scss:defaults --*/
+
+// Couleurs Université Laval
+$primary: #C31E39;
+$secondary: #003875;
+$light: #f8f9fa;
+$dark: #343a40;
+
+// Police
+$font-family-sans-serif: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+/*-- scss:rules --*/
+
+// Style pour les callouts
+.callout {
+  border-left: 4px solid $primary;
+  margin: 1rem 0;
+}
+
+.callout-tip {
+  border-left-color: #28a745;
+}
+
+.callout-important {
+  border-left-color: #dc3545;
+}
+
+.callout-note {
+  border-left-color: #007bff;
+}
+
+// Style pour le code
+pre {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+}
+
+// Navigation
+.navbar {
+  background-color: $secondary !important;
+}
+
+.navbar-brand {
+  color: white !important;
+}
+
+// Footer
+.page-footer {
+  background-color: $secondary;
+  color: white;
+  margin-top: 2rem;
+}
+
+.page-footer a {
+  color: #ccc;
+}
+
+.page-footer a:hover {
+  color: white;
+}

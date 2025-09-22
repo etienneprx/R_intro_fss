@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Initiation à l'analyse des données avec R"
+  description: "Formation théorique pour l'introduction à R - Université Laval"
+  site-url: "https://username.github.io/R_intro_fss"
+  repo-url: "https://github.com/username/R_intro_fss"
+  
+  navbar:
+    title: "Intro R - FSS"
+    left:
+      - href: index.qmd
+        text: Présentation
+      - href: exercices.qmd
+        text: Exercices
+    right:
+      - icon: github
+        href: "https://github.com/username/R_intro_fss"
+
+  page-footer:
+    left: "© 2025 Étienne Proulx - Université Laval"
+    right: 
+      - icon: github
+        href: "https://github.com/username/R_intro_fss"
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - custom.scss
+    toc: true
+    toc-location: left
+    code-copy: true
+    code-fold: false
+    fig-width: 8
+    fig-height: 6
+
+execute:
+  freeze: auto
+  echo: true
+  warning: false
+  message: false

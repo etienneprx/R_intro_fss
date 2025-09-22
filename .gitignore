@@ -1,0 +1,48 @@
+# R specific
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Quarto
+/.quarto/
+_site/
+.quarto
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Log files
+*.log
+
+# Cache
+*cache/
+*_cache/
+
+# Output files (keep docs/ for GitHub Pages)
+# docs/ is needed for GitHub Pages deployment
+
+# R packages
+*.tar.gz
+
+# Environment variables
+.env
+.Renviron
+
+# Plots
+*.png
+*.jpg
+*.pdf
+!assets/*.png
+!assets/*.jpg
