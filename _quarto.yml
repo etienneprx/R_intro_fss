@@ -12,7 +12,9 @@ website:
     title: "Intro R - FSS"
     left:
       - href: index.qmd
-        text: Présentation
+        text: Accueil
+      - href: slides.qmd
+        text: Slides
       - href: exercices.qmd
         text: Exercices
     right:
@@ -27,7 +29,7 @@ website:
 
 format:
   html:
-    theme: 
+    theme:
       - cosmo
       - custom.scss
     toc: true
