@@ -1,1 +1,1 @@
-Sitemap: https://username.github.io/R_intro_fss/sitemap.xml
+Sitemap: https://etienneprx.github.io/R_intro_fss/sitemap.xml
