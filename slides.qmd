@@ -683,6 +683,6 @@ taux_survie_global <- mean(titanic$Survived, na.rm = TRUE)
 **Tous les codes sont copiables depuis cette présentation**
 :::
 
-> *"Le meilleur moyen d'apprendre R, c'est de pratiquer avec de vraies données !"*
+
 
 **Prochaines étapes :** Continuez avec vos propres données et n'hésitez pas à expérimenter !
