@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!slides.qmd"
 
 website:
   title: "Initiation à l'analyse des données avec R"

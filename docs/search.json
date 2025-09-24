@@ -213,15 +213,15 @@
     "objectID": "slides.html#objectifs-de-latelier",
     "href": "slides.html#objectifs-de-latelier",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Objectifs de l’atelier",
-    "text": "Objectifs de l’atelier\n\nIntroduire R pour l’analyse de données\n\nInterface RStudio et console\nLes objets et types de données\nLes fonctions et packages\nImport et manipulation de données\nAnalyse descriptive et graphiques\n\n\n\nLe but est que vous puissiez sortir d’ici avec une compréhension de base de R et que vous soyez capable d’aller chercher des ressources pour continuer à apprendre."
+    "section": "",
+    "text": "Introduire R pour l’analyse de données\n\nInterface RStudio et console\nLes objets et types de données\nLes fonctions et packages\nImport et manipulation de données\nAnalyse descriptive et graphiques\n\n\n\nLe but est que vous puissiez sortir d’ici avec une compréhension de base de R et que vous soyez capable d’aller chercher des ressources pour continuer à apprendre."
   },
   {
     "objectID": "slides.html#quest-ce-que-r",
     "href": "slides.html#quest-ce-que-r",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Qu’est-ce que R ?",
-    "text": "Qu’est-ce que R ?\n\n\nR c’est :\n\nUn langage de programmation statistique\nGratuit et open-source\n\nUne communauté active mondiale\nDes milliers de packages spécialisés\n\n\nPourquoi R ?\n\nReproductibilité des analyses\nTrès utilisé en sciences sociales\nExtensible avec les packages\nPermet l’automatisation\n\n\n\nAujourd’hui nous allons apprendre les bases pour analyser de vraies données"
+    "text": "Qu’est-ce que R ?\n\n\nR c’est :\n\nUn langage de programmation statistique\nGratuit et open-source\n\nUne communauté active mondiale\nDes milliers de packages spécialisés\n\n\nPourquoi R ?\n\nReproductibilité des analyses\nTrès utilisé en sciences sociales\nExtensible avec les packages\nPermet l’automatisation\n\n\n\n\nAujourd’hui nous allons apprendre les bases pour analyser de vraies données"
   },
   {
     "objectID": "slides.html#avant-de-commencer-rstudio",
@@ -242,7 +242,7 @@
     "href": "slides.html#créer-nos-premiers-objets",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Créer nos premiers objets",
-    "text": "Créer nos premiers objets\nEn R, on sauvegarde tout dans des objets avec &lt;-\n\n# Créer des objets simples\nmon_age &lt;- 30\nmon_nom &lt;- \"Étienne\" \nma_note &lt;- 85.5\n\n\n\n# Voir le contenu\nmon_age\n\n[1] 30\n\nmon_nom\n\n[1] \"Étienne\"\n\nma_note\n\n[1] 85.5\n\n\n\n\n\n\n\n\n\nNote\n\n\nImportant : Les objets apparaissent dans le panneau Environment !"
+    "text": "Créer nos premiers objets\nEn R, on sauvegarde tout dans des objets avec &lt;-\n\n# Créer des objets simples\nmon_age &lt;- 30\nmon_nom &lt;- \"Étienne\" \nma_note &lt;- 85.5\n\n\n\n# Voir le contenu\nmon_age\n\n[1] 30\n\nmon_nom\n\n[1] \"Étienne\"\n\nma_note\n\n[1] 85.5\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nImportant : Les objets apparaissent dans le panneau Environment !"
   },
   {
     "objectID": "slides.html#les-vecteurs-groupes-de-valeurs",
@@ -291,7 +291,7 @@
     "href": "slides.html#les-packages-étendre-r",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Les packages : étendre R",
-    "text": "Les packages : étendre R\n\n\n\n\n\n\nInstallation vs Chargement\n\n\n\ninstall.packages(\"nom\") : installer (1 seule fois)\nlibrary(nom) : charger (à chaque session)\n\n\n\n\n\n# Installer les packages essentiels (à faire une fois)\ninstall.packages(\"readr\")     # importer des données\ninstall.packages(\"dplyr\")     # manipuler des données  \ninstall.packages(\"ggplot2\")   # faire des graphiques\n\n\n\n# Charger les packages (à chaque session)\nlibrary(readr)\nlibrary(dplyr) \nlibrary(ggplot2)"
+    "text": "Les packages : étendre R\n\n\n\n\n\n\nInstallation vs Chargement\n\n\n\n\ninstall.packages(\"nom\") : installer (1 seule fois)\nlibrary(nom) : charger (à chaque session)\n\n\n\n\n# Installer les packages essentiels (à faire une fois)\ninstall.packages(\"readr\")     # importer des données\ninstall.packages(\"dplyr\")     # manipuler des données  \ninstall.packages(\"ggplot2\")   # faire des graphiques\n\n\n\n# Charger les packages (à chaque session)\nlibrary(readr)\nlibrary(dplyr) \nlibrary(ggplot2)"
   },
   {
     "objectID": "slides.html#charger-de-vraies-données",
@@ -396,14 +396,14 @@
     "href": "slides.html#bonnes-pratiques",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Bonnes pratiques",
-    "text": "Bonnes pratiques\n\n\n\n\n\n\nConseils pour bien débuter\n\n\n\nOrganisez votre travail : utilisez des projets RStudio\nNommez bien vos objets : donnees_titanic plutôt que df1\nCommentez votre code : utilisez # pour expliquer\nTestez étape par étape : vérifiez chaque ligne\nSauvegardez souvent : scripts ET données nettoyées\n\n\n\n\n\n# Exemple de code bien documenté\n# Charger les données du Titanic\ntitanic &lt;- read.csv(\"titanic.csv\")\n\n# Calculer le taux de survie moyen\ntaux_survie_global &lt;- mean(titanic$Survived, na.rm = TRUE)"
+    "text": "Bonnes pratiques\n\n\n\n\n\n\nConseils pour bien débuter\n\n\n\n\nOrganisez votre travail : utilisez des projets RStudio\nNommez bien vos objets : donnees_titanic plutôt que df1\nCommentez votre code : utilisez # pour expliquer\nTestez étape par étape : vérifiez chaque ligne\nSauvegardez souvent : scripts ET données nettoyées\n\n\n\n\n# Exemple de code bien documenté\n# Charger les données du Titanic\ntitanic &lt;- read.csv(\"titanic.csv\")\n\n# Calculer le taux de survie moyen\ntaux_survie_global &lt;- mean(titanic$Survived, na.rm = TRUE)"
   },
   {
     "objectID": "slides.html#ce-quon-a-appris-aujourdhui",
     "href": "slides.html#ce-quon-a-appris-aujourdhui",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Ce qu’on a appris aujourd’hui",
-    "text": "Ce qu’on a appris aujourd’hui\n\n\n\n\n\n\nRécapitulatif\n\n\n✅ Interface RStudio et console\n✅ Objets, vecteurs et data frames\n✅ Types de données et fonctions\n✅ Import et exploration de données\n✅ Analyse descriptive (moyennes, tableaux)\n✅ Premiers graphiques avec ggplot2\n✅ Manipulation avec dplyr (filter, select, group_by)\n\n\n\nVous pouvez maintenant :\n\nCharger des données\nLes explorer et les résumer\nCréer des graphiques de base\nFaire des analyses descriptives simples"
+    "text": "Ce qu’on a appris aujourd’hui\n\n\n\n\n\n\nRécapitulatif\n\n\n\n✅ Interface RStudio et console\n✅ Objets, vecteurs et data frames\n✅ Types de données et fonctions\n✅ Import et exploration de données\n✅ Analyse descriptive (moyennes, tableaux)\n✅ Premiers graphiques avec ggplot2\n✅ Manipulation avec dplyr (filter, select, group_by)\n\n\nVous pouvez maintenant :\n\nCharger des données\nLes explorer et les résumer\nCréer des graphiques de base\nFaire des analyses descriptives simples"
   },
   {
     "objectID": "slides.html#ressources-pour-continuer",
@@ -417,7 +417,7 @@
     "href": "slides.html#questions",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nMerci pour votre attention !\n\n\nContact : Étienne Proulx\nTous les codes sont copiables depuis cette présentation\n\n\n\nProchaines étapes : Continuez avec vos propres données et n’hésitez pas à expérimenter !\n\n\n\n\nFaculté des sciences sociales"
+    "text": "Questions ?\n\n\n\n\n\n\nMerci pour votre attention !\n\n\n\nContact : Étienne Proulx\nTous les codes sont copiables depuis cette présentation\n\n\nProchaines étapes : Continuez avec vos propres données et n’hésitez pas à expérimenter !"
   },
   {
     "objectID": "index.html#bienvenue",
@@ -438,7 +438,7 @@
     "href": "slides.html#comprendre-lorganisation-de-votre-ordinateur",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Comprendre l’organisation de votre ordinateur",
-    "text": "Comprendre l’organisation de votre ordinateur\n\n\n\n\n\n\nVotre ordinateur = une grande bibliothèque\n\n\nChaque fichier a une adresse précise pour le retrouver !\n\n\n\nExemple d’organisation :\n📁 Mon ordinateur\n  📁 Documents\n    📁 Université\n      📁 Session_Hiver2024\n        📁 Cours_R\n          📄 donnees.csv\n          📄 mon_script.R\nL’adresse complète (chemin) :\n\nWindows : C:/Documents/Université/Session_Hiver2024/Cours_R/\nMac : /Users/votrenom/Documents/Université/Session_Hiver2024/Cours_R/"
+    "text": "Comprendre l’organisation de votre ordinateur\n\n\n\n\n\n\nVotre ordinateur = une grande bibliothèque\n\n\n\nChaque fichier a une adresse précise pour le retrouver !\n\n\nExemple d’organisation :\n📁 Mon ordinateur\n  📁 Documents\n    📁 Université\n      📁 Session_Hiver2024\n        📁 Cours_R\n          📄 donnees.csv\n          📄 mon_script.R\nL’adresse complète (chemin) :\n\nWindows : C:/Documents/Université/Session_Hiver2024/Cours_R/\nMac : /Users/votrenom/Documents/Université/Session_Hiver2024/Cours_R/"
   },
   {
     "objectID": "slides.html#où-travaille-r-en-ce-moment",
@@ -452,21 +452,21 @@
     "href": "slides.html#bien-organiser-son-projet-r",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Bien organiser son projet R",
-    "text": "Bien organiser son projet R\n\n\n\n\n\n\nStructure recommandée\n\n\n📁 Mon_Projet_R/\n  📁 code/              # tous vos scripts R\n    📄 analyse.R\n    📄 graphiques.R\n  📁 data/              # tous vos fichiers CSV, Excel\n    📄 titanic.csv\n    📄 sondage.xlsx  \n  📁 graphs/            # vos graphiques exportés\n    📄 histogram_ages.png\n  📁 outputs/           # vos résultats et rapports\n    📄 resultats.csv\n\n\n\nPourquoi c’est important ?\n\nTout est au même endroit\nFacile de retrouver ses fichiers\nOn peut partager le dossier complet à quelqu’un"
+    "text": "Bien organiser son projet R\n\n\n\n\n\n\nStructure recommandée\n\n\n\n📁 Mon_Projet_R/\n  📁 code/              # tous vos scripts R\n    📄 analyse.R\n    📄 graphiques.R\n  📁 data/              # tous vos fichiers CSV, Excel\n    📄 titanic.csv\n    📄 sondage.xlsx  \n  📁 graphs/            # vos graphiques exportés\n    📄 histogram_ages.png\n  📁 outputs/           # vos résultats et rapports\n    📄 resultats.csv\n\n\nPourquoi c’est important ?\n\nTout est au même endroit\nFacile de retrouver ses fichiers\nOn peut partager le dossier complet à quelqu’un"
   },
   {
     "objectID": "slides.html#changer-le-dossier-de-travail-de-r",
     "href": "slides.html#changer-le-dossier-de-travail-de-r",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Changer le dossier de travail de R",
-    "text": "Changer le dossier de travail de R\nMéthode 1 : Avec du code\n\n# Changer vers mon dossier de projet\nsetwd(\"C:/Documents/Université/Mon_Projet_R\")   # Windows\nsetwd(\"/Users/nom/Documents/Mon_Projet_R\")      # Mac\n\n# Vérifier que ça a marché\ngetwd()\n\n\nMéthode 2 : Menu RStudio Session → Set Working Directory → Choose Directory...\n\n\n\n\n\n\n\nAvertissement\n\n\nAttention : Il faut refaire setwd() à chaque fois qu’on ouvre RStudio !"
+    "text": "Changer le dossier de travail de R\nMéthode 1 : Avec du code\n\n# Changer vers mon dossier de projet\nsetwd(\"C:/Documents/Université/Mon_Projet_R\")   # Windows\nsetwd(\"/Users/nom/Documents/Mon_Projet_R\")      # Mac\n\n# Vérifier que ça a marché\ngetwd()\n\n\nMéthode 2 : Menu RStudio Session → Set Working Directory → Choose Directory...\n\n\n\n\n\n\n\nAvertissement\n\n\n\nAttention : Il faut refaire setwd() à chaque fois qu’on ouvre RStudio !"
   },
   {
     "objectID": "slides.html#lien-entre-rstudio-et-votre-dossier",
     "href": "slides.html#lien-entre-rstudio-et-votre-dossier",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Lien entre RStudio et votre dossier",
-    "text": "Lien entre RStudio et votre dossier\n\n\nDans RStudio :\n\nConsole : getwd() montre où on est\nPanneau Files (bas-droite) : navigue dans les dossiers\nEnvironment : vos objets R en mémoire\n\n\nSur votre ordinateur :\n\nExplorateur de fichiers (Windows) ou Finder (Mac)\nMême structure de dossiers\nLes fichiers existent vraiment !\n\n\n\n\n\n\n\n\nAstuce\n\n\nLe panneau Files de RStudio montre le même contenu que list.files() !"
+    "text": "Lien entre RStudio et votre dossier\n\n\nDans RStudio :\n\nConsole : getwd() montre où on est\nPanneau Files (bas-droite) : navigue dans les dossiers\nEnvironment : vos objets R en mémoire\n\n\nSur votre ordinateur :\n\nExplorateur de fichiers (Windows) ou Finder (Mac)\nMême structure de dossiers\nLes fichiers existent vraiment !\n\n\n\n\n\n\n\n\n\nAstuce\n\n\n\nLe panneau Files de RStudio montre le même contenu que list.files() !"
   },
   {
     "objectID": "slides.html#maintenant-on-peut-charger-nos-données",
@@ -481,5 +481,26 @@
     "title": "Initiation à l’analyse des données avec R",
     "section": "Méthode propre",
     "text": "Méthode propre\n\nCréez un dossier pour votre projet\nMettez-y vos fichiers de données\n\nUtilisez setwd() pour y aller\nMaintenant R trouve vos fichiers !"
+  },
+  {
+    "objectID": "slides.html#analyse-des-variables",
+    "href": "slides.html#analyse-des-variables",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Analyse des variables",
+    "text": "Analyse des variables\n\n# Compter les survivants\ntable(titanic$Survived)\n\n\n  0   1 \n545 342 \n\n\n\n\n# En pourcentages\nprop.table(table(titanic$Survived)) * 100\n\n\n       0        1 \n61.44307 38.55693 \n\n\n\n\n\n# Survivants par classe\ntable(titanic$Pclass, titanic$Survived)\n\n   \n      0   1\n  1  80 136\n  2  97  87\n  3 368 119"
+  },
+  {
+    "objectID": "slides.html#analyse-des-variables-1",
+    "href": "slides.html#analyse-des-variables-1",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Analyse des variables",
+    "text": "Analyse des variables\n\n# Statistiques sur l'âge\nmean(titanic$Age, na.rm = TRUE)   # na.rm = ignore les valeurs manquantes\n\n[1] 29.47144\n\nmedian(titanic$Age, na.rm = TRUE)\n\n[1] 28\n\nsd(titanic$Age, na.rm = TRUE)\n\n[1] 14.12191\n\n\n\n\n# Statistiques sur le prix du billet\nsummary(titanic$Fare)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  0.000   7.925  14.454  32.305  31.137 512.329 \n\n\n\n\n\n\n\n\n\nNote\n\n\n\nna.rm = TRUE ignore les valeurs manquantes (NA)"
+  },
+  {
+    "objectID": "slides_test.html#test-slide",
+    "href": "slides_test.html#test-slide",
+    "title": "Test Slides",
+    "section": "Test slide",
+    "text": "Test slide\nThis is a test."
   }
 ]

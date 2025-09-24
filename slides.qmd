@@ -18,7 +18,8 @@ format:
     incremental: false
     slide-number: true
     show-slide-number: all
-    
+    standalone: true
+
 execute:
   echo: true
   eval: true
@@ -508,7 +509,7 @@ summary(titanic)
 
 ---
 
-## Analyse des variables qualitatives {.smaller}
+## Analyse des variables {.smaller}
 
 ```{r}
 #| code-copy: true
@@ -534,7 +535,7 @@ table(titanic$Pclass, titanic$Survived)
 
 ---
 
-## Analyse des variables quantitatives {.smaller}
+## Analyse des variables {.smaller}
 
 ```{r}
 #| code-copy: true
@@ -758,6 +759,10 @@ str(titanic)           # structure complète
 glimpse(titanic)       # aperçu moderne (dplyr)
 ```
 
+---
+
+## Quelques fonctions très utiles {.smaller}
+
 ::: {.fragment}
 ```{r}
 #| code-copy: true
@@ -766,6 +771,7 @@ sum(is.na(titanic$Age))          # compter les NA
 titanic_sans_na <- na.omit(titanic)  # enlever toutes les lignes avec NA
 ```
 :::
+
 
 ::: {.fragment}
 ```{r}
