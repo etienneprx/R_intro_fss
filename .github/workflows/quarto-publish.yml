@@ -27,11 +27,13 @@ jobs:
           install.packages(c("rmarkdown", "readr", "dplyr", "ggplot2", "knitr"))
         shell: Rscript {0}
 
-      - name: Render slides specifically
+      - name: Render slides as Reveal.js
         run: |
           quarto render slides.qmd --to revealjs
+          cp slides.html docs/slides.html
+          cp -r slides_files docs/ 2>/dev/null || true
 
-      - name: Render entire site
+      - name: Render site without slides
         run: quarto render
 
       - name: Publish to GitHub Pages
