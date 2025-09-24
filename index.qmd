@@ -11,6 +11,11 @@ lang: fr
 
 Cette formation offre une introduction complète à l'analyse des données avec R.
 
+::: {.callout-important}
+## 📋 Présence obligatoire
+**Participants :** Veuillez remplir le **[formulaire de présence](https://forms.office.com/pages/responsepage.aspx?id=1Yt3Vj9q00uiZZMWPk1b_tBW0Xm042tAp2039Zj2C11UMUZCNFJKVUZJUUU5V1BOQjJCRDQ2TjlZNyQlQCN0PWcu&route=shorturl)** avant le début de la formation.
+:::
+
 ### Contenu de la formation
 
 - **[Slides de présentation](slides.qmd)** : Contenu théorique de la formation
