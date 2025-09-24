@@ -16,7 +16,7 @@ website:
     left:
       - href: index.qmd
         text: Accueil
-      - href: slides.qmd
+      - href: slides.html
         text: Slides
       - href: exercices.qmd
         text: Exercices
