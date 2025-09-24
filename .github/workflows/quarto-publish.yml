@@ -27,6 +27,9 @@ jobs:
           install.packages(c("rmarkdown", "readr", "dplyr", "ggplot2", "knitr"))
         shell: Rscript {0}
 
+      - name: Render slides with slides profile
+        run: quarto render slides.qmd --profile slides
+
       - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:

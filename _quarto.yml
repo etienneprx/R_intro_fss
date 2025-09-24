@@ -7,7 +7,7 @@ website:
   description: "Formation théorique pour l'introduction à R - Université Laval"
   site-url: "https://etienneprx.github.io/R_intro_fss"
   repo-url: "https://github.com/etienneprx/R_intro_fss"
-  
+
   navbar:
     title: "Intro R - FSS"
     left:
@@ -23,7 +23,7 @@ website:
 
   page-footer:
     left: "© 2025 Étienne Proulx - Université Laval"
-    right: 
+    right:
       - icon: github
         href: "https://github.com/etienneprx/R_intro_fss"
 
@@ -38,6 +38,23 @@ format:
     code-fold: false
     fig-width: 8
     fig-height: 6
+
+# Configuration spécifique pour les slides
+profiles:
+  slides:
+    format:
+      revealjs:
+        theme: simple
+        logo: https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Ulaval_Shield.svg/800px-Ulaval_Shield.svg.png
+        footer: "[Faculté des sciences sociales](https://www.fss.ulaval.ca)"
+        transition: slide
+        transition-speed: fast
+        code-fold: false
+        code-overflow: wrap
+        code-copy: true
+        incremental: false
+        slide-number: true
+        show-slide-number: all
 
 execute:
   freeze: auto

@@ -26,6 +26,13 @@ execute:
   message: false
 ---
 
+```{r setup}
+#| include: false
+library(ggplot2)
+library(dplyr)
+library(readr)
+```
+
 ## Objectifs de l'atelier {.smaller}
 
 - Introduire R pour l'analyse de données
@@ -44,22 +51,26 @@ execute:
 ::: {.columns}
 ::: {.column width="50%"}
 **R c'est :**
+
 - Un langage de programmation statistique
 - Gratuit et open-source  
 - Une communauté active mondiale
 - Des milliers de packages spécialisés
+  
 :::
 
 ::: {.column width="50%"}
 **Pourquoi R ?**
+
 - Reproductibilité des analyses
 - Très utilisé en sciences sociales
 - Extensible avec les packages
 - Permet l'automatisation
+  
 :::
 :::
 
-> Aujourd'hui nous allons apprendre les bases pour analyser de vraies données !
+> Aujourd'hui nous allons apprendre les bases pour analyser de vraies données 
 
 ---
 
@@ -80,7 +91,7 @@ execute:
 ```{r}
 #| eval: false
 #| code-copy: true
-# Notre première commande !
+# Notre première commande 
 print("Bonjour tout le monde!")
 ```
 :::
@@ -307,6 +318,162 @@ library(ggplot2)
 
 ---
 
+## Comprendre l'organisation de votre ordinateur {.smaller}
+
+::: {.callout-important}
+## Votre ordinateur = une grande bibliothèque
+Chaque fichier a une **adresse précise** pour le retrouver !
+:::
+
+**Exemple d'organisation :**
+```
+📁 Mon ordinateur
+  📁 Documents
+    📁 Université
+      📁 Session_Hiver2024
+        📁 Cours_R
+          📄 donnees.csv
+          📄 mon_script.R
+```
+
+**L'adresse complète (chemin) :**
+
+- Windows : `C:/Documents/Université/Session_Hiver2024/Cours_R/`
+- Mac : `/Users/votrenom/Documents/Université/Session_Hiver2024/Cours_R/`
+
+---
+
+## Où travaille R en ce moment ? {.smaller}
+
+::: {.callout-tip}
+## À tester maintenant !
+:::
+
+```{r}
+#| code-copy: true
+# Où suis-je actuellement ?
+getwd()  # "get working directory" = obtenir le dossier de travail
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Qu'est-ce qu'il y a dans ce dossier ?
+list.files()  # lister tous les fichiers
+```
+:::
+
+**R travaille toujours dans UN dossier à la fois !**  
+C'est son "bureau" où il cherche vos fichiers par défaut.
+
+---
+
+## Bien organiser son projet R {.smaller}
+
+::: {.callout-note}
+## Structure recommandée
+```
+📁 Mon_Projet_R/
+  📁 code/              # tous vos scripts R
+    📄 analyse.R
+    📄 graphiques.R
+  📁 data/              # tous vos fichiers CSV, Excel
+    📄 titanic.csv
+    📄 sondage.xlsx  
+  📁 graphs/            # vos graphiques exportés
+    📄 histogram_ages.png
+  📁 outputs/           # vos résultats et rapports
+    📄 resultats.csv
+```
+:::
+
+**Pourquoi c'est important ?**
+
+- Tout est au même endroit
+- Facile de retrouver ses fichiers
+- On peut partager le dossier complet à quelqu'un
+
+---
+
+## Changer le dossier de travail de R {.smaller}
+
+**Méthode 1 : Avec du code**
+```{r}
+#| eval: false
+#| code-copy: true
+# Changer vers mon dossier de projet
+setwd("C:/Documents/Université/Mon_Projet_R")   # Windows
+setwd("/Users/nom/Documents/Mon_Projet_R")      # Mac
+
+# Vérifier que ça a marché
+getwd()
+```
+
+::: {.fragment}
+**Méthode 2 : Menu RStudio**
+`Session` → `Set Working Directory` → `Choose Directory...`
+:::
+
+::: {.callout-warning}
+**Attention :** Il faut refaire `setwd()` à chaque fois qu'on ouvre RStudio !
+:::
+
+---
+
+## Lien entre RStudio et votre dossier {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**Dans RStudio :**
+
+- **Console** : `getwd()` montre où on est
+- **Panneau Files** (bas-droite) : navigue dans les dossiers
+- **Environment** : vos objets R en mémoire
+
+:::
+
+::: {.column width="50%"}
+**Sur votre ordinateur :**
+
+- **Explorateur de fichiers** (Windows) ou **Finder** (Mac)
+- Même structure de dossiers
+- Les fichiers existent vraiment !
+
+:::
+:::
+
+::: {.callout-tip}
+## Astuce
+Le panneau **Files** de RStudio montre le même contenu que `list.files()` !
+:::
+
+---
+
+## Maintenant on peut charger nos données ! {.smaller}
+
+::: {.callout-success}
+## Méthode propre
+1. Créez un dossier pour votre projet
+2. Mettez-y vos fichiers de données  
+3. Utilisez `setwd()` pour y aller
+4. Maintenant R trouve vos fichiers !
+:::
+
+---
+
+```{r}
+#| eval: false
+#| code-copy: true
+# Étapes pratiques :
+setwd("C:/Mon_Projet_R")              # aller dans mon dossier
+list.files()                          # voir mes dossiers : code, data, graphs...
+donnees <- read.csv("data/titanic.csv")  # charger depuis le dossier data
+```
+
+**Prochaine slide :** On va charger les vraies données du Titanic !
+
+---
+
 ## Charger de vraies données {.smaller}
 
 Utilisons les données **Titanic** pour pratiquer !
@@ -422,8 +589,9 @@ ggplot(titanic, aes(x = factor(Pclass), fill = factor(Survived))) +
 ```
 
 **Décomposition :**
+
 - `ggplot()` : initialise le graphique
-- `aes()` : définit les variables (esthétiques)
+- `aes()` : définit les variables
 - `geom_bar()` : type de graphique (barres)
 - `labs()` : titres et étiquettes
 - `theme_minimal()` : style du graphique
@@ -573,6 +741,7 @@ titanic$ages  # au lieu de Age
 ```
 
 **Réflexes :**
+
 1. Lire le message d'erreur
 2. Vérifier l'orthographe
 3. Vérifier les parenthèses/guillemets
@@ -649,6 +818,7 @@ taux_survie_global <- mean(titanic$Survived, na.rm = TRUE)
 :::
 
 **Vous pouvez maintenant :**
+
 - Charger des données
 - Les explorer et les résumer
 - Créer des graphiques de base
@@ -659,16 +829,19 @@ taux_survie_global <- mean(titanic$Survived, na.rm = TRUE)
 ## Ressources pour continuer {.smaller}
 
 **Documentation et aide :**
+
 - `?fonction` dans R (ex: `?mean`)
 - [R Documentation](https://www.rdocumentation.org/)
 - [RStudio Cheatsheets](https://posit.co/resources/cheatsheets/)
 
 **Apprentissage :**
+
 - [swirl](https://swirlstats.com/) - apprendre R dans R
 - [R for Data Science](https://r4ds.hadley.nz/) (gratuit en ligne)
 - ChatGPT pour déboguer vos erreurs !
 
 **Communauté :**
+
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/r)
 - [RStudio Community](https://community.rstudio.com/)
 
