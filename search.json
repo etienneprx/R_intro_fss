@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "",
+    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\nImportant📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
+  },
+  {
+    "objectID": "index.html#bienvenue",
+    "href": "index.html#bienvenue",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "",
+    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\nImportant📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
+  },
+  {
     "objectID": "exercices.html",
     "href": "exercices.html",
     "title": "Exercices pratiques",
@@ -278,19 +292,5 @@
     "title": "Initiation à l’analyse des données avec R",
     "section": "Questions ?",
     "text": "Questions ?\n\n\n\n\n\n\nMerci pour votre attention !\n\n\nContact : Étienne Proulx\nTous les codes sont copiables depuis cette présentation\n\n\n\nProchaines étapes : Continuez avec vos propres données et n’hésitez pas à expérimenter !"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Initiation à l’analyse des données avec R",
-    "section": "",
-    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
-  },
-  {
-    "objectID": "index.html#bienvenue",
-    "href": "index.html#bienvenue",
-    "title": "Initiation à l’analyse des données avec R",
-    "section": "",
-    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
   }
 ]
