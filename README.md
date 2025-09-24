@@ -1,6 +1,6 @@
 # Initiation à l'analyse des données avec R
 
-[![Website](https://img.shields.io/badge/website-live-brightgreen)](https://username.github.io/R_intro_fss)
+[![Website](https://img.shields.io/badge/website-live-brightgreen)](https://etienneprx.github.io/R_intro_fss)
 [![Quarto](https://img.shields.io/badge/Made%20with-Quarto-blue)](https://quarto.org)
 
 Formation théorique d'introduction à R dispensée à la Faculté des sciences sociales de l'Université Laval.
