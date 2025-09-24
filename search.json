@@ -1,45 +1,17 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Initiation à l’analyse des données avec R",
-    "section": "",
-    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
-  },
-  {
-    "objectID": "index.html#bienvenue",
-    "href": "index.html#bienvenue",
-    "title": "Initiation à l’analyse des données avec R",
-    "section": "",
-    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
-  },
-  {
     "objectID": "exercices.html",
     "href": "exercices.html",
     "title": "Exercices pratiques",
     "section": "",
-    "text": "Créez trois objets :\n\nmon_nom avec votre prénom\nmon_age avec votre âge\nma_discipline avec votre discipline d’études\n\nAffichez le contenu de chaque objet\n\n\n# Votre code ici\n\n\n\n\n\nCréez un vecteur notes avec les valeurs : 78, 85, 92, 67, 88, 91\nCalculez la moyenne, la médiane et l’écart-type\nCombien d’étudiants ont une note supérieure à 80 ?\n\n\n# Votre code ici\n\n\n\n\nCréez un data frame mes_etudiants avec : - 5 noms d’étudiants fictifs - Leurs âges (entre 20 et 30 ans) - Leurs notes (entre 60 et 100) - Leur programme d’études\n\n# Votre code ici"
+    "text": "À VENIR"
   },
   {
     "objectID": "exercices.html#exercices-pour-débutants",
     "href": "exercices.html#exercices-pour-débutants",
     "title": "Exercices pratiques",
     "section": "",
-    "text": "Créez trois objets :\n\nmon_nom avec votre prénom\nmon_age avec votre âge\nma_discipline avec votre discipline d’études\n\nAffichez le contenu de chaque objet\n\n\n# Votre code ici\n\n\n\n\n\nCréez un vecteur notes avec les valeurs : 78, 85, 92, 67, 88, 91\nCalculez la moyenne, la médiane et l’écart-type\nCombien d’étudiants ont une note supérieure à 80 ?\n\n\n# Votre code ici\n\n\n\n\nCréez un data frame mes_etudiants avec : - 5 noms d’étudiants fictifs - Leurs âges (entre 20 et 30 ans) - Leurs notes (entre 60 et 100) - Leur programme d’études\n\n# Votre code ici"
-  },
-  {
-    "objectID": "exercices.html#exercices-avec-données-réelles",
-    "href": "exercices.html#exercices-avec-données-réelles",
-    "title": "Exercices pratiques",
-    "section": "Exercices avec données réelles",
-    "text": "Exercices avec données réelles\n\nExercice 4 : Analyser les données d’étudiants\n\n# Charger les données d'exemple\netudiants &lt;- read.csv(\"data/etudiants_exemple.csv\")\nhead(etudiants)\n\n       nom age note     programme sexe          ville\n1    Alice  23   85    Sociologie    F         Québec\n2      Bob  25   78      Économie    M       Montréal\n3   Claire  22   92    Sociologie    F          Laval\n4    David  24   88   Psychologie    M     Sherbrooke\n5     Emma  26   90      Économie    F Trois-Rivières\n6 François  23   76 Anthropologie    M       Rimouski\n\n\n\nCombien d’étudiants y a-t-il au total ?\nQuelle est la note moyenne ?\nQuel est l’âge médian ?\nCombien d’étudiants par programme ?\n\n\n# Votre code ici\n\n\n\nExercice 5 : Filtrer et résumer\n\nCréez un sous-ensemble avec seulement les étudiants en Sociologie\nCalculez la note moyenne par sexe\nTrouvez l’étudiant le plus jeune et le plus âgé\n\n\n# Votre code ici\n\n\n\nExercice 6 : Vos premiers graphiques\n\nCréez un histogramme des notes\nCréez un graphique en barres du nombre d’étudiants par programme\nCréez un nuage de points âge vs note\n\n\n# Votre code ici"
-  },
-  {
-    "objectID": "exercices.html#solutions",
-    "href": "exercices.html#solutions",
-    "title": "Exercices pratiques",
-    "section": "Solutions",
-    "text": "Solutions\n\n\n\n\n\n\nNoteSolutions Exercice 1\n\n\n\n\n\n\nmon_nom &lt;- \"Votre prénom\"\nmon_age &lt;- 25  # votre âge\nma_discipline &lt;- \"Sciences sociales\"\n\n# Afficher\nmon_nom\nmon_age\nma_discipline\n\n\n\n\n\n\n\n\n\n\nNoteSolutions Exercice 2\n\n\n\n\n\n\nnotes &lt;- c(78, 85, 92, 67, 88, 91)\n\n# Statistiques\nmean(notes)\nmedian(notes)\nsd(notes)\n\n# Nombre d'étudiants avec note &gt; 80\nsum(notes &gt; 80)\n\n\n\n\n\n\n\n\n\n\nNoteSolutions Exercice 4\n\n\n\n\n\n\n# Nombre total d'étudiants\nnrow(etudiants)\n\n# Note moyenne\nmean(etudiants$note)\n\n# Âge médian\nmedian(etudiants$age)\n\n# Étudiants par programme\ntable(etudiants$programme)"
+    "text": "À VENIR"
   },
   {
     "objectID": "slides.html#objectifs-de-latelier",
@@ -306,5 +278,19 @@
     "title": "Initiation à l’analyse des données avec R",
     "section": "Questions ?",
     "text": "Questions ?\n\n\n\n\n\n\nMerci pour votre attention !\n\n\nContact : Étienne Proulx\nTous les codes sont copiables depuis cette présentation\n\n\n\nProchaines étapes : Continuez avec vos propres données et n’hésitez pas à expérimenter !"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "",
+    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
+  },
+  {
+    "objectID": "index.html#bienvenue",
+    "href": "index.html#bienvenue",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "",
+    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
   }
 ]

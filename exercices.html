@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -75,7 +40,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-649c011751fbf2adbcf3ec51ff28cc2a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-28881f5fd9ca60f646796b55a1d5780d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -160,19 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercices-pour-débutants" id="toc-exercices-pour-débutants" class="nav-link active" data-scroll-target="#exercices-pour-débutants">Exercices pour débutants</a>
-  <ul class="collapse">
-  <li><a href="#exercice-1-premiers-pas-avec-r" id="toc-exercice-1-premiers-pas-avec-r" class="nav-link" data-scroll-target="#exercice-1-premiers-pas-avec-r">Exercice 1 : Premiers pas avec R</a></li>
-  <li><a href="#exercice-2-travailler-avec-des-vecteurs" id="toc-exercice-2-travailler-avec-des-vecteurs" class="nav-link" data-scroll-target="#exercice-2-travailler-avec-des-vecteurs">Exercice 2 : Travailler avec des vecteurs</a></li>
-  <li><a href="#exercice-3-votre-premier-data-frame" id="toc-exercice-3-votre-premier-data-frame" class="nav-link" data-scroll-target="#exercice-3-votre-premier-data-frame">Exercice 3 : Votre premier data frame</a></li>
-  </ul></li>
-  <li><a href="#exercices-avec-données-réelles" id="toc-exercices-avec-données-réelles" class="nav-link" data-scroll-target="#exercices-avec-données-réelles">Exercices avec données réelles</a>
-  <ul class="collapse">
-  <li><a href="#exercice-4-analyser-les-données-détudiants" id="toc-exercice-4-analyser-les-données-détudiants" class="nav-link" data-scroll-target="#exercice-4-analyser-les-données-détudiants">Exercice 4 : Analyser les données d’étudiants</a></li>
-  <li><a href="#exercice-5-filtrer-et-résumer" id="toc-exercice-5-filtrer-et-résumer" class="nav-link" data-scroll-target="#exercice-5-filtrer-et-résumer">Exercice 5 : Filtrer et résumer</a></li>
-  <li><a href="#exercice-6-vos-premiers-graphiques" id="toc-exercice-6-vos-premiers-graphiques" class="nav-link" data-scroll-target="#exercice-6-vos-premiers-graphiques">Exercice 6 : Vos premiers graphiques</a></li>
-  </ul></li>
-  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
+  <li><a href="#exercices-pour-débutants" id="toc-exercices-pour-débutants" class="nav-link active" data-scroll-target="#exercices-pour-débutants">Exercices pour débutants</a></li>
   </ul>
 </nav>
 </nav>
@@ -205,172 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="exercices-pour-débutants" class="level2">
 <h2 class="anchored" data-anchor-id="exercices-pour-débutants">Exercices pour débutants</h2>
-<section id="exercice-1-premiers-pas-avec-r" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-1-premiers-pas-avec-r">Exercice 1 : Premiers pas avec R</h3>
-<ol type="1">
-<li>Créez trois objets :
-<ul>
-<li><code>mon_nom</code> avec votre prénom</li>
-<li><code>mon_age</code> avec votre âge</li>
-<li><code>ma_discipline</code> avec votre discipline d’études</li>
-</ul></li>
-<li>Affichez le contenu de chaque objet</li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre code ici</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="exercice-2-travailler-avec-des-vecteurs" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-2-travailler-avec-des-vecteurs">Exercice 2 : Travailler avec des vecteurs</h3>
-<ol type="1">
-<li>Créez un vecteur <code>notes</code> avec les valeurs : 78, 85, 92, 67, 88, 91</li>
-<li>Calculez la moyenne, la médiane et l’écart-type</li>
-<li>Combien d’étudiants ont une note supérieure à 80 ?</li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre code ici</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="exercice-3-votre-premier-data-frame" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-3-votre-premier-data-frame">Exercice 3 : Votre premier data frame</h3>
-<p>Créez un data frame <code>mes_etudiants</code> avec : - 5 noms d’étudiants fictifs - Leurs âges (entre 20 et 30 ans) - Leurs notes (entre 60 et 100) - Leur programme d’études</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre code ici</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-</section>
-<section id="exercices-avec-données-réelles" class="level2">
-<h2 class="anchored" data-anchor-id="exercices-avec-données-réelles">Exercices avec données réelles</h2>
-<section id="exercice-4-analyser-les-données-détudiants" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-4-analyser-les-données-détudiants">Exercice 4 : Analyser les données d’étudiants</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger les données d'exemple</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>etudiants <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/etudiants_exemple.csv"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(etudiants)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       nom age note     programme sexe          ville
-1    Alice  23   85    Sociologie    F         Québec
-2      Bob  25   78      Économie    M       Montréal
-3   Claire  22   92    Sociologie    F          Laval
-4    David  24   88   Psychologie    M     Sherbrooke
-5     Emma  26   90      Économie    F Trois-Rivières
-6 François  23   76 Anthropologie    M       Rimouski</code></pre>
-</div>
-</div>
-<ol type="1">
-<li>Combien d’étudiants y a-t-il au total ?</li>
-<li>Quelle est la note moyenne ?</li>
-<li>Quel est l’âge médian ?</li>
-<li>Combien d’étudiants par programme ?</li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre code ici</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="exercice-5-filtrer-et-résumer" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-5-filtrer-et-résumer">Exercice 5 : Filtrer et résumer</h3>
-<ol type="1">
-<li>Créez un sous-ensemble avec seulement les étudiants en Sociologie</li>
-<li>Calculez la note moyenne par sexe</li>
-<li>Trouvez l’étudiant le plus jeune et le plus âgé</li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre code ici</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="exercice-6-vos-premiers-graphiques" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-6-vos-premiers-graphiques">Exercice 6 : Vos premiers graphiques</h3>
-<ol type="1">
-<li>Créez un histogramme des notes</li>
-<li>Créez un graphique en barres du nombre d’étudiants par programme</li>
-<li>Créez un nuage de points âge vs note</li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre code ici</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-</section>
-<section id="solutions" class="level2">
-<h2 class="anchored" data-anchor-id="solutions">Solutions</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solutions Exercice 1
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mon_nom <span class="ot">&lt;-</span> <span class="st">"Votre prénom"</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mon_age <span class="ot">&lt;-</span> <span class="dv">25</span>  <span class="co"># votre âge</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>ma_discipline <span class="ot">&lt;-</span> <span class="st">"Sciences sociales"</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>mon_nom</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>mon_age</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>ma_discipline</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solutions Exercice 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>notes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">78</span>, <span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">67</span>, <span class="dv">88</span>, <span class="dv">91</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Statistiques</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(notes)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(notes)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(notes)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Nombre d'étudiants avec note &gt; 80</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(notes <span class="sc">&gt;</span> <span class="dv">80</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solutions Exercice 4
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nombre total d'étudiants</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(etudiants)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Note moyenne</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(etudiants<span class="sc">$</span>note)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Âge médian</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(etudiants<span class="sc">$</span>age)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Étudiants par programme</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(etudiants<span class="sc">$</span>programme)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-</div>
+<p>À VENIR</p>
 
 
 </section>
