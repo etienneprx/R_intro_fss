@@ -1,9 +1,6 @@
 project:
   type: website
   output-dir: docs
-  render:
-    - "*.qmd"
-    - "!slides.qmd"
 
 website:
   title: "Initiation à l'analyse des données avec R"
@@ -16,7 +13,7 @@ website:
     left:
       - href: index.qmd
         text: Accueil
-      - href: slides.html
+      - href: slides.qmd
         text: Slides
       - href: exercices.qmd
         text: Exercices
@@ -41,23 +38,6 @@ format:
     code-fold: false
     fig-width: 8
     fig-height: 6
-
-# Configuration spécifique pour les slides
-profiles:
-  slides:
-    format:
-      revealjs:
-        theme: simple
-        logo: https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Ulaval_Shield.svg/800px-Ulaval_Shield.svg.png
-        footer: "[Faculté des sciences sociales](https://www.fss.ulaval.ca)"
-        transition: slide
-        transition-speed: fast
-        code-fold: false
-        code-overflow: wrap
-        code-copy: true
-        incremental: false
-        slide-number: true
-        show-slide-number: all
 
 execute:
   freeze: auto

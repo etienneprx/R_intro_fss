@@ -13,7 +13,7 @@ Cette formation offre une introduction complète à l'analyse des données avec 
 
 ### Contenu de la formation
 
-- **[Slides de présentation](slides.html)** : Contenu théorique de la formation
+- **[Slides de présentation](slides.qmd)** : Contenu théorique de la formation
 - **[Exercices pratiques](exercices.qmd)** : Exercices pour mettre en pratique les concepts
 
 ### À propos
