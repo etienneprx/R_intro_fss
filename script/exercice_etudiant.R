@@ -159,25 +159,25 @@ nombre_pays <-
 
 
 # 1. Filtrez les données pour l'année 2007 seulement
-# Indice : donnees %>% filter(year == 2007)
+
 # À COMPLÉTER
 donnees_2007 <- donnees %>%
 
 
 # 2. Sélectionnez uniquement les colonnes pays, continent et espérance de vie
-# Indice : utilisez select(country, continent, lifeExp)
+
 # À COMPLÉTER
 donnees_select <- donnees_2007 %>%
 
 
 # 3. Créez une nouvelle variable 'esperance_vie_mois' (en mois au lieu d'années)
-# Indice : utilisez mutate(esperance_vie_mois = lifeExp * 12)
+# Indice : utilisez mutate()
 # À COMPLÉTER
 donnees_mois <- donnees_select %>%
 
 
 # 4. Triez les pays par espérance de vie décroissante
-# Indice : utilisez arrange(desc(lifeExp))
+# Indice : utilisez arrange(desc())
 # À COMPLÉTER
 donnees_triees <- donnees_mois %>%
 
@@ -192,7 +192,7 @@ head(donnees_triees)
 # Objectif : Utiliser group_by() et summarise() pour des analyses par continent
 
 # 1. Calculez l'espérance de vie moyenne par continent en 2007
-# Indice : group_by(continent) %>% summarise(esperance_moy = mean(lifeExp))
+
 # À COMPLÉTER
 esperance_continent <- donnees %>%
   filter(year == 2007) %>%
@@ -225,7 +225,7 @@ nb_pays <- donnees %>%
 print(nb_pays)
 
 # 4. Identifiez le continent avec la plus haute espérance de vie moyenne
-# Indice : utilisez arrange(desc(esperance_moy)) %>% head(1)
+
 # À COMPLÉTER
 continent_max_esperance <- esperance_continent %>%
 
