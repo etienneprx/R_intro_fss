@@ -52,48 +52,224 @@ library(readr)
 ::: {.column width="50%"}
 **R c'est :**
 
-- Un langage de programmation statistique
-- Gratuit et open-source  
+- Un langage de programmation pour l'analyse de données
+- Gratuit et open-source
 - Une communauté active mondiale
-- Des milliers de packages spécialisés
-  
+- Plus de 21,000 packages spécialisés
+
 :::
 
 ::: {.column width="50%"}
-**Pourquoi R ?**
+**Pourquoi l'utiliser ?**
 
-- Reproductibilité des analyses
-- Très utilisé en sciences sociales
-- Extensible avec les packages
-- Permet l'automatisation
-  
+- Adapté aux sciences sociales
+- Analyses reproductibles et transparentes
+- Visualisations de qualité professionnelle
+- Compétence recherchée en recherche et industrie
+
 :::
 :::
 
-> Aujourd'hui nous allons apprendre les bases pour analyser de vraies données 
+<br>
+
+> Aujourd'hui nous allons apprendre les bases pour analyser de vraies données
 
 ---
 
-## Avant de commencer : RStudio {.smaller}
+## Pourquoi R en sciences sociales ? {.smaller background-color="#2C5F77"}
 
-::: {.callout-tip}
-## Ouvrons RStudio ensemble !
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1024px-R_logo.svg.png){.absolute top=0 left=900 width="20%"}
+
+::: {style="color: white;"}
+
+**R est utilisé dans la vraie vie :**
+
+::: {.columns}
+::: {.column width="50%"}
+**Organisations :**
+
+- [AirBnB](https://medium.com/airbnb-engineering/using-r-packages-and-education-to-scale-data-science-at-airbnb-906faa58e12d) - analyse de données
+- [BBC](https://bbc.github.io/rcookbook/) - graphiques journalistiques
+- Google, Facebook, Amazon - data science
+
 :::
 
-**Les 4 panneaux de RStudio :**
+::: {.column width="50%"}
+**Recherche au Québec :**
 
-1. **Console** (en bas à gauche) : où s'exécutent les commandes
-2. **Script** (en haut à gauche) : où on écrit notre code  
-3. **Environment** (en haut à droite) : nos objets
-4. **Files/Plots** (en bas à droite) : fichiers et graphiques
+- [Vox Pop Labs](https://github.com/voxpoplabs) (Boussole électorale)
+- CLESSN (Université Laval)
+- Nombreux chercheurs en sciences sociales
 
-::: {.fragment}
-```{r}
-#| eval: false
-#| code-copy: true
-# Notre première commande 
-print("Bonjour tout le monde!")
-```
+:::
+:::
+:::
+
+---
+
+## Visualisations avancées avec R {.smaller background-color="#4A90A4"}
+
+::: {style="color: white;"}
+
+**Suivi quotidien des intentions de vote - Élections fédérales 2025**
+
+:::
+
+![](https://github.com/clessn/agregateur_data/blob/main/img/daily_gif_fr.gif?raw=true){fig-align="center" width="80%"}
+
+::: {.callout-note}
+Animation générée automatiquement chaque jour avec R - Centre d'analyse des politiques publiques
+:::
+
+---
+
+## Au-delà des chiffres {.smaller background-color="#2C5F77"}
+
+::: {style="color: white;"}
+
+**R s'adapte à tous types de données**
+
+::: {.columns}
+::: {.column width="50%"}
+**Texte :**
+
+- Analyse de sentiment
+- Classification de documents
+- Transcription audio
+- Extraction d'informations
+
+:::
+
+::: {.column width="50%"}
+**Multimédia :**
+
+- Analyse d'images
+- Création de vidéos
+- Infographies automatisées
+- Présentations interactives
+
+:::
+:::
+:::
+
+---
+
+## Applications web interactives avec Shiny {.smaller background-color="#4A90A4"}
+
+::: {style="color: white;"}
+
+**Explorez vos données de manière interactive**
+
+:::
+
+[![](images/shiny.png){width="80%"}](https://nz-stefan.shinyapps.io/commute-explorer-2/)
+
+::: {.callout-tip}
+Cliquez sur l'image pour voir l'[application en action](https://nz-stefan.shinyapps.io/commute-explorer-2/)
+:::
+
+---
+
+## Applications Shiny : possibilités infinies {.smaller background-color="#5B4E77"}
+
+::: {style="color: white;"}
+
+**Transformez vos analyses en outils accessibles**
+**Exemples d'utilisation :**
+
+- Tableaux de bord de suivi
+- Explorateurs de données interactifs
+- Outils de collecte de données
+- Simulateurs et calculateurs
+- Rapports personnalisés
+
+::: {.callout-note}
+Aucune connaissance en développement web nécessaire
+:::
+:::
+
+---
+
+## Et après R ? {.smaller background-color="#2C5F77"}
+
+::: {style="color: white;"}
+
+**Apprendre R ouvre la porte à d'autres langages**
+
+Les concepts appris en R se transfèrent facilement :
+
+::: {.columns}
+::: {.column width="50%"}
+**Analyse de données :**
+
+- Python (data science)
+- Julia (calcul scientifique)
+- SQL (bases de données)
+
+:::
+
+::: {.column width="50%"}
+**Développement :**
+
+- JavaScript (web interactif)
+- HTML/CSS (présentation)
+- Bash (automatisation)
+
+:::
+:::
+
+::: {.callout-note}
+Une fois qu'on maîtrise un langage de programmation, les autres deviennent beaucoup plus faciles à apprendre
+:::
+:::
+
+---
+
+## Installer R et RStudio {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**Quelle est la différence ?**
+
+- R est le moteur, RStudio est le véhicule
+- R est le langage, RStudio est la feuille de papier
+- RStudio facilite l'utilisation de R
+- RStudio est un IDE (Integrated Development Environment)
+- Personnalisation de l'environnement de travail
+:::
+
+::: {.column width="50%"}
+**Liens de téléchargement :**
+
+- [Installer R](https://cran.r-project.org/)
+- [Installer RStudio](https://www.rstudio.com/products/rstudio/download/)
+:::
+:::
+
+---
+
+## Avant de commencer à coder : RStudio {.smaller}
+
+![](images/rstudio.png){.absolute top="100" left="0" width="100%" height="80%"}
+
+::: {.absolute top="250" left="80" style="background-color: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; max-width: 280px;"}
+**Script**  
+Où on écrit notre code
+:::
+
+::: {.absolute top="200" left="600" style="background-color: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; max-width: 280px;"}
+**Environment**  
+Nos objets et données
+:::
+
+::: {.absolute top="500" left="80" style="background-color: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; max-width: 280px;"}
+**Console**  
+Où s'exécutent les commandes
+:::
+
+::: {.absolute top="450" left="600" style="background-color: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; max-width: 280px;"}
+**Files/Plots**  
+Fichiers et graphiques
 :::
 
 ---
@@ -122,6 +298,7 @@ sqrt(16)
 ```
 :::
 
+
 ---
 
 ## Créer nos premiers objets {.smaller}
@@ -129,194 +306,276 @@ sqrt(16)
 En R, on sauvegarde tout dans des **objets** avec `<-`
 
 ```{r}
-#| code-copy: true
 # Créer des objets simples
-mon_age <- 30
-mon_nom <- "Étienne" 
-ma_note <- 85.5
+film_prefere <- "Dune"
+annee_sortie <- 2021
+note_imdb <- 8.0
 ```
 
-::: {.fragment}
 ```{r}
-#| code-copy: true
-# Voir le contenu
-mon_age
-mon_nom
-ma_note
+# Voir le contenu des objets
+film_prefere
+annee_sortie
+note_imdb
 ```
-:::
 
 ::: {.callout-note}
-**Important :** Les objets apparaissent dans le panneau Environment !
+**Important :** Les objets apparaissent dans le panneau Environment de RStudio !
 :::
 
 ---
 
-## Les vecteurs : groupes de valeurs {.smaller}
+## Les vecteurs : groupes de valeurs
 
 ```{r}
-#| code-copy: true
-# Créer des vecteurs avec c()
-ages <- c(23, 45, 31, 28, 35)
-noms <- c("Alice", "Bob", "Claire", "David", "Emma")
-notes <- c(85, 78, 92, 88, 90)
+# Créer des vecteurs avec la fonction c()
+films <- c("Dune", "Oppenheimer", "Barbie", "The Zone of Interest", "Killers of the Flower Moon")
+annees <- c(2021, 2023, 2023, 2023, 2023)
+notes_imdb <- c(8.0, 8.3, 6.8, 7.4, 7.6)
 ```
 
-::: {.fragment}
 ```{r}
-#| code-copy: true
 # Explorer nos vecteurs
-ages
-length(ages)  # nombre d'éléments
-mean(ages)    # moyenne
+films
+length(films)     # nombre de films
+mean(notes_imdb)  # note moyenne
 ```
-:::
 
 ---
 
-## Types de données {.smaller}
+## Types de données : attention aux pièges !
 
 ```{r}
-#| code-copy: true
 # Vérifier le type de nos objets
-class(ages)        # numérique
-class(noms)        # caractère (texte)
+class(notes_imdb)    # numérique - parfait pour calculer
+class(films)         # caractère (texte)
 class(c(TRUE, FALSE))  # logique
 ```
 
-::: {.fragment}
-```{r}
-#| code-copy: true
-# R convertit automatiquement si nécessaire
-melange <- c(1, 2, "trois")
-melange
-class(melange)  # tout devient du texte !
-```
+::: {.callout-warning}
+## Problème fréquent en analyse de données
+Parfois, des nombres sont stockés comme du texte dans vos données. R ne peut pas calculer avec du texte !
 :::
 
 ---
 
-## Notre premier tableau de données {.smaller}
+## Types de données : attention aux pièges !
+
+```{r}
+# Exemple de coercition automatique (à surveiller !)
+notes_mixtes <- c(8.0, 7.5, "6.8")  # un chiffre écrit en texte
+notes_mixtes
+class(notes_mixtes)  # tout devient du texte !
+```
+
+```{r}
+# Impossible de calculer maintenant
+ mean(notes_mixtes)  # Ceci produira une erreur !
+```
+
+---
+
+## Solution : convertir les types
+
+```{r}
+# Convertir du texte en numérique
+notes_numeriques <- as.numeric(notes_mixtes)
+notes_numeriques
+class(notes_numeriques)
+
+# Maintenant on peut calculer
+mean(notes_numeriques)
+```
+
+::: {.callout-tip}
+## Bonne pratique
+Toujours vérifier le type de vos variables avec `class()` avant de faire des calculs !
+:::
+
+---
+
+## Notre premier tableau de données
 
 Un **data frame** = tableau avec lignes et colonnes
 
 ```{r}
-#| code-copy: true
-# Créer notre tableau d'étudiants
-etudiants <- data.frame(
-  nom = c("Alice", "Bob", "Claire", "David", "Emma"),
-  age = c(23, 25, 22, 24, 26), 
-  note = c(85, 78, 92, 88, 90),
-  programme = c("Socio", "Éco", "Socio", "Psycho", "Éco")
+# Créer notre base de données de films
+cinema <- data.frame(
+  titre = c("Dune", "Oppenheimer", "Barbie", "The Zone of Interest", "Killers of the Flower Moon"),
+  annee = c(2021, 2023, 2023, 2023, 2023),
+  note = c(8.0, 8.3, 6.8, 7.4, 7.6),
+  genre = c("Sci-Fi", "Biographie", "Comédie", "Drame", "Drame")
 )
 ```
 
-::: {.fragment}
 ```{r}
-#| code-copy: true
 # Regarder notre tableau
-etudiants
+cinema
 ```
-:::
 
 ---
 
-## Explorer un data frame {.smaller}
+## Explorer un data frame
 
 ```{r}
-#| code-copy: true
 # Informations générales
-dim(etudiants)       # dimensions (lignes x colonnes)
-nrow(etudiants)      # nombre de lignes
-ncol(etudiants)      # nombre de colonnes
-names(etudiants)     # noms des colonnes
+dim(cinema)       # dimensions (lignes x colonnes)
+nrow(cinema)      # nombre de films
+ncol(cinema)      # nombre de variables
+names(cinema)     # noms des colonnes
 ```
 
-::: {.fragment}
+---
+
+## Explorer un data frame
+
 ```{r}
-#| code-copy: true
 # Aperçu du contenu
-head(etudiants, 3)   # premières lignes
-str(etudiants)       # structure détaillée
+head(cinema, 3)   # premiers films
+str(cinema)       # structure détaillée
 ```
-:::
 
 ---
 
-## Accéder aux colonnes {.smaller}
+## Accéder aux colonnes
 
-**Avec le symbole `$` (recommandé) :**
-```{r}
-#| code-copy: true
-etudiants$nom
-etudiants$note
-mean(etudiants$age)  # âge moyen
-```
+### Avec le symbole `$` (recommandé)
 
-::: {.fragment}
-**Avec les crochets `[ ]` :**
 ```{r}
-#| code-copy: true
-etudiants[, "nom"]          # par nom
-etudiants[, 1]              # par position
-etudiants[, c("nom", "age")] # plusieurs colonnes
+cinema$titre
+cinema$note
+mean(cinema$note)  # note moyenne
 ```
-:::
 
 ---
 
-## Les fonctions : nos outils {.smaller}
+## Accéder aux colonnes
+### Avec les crochets `[ ]`
+
+```{r}
+cinema[, "titre"]          # par nom
+cinema[, 1]                # par position
+cinema[, c("titre", "genre")] # plusieurs colonnes
+```
+
+---
+
+## Les fonctions : nos outils
 
 Une **fonction** fait une tâche : `fonction(argument1, argument2)`
 
 ```{r}
-#| code-copy: true
 # Fonctions statistiques essentielles
-mean(etudiants$note)      # moyenne
-median(etudiants$note)    # médiane
-sd(etudiants$note)        # écart-type
-min(etudiants$note)       # minimum
-max(etudiants$note)       # maximum
+mean(cinema$note)      # note moyenne
+median(cinema$note)    # note médiane
+sd(cinema$note)        # écart-type
+min(cinema$note)       # note minimale
+max(cinema$note)       # note maximale
 ```
 
-::: {.fragment}
+---
+
+## Les fonctions : nos outils
+
 ```{r}
-#| code-copy: true
-# Résumé complet
-summary(etudiants$note)
+# Résumé complet d'une variable
+summary(cinema$note)
 ```
-:::
+
+```{r}
+# Compter les occurrences
+table(cinema$genre)    # combien de films par genre ?
+```
 
 ---
 
 ## Les packages : étendre R {.smaller}
 
-::: {.callout-important}
-## Installation vs Chargement
-- `install.packages("nom")` : installer (1 seule fois)
-- `library(nom)` : charger (à chaque session)
+**Les packages sont comme des applications pour R**
+
+- R de base = fonctions essentielles
+- Packages = fonctions spécialisées créées par la communauté
+- Plus de 21,000 packages disponibles sur CRAN
+- Chaque package résout des problèmes spécifiques
+
+::: {.callout-tip}
+## Analogie
+R de base = téléphone vide  
+Packages = applications qu'on télécharge
+:::
+
+---
+
+## Le Tidyverse : votre boîte à outils {.smaller}
+
+**Collection de packages pour l'analyse de données moderne**
+
+::: {.columns}
+::: {.column width="50%"}
+**Packages principaux :**
+
+- `readr` : importer des données
+- `dplyr` : manipuler des données
+- `ggplot2` : créer des graphiques
+- `tidyr` : nettoyer des données
+:::
+
+::: {.column width="50%"}
+**Avantages :**
+
+- Syntaxe cohérente et intuitive
+- Très utilisé en sciences sociales
+- Documentation excellente
+- S'installe en un seul package !
+:::
 :::
 
 ```{r}
 #| eval: false
 #| code-copy: true
-# Installer les packages essentiels (à faire une fois)
-install.packages("readr")     # importer des données
-install.packages("dplyr")     # manipuler des données  
-install.packages("ggplot2")   # faire des graphiques
+# Installer le Tidyverse (contient plusieurs packages)
+install.packages("tidyverse")
+```
+
+---
+
+## Installation vs Chargement {.smaller}
+
+::: {.callout-important}
+## Différence cruciale
+- `install.packages("nom")` : télécharger le package (1 seule fois)
+- `library(nom)` : activer le package (à chaque session R)
+:::
+
+**Installer des packages**
+
+```{r}
+#| eval: false
+#| code-copy: true
+# Exemples d'installation (à faire une fois)
+install.packages("tidyverse")
+install.packages("readxl")
+install.packages("janitor")
 ```
 
 ::: {.fragment}
+**Charger des packages**
+
 ```{r}
 #| code-copy: true
-# Charger les packages (à chaque session)
-library(readr)
-library(dplyr) 
-library(ggplot2)
+# À faire au début de chaque script
+library(tidyverse)
+library(readxl)
 ```
 :::
 
+::: {.callout-tip}
+## Bonne pratique
+Mettez toujours vos `library()` au début de votre script
+:::
+
 ---
+
 
 ## Comprendre l'organisation de votre ordinateur {.smaller}
 
@@ -452,68 +711,149 @@ Le panneau **Files** de RStudio montre le même contenu que `list.files()` !
 ## Maintenant on peut charger nos données ! {.smaller}
 
 ::: {.callout-success}
-## Méthode propre
+**Méthode propre**
+
 1. Créez un dossier pour votre projet
 2. Mettez-y vos fichiers de données  
 3. Utilisez `setwd()` pour y aller
 4. Maintenant R trouve vos fichiers !
 :::
 
----
-
 ```{r}
 #| eval: false
 #| code-copy: true
 # Étapes pratiques :
-setwd("C:/Mon_Projet_R")              # aller dans mon dossier
+setwd("C:/Mon_Projet_R")              # Remplacer par cotre propre chemin
 list.files()                          # voir mes dossiers : code, data, graphs...
 donnees <- read.csv("data/titanic.csv")  # charger depuis le dossier data
 ```
 
 **Prochaine slide :** On va charger les vraies données du Titanic !
 
+
 ---
 
-## Charger de vraies données {.smaller}
+## Charger de vraies données {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
 
 Utilisons les données **Titanic** pour pratiquer !
 
 ```{r}
 #| code-copy: true
-# Charger les données Titanic (intégrées dans R)
-titanic <- read.csv("https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv")
+# Charger les données Titanic
+titanic <- read.csv("data/titanic.csv")
 
-# Premiers coups d'œil
+# Premier coup d'œil
 head(titanic, 3)
 ```
 
+::: {.callout-tip}
+## Téléchargez les données
+Cliquez sur ce [lien](https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv) 
+
+Attention de bien spécifier votre chemin d'accès!
+:::
+:::
+
 ---
 
-## Explorer les données Titanic {.smaller}
+## Explorer la structure des données {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+**Toujours commencer par comprendre nos données**
 
 ```{r}
 #| code-copy: true
-# Informations générales
-dim(titanic)
-names(titanic)
-```
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Résumé des variables
-summary(titanic)
+# Informations de base
+dim(titanic)          # dimensions (lignes x colonnes)
+names(titanic)        # noms des colonnes
+nrow(titanic)         # nombre de lignes
+ncol(titanic)         # nombre de colonnes
 ```
 :::
 
 ---
 
-## Analyse des variables {.smaller}
+## Examiner la structure détaillée {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
 
 ```{r}
 #| code-copy: true
-# Compter les survivants
-table(titanic$Survived)
+# Structure complète des données
+str(titanic)
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Aperçu moderne avec glimpse (dplyr)
+library(dplyr)
+glimpse(titanic)
+```
+:::
+
+**Ces fonctions montrent :** types de variables, premières valeurs, dimensions
+:::
+
+---
+
+## Résumé statistique des variables {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+```{r}
+#| code-copy: true
+# Résumé statistique de toutes les variables
+summary(titanic)
+```
+
+**Ce résumé nous révèle :**
+Moyennes, médianes, quartiles pour les variables numériques | Fréquences pour les variables catégorielles | Présence de valeurs manquantes (NA's)
+:::
+
+---
+
+## Gérer les valeurs manquantes {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+```{r}
+#| code-copy: true
+# Compter les valeurs manquantes par colonne
+colSums(is.na(titanic))
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Compter les NA dans une colonne spécifique
+sum(is.na(titanic$Age))
+
+# Voir quels passagers ont un âge manquant
+head(titanic[is.na(titanic$Age), ])
+```
+:::
+
+::: {.callout-note}
+**na.rm = TRUE** dans les fonctions statistiques ignore les valeurs manquantes
+:::
+:::
+
+---
+
+## Analyse des variables individuelles {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+```{r}
+#| code-copy: true
+# Variables catégorielles : compter les occurrences
+table(titanic$Survived)    # survivants
+table(titanic$Pclass)      # classes
+table(titanic$Sex)         # sexe
 ```
 
 ::: {.fragment}
@@ -523,25 +863,21 @@ table(titanic$Survived)
 prop.table(table(titanic$Survived)) * 100
 ```
 :::
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Survivants par classe
-table(titanic$Pclass, titanic$Survived)
-```
 :::
 
 ---
 
-## Analyse des variables {.smaller}
+## Analyse des variables numériques {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
 
 ```{r}
 #| code-copy: true
 # Statistiques sur l'âge
-mean(titanic$Age, na.rm = TRUE)   # na.rm = ignore les valeurs manquantes
-median(titanic$Age, na.rm = TRUE)
-sd(titanic$Age, na.rm = TRUE)
+mean(titanic$Age, na.rm = TRUE)     # âge moyen
+median(titanic$Age, na.rm = TRUE)   # âge médian
+sd(titanic$Age, na.rm = TRUE)       # écart-type
+range(titanic$Age, na.rm = TRUE)    # min et max
 ```
 
 ::: {.fragment}
@@ -551,98 +887,76 @@ sd(titanic$Age, na.rm = TRUE)
 summary(titanic$Fare)
 ```
 :::
-
-::: {.callout-note}
-**na.rm = TRUE** ignore les valeurs manquantes (NA)
 :::
 
 ---
 
-## Notre premier graphique {.smaller}
+## Analyse croisée de variables {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
 
 ```{r}
 #| code-copy: true
-#| fig-height: 4
-#| fig-align: center
-# Graphique des survivants par classe
-ggplot(titanic, aes(x = factor(Pclass), fill = factor(Survived))) +
-  geom_bar() +
-  labs(title = "Survivants par classe sur le Titanic",
-       x = "Classe", y = "Nombre de passagers",
-       fill = "Survécu") +
-  theme_minimal()
+# Croiser deux variables catégorielles
+table(titanic$Pclass, titanic$Survived)
 ```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Ajouter les noms de lignes/colonnes pour clarté
+table(Classe = titanic$Pclass, Survécu = titanic$Survived)
+```
+:::
+
+**Ce tableau montre :** répartition des survivants selon la classe
+:::
 
 ---
 
-## Anatomie d'un graphique ggplot {.smaller}
+## Manipulation des données avec dplyr {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+**Le package dplyr facilite la manipulation de données**
 
 ```{r}
-#| eval: false
 #| code-copy: true
-ggplot(titanic, aes(x = factor(Pclass), fill = factor(Survived))) +
-  geom_bar() +
-  labs(title = "Survivants par classe sur le Titanic",
-       x = "Classe", y = "Nombre de passagers", 
-       fill = "Survécu") +
-  theme_minimal()
+# Charger dplyr (ou tidyverse)
+library(dplyr)
 ```
 
-**Décomposition :**
+**Fonctions principales :**
 
-- `ggplot()` : initialise le graphique
-- `aes()` : définit les variables
-- `geom_bar()` : type de graphique (barres)
-- `labs()` : titres et étiquettes
-- `theme_minimal()` : style du graphique
+- `select()` : sélectionner des colonnes
+- `filter()` : filtrer des lignes
+- `mutate()` : créer/modifier des variables
+- `group_by()` + `summarise()` : grouper et résumer
+:::
 
 ---
 
-## Histogramme des âges {.smaller}
+## Sélectionner des colonnes {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
 
 ```{r}
 #| code-copy: true
-#| fig-height: 4
-#| fig-align: center
-# Distribution des âges
-ggplot(titanic, aes(x = Age)) +
-  geom_histogram(bins = 20, fill = "steelblue", alpha = 0.7) +
-  labs(title = "Distribution des âges sur le Titanic",
-       x = "Âge", y = "Nombre de passagers") +
-  theme_minimal()
-```
-
----
-
-## Nuage de points : âge vs prix {.smaller}
-
-```{r}
-#| code-copy: true
-#| fig-height: 4
-#| fig-align: center
-# Relation âge-prix du billet
-ggplot(titanic, aes(x = Age, y = Fare, color = factor(Survived))) +
-  geom_point(alpha = 0.6) +
-  labs(title = "Âge vs Prix du billet",
-       x = "Âge", y = "Prix du billet", 
-       color = "Survécu") +
-  theme_minimal()
-```
-
----
-
-## Filtrer et sélectionner {.smaller}
-
-```{r}
-#| code-copy: true
-# Sélectionner seulement certaines colonnes
+# Garder seulement certaines colonnes
 titanic_simple <- titanic %>%
   select(Survived, Pclass, Sex, Age, Fare)
 
 head(titanic_simple, 3)
 ```
 
-::: {.fragment}
+:::
+
+---
+
+## Filtrer des lignes {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
 ```{r}
 #| code-copy: true
 # Filtrer les passagers de première classe
@@ -651,160 +965,417 @@ premiere_classe <- titanic %>%
 
 nrow(premiere_classe)  # combien de passagers ?
 ```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Filtres multiples
+adultes_survie <- titanic %>%
+  filter(Age >= 18, Survived == 1)
+
+nrow(adultes_survie)
+```
+:::
+
+**Opérateurs de filtre :** `==`, `!=`, `>`, `<`, `>=`, `<=`, `%in%`
 :::
 
 ---
 
-## Grouper et résumer {.smaller}
+## Créer de nouvelles variables {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
 
 ```{r}
 #| code-copy: true
-# Taux de survie par classe
-titanic %>%
-  group_by(Pclass) %>%
-  summarise(
-    nb_passagers = n(),
-    nb_survivants = sum(Survived),
-    taux_survie = mean(Survived) * 100
-  )
-```
+# Créer une variable catégorielle âge
+titanic <- titanic %>%
+  mutate(groupe_age = ifelse(Age < 18, "Enfant", "Adulte"))
 
----
-
-## Taux de survie par sexe {.smaller}
-
-```{r}
-#| code-copy: true
-# Analyse par sexe
-titanic %>%
-  group_by(Sex) %>%
-  summarise(
-    nb_passagers = n(),
-    taux_survie = round(mean(Survived) * 100, 1)
-  )
+table(titanic$groupe_age)
 ```
 
 ::: {.fragment}
 ```{r}
 #| code-copy: true
-#| fig-height: 3
-# Graphique correspondant
-ggplot(titanic, aes(x = Sex, fill = factor(Survived))) +
-  geom_bar(position = "fill") +
-  labs(title = "Taux de survie par sexe", 
-       y = "Proportion", fill = "Survécu") +
+# Créer plusieurs variables en une fois
+titanic <- titanic %>%
+  mutate(
+    prix_eleve = ifelse(Fare > 50, "Cher", "Abordable"),
+    taille_famille = Siblings.Spouses.Aboard + Parents.Children.Aboard + 1  # inclure le passager lui-même
+  )
+
+# Visualiser les premières lignes des nouvelles variables
+titanic_newvars <- titanic %>%
+  select(groupe_age, prix_eleve, taille_famille)
+
+head(titanic_newvars)
+```
+:::
+:::
+
+---
+
+## Nettoyage de données avancé {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+```{r}
+#| code-copy: true
+# Stratégie pour gérer les valeurs manquantes dans la variable Age
+# Étape 1: Remplacer les NA par la médiane des âges existants
+titanic <- titanic %>%
+  mutate(Age = ifelse(is.na(Age),                    # SI l'âge est manquant (NA)
+                      median(Age, na.rm = TRUE),      # ALORS utiliser la médiane
+                      Age))                           # SINON garder l'âge original
+
+# Étape 2: Vérifier que le remplacement a fonctionné
+sum(is.na(titanic$Age))  # Compter combien de NA restent (devrait être 0)
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# Standardiser les noms de colonnes (optionnel)
+titanic <- titanic %>%
+  rename(
+    survie = Survived,
+    classe = Pclass,
+    sexe = Sex
+  )
+```
+:::
+:::
+
+---
+
+## Grouper et résumer {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+```{r}
+#| code-copy: true
+# Statistiques par groupe
+titanic %>%
+  group_by(classe) %>%
+  summarise(
+    nb_passagers = n(),
+    nb_survivants = sum(survie),
+    taux_survie = round(mean(survie) * 100, 1),
+    age_moyen = round(mean(Age, na.rm = TRUE), 1)
+  )
+```
+
+**La fonction `n()` compte le nombre de lignes dans chaque groupe**
+:::
+
+---
+
+## Groupements multiples {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+```{r}
+#| code-copy: true
+# Analyser par classe ET sexe
+resume_complet <- titanic %>%
+  group_by(classe, sexe) %>%
+  summarise(
+    nb_passagers = n(),
+    taux_survie = round(mean(survie) * 100, 1)
+  )
+
+resume_complet
+```
+:::
+
+---
+
+## Graphiques simples : graphiques en barres {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+**Commençons par le plus simple : compter des catégories**
+
+```{r}
+#| code-copy: true
+#| fig-height: 4
+#| fig-align: center
+library(ggplot2)
+
+# Nombre de passagers par classe
+ggplot(titanic, aes(x = factor(classe))) +
+  geom_bar()
+```
+:::
+
+---
+
+## Graphiques simples : graphiques en barres {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+**Éléments de base :**
+
+- `ggplot()` : initialise le graphique avec les données
+- `aes()` : spécifie quelles variables utiliser
+- `geom_bar()` : type de graphique (barres)
+:::
+
+---
+
+## Ajouter des couleurs et labels {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+```{r}
+#| code-copy: true
+#| fig-height: 4
+#| fig-align: center
+# Même graphique, mais plus joli
+ggplot(titanic, aes(x = factor(classe))) +
+  geom_bar(fill = "steelblue", color = "white") +
+  labs(
+    title = "Répartition des passagers par classe",
+    x = "Classe", 
+    y = "Nombre de passagers"
+  ) +
   theme_minimal()
 ```
 :::
 
 ---
 
-## Sauvegarder notre travail {.smaller}
+## Ajouter des couleurs et labels {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+**Nouveaux éléments :**
+
+- `fill` : couleur de remplissage des barres
+- `labs()` : ajouter titres et étiquettes
+- `theme_minimal()` : style épuré
+:::
+
+---
+
+## Graphiques empilés : deux variables {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+```{r}
+#| code-copy: true
+#| fig-height: 4
+#| fig-align: center
+# Survivants par classe (barres empilées)
+ggplot(titanic, aes(x = factor(classe), fill = factor(survie))) +
+  geom_bar() +
+  labs(
+    title = "Survivants par classe sur le Titanic",
+    x = "Classe", 
+    y = "Nombre de passagers",
+    fill = "Survécu"
+  ) +
+  theme_minimal()
+## **Nouvelle technique :** `fill = factor(survie)` dans `aes()` crée des couleurs automatiques selon la survie
+```
+
+:::
+
+---
+
+## Graphiques en proportions {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+**`position = "fill"`** transforme en proportions (0 à 1) pour comparer les taux
+
+```{r}
+#| code-copy: true
+#| fig-height: 4
+#| fig-align: center
+# Proportions plutôt que nombres absolus
+ggplot(titanic, aes(x = factor(classe), fill = factor(survie))) +
+  geom_bar(position = "fill") +
+  labs(
+    title = "Taux de survie par classe",
+    x = "Classe", 
+    y = "Proportion",
+    fill = "Survécu"
+  ) +
+  theme_minimal()
+```
+
+:::
+
+---
+
+## Histogrammes : distribution d'une variable {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+```{r}
+#| code-copy: true
+#| fig-height: 4
+#| fig-align: center
+# Distribution des âges
+ggplot(titanic, aes(x = Age)) +
+  geom_histogram(bins = 20, fill = "lightblue", color = "white", alpha = 0.7) +
+  labs(
+    title = "Distribution des âges sur le Titanic",
+    x = "Âge", 
+    y = "Nombre de passagers"
+  ) +
+  theme_minimal()
+```
+:::
+
+---
+
+## Histogrammes : distribution d'une variable {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+**Nouveaux éléments :**
+
+- `geom_histogram()` : pour variables numériques continues
+- `bins = 20` : nombre de barres
+- `alpha = 0.7` : transparence (0 = invisible, 1 = opaque)
+:::
+
+---
+
+## Nuages de points {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+**`geom_point()`** crée un nuage de points pour explorer les relations entre variables numériques
+
+```{r}
+#| code-copy: true
+#| fig-height: 4
+#| fig-align: center
+# Relation âge-prix du billet
+ggplot(titanic, aes(x = Age, y = Fare)) +
+  geom_point(alpha = 0.6) +
+  labs(
+    title = "Âge vs Prix du billet",
+    x = "Âge", 
+    y = "Prix du billet"
+  ) +
+  theme_minimal()
+```
+
+:::
+
+---
+
+## Nuages de points avec couleurs {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+**La couleur révèle des patterns :** les survivants avaient-ils des billets plus chers ?
+
+```{r}
+#| code-copy: true
+#| fig-height: 4
+#| fig-align: center
+# Ajouter la survie comme couleur
+ggplot(titanic, aes(x = Age, y = Fare, color = factor(survie))) +
+  geom_point(alpha = 0.6) +
+  labs(
+    title = "Âge vs Prix du billet selon la survie",
+    x = "Âge", 
+    y = "Prix du billet",
+    color = "Survécu"
+  ) +
+  theme_minimal()
+```
+
+:::
+
+---
+
+## Sauvegarder notre travail {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
 
 ```{r}
 #| eval: false
 #| code-copy: true
-# Sauvegarder un graphique
-ggsave("graphique_titanic.png", width = 10, height = 6)
+# Sauvegarder le dernier graphique
+ggsave("age_prix_survie.png", width = 10, height = 6)
 
 # Sauvegarder des données nettoyées
-write.csv(titanic_simple, "titanic_nettoye.csv", row.names = FALSE)
+write.csv(titanic, "titanic_nettoye.csv", row.names = FALSE)
 
-# Sauvegarder notre analyse
-resultats <- titanic %>%
-  group_by(Pclass, Sex) %>%
-  summarise(taux_survie = mean(Survived) * 100)
-
-write.csv(resultats, "analyse_survie.csv", row.names = FALSE)
+# Sauvegarder nos résultats d'analyse
+write.csv(resume_complet, "analyse_survie_classe_sexe.csv", row.names = FALSE)
 ```
+
+**Toujours sauvegarder :** scripts, données nettoyées, graphiques, résultats
+:::
 
 ---
 
-## Messages d'erreur : pas de panique ! {.smaller}
+## Messages d'erreur : pas de panique ! {.smaller background-color="#4A90A4"}
 
-**Erreurs courantes :**
+::: {style="color: #333;"}
+
+**Erreurs courantes et solutions :**
 
 ```{r}
 #| eval: false
 #| code-copy: true
-# Objet non trouvé
+# Erreur : objet non trouvé
 mean(donnees$age)
 # Error: object 'donnees' not found
+# → Vérifier le nom de l'objet
 
-# Parenthèse manquante  
-mean(titanic$Age
-# Error: unexpected end of input
-
-# Colonne inexistante
+# Erreur : colonne inexistante  
 titanic$ages  # au lieu de Age
-# NULL
+# → Utiliser names(titanic) pour voir les vraies colonnes
+
+# Erreur : parenthèse manquante
+mean(titanic$Age
+# → Vérifier que toutes les parenthèses sont fermées
 ```
 
-**Réflexes :**
-
-1. Lire le message d'erreur
-2. Vérifier l'orthographe
-3. Vérifier les parenthèses/guillemets
-4. Utiliser `names()` pour voir les colonnes
-
----
-
-## Quelques fonctions très utiles {.smaller}
-
-```{r}
-#| code-copy: true
-# Explorer la structure
-str(titanic)           # structure complète
-glimpse(titanic)       # aperçu moderne (dplyr)
-```
-
----
-
-## Quelques fonctions très utiles {.smaller}
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Gérer les valeurs manquantes
-sum(is.na(titanic$Age))          # compter les NA
-titanic_sans_na <- na.omit(titanic)  # enlever toutes les lignes avec NA
-```
-:::
-
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Créer de nouvelles variables
-titanic$est_enfant <- ifelse(titanic$Age < 18, "Enfant", "Adulte")
-table(titanic$est_enfant)
-```
+**Réflexes :** lire le message, vérifier l'orthographe, tester ligne par ligne
 :::
 
 ---
 
-## Bonnes pratiques {.smaller}
+## Bonnes pratiques pour l'analyse {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
 
 ::: {.callout-tip}
-## Conseils pour bien débuter
+## Workflow recommandé
 
-1. **Organisez votre travail :** utilisez des projets RStudio
-2. **Nommez bien vos objets :** `donnees_titanic` plutôt que `df1`
-3. **Commentez votre code :** utilisez `#` pour expliquer
-4. **Testez étape par étape :** vérifiez chaque ligne
-5. **Sauvegardez souvent :** scripts ET données nettoyées
+1. **Explorer d'abord :** `str()`, `summary()`, `glimpse()`
+2. **Nettoyer ensuite :** gérer les NA, corriger les types
+3. **Analyser pas à pas :** une variable, puis des croisements
+4. **Visualiser pour comprendre :** graphiques simples puis complexes
+5. **Documenter et sauvegarder :** commenter le code, sauvegarder les résultats
 :::
 
 ```{r}
 #| eval: false
 #| code-copy: true
-# Exemple de code bien documenté
-# Charger les données du Titanic
-titanic <- read.csv("titanic.csv")
+# Exemple de code bien structuré
+# 1. Chargement et exploration
+titanic <- read.csv("data/titanic.csv")
+str(titanic)
 
-# Calculer le taux de survie moyen
-taux_survie_global <- mean(titanic$Survived, na.rm = TRUE)
+# 2. Nettoyage
+titanic <- titanic %>% 
+  mutate(Age = ifelse(is.na(Age), median(Age, na.rm = TRUE), Age))
+
+# 3. Analyse et visualisation
+# ... votre analyse ...
 ```
+:::
 
 ---
 
@@ -857,7 +1428,8 @@ taux_survie_global <- mean(titanic$Survived, na.rm = TRUE)
 ::: {.callout-tip appearance="simple"}
 ## Merci pour votre attention !
 
-**Contact :** Étienne Proulx  
+**Contact :** etienne.proulx.2@ulaval.ca
+
 **Tous les codes sont copiables depuis cette présentation**
 :::
 
