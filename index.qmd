@@ -20,6 +20,7 @@ Cette formation offre une introduction complète à l'analyse des données avec 
 
 - **[Slides de présentation](slides.qmd)** : Contenu théorique de la formation
 - **[Exercices pratiques](exercices.qmd)** : Exercices pour mettre en pratique les concepts
+- **[Script R complet](script/script_r_formation.r)** : Tous les exemples de code de la formation à télécharger
 
 ### À propos
 

@@ -46,3 +46,5 @@ Thumbs.db
 *.pdf
 !assets/*.png
 !assets/*.jpg
+!docs/images/*.png
+!docs/images/*.jpg
