@@ -1,8 +1,378 @@
 ---
 title: "Exercices pratiques"
 subtitle: "Mise en pratique des concepts R"
+lang: fr
+format:
+  html:
+    code-fold: false
+    code-copy: true
+execute:
+  echo: true
+  eval: true
+  warning: false
+  message: false
 ---
 
-## Exercices pour débutants
+```{r setup}
+#| include: false
+library(ggplot2)
+library(dplyr)
+library(readr)
+```
 
-À VENIR
+## 📋 Instructions générales
+
+Cet exercice pratique vous permettra de mettre en application tous les concepts vus dans la formation R. Vous travaillerez avec des **vraies données** sur l'espérance de vie et l'économie des pays du monde.
+
+### 🎯 Objectifs de l'exercice
+
+- Manipuler des objets et vecteurs R
+- Explorer un dataset réel
+- Utiliser les fonctions de base et dplyr
+- Créer des visualisations avec ggplot2
+- Analyser des tendances dans les données
+
+### 💾 Comment procéder
+
+1. **Téléchargez les fichiers nécessaires** :
+   - [**Script R de l'exercice**](script/exercice_etudiant.R)
+   - [**Données CSV**](data/donnees_pays.csv)
+2. **Placez les deux fichiers** dans le même dossier sur votre ordinateur
+3. **Ouvrez le script** dans RStudio
+4. **Définissez votre dossier de travail** (instructions dans le script)
+5. **Suivez les instructions** dans le script (zones à compléter marquées par `# À COMPLÉTER`)
+6. **Exécutez votre code** au fur et à mesure
+7. **Consultez les solutions** ci-dessous si vous êtes bloqué
+
+::: {.callout-important}
+## 📖 Données utilisées
+Le fichier **donnees_pays.csv** contient des données sur l'espérance de vie, la population et le PIB par habitant pour **142 pays** de 1952 à 2007. Ces données proviennent du célèbre dataset Gapminder utilisé mondialement pour l'enseignement de l'analyse de données.
+
+**Variables disponibles :**
+- `country` : Nom du pays
+- `continent` : Continent (Africa, Americas, Asia, Europe, Oceania)
+- `year` : Année (1952 à 2007, par intervalles de 5 ans)
+- `lifeExp` : Espérance de vie à la naissance (années)
+- `pop` : Population totale
+- `gdpPercap` : PIB par habitant (dollars US, ajusté inflation)
+:::
+
+---
+
+## 🏁 Exercice 1 : Premiers pas avec les objets
+
+**Objectif** : Créer des objets et vecteurs pour vous familiariser avec R
+
+### Consignes
+1. Créez un objet `pays_prefere` avec le nom de votre pays favori
+2. Créez un vecteur `continents` avec les 5 continents principaux
+3. Créez un vecteur `populations` avec des populations fictives (en millions)
+4. Vérifiez les types de données avec `class()`
+
+::: {.panel-tabset}
+
+## Solution
+
+```{r}
+#| eval: false
+# 1. Créer un objet
+pays_prefere <- "Canada"
+
+# 2. Créer un vecteur de continents
+continents <- c("Afrique", "Amérique", "Asie", "Europe", "Océanie")
+
+# 3. Créer un vecteur de populations (en millions)
+populations <- c(1200, 580, 4600, 750, 45)
+
+# 4. Vérifier les types
+class(pays_prefere)   # character
+class(continents)     # character
+class(populations)    # numeric
+```
+
+:::
+
+---
+
+## 🌍 Exercice 2 : Explorer le dataset gapminder
+
+**Objectif** : Charger et explorer des vraies données internationales
+
+### Consignes
+1. Installez et chargez le package `gapminder`
+2. Chargez le dataset dans un objet appelé `donnees`
+3. Explorez la structure des données (`dim()`, `head()`, `str()`, `summary()`)
+4. Identifiez les variables disponibles
+
+::: {.panel-tabset}
+
+## Solution
+
+```{r}
+#| eval: false
+# 1. Installer et charger le package (à faire une seule fois)
+# install.packages("gapminder")
+library(gapminder)
+
+# 2. Charger les données
+donnees <- gapminder
+
+# 3. Explorer la structure
+dim(donnees)        # dimensions
+head(donnees)       # premiers cas
+str(donnees)        # structure détaillée
+summary(donnees)    # résumé statistique
+
+# 4. Voir les noms des colonnes
+names(donnees)
+```
+
+:::
+
+---
+
+## 🔍 Exercice 3 : Analyse descriptive
+
+**Objectif** : Analyser les variables avec des fonctions statistiques
+
+### Consignes
+1. Calculez l'espérance de vie moyenne mondiale
+2. Trouvez le PIB par habitant minimum et maximum
+3. Comptez combien de pays uniques sont dans le dataset
+4. Identifiez les années disponibles dans les données
+
+::: {.panel-tabset}
+
+## Solution
+
+```{r}
+# Charger les données pour les solutions
+library(gapminder)
+donnees <- gapminder
+
+# 1. Espérance de vie moyenne
+mean(donnees$lifeExp)
+
+# 2. PIB par habitant min et max
+min(donnees$gdpPercap)
+max(donnees$gdpPercap)
+
+# 3. Nombre de pays uniques
+length(unique(donnees$country))
+
+# 4. Années disponibles
+unique(donnees$year)
+sort(unique(donnees$year))  # pour les avoir en ordre
+```
+
+:::
+
+---
+
+## 🛠️ Exercice 4 : Manipulation avec dplyr
+
+**Objectif** : Filtrer, sélectionner et transformer les données
+
+### Consignes
+1. Filtrez les données pour l'année 2007 seulement
+2. Sélectionnez uniquement les colonnes pays, continent et espérance de vie
+3. Créez une nouvelle variable `esperance_vie_mois` (en mois au lieu d'années)
+4. Triez les pays par espérance de vie décroissante
+
+::: {.panel-tabset}
+
+## Solution
+
+```{r}
+library(dplyr)
+
+# 1. Filtrer pour 2007
+donnees_2007 <- donnees %>%
+  filter(year == 2007)
+
+# 2. Sélectionner certaines colonnes
+donnees_select <- donnees_2007 %>%
+  select(country, continent, lifeExp)
+
+# 3. Créer nouvelle variable (espérance de vie en mois)
+donnees_mois <- donnees_select %>%
+  mutate(esperance_vie_mois = lifeExp * 12)
+
+# 4. Trier par espérance de vie décroissante
+donnees_triees <- donnees_mois %>%
+  arrange(desc(lifeExp))
+
+# Voir le résultat
+head(donnees_triees)
+```
+
+:::
+
+---
+
+## 📊 Exercice 5 : Analyses par groupe
+
+**Objectif** : Utiliser `group_by()` et `summarise()` pour des analyses par continent
+
+### Consignes
+1. Calculez l'espérance de vie moyenne par continent en 2007
+2. Trouvez le PIB par habitant médian par continent
+3. Comptez le nombre de pays par continent
+4. Identifiez le continent avec la plus haute espérance de vie moyenne
+
+::: {.panel-tabset}
+
+## Solution
+
+```{r}
+# 1. Espérance de vie moyenne par continent (2007)
+esperance_continent <- donnees %>%
+  filter(year == 2007) %>%
+  group_by(continent) %>%
+  summarise(esperance_moy = mean(lifeExp))
+
+print(esperance_continent)
+
+# 2. PIB médian par continent
+pib_continent <- donnees %>%
+  filter(year == 2007) %>%
+  group_by(continent) %>%
+  summarise(pib_median = median(gdpPercap))
+
+print(pib_continent)
+
+# 3. Nombre de pays par continent
+nb_pays <- donnees %>%
+  filter(year == 2007) %>%
+  group_by(continent) %>%
+  summarise(nombre_pays = n())
+
+print(nb_pays)
+
+# 4. Continent avec plus haute espérance de vie
+esperance_continent %>%
+  arrange(desc(esperance_moy)) %>%
+  head(1)
+```
+
+:::
+
+---
+
+## 📈 Exercice 6 : Visualisations
+
+**Objectif** : Créer des graphiques pour explorer les tendances
+
+### Consignes
+1. Créez un graphique en barres de l'espérance de vie par continent (2007)
+2. Créez un histogramme du PIB par habitant en 2007
+3. Créez un nuage de points PIB vs espérance de vie (2007)
+4. Ajoutez des couleurs par continent au nuage de points
+
+::: {.panel-tabset}
+
+## Solution
+
+```{r}
+library(ggplot2)
+
+# Préparer les données pour 2007
+donnees_2007 <- donnees %>% filter(year == 2007)
+
+# 1. Graphique en barres par continent
+donnees_2007 %>%
+  group_by(continent) %>%
+  summarise(esperance_moy = mean(lifeExp)) %>%
+  ggplot(aes(x = continent, y = esperance_moy)) +
+  geom_col(fill = "steelblue") +
+  labs(title = "Espérance de vie moyenne par continent (2007)",
+       x = "Continent", y = "Espérance de vie (années)")
+
+# 2. Histogramme du PIB par habitant
+ggplot(donnees_2007, aes(x = gdpPercap)) +
+  geom_histogram(bins = 20, fill = "lightcoral", alpha = 0.7) +
+  labs(title = "Distribution du PIB par habitant (2007)",
+       x = "PIB par habitant", y = "Nombre de pays")
+
+# 3. Nuage de points PIB vs espérance de vie
+ggplot(donnees_2007, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point() +
+  labs(title = "Relation PIB - Espérance de vie (2007)",
+       x = "PIB par habitant", y = "Espérance de vie (années)")
+
+# 4. Nuage de points avec couleurs par continent
+ggplot(donnees_2007, aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point(size = 3) +
+  labs(title = "Relation PIB - Espérance de vie par continent (2007)",
+       x = "PIB par habitant", y = "Espérance de vie (années)",
+       color = "Continent")
+```
+
+:::
+
+---
+
+## 🎯 Exercice bonus : Analyse temporelle
+
+**Objectif** : Explorer l'évolution dans le temps
+
+### Consignes
+1. Calculez l'évolution de l'espérance de vie moyenne mondiale par décennie
+2. Identifiez le pays avec la plus forte croissance d'espérance de vie entre 1952 et 2007
+3. Créez un graphique linéaire de l'évolution du PIB moyen par continent
+
+::: {.panel-tabset}
+
+## Solution
+
+```{r}
+# 1. Évolution par décennie
+evolution_decennie <- donnees %>%
+  group_by(year) %>%
+  summarise(esperance_mondiale = mean(lifeExp))
+
+print(evolution_decennie)
+
+# 2. Plus forte croissance d'espérance de vie
+croissance_pays <- donnees %>%
+  filter(year %in% c(1952, 2007)) %>%
+  group_by(country) %>%
+  summarise(
+    croissance = lifeExp[year == 2007] - lifeExp[year == 1952]
+  ) %>%
+  arrange(desc(croissance))
+
+print(head(croissance_pays))
+
+# 3. Graphique évolution PIB par continent
+donnees %>%
+  group_by(continent, year) %>%
+  summarise(pib_moyen = mean(gdpPercap)) %>%
+  ggplot(aes(x = year, y = pib_moyen, color = continent)) +
+  geom_line(size = 1.2) +
+  labs(title = "Évolution du PIB moyen par continent",
+       x = "Année", y = "PIB par habitant moyen",
+       color = "Continent")
+```
+
+:::
+
+---
+
+## 🏆 Félicitations !
+
+Vous avez terminé tous les exercices ! Vous maîtrisez maintenant :
+
+- ✅ La création d'objets et vecteurs
+- ✅ L'exploration de datasets réels
+- ✅ Les fonctions statistiques de base
+- ✅ La manipulation de données avec dplyr
+- ✅ Les visualisations avec ggplot2
+- ✅ L'analyse de tendances temporelles
+
+### 📚 Pour aller plus loin
+
+- Explorez d'autres datasets avec `data()`
+- Essayez de nouveaux types de graphiques
+- Apprenez à importer vos propres données Excel/CSV
+- Découvrez les analyses statistiques avancées
