@@ -71,12 +71,16 @@ Le fichier **donnees_pays.csv** contient des données sur l'espérance de vie, l
 
 ::: {.panel-tabset}
 
+## À vous de jouer !
+
+Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.
+
 ## Solution
 
 ```{r}
 #| eval: false
 # 1. Créer un objet
-pays_prefere <- "Canada"
+pays_prefere <- "Quebec"
 
 # 2. Créer un vecteur de continents
 continents <- c("Afrique", "Amérique", "Asie", "Europe", "Océanie")
@@ -94,17 +98,21 @@ class(populations)    # numeric
 
 ---
 
-## 🌍 Exercice 2 : Explorer le dataset gapminder
+## 🌍 Exercice 2 : Explorer le dataset
 
-**Objectif** : Charger et explorer des vraies données internationales
+**Objectif** : Explorer des vraies données internationales
 
 ### Consignes
-1. Installez et chargez le package `gapminder`
-2. Chargez le dataset dans un objet appelé `donnees`
+1. Chargez les packages nécessaires (`readr`, `dplyr`, `ggplot2`)
+2. Chargez les données depuis le fichier CSV avec `read_csv()`
 3. Explorez la structure des données (`dim()`, `head()`, `str()`, `summary()`)
 4. Identifiez les variables disponibles
 
 ::: {.panel-tabset}
+
+## À vous de jouer !
+
+Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.
 
 ## Solution
 
@@ -144,6 +152,10 @@ names(donnees)
 
 ::: {.panel-tabset}
 
+## À vous de jouer !
+
+Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.
+
 ## Solution
 
 ```{r}
@@ -182,6 +194,10 @@ sort(unique(donnees$year))  # pour les avoir en ordre
 4. Triez les pays par espérance de vie décroissante
 
 ::: {.panel-tabset}
+
+## À vous de jouer !
+
+Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.
 
 ## Solution
 
@@ -223,6 +239,10 @@ head(donnees_triees)
 4. Identifiez le continent avec la plus haute espérance de vie moyenne
 
 ::: {.panel-tabset}
+
+## À vous de jouer !
+
+Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.
 
 ## Solution
 
@@ -272,6 +292,10 @@ esperance_continent %>%
 4. Ajoutez des couleurs par continent au nuage de points
 
 ::: {.panel-tabset}
+
+## À vous de jouer !
+
+Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.
 
 ## Solution
 
@@ -324,6 +348,10 @@ ggplot(donnees_2007, aes(x = gdpPercap, y = lifeExp, color = continent)) +
 3. Créez un graphique linéaire de l'évolution du PIB moyen par continent
 
 ::: {.panel-tabset}
+
+## À vous de jouer !
+
+Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.
 
 ## Solution
 
