@@ -1149,8 +1149,8 @@ Packages = applications qu’on télécharge</p>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "_freeze"          "_quarto.yml"      "ancien.qmd"       "custom.scss"     
  [5] "data"             "docs"             "exercices.qmd"    "images"          
- [9] "index.qmd"        "README.md"        "slides_files"     "slides.qmd"      
-[13] "slides.rmarkdown"</code></pre>
+ [9] "index.qmd"        "README.md"        "script"           "slides_files"    
+[13] "slides.qmd"       "slides.rmarkdown"</code></pre>
 </div>
 </div>
 </div>
@@ -1763,6 +1763,58 @@ Adulte Enfant
 </div>
 </div>
 </section>
+<section id="observation-la-fonction-factor-transformer-en-catégories" class="slide level2 smaller" data-background-color="rgba(206, 87, 87, 1)">
+<h2>Observation: la fonction factor() : transformer en catégories</h2>
+<div style="color: #333;">
+<p><strong>Pourquoi <code>factor(classe)</code> dans nos graphiques ?</strong></p>
+<div class="cell" data-code-copy="true">
+<div class="sourceCode cell-code" id="cb160"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a></a><span class="co"># Notre variable classe contient des chiffres</span></span>
+<span id="cb160-2"><a></a><span class="fu">class</span>(titanic<span class="sc">$</span>classe)  <span class="co"># "numeric" </span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb162"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a></a><span class="fu">table</span>(titanic<span class="sc">$</span>classe)  <span class="co"># 1, 2, 3</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  1   2   3 
+216 184 487 </code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell" data-code-copy="true">
+<div class="sourceCode cell-code" id="cb164"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a></a><span class="co"># R peut les voir comme des NOMBRES ou comme des CATÉGORIES</span></span>
+<span id="cb164-2"><a></a><span class="co"># factor() dit à R : "Traite ça comme des catégories !"</span></span>
+<span id="cb164-3"><a></a><span class="fu">class</span>(<span class="fu">factor</span>(titanic<span class="sc">$</span>classe))  <span class="co"># "factor"</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "factor"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="observation-la-fonction-factor-transformer-en-catégories-1" class="slide level2 smaller" data-background-color="rgba(206, 87, 87, 1)">
+<h2>Observation: la fonction factor() : transformer en catégories</h2>
+<div style="color: #333;">
+<p><strong>Différence visuelle dans les graphiques :</strong></p>
+<ul>
+<li>Sans <code>factor()</code> : axe continu avec espaces bizarres</li>
+<li>Avec <code>factor()</code> : barres bien distinctes pour chaque classe</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Astuce</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Character vs Factor :</strong> <code>as.character()</code> marche aussi, mais <code>factor()</code> nous donne plus de contrôle sur l’ordre d’affichage !</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="graphiques-simples-graphiques-en-barres-1" class="slide level2 smaller" data-background-color="#4A90A4">
 <h2>Graphiques simples : graphiques en barres</h2>
 <div style="color: #333;">
@@ -1778,19 +1830,19 @@ Adulte Enfant
 <h2>Ajouter des couleurs et labels</h2>
 <div style="color: #333;">
 <div class="cell" data-layout-align="center" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb160"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a></a><span class="co"># Même graphique, mais plus joli</span></span>
-<span id="cb160-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(classe))) <span class="sc">+</span></span>
-<span id="cb160-3"><a></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb160-4"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb160-5"><a></a>    <span class="at">title =</span> <span class="st">"Répartition des passagers par classe"</span>,</span>
-<span id="cb160-6"><a></a>    <span class="at">x =</span> <span class="st">"Classe"</span>, </span>
-<span id="cb160-7"><a></a>    <span class="at">y =</span> <span class="st">"Nombre de passagers"</span></span>
-<span id="cb160-8"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb160-9"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a></a><span class="co"># Même graphique, mais plus joli</span></span>
+<span id="cb166-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(classe))) <span class="sc">+</span></span>
+<span id="cb166-3"><a></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb166-4"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb166-5"><a></a>    <span class="at">title =</span> <span class="st">"Répartition des passagers par classe"</span>,</span>
+<span id="cb166-6"><a></a>    <span class="at">x =</span> <span class="st">"Classe"</span>, </span>
+<span id="cb166-7"><a></a>    <span class="at">y =</span> <span class="st">"Nombre de passagers"</span></span>
+<span id="cb166-8"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb166-9"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-51-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-53-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1811,25 +1863,25 @@ Adulte Enfant
 <section id="graphiques-empilés-deux-variables" class="slide level2 smaller" data-background-color="#4A90A4">
 <h2>Graphiques empilés : deux variables</h2>
 <div style="color: #333;">
+<p><strong>Nouvelle technique :</strong> <code>fill = factor(survie)</code> dans <code>aes()</code> crée des couleurs automatiques selon la survie</p>
 <div class="cell" data-layout-align="center" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb161"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a></a><span class="co"># Survivants par classe (barres empilées)</span></span>
-<span id="cb161-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(classe), <span class="at">fill =</span> <span class="fu">factor</span>(survie))) <span class="sc">+</span></span>
-<span id="cb161-3"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb161-4"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb161-5"><a></a>    <span class="at">title =</span> <span class="st">"Survivants par classe sur le Titanic"</span>,</span>
-<span id="cb161-6"><a></a>    <span class="at">x =</span> <span class="st">"Classe"</span>, </span>
-<span id="cb161-7"><a></a>    <span class="at">y =</span> <span class="st">"Nombre de passagers"</span>,</span>
-<span id="cb161-8"><a></a>    <span class="at">fill =</span> <span class="st">"Survécu"</span></span>
-<span id="cb161-9"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb161-10"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb167"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb167-1"><a></a><span class="co"># Survivants par classe (barres empilées)</span></span>
+<span id="cb167-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(classe), <span class="at">fill =</span> <span class="fu">factor</span>(survie))) <span class="sc">+</span></span>
+<span id="cb167-3"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb167-4"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb167-5"><a></a>    <span class="at">title =</span> <span class="st">"Survivants par classe sur le Titanic"</span>,</span>
+<span id="cb167-6"><a></a>    <span class="at">x =</span> <span class="st">"Classe"</span>, </span>
+<span id="cb167-7"><a></a>    <span class="at">y =</span> <span class="st">"Nombre de passagers"</span>,</span>
+<span id="cb167-8"><a></a>    <span class="at">fill =</span> <span class="st">"Survécu"</span></span>
+<span id="cb167-9"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb167-10"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-52-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-54-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb162"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a></a><span class="do">## **Nouvelle technique :** `fill = factor(survie)` dans `aes()` crée des couleurs automatiques selon la survie</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1838,20 +1890,20 @@ Adulte Enfant
 <div style="color: #333;">
 <p><strong><code>position = "fill"</code></strong> transforme en proportions (0 à 1) pour comparer les taux</p>
 <div class="cell" data-layout-align="center" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a></a><span class="co"># Proportions plutôt que nombres absolus</span></span>
-<span id="cb163-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(classe), <span class="at">fill =</span> <span class="fu">factor</span>(survie))) <span class="sc">+</span></span>
-<span id="cb163-3"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
-<span id="cb163-4"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb163-5"><a></a>    <span class="at">title =</span> <span class="st">"Taux de survie par classe"</span>,</span>
-<span id="cb163-6"><a></a>    <span class="at">x =</span> <span class="st">"Classe"</span>, </span>
-<span id="cb163-7"><a></a>    <span class="at">y =</span> <span class="st">"Proportion"</span>,</span>
-<span id="cb163-8"><a></a>    <span class="at">fill =</span> <span class="st">"Survécu"</span></span>
-<span id="cb163-9"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb163-10"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a></a><span class="co"># Proportions plutôt que nombres absolus</span></span>
+<span id="cb168-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(classe), <span class="at">fill =</span> <span class="fu">factor</span>(survie))) <span class="sc">+</span></span>
+<span id="cb168-3"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb168-4"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb168-5"><a></a>    <span class="at">title =</span> <span class="st">"Taux de survie par classe"</span>,</span>
+<span id="cb168-6"><a></a>    <span class="at">x =</span> <span class="st">"Classe"</span>, </span>
+<span id="cb168-7"><a></a>    <span class="at">y =</span> <span class="st">"Proportion"</span>,</span>
+<span id="cb168-8"><a></a>    <span class="at">fill =</span> <span class="st">"Survécu"</span></span>
+<span id="cb168-9"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb168-10"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-53-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-55-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1862,19 +1914,19 @@ Adulte Enfant
 <h2>Histogrammes : distribution d’une variable</h2>
 <div style="color: #333;">
 <div class="cell" data-layout-align="center" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb164"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a></a><span class="co"># Distribution des âges</span></span>
-<span id="cb164-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> Age)) <span class="sc">+</span></span>
-<span id="cb164-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb164-4"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb164-5"><a></a>    <span class="at">title =</span> <span class="st">"Distribution des âges sur le Titanic"</span>,</span>
-<span id="cb164-6"><a></a>    <span class="at">x =</span> <span class="st">"Âge"</span>, </span>
-<span id="cb164-7"><a></a>    <span class="at">y =</span> <span class="st">"Nombre de passagers"</span></span>
-<span id="cb164-8"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb164-9"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a></a><span class="co"># Distribution des âges</span></span>
+<span id="cb169-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> Age)) <span class="sc">+</span></span>
+<span id="cb169-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb169-4"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb169-5"><a></a>    <span class="at">title =</span> <span class="st">"Distribution des âges sur le Titanic"</span>,</span>
+<span id="cb169-6"><a></a>    <span class="at">x =</span> <span class="st">"Âge"</span>, </span>
+<span id="cb169-7"><a></a>    <span class="at">y =</span> <span class="st">"Nombre de passagers"</span></span>
+<span id="cb169-8"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb169-9"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-54-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-56-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1897,19 +1949,19 @@ Adulte Enfant
 <div style="color: #333;">
 <p><strong><code>geom_point()</code></strong> crée un nuage de points pour explorer les relations entre variables numériques</p>
 <div class="cell" data-layout-align="center" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a></a><span class="co"># Relation âge-prix du billet</span></span>
-<span id="cb165-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> Fare)) <span class="sc">+</span></span>
-<span id="cb165-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb165-4"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb165-5"><a></a>    <span class="at">title =</span> <span class="st">"Âge vs Prix du billet"</span>,</span>
-<span id="cb165-6"><a></a>    <span class="at">x =</span> <span class="st">"Âge"</span>, </span>
-<span id="cb165-7"><a></a>    <span class="at">y =</span> <span class="st">"Prix du billet"</span></span>
-<span id="cb165-8"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb165-9"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb170"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a></a><span class="co"># Relation âge-prix du billet</span></span>
+<span id="cb170-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> Fare)) <span class="sc">+</span></span>
+<span id="cb170-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb170-4"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb170-5"><a></a>    <span class="at">title =</span> <span class="st">"Âge vs Prix du billet"</span>,</span>
+<span id="cb170-6"><a></a>    <span class="at">x =</span> <span class="st">"Âge"</span>, </span>
+<span id="cb170-7"><a></a>    <span class="at">y =</span> <span class="st">"Prix du billet"</span></span>
+<span id="cb170-8"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb170-9"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-55-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-57-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1921,20 +1973,20 @@ Adulte Enfant
 <div style="color: #333;">
 <p><strong>La couleur révèle des patterns :</strong> les survivants avaient-ils des billets plus chers ?</p>
 <div class="cell" data-layout-align="center" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a></a><span class="co"># Ajouter la survie comme couleur</span></span>
-<span id="cb166-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> Fare, <span class="at">color =</span> <span class="fu">factor</span>(survie))) <span class="sc">+</span></span>
-<span id="cb166-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb166-4"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb166-5"><a></a>    <span class="at">title =</span> <span class="st">"Âge vs Prix du billet selon la survie"</span>,</span>
-<span id="cb166-6"><a></a>    <span class="at">x =</span> <span class="st">"Âge"</span>, </span>
-<span id="cb166-7"><a></a>    <span class="at">y =</span> <span class="st">"Prix du billet"</span>,</span>
-<span id="cb166-8"><a></a>    <span class="at">color =</span> <span class="st">"Survécu"</span></span>
-<span id="cb166-9"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb166-10"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb171"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a></a><span class="co"># Ajouter la survie comme couleur</span></span>
+<span id="cb171-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> Fare, <span class="at">color =</span> <span class="fu">factor</span>(survie))) <span class="sc">+</span></span>
+<span id="cb171-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb171-4"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb171-5"><a></a>    <span class="at">title =</span> <span class="st">"Âge vs Prix du billet selon la survie"</span>,</span>
+<span id="cb171-6"><a></a>    <span class="at">x =</span> <span class="st">"Âge"</span>, </span>
+<span id="cb171-7"><a></a>    <span class="at">y =</span> <span class="st">"Prix du billet"</span>,</span>
+<span id="cb171-8"><a></a>    <span class="at">color =</span> <span class="st">"Survécu"</span></span>
+<span id="cb171-9"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb171-10"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-56-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-58-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1945,14 +1997,14 @@ Adulte Enfant
 <h2>Sauvegarder notre travail</h2>
 <div style="color: #333;">
 <div class="cell" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb167"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb167-1"><a></a><span class="co"># Sauvegarder le dernier graphique</span></span>
-<span id="cb167-2"><a></a><span class="fu">ggsave</span>(<span class="st">"age_prix_survie.png"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
-<span id="cb167-3"><a></a></span>
-<span id="cb167-4"><a></a><span class="co"># Sauvegarder des données nettoyées</span></span>
-<span id="cb167-5"><a></a><span class="fu">write.csv</span>(titanic, <span class="st">"titanic_nettoye.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb167-6"><a></a></span>
-<span id="cb167-7"><a></a><span class="co"># Sauvegarder nos résultats d'analyse</span></span>
-<span id="cb167-8"><a></a><span class="fu">write.csv</span>(resume_complet, <span class="st">"analyse_survie_classe_sexe.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb172"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a></a><span class="co"># Sauvegarder le dernier graphique</span></span>
+<span id="cb172-2"><a></a><span class="fu">ggsave</span>(<span class="st">"age_prix_survie.png"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb172-3"><a></a></span>
+<span id="cb172-4"><a></a><span class="co"># Sauvegarder des données nettoyées</span></span>
+<span id="cb172-5"><a></a><span class="fu">write.csv</span>(titanic, <span class="st">"titanic_nettoye.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb172-6"><a></a></span>
+<span id="cb172-7"><a></a><span class="co"># Sauvegarder nos résultats d'analyse</span></span>
+<span id="cb172-8"><a></a><span class="fu">write.csv</span>(resume_complet, <span class="st">"analyse_survie_classe_sexe.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Toujours sauvegarder :</strong> scripts, données nettoyées, graphiques, résultats</p>
 </div>
@@ -1962,18 +2014,18 @@ Adulte Enfant
 <div style="color: #333;">
 <p><strong>Erreurs courantes et solutions :</strong></p>
 <div class="cell" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a></a><span class="co"># Erreur : objet non trouvé</span></span>
-<span id="cb168-2"><a></a><span class="fu">mean</span>(donnees<span class="sc">$</span>age)</span>
-<span id="cb168-3"><a></a><span class="co"># Error: object 'donnees' not found</span></span>
-<span id="cb168-4"><a></a><span class="co"># → Vérifier le nom de l'objet</span></span>
-<span id="cb168-5"><a></a></span>
-<span id="cb168-6"><a></a><span class="co"># Erreur : colonne inexistante  </span></span>
-<span id="cb168-7"><a></a>titanic<span class="sc">$</span>ages  <span class="co"># au lieu de Age</span></span>
-<span id="cb168-8"><a></a><span class="co"># → Utiliser names(titanic) pour voir les vraies colonnes</span></span>
-<span id="cb168-9"><a></a></span>
-<span id="cb168-10"><a></a><span class="co"># Erreur : parenthèse manquante</span></span>
-<span id="cb168-11"><a></a><span class="fu">mean</span>(titanic<span class="sc">$</span>Age</span>
-<span id="cb168-12"><a></a><span class="co"># → Vérifier que toutes les parenthèses sont fermées</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb173"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a></a><span class="co"># Erreur : objet non trouvé</span></span>
+<span id="cb173-2"><a></a><span class="fu">mean</span>(donnees<span class="sc">$</span>age)</span>
+<span id="cb173-3"><a></a><span class="co"># Error: object 'donnees' not found</span></span>
+<span id="cb173-4"><a></a><span class="co"># → Vérifier le nom de l'objet</span></span>
+<span id="cb173-5"><a></a></span>
+<span id="cb173-6"><a></a><span class="co"># Erreur : colonne inexistante  </span></span>
+<span id="cb173-7"><a></a>titanic<span class="sc">$</span>ages  <span class="co"># au lieu de Age</span></span>
+<span id="cb173-8"><a></a><span class="co"># → Utiliser names(titanic) pour voir les vraies colonnes</span></span>
+<span id="cb173-9"><a></a></span>
+<span id="cb173-10"><a></a><span class="co"># Erreur : parenthèse manquante</span></span>
+<span id="cb173-11"><a></a><span class="fu">mean</span>(titanic<span class="sc">$</span>Age</span>
+<span id="cb173-12"><a></a><span class="co"># → Vérifier que toutes les parenthèses sont fermées</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Réflexes :</strong> lire le message, vérifier l’orthographe, tester ligne par ligne</p>
 </div>
@@ -2001,17 +2053,17 @@ Adulte Enfant
 </div>
 </div>
 <div class="cell" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a></a><span class="co"># Exemple de code bien structuré</span></span>
-<span id="cb169-2"><a></a><span class="co"># 1. Chargement et exploration</span></span>
-<span id="cb169-3"><a></a>titanic <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/titanic.csv"</span>)</span>
-<span id="cb169-4"><a></a><span class="fu">str</span>(titanic)</span>
-<span id="cb169-5"><a></a></span>
-<span id="cb169-6"><a></a><span class="co"># 2. Nettoyage</span></span>
-<span id="cb169-7"><a></a>titanic <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span> </span>
-<span id="cb169-8"><a></a>  <span class="fu">mutate</span>(<span class="at">Age =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(Age), <span class="fu">median</span>(Age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), Age))</span>
-<span id="cb169-9"><a></a></span>
-<span id="cb169-10"><a></a><span class="co"># 3. Analyse et visualisation</span></span>
-<span id="cb169-11"><a></a><span class="co"># ... votre analyse ...</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a></a><span class="co"># Exemple de code bien structuré</span></span>
+<span id="cb174-2"><a></a><span class="co"># 1. Chargement et exploration</span></span>
+<span id="cb174-3"><a></a>titanic <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/titanic.csv"</span>)</span>
+<span id="cb174-4"><a></a><span class="fu">str</span>(titanic)</span>
+<span id="cb174-5"><a></a></span>
+<span id="cb174-6"><a></a><span class="co"># 2. Nettoyage</span></span>
+<span id="cb174-7"><a></a>titanic <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span> </span>
+<span id="cb174-8"><a></a>  <span class="fu">mutate</span>(<span class="at">Age =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(Age), <span class="fu">median</span>(Age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), Age))</span>
+<span id="cb174-9"><a></a></span>
+<span id="cb174-10"><a></a><span class="co"># 3. Analyse et visualisation</span></span>
+<span id="cb174-11"><a></a><span class="co"># ... votre analyse ...</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>

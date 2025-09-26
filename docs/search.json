@@ -109,7 +109,7 @@
     "href": "slides.html#où-travaille-r-en-ce-moment",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Où travaille R en ce moment ?",
-    "text": "Où travaille R en ce moment ?\n\n\n\n\n\n\nÀ tester maintenant !\n\n\n\n\n\n\n\n# Où suis-je actuellement ?\ngetwd()  # \"get working directory\" = obtenir le dossier de travail\n\n[1] \"/home/etienne_prx/Dropbox/travail/enseignements/R_intro_fss\"\n\n\n\n\n# Qu'est-ce qu'il y a dans ce dossier ?\nlist.files()  # lister tous les fichiers\n\n [1] \"_freeze\"          \"_quarto.yml\"      \"ancien.qmd\"       \"custom.scss\"     \n [5] \"data\"             \"docs\"             \"exercices.qmd\"    \"images\"          \n [9] \"index.qmd\"        \"README.md\"        \"slides_files\"     \"slides.qmd\"      \n[13] \"slides.rmarkdown\"\n\n\n\nR travaille toujours dans UN dossier à la fois !\nC’est son “bureau” où il cherche vos fichiers par défaut."
+    "text": "Où travaille R en ce moment ?\n\n\n\n\n\n\nÀ tester maintenant !\n\n\n\n\n\n\n\n# Où suis-je actuellement ?\ngetwd()  # \"get working directory\" = obtenir le dossier de travail\n\n[1] \"/home/etienne_prx/Dropbox/travail/enseignements/R_intro_fss\"\n\n\n\n\n# Qu'est-ce qu'il y a dans ce dossier ?\nlist.files()  # lister tous les fichiers\n\n [1] \"_freeze\"          \"_quarto.yml\"      \"ancien.qmd\"       \"custom.scss\"     \n [5] \"data\"             \"docs\"             \"exercices.qmd\"    \"images\"          \n [9] \"index.qmd\"        \"README.md\"        \"script\"           \"slides_files\"    \n[13] \"slides.qmd\"       \"slides.rmarkdown\"\n\n\n\nR travaille toujours dans UN dossier à la fois !\nC’est son “bureau” où il cherche vos fichiers par défaut."
   },
   {
     "objectID": "slides.html#bien-organiser-son-projet-r",
@@ -585,7 +585,7 @@
     "href": "slides.html#graphiques-empilés-deux-variables",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Graphiques empilés : deux variables",
-    "text": "Graphiques empilés : deux variables\n\n\n# Survivants par classe (barres empilées)\nggplot(titanic, aes(x = factor(classe), fill = factor(survie))) +\n  geom_bar() +\n  labs(\n    title = \"Survivants par classe sur le Titanic\",\n    x = \"Classe\", \n    y = \"Nombre de passagers\",\n    fill = \"Survécu\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n## **Nouvelle technique :** `fill = factor(survie)` dans `aes()` crée des couleurs automatiques selon la survie"
+    "text": "Graphiques empilés : deux variables\n\nNouvelle technique : fill = factor(survie) dans aes() crée des couleurs automatiques selon la survie\n\n# Survivants par classe (barres empilées)\nggplot(titanic, aes(x = factor(classe), fill = factor(survie))) +\n  geom_bar() +\n  labs(\n    title = \"Survivants par classe sur le Titanic\",\n    x = \"Classe\", \n    y = \"Nombre de passagers\",\n    fill = \"Survécu\"\n  ) +\n  theme_minimal()"
   },
   {
     "objectID": "slides.html#graphiques-en-proportions",
@@ -649,5 +649,19 @@
     "title": "Initiation à l’analyse des données avec R",
     "section": "Nuages de points",
     "text": "Nuages de points\n\ngeom_point() crée un nuage de points pour explorer les relations entre variables numériques\n\n# Relation âge-prix du billet\nggplot(titanic, aes(x = Age, y = Fare)) +\n  geom_point(alpha = 0.6) +\n  labs(\n    title = \"Âge vs Prix du billet\",\n    x = \"Âge\", \n    y = \"Prix du billet\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides.html#observation-la-fonction-factor-transformer-en-catégories",
+    "href": "slides.html#observation-la-fonction-factor-transformer-en-catégories",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Observation: la fonction factor() : transformer en catégories",
+    "text": "Observation: la fonction factor() : transformer en catégories\n\nPourquoi factor(classe) dans nos graphiques ?\n\n# Notre variable classe contient des chiffres\nclass(titanic$classe)  # \"numeric\" \n\n[1] \"integer\"\n\ntable(titanic$classe)  # 1, 2, 3\n\n\n  1   2   3 \n216 184 487 \n\n\n\n\n# R peut les voir comme des NOMBRES ou comme des CATÉGORIES\n# factor() dit à R : \"Traite ça comme des catégories !\"\nclass(factor(titanic$classe))  # \"factor\"\n\n[1] \"factor\""
+  },
+  {
+    "objectID": "slides.html#observation-la-fonction-factor-transformer-en-catégories-1",
+    "href": "slides.html#observation-la-fonction-factor-transformer-en-catégories-1",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Observation: la fonction factor() : transformer en catégories",
+    "text": "Observation: la fonction factor() : transformer en catégories\n\nDifférence visuelle dans les graphiques :\n\nSans factor() : axe continu avec espaces bizarres\nAvec factor() : barres bien distinctes pour chaque classe\n\n\n\n\n\n\n\nAstuce\n\n\nCharacter vs Factor : as.character() marche aussi, mais factor() nous donne plus de contrôle sur l’ordre d’affichage !"
   }
 ]

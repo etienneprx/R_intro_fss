@@ -1111,6 +1111,47 @@ ggplot(titanic, aes(x = factor(classe))) +
 
 ---
 
+## Observation: la fonction factor() : transformer en catégories {.smaller background-color="rgba(206, 87, 87, 1)"}
+
+::: {style="color: #333;"}
+
+**Pourquoi `factor(classe)` dans nos graphiques ?**
+
+```{r}
+#| code-copy: true
+# Notre variable classe contient des chiffres
+class(titanic$classe)  # "numeric" 
+table(titanic$classe)  # 1, 2, 3
+```
+
+::: {.fragment}
+```{r}
+#| code-copy: true
+# R peut les voir comme des NOMBRES ou comme des CATÉGORIES
+# factor() dit à R : "Traite ça comme des catégories !"
+class(factor(titanic$classe))  # "factor"
+```
+:::
+:::
+
+---
+
+## Observation: la fonction factor() : transformer en catégories {.smaller background-color="rgba(206, 87, 87, 1)"}
+
+::: {style="color: #333;"}
+
+**Différence visuelle dans les graphiques :**
+
+- Sans `factor()` : axe continu avec espaces bizarres
+- Avec `factor()` : barres bien distinctes pour chaque classe
+
+::: {.callout-tip}
+**Character vs Factor :** `as.character()` marche aussi, mais `factor()` nous donne plus de contrôle sur l'ordre d'affichage !
+:::
+:::
+
+---
+
 ## Graphiques simples : graphiques en barres {.smaller background-color="#4A90A4"}
 
 ::: {style="color: #333;"}
@@ -1163,6 +1204,8 @@ ggplot(titanic, aes(x = factor(classe))) +
 
 ::: {style="color: #333;"}
 
+**Nouvelle technique :** `fill = factor(survie)` dans `aes()` crée des couleurs automatiques selon la survie
+
 ```{r}
 #| code-copy: true
 #| fig-height: 4
@@ -1177,7 +1220,7 @@ ggplot(titanic, aes(x = factor(classe), fill = factor(survie))) +
     fill = "Survécu"
   ) +
   theme_minimal()
-## **Nouvelle technique :** `fill = factor(survie)` dans `aes()` crée des couleurs automatiques selon la survie
+
 ```
 
 :::
