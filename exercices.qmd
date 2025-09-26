@@ -110,12 +110,13 @@ class(populations)    # numeric
 
 ```{r}
 #| eval: false
-# 1. Installer et charger le package (à faire une seule fois)
-# install.packages("gapminder")
-library(gapminder)
+# 1. Charger les packages nécessaires
+library(readr)
+library(dplyr)
+library(ggplot2)
 
-# 2. Charger les données
-donnees <- gapminder
+# 2. Charger les données depuis le fichier CSV
+donnees <- read_csv("donnees_pays.csv")
 
 # 3. Explorer la structure
 dim(donnees)        # dimensions
@@ -147,8 +148,9 @@ names(donnees)
 
 ```{r}
 # Charger les données pour les solutions
-library(gapminder)
-donnees <- gapminder
+library(readr)
+library(dplyr)
+donnees <- read_csv("data/donnees_pays.csv")
 
 # 1. Espérance de vie moyenne
 mean(donnees$lifeExp)
