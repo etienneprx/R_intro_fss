@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Initiation à l’analyse des données avec R",
-    "section": "",
-    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\nImportant📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
-  },
-  {
-    "objectID": "index.html#bienvenue",
-    "href": "index.html#bienvenue",
-    "title": "Initiation à l’analyse des données avec R",
-    "section": "",
-    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\nImportant📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
-  },
-  {
     "objectID": "exercices.html",
     "href": "exercices.html",
     "title": "Exercices pratiques",
@@ -28,6 +14,20 @@
     "text": "À VENIR"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "",
+    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\nImportant📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
+  },
+  {
+    "objectID": "index.html#bienvenue",
+    "href": "index.html#bienvenue",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "",
+    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\nImportant📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
+  },
+  {
     "objectID": "slides.html#objectifs-de-latelier",
     "href": "slides.html#objectifs-de-latelier",
     "title": "Initiation à l’analyse des données avec R",
@@ -39,14 +39,63 @@
     "href": "slides.html#quest-ce-que-r",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Qu’est-ce que R ?",
-    "text": "Qu’est-ce que R ?\n\n\nR c’est :\n\nUn langage de programmation statistique\nGratuit et open-source\n\nUne communauté active mondiale\nDes milliers de packages spécialisés\n\n\nPourquoi R ?\n\nReproductibilité des analyses\nTrès utilisé en sciences sociales\nExtensible avec les packages\nPermet l’automatisation\n\n\n\nAujourd’hui nous allons apprendre les bases pour analyser de vraies données"
+    "text": "Qu’est-ce que R ?\n\n\nR c’est :\n\nUn langage de programmation pour l’analyse de données\nGratuit et open-source\nUne communauté active mondiale\nPlus de 21,000 packages spécialisés\n\n\nPourquoi l’utiliser ?\n\nAdapté aux sciences sociales\nAnalyses reproductibles et transparentes\nVisualisations de qualité professionnelle\nCompétence recherchée en recherche et industrie\n\n\n\n\nAujourd’hui nous allons apprendre les bases pour analyser de vraies données"
   },
   {
-    "objectID": "slides.html#avant-de-commencer-rstudio",
-    "href": "slides.html#avant-de-commencer-rstudio",
+    "objectID": "slides.html#pourquoi-r-en-sciences-sociales",
+    "href": "slides.html#pourquoi-r-en-sciences-sociales",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Avant de commencer : RStudio",
-    "text": "Avant de commencer : RStudio\n\n\n\n\n\n\nOuvrons RStudio ensemble !\n\n\n\n\n\n\nLes 4 panneaux de RStudio :\n\nConsole (en bas à gauche) : où s’exécutent les commandes\nScript (en haut à gauche) : où on écrit notre code\n\nEnvironment (en haut à droite) : nos objets\nFiles/Plots (en bas à droite) : fichiers et graphiques\n\n\n\n# Notre première commande \nprint(\"Bonjour tout le monde!\")"
+    "section": "Pourquoi R en sciences sociales ?",
+    "text": "Pourquoi R en sciences sociales ?\n\n\nR est utilisé dans la vraie vie :\n\n\nOrganisations :\n\nAirBnB - analyse de données\nBBC - graphiques journalistiques\nGoogle, Facebook, Amazon - data science\n\n\nRecherche au Québec :\n\nVox Pop Labs (Boussole électorale)\nCLESSN (Université Laval)\nNombreux chercheurs en sciences sociales"
+  },
+  {
+    "objectID": "slides.html#visualisations-avancées-avec-r",
+    "href": "slides.html#visualisations-avancées-avec-r",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Visualisations avancées avec R",
+    "text": "Visualisations avancées avec R\n\nSuivi quotidien des intentions de vote - Élections fédérales 2025\n\n\n\n\n\n\n\n\nNote\n\n\nAnimation générée automatiquement chaque jour avec R - Centre d’analyse des politiques publiques"
+  },
+  {
+    "objectID": "slides.html#au-delà-des-chiffres",
+    "href": "slides.html#au-delà-des-chiffres",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Au-delà des chiffres",
+    "text": "Au-delà des chiffres\n\nR s’adapte à tous types de données\n\n\nTexte :\n\nAnalyse de sentiment\nClassification de documents\nTranscription audio\nExtraction d’informations\n\n\nMultimédia :\n\nAnalyse d’images\nCréation de vidéos\nInfographies automatisées\nPrésentations interactives"
+  },
+  {
+    "objectID": "slides.html#applications-web-interactives-avec-shiny",
+    "href": "slides.html#applications-web-interactives-avec-shiny",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Applications web interactives avec Shiny",
+    "text": "Applications web interactives avec Shiny\n\nExplorez vos données de manière interactive\n\n\n\n\n\n\n\n\nAstuce\n\n\nCliquez sur l’image pour voir l’application en action"
+  },
+  {
+    "objectID": "slides.html#applications-shiny-possibilités-infinies",
+    "href": "slides.html#applications-shiny-possibilités-infinies",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Applications Shiny : possibilités infinies",
+    "text": "Applications Shiny : possibilités infinies\n\nTransformez vos analyses en outils accessibles Exemples d’utilisation :\n\nTableaux de bord de suivi\nExplorateurs de données interactifs\nOutils de collecte de données\nSimulateurs et calculateurs\nRapports personnalisés\n\n\n\n\n\n\n\nNote\n\n\nAucune connaissance en développement web nécessaire"
+  },
+  {
+    "objectID": "slides.html#et-après-r",
+    "href": "slides.html#et-après-r",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Et après R ?",
+    "text": "Et après R ?\n\nApprendre R ouvre la porte à d’autres langages\nLes concepts appris en R se transfèrent facilement :\n\n\nAnalyse de données :\n\nPython (data science)\nJulia (calcul scientifique)\nSQL (bases de données)\n\n\nDéveloppement :\n\nJavaScript (web interactif)\nHTML/CSS (présentation)\nBash (automatisation)\n\n\n\n\n\n\n\n\nNote\n\n\nUne fois qu’on maîtrise un langage de programmation, les autres deviennent beaucoup plus faciles à apprendre"
+  },
+  {
+    "objectID": "slides.html#installer-r-et-rstudio",
+    "href": "slides.html#installer-r-et-rstudio",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Installer R et RStudio",
+    "text": "Installer R et RStudio\n\n\nQuelle est la différence ?\n\nR est le moteur, RStudio est le véhicule\nR est le langage, RStudio est la feuille de papier\nRStudio facilite l’utilisation de R\nRStudio est un IDE (Integrated Development Environment)\nPersonnalisation de l’environnement de travail\n\n\nLiens de téléchargement :\n\nInstaller R\nInstaller RStudio"
+  },
+  {
+    "objectID": "slides.html#avant-de-commencer-à-coder-rstudio",
+    "href": "slides.html#avant-de-commencer-à-coder-rstudio",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Avant de commencer à coder : RStudio",
+    "text": "Avant de commencer à coder : RStudio\n\n\nScript\nOù on écrit notre code\n\n\nEnvironment\nNos objets et données\n\n\nConsole\nOù s’exécutent les commandes\n\n\nFiles/Plots\nFichiers et graphiques"
   },
   {
     "objectID": "slides.html#r-comme-calculatrice",
@@ -60,56 +109,105 @@
     "href": "slides.html#créer-nos-premiers-objets",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Créer nos premiers objets",
-    "text": "Créer nos premiers objets\nEn R, on sauvegarde tout dans des objets avec &lt;-\n\n# Créer des objets simples\nmon_age &lt;- 30\nmon_nom &lt;- \"Étienne\" \nma_note &lt;- 85.5\n\n\n\n# Voir le contenu\nmon_age\n\n[1] 30\n\nmon_nom\n\n[1] \"Étienne\"\n\nma_note\n\n[1] 85.5\n\n\n\n\n\n\n\n\n\nNote\n\n\nImportant : Les objets apparaissent dans le panneau Environment !"
+    "text": "Créer nos premiers objets\nEn R, on sauvegarde tout dans des objets avec &lt;-\n\n# Créer des objets simples\nfilm_prefere &lt;- \"Dune\"\nannee_sortie &lt;- 2021\nnote_imdb &lt;- 8.0\n\n\n# Voir le contenu des objets\nfilm_prefere\n\n[1] \"Dune\"\n\nannee_sortie\n\n[1] 2021\n\nnote_imdb\n\n[1] 8\n\n\n\n\n\n\n\n\nNote\n\n\nImportant : Les objets apparaissent dans le panneau Environment de RStudio !"
   },
   {
     "objectID": "slides.html#les-vecteurs-groupes-de-valeurs",
     "href": "slides.html#les-vecteurs-groupes-de-valeurs",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Les vecteurs : groupes de valeurs",
-    "text": "Les vecteurs : groupes de valeurs\n\n# Créer des vecteurs avec c()\nages &lt;- c(23, 45, 31, 28, 35)\nnoms &lt;- c(\"Alice\", \"Bob\", \"Claire\", \"David\", \"Emma\")\nnotes &lt;- c(85, 78, 92, 88, 90)\n\n\n\n# Explorer nos vecteurs\nages\n\n[1] 23 45 31 28 35\n\nlength(ages)  # nombre d'éléments\n\n[1] 5\n\nmean(ages)    # moyenne\n\n[1] 32.4"
+    "text": "Les vecteurs : groupes de valeurs\n\n# Créer des vecteurs avec la fonction c()\nfilms &lt;- c(\"Dune\", \"Oppenheimer\", \"Barbie\", \"The Zone of Interest\", \"Killers of the Flower Moon\")\nannees &lt;- c(2021, 2023, 2023, 2023, 2023)\nnotes_imdb &lt;- c(8.0, 8.3, 6.8, 7.4, 7.6)\n\n\n# Explorer nos vecteurs\nfilms\n\n[1] \"Dune\"                       \"Oppenheimer\"               \n[3] \"Barbie\"                     \"The Zone of Interest\"      \n[5] \"Killers of the Flower Moon\"\n\nlength(films)     # nombre de films\n\n[1] 5\n\nmean(notes_imdb)  # note moyenne\n\n[1] 7.62"
   },
   {
-    "objectID": "slides.html#types-de-données",
-    "href": "slides.html#types-de-données",
+    "objectID": "slides.html#types-de-données-attention-aux-pièges",
+    "href": "slides.html#types-de-données-attention-aux-pièges",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Types de données",
-    "text": "Types de données\n\n# Vérifier le type de nos objets\nclass(ages)        # numérique\n\n[1] \"numeric\"\n\nclass(noms)        # caractère (texte)\n\n[1] \"character\"\n\nclass(c(TRUE, FALSE))  # logique\n\n[1] \"logical\"\n\n\n\n\n# R convertit automatiquement si nécessaire\nmelange &lt;- c(1, 2, \"trois\")\nmelange\n\n[1] \"1\"     \"2\"     \"trois\"\n\nclass(melange)  # tout devient du texte !\n\n[1] \"character\""
+    "section": "Types de données : attention aux pièges !",
+    "text": "Types de données : attention aux pièges !\n\n# Vérifier le type de nos objets\nclass(notes_imdb)    # numérique - parfait pour calculer\n\n[1] \"numeric\"\n\nclass(films)         # caractère (texte)\n\n[1] \"character\"\n\nclass(c(TRUE, FALSE))  # logique\n\n[1] \"logical\"\n\n\n\n\n\n\n\n\nProblème fréquent en analyse de données\n\n\nParfois, des nombres sont stockés comme du texte dans vos données. R ne peut pas calculer avec du texte !"
+  },
+  {
+    "objectID": "slides.html#types-de-données-attention-aux-pièges-1",
+    "href": "slides.html#types-de-données-attention-aux-pièges-1",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Types de données : attention aux pièges !",
+    "text": "Types de données : attention aux pièges !\n\n# Exemple de coercition automatique (à surveiller !)\nnotes_mixtes &lt;- c(8.0, 7.5, \"6.8\")  # un chiffre écrit en texte\nnotes_mixtes\n\n[1] \"8\"   \"7.5\" \"6.8\"\n\nclass(notes_mixtes)  # tout devient du texte !\n\n[1] \"character\"\n\n\n\n# Impossible de calculer maintenant\n mean(notes_mixtes)  # Ceci produira une erreur !\n\n[1] NA"
+  },
+  {
+    "objectID": "slides.html#solution-convertir-les-types",
+    "href": "slides.html#solution-convertir-les-types",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Solution : convertir les types",
+    "text": "Solution : convertir les types\n\n# Convertir du texte en numérique\nnotes_numeriques &lt;- as.numeric(notes_mixtes)\nnotes_numeriques\n\n[1] 8.0 7.5 6.8\n\nclass(notes_numeriques)\n\n[1] \"numeric\"\n\n# Maintenant on peut calculer\nmean(notes_numeriques)\n\n[1] 7.433333\n\n\n\n\n\n\n\n\nBonne pratique\n\n\nToujours vérifier le type de vos variables avec class() avant de faire des calculs !"
   },
   {
     "objectID": "slides.html#notre-premier-tableau-de-données",
     "href": "slides.html#notre-premier-tableau-de-données",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Notre premier tableau de données",
-    "text": "Notre premier tableau de données\nUn data frame = tableau avec lignes et colonnes\n\n# Créer notre tableau d'étudiants\netudiants &lt;- data.frame(\n  nom = c(\"Alice\", \"Bob\", \"Claire\", \"David\", \"Emma\"),\n  age = c(23, 25, 22, 24, 26), \n  note = c(85, 78, 92, 88, 90),\n  programme = c(\"Socio\", \"Éco\", \"Socio\", \"Psycho\", \"Éco\")\n)\n\n\n\n# Regarder notre tableau\netudiants\n\n     nom age note programme\n1  Alice  23   85     Socio\n2    Bob  25   78       Éco\n3 Claire  22   92     Socio\n4  David  24   88    Psycho\n5   Emma  26   90       Éco"
+    "text": "Notre premier tableau de données\nUn data frame = tableau avec lignes et colonnes\n\n# Créer notre base de données de films\ncinema &lt;- data.frame(\n  titre = c(\"Dune\", \"Oppenheimer\", \"Barbie\", \"The Zone of Interest\", \"Killers of the Flower Moon\"),\n  annee = c(2021, 2023, 2023, 2023, 2023),\n  note = c(8.0, 8.3, 6.8, 7.4, 7.6),\n  genre = c(\"Sci-Fi\", \"Biographie\", \"Comédie\", \"Drame\", \"Drame\")\n)\n\n\n# Regarder notre tableau\ncinema\n\n                       titre annee note      genre\n1                       Dune  2021  8.0     Sci-Fi\n2                Oppenheimer  2023  8.3 Biographie\n3                     Barbie  2023  6.8    Comédie\n4       The Zone of Interest  2023  7.4      Drame\n5 Killers of the Flower Moon  2023  7.6      Drame"
   },
   {
     "objectID": "slides.html#explorer-un-data-frame",
     "href": "slides.html#explorer-un-data-frame",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Explorer un data frame",
-    "text": "Explorer un data frame\n\n# Informations générales\ndim(etudiants)       # dimensions (lignes x colonnes)\n\n[1] 5 4\n\nnrow(etudiants)      # nombre de lignes\n\n[1] 5\n\nncol(etudiants)      # nombre de colonnes\n\n[1] 4\n\nnames(etudiants)     # noms des colonnes\n\n[1] \"nom\"       \"age\"       \"note\"      \"programme\"\n\n\n\n\n# Aperçu du contenu\nhead(etudiants, 3)   # premières lignes\n\n     nom age note programme\n1  Alice  23   85     Socio\n2    Bob  25   78       Éco\n3 Claire  22   92     Socio\n\nstr(etudiants)       # structure détaillée\n\n'data.frame':   5 obs. of  4 variables:\n $ nom      : chr  \"Alice\" \"Bob\" \"Claire\" \"David\" ...\n $ age      : num  23 25 22 24 26\n $ note     : num  85 78 92 88 90\n $ programme: chr  \"Socio\" \"Éco\" \"Socio\" \"Psycho\" ..."
+    "text": "Explorer un data frame\n\n# Informations générales\ndim(cinema)       # dimensions (lignes x colonnes)\n\n[1] 5 4\n\nnrow(cinema)      # nombre de films\n\n[1] 5\n\nncol(cinema)      # nombre de variables\n\n[1] 4\n\nnames(cinema)     # noms des colonnes\n\n[1] \"titre\" \"annee\" \"note\"  \"genre\""
+  },
+  {
+    "objectID": "slides.html#explorer-un-data-frame-1",
+    "href": "slides.html#explorer-un-data-frame-1",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Explorer un data frame",
+    "text": "Explorer un data frame\n\n# Aperçu du contenu\nhead(cinema, 3)   # premiers films\n\n        titre annee note      genre\n1        Dune  2021  8.0     Sci-Fi\n2 Oppenheimer  2023  8.3 Biographie\n3      Barbie  2023  6.8    Comédie\n\nstr(cinema)       # structure détaillée\n\n'data.frame':   5 obs. of  4 variables:\n $ titre: chr  \"Dune\" \"Oppenheimer\" \"Barbie\" \"The Zone of Interest\" ...\n $ annee: num  2021 2023 2023 2023 2023\n $ note : num  8 8.3 6.8 7.4 7.6\n $ genre: chr  \"Sci-Fi\" \"Biographie\" \"Comédie\" \"Drame\" ..."
   },
   {
     "objectID": "slides.html#accéder-aux-colonnes",
     "href": "slides.html#accéder-aux-colonnes",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Accéder aux colonnes",
-    "text": "Accéder aux colonnes\nAvec le symbole $ (recommandé) :\n\netudiants$nom\n\n[1] \"Alice\"  \"Bob\"    \"Claire\" \"David\"  \"Emma\"  \n\netudiants$note\n\n[1] 85 78 92 88 90\n\nmean(etudiants$age)  # âge moyen\n\n[1] 24\n\n\n\nAvec les crochets [ ] :\n\netudiants[, \"nom\"]          # par nom\n\n[1] \"Alice\"  \"Bob\"    \"Claire\" \"David\"  \"Emma\"  \n\netudiants[, 1]              # par position\n\n[1] \"Alice\"  \"Bob\"    \"Claire\" \"David\"  \"Emma\"  \n\netudiants[, c(\"nom\", \"age\")] # plusieurs colonnes\n\n     nom age\n1  Alice  23\n2    Bob  25\n3 Claire  22\n4  David  24\n5   Emma  26"
+    "text": "Accéder aux colonnes\nAvec le symbole $ (recommandé)\n\ncinema$titre\n\n[1] \"Dune\"                       \"Oppenheimer\"               \n[3] \"Barbie\"                     \"The Zone of Interest\"      \n[5] \"Killers of the Flower Moon\"\n\ncinema$note\n\n[1] 8.0 8.3 6.8 7.4 7.6\n\nmean(cinema$note)  # note moyenne\n\n[1] 7.62"
+  },
+  {
+    "objectID": "slides.html#accéder-aux-colonnes-1",
+    "href": "slides.html#accéder-aux-colonnes-1",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Accéder aux colonnes",
+    "text": "Accéder aux colonnes\nAvec les crochets [ ]\n\ncinema[, \"titre\"]          # par nom\n\n[1] \"Dune\"                       \"Oppenheimer\"               \n[3] \"Barbie\"                     \"The Zone of Interest\"      \n[5] \"Killers of the Flower Moon\"\n\ncinema[, 1]                # par position\n\n[1] \"Dune\"                       \"Oppenheimer\"               \n[3] \"Barbie\"                     \"The Zone of Interest\"      \n[5] \"Killers of the Flower Moon\"\n\ncinema[, c(\"titre\", \"genre\")] # plusieurs colonnes\n\n                       titre      genre\n1                       Dune     Sci-Fi\n2                Oppenheimer Biographie\n3                     Barbie    Comédie\n4       The Zone of Interest      Drame\n5 Killers of the Flower Moon      Drame"
   },
   {
     "objectID": "slides.html#les-fonctions-nos-outils",
     "href": "slides.html#les-fonctions-nos-outils",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Les fonctions : nos outils",
-    "text": "Les fonctions : nos outils\nUne fonction fait une tâche : fonction(argument1, argument2)\n\n# Fonctions statistiques essentielles\nmean(etudiants$note)      # moyenne\n\n[1] 86.6\n\nmedian(etudiants$note)    # médiane\n\n[1] 88\n\nsd(etudiants$note)        # écart-type\n\n[1] 5.458938\n\nmin(etudiants$note)       # minimum\n\n[1] 78\n\nmax(etudiants$note)       # maximum\n\n[1] 92\n\n\n\n\n# Résumé complet\nsummary(etudiants$note)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   78.0    85.0    88.0    86.6    90.0    92.0"
+    "text": "Les fonctions : nos outils\nUne fonction fait une tâche : fonction(argument1, argument2)\n\n# Fonctions statistiques essentielles\nmean(cinema$note)      # note moyenne\n\n[1] 7.62\n\nmedian(cinema$note)    # note médiane\n\n[1] 7.6\n\nsd(cinema$note)        # écart-type\n\n[1] 0.5761944\n\nmin(cinema$note)       # note minimale\n\n[1] 6.8\n\nmax(cinema$note)       # note maximale\n\n[1] 8.3"
+  },
+  {
+    "objectID": "slides.html#les-fonctions-nos-outils-1",
+    "href": "slides.html#les-fonctions-nos-outils-1",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Les fonctions : nos outils",
+    "text": "Les fonctions : nos outils\n\n# Résumé complet d'une variable\nsummary(cinema$note)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   6.80    7.40    7.60    7.62    8.00    8.30 \n\n\n\n# Compter les occurrences\ntable(cinema$genre)    # combien de films par genre ?\n\n\nBiographie    Comédie      Drame     Sci-Fi \n         1          1          2          1"
   },
   {
     "objectID": "slides.html#les-packages-étendre-r",
     "href": "slides.html#les-packages-étendre-r",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Les packages : étendre R",
-    "text": "Les packages : étendre R\n\n\n\n\n\n\nInstallation vs Chargement\n\n\n\ninstall.packages(\"nom\") : installer (1 seule fois)\nlibrary(nom) : charger (à chaque session)\n\n\n\n\n\n# Installer les packages essentiels (à faire une fois)\ninstall.packages(\"readr\")     # importer des données\ninstall.packages(\"dplyr\")     # manipuler des données  \ninstall.packages(\"ggplot2\")   # faire des graphiques\n\n\n\n# Charger les packages (à chaque session)\nlibrary(readr)\nlibrary(dplyr) \nlibrary(ggplot2)"
+    "text": "Les packages : étendre R\nLes packages sont comme des applications pour R\n\nR de base = fonctions essentielles\nPackages = fonctions spécialisées créées par la communauté\nPlus de 21,000 packages disponibles sur CRAN\nChaque package résout des problèmes spécifiques\n\n\n\n\n\n\n\nAnalogie\n\n\nR de base = téléphone vide\nPackages = applications qu’on télécharge"
+  },
+  {
+    "objectID": "slides.html#le-tidyverse-votre-boîte-à-outils",
+    "href": "slides.html#le-tidyverse-votre-boîte-à-outils",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Le Tidyverse : votre boîte à outils",
+    "text": "Le Tidyverse : votre boîte à outils\nCollection de packages pour l’analyse de données moderne\n\n\nPackages principaux :\n\nreadr : importer des données\ndplyr : manipuler des données\nggplot2 : créer des graphiques\ntidyr : nettoyer des données\n\n\nAvantages :\n\nSyntaxe cohérente et intuitive\nTrès utilisé en sciences sociales\nDocumentation excellente\nS’installe en un seul package !\n\n\n\n# Installer le Tidyverse (contient plusieurs packages)\ninstall.packages(\"tidyverse\")"
+  },
+  {
+    "objectID": "slides.html#installation-vs-chargement",
+    "href": "slides.html#installation-vs-chargement",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Installation vs Chargement",
+    "text": "Installation vs Chargement\n\n\n\n\n\n\nDifférence cruciale\n\n\n\ninstall.packages(\"nom\") : télécharger le package (1 seule fois)\nlibrary(nom) : activer le package (à chaque session R)\n\n\n\n\nInstaller des packages\n\n# Exemples d'installation (à faire une fois)\ninstall.packages(\"tidyverse\")\ninstall.packages(\"readxl\")\ninstall.packages(\"janitor\")\n\n\nCharger des packages\n\n# À faire au début de chaque script\nlibrary(tidyverse)\nlibrary(readxl)\n\n\n\n\n\n\n\n\nBonne pratique\n\n\nMettez toujours vos library() au début de votre script"
   },
   {
     "objectID": "slides.html#comprendre-lorganisation-de-votre-ordinateur",
@@ -123,7 +221,7 @@
     "href": "slides.html#où-travaille-r-en-ce-moment",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Où travaille R en ce moment ?",
-    "text": "Où travaille R en ce moment ?\n\n\n\n\n\n\nÀ tester maintenant !\n\n\n\n\n\n\n\n# Où suis-je actuellement ?\ngetwd()  # \"get working directory\" = obtenir le dossier de travail\n\n[1] \"/home/etienne_prx/Dropbox/travail/enseignements/R_intro_fss\"\n\n\n\n\n# Qu'est-ce qu'il y a dans ce dossier ?\nlist.files()  # lister tous les fichiers\n\n [1] \"_freeze\"          \"_quarto.yml\"      \"custom.scss\"      \"data\"            \n [5] \"docs\"             \"exercices.qmd\"    \"images\"           \"index.qmd\"       \n [9] \"README.md\"        \"slides_files\"     \"slides.html\"      \"slides.qmd\"      \n[13] \"slides.rmarkdown\"\n\n\n\nR travaille toujours dans UN dossier à la fois !\nC’est son “bureau” où il cherche vos fichiers par défaut."
+    "text": "Où travaille R en ce moment ?\n\n\n\n\n\n\nÀ tester maintenant !\n\n\n\n\n\n\n\n# Où suis-je actuellement ?\ngetwd()  # \"get working directory\" = obtenir le dossier de travail\n\n[1] \"/home/etienne_prx/Dropbox/travail/enseignements/R_intro_fss\"\n\n\n\n\n# Qu'est-ce qu'il y a dans ce dossier ?\nlist.files()  # lister tous les fichiers\n\n [1] \"_freeze\"          \"_quarto.yml\"      \"ancien.qmd\"       \"custom.scss\"     \n [5] \"data\"             \"docs\"             \"exercices.qmd\"    \"images\"          \n [9] \"index.qmd\"        \"README.md\"        \"slides_files\"     \"slides.qmd\"      \n[13] \"slides.rmarkdown\"\n\n\n\nR travaille toujours dans UN dossier à la fois !\nC’est son “bureau” où il cherche vos fichiers par défaut."
   },
   {
     "objectID": "slides.html#bien-organiser-son-projet-r",
@@ -151,126 +249,203 @@
     "href": "slides.html#maintenant-on-peut-charger-nos-données",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Maintenant on peut charger nos données !",
-    "text": "Maintenant on peut charger nos données !"
-  },
-  {
-    "objectID": "slides.html#méthode-propre",
-    "href": "slides.html#méthode-propre",
-    "title": "Initiation à l’analyse des données avec R",
-    "section": "Méthode propre",
-    "text": "Méthode propre\n\nCréez un dossier pour votre projet\nMettez-y vos fichiers de données\n\nUtilisez setwd() pour y aller\nMaintenant R trouve vos fichiers !"
+    "text": "Maintenant on peut charger nos données !\n\nMéthode propre\n\nCréez un dossier pour votre projet\nMettez-y vos fichiers de données\n\nUtilisez setwd() pour y aller\nMaintenant R trouve vos fichiers !\n\n\n\n# Étapes pratiques :\nsetwd(\"C:/Mon_Projet_R\")              # Remplacer par cotre propre chemin\nlist.files()                          # voir mes dossiers : code, data, graphs...\ndonnees &lt;- read.csv(\"data/titanic.csv\")  # charger depuis le dossier data\n\nProchaine slide : On va charger les vraies données du Titanic !"
   },
   {
     "objectID": "slides.html#charger-de-vraies-données",
     "href": "slides.html#charger-de-vraies-données",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Charger de vraies données",
-    "text": "Charger de vraies données\nUtilisons les données Titanic pour pratiquer !\n\n# Charger les données Titanic (intégrées dans R)\ntitanic &lt;- read.csv(\"https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv\")\n\n# Premiers coups d'œil\nhead(titanic, 3)\n\n  Survived Pclass                                               Name    Sex Age\n1        0      3                             Mr. Owen Harris Braund   male  22\n2        1      1 Mrs. John Bradley (Florence Briggs Thayer) Cumings female  38\n3        1      3                              Miss. Laina Heikkinen female  26\n  Siblings.Spouses.Aboard Parents.Children.Aboard    Fare\n1                       1                       0  7.2500\n2                       1                       0 71.2833\n3                       0                       0  7.9250"
+    "text": "Charger de vraies données\n\nUtilisons les données Titanic pour pratiquer !\n\n# Charger les données Titanic\ntitanic &lt;- read.csv(\"data/titanic.csv\")\n\n# Premier coup d'œil\nhead(titanic, 3)\n\n  Survived Pclass                                               Name    Sex Age\n1        0      3                             Mr. Owen Harris Braund   male  22\n2        1      1 Mrs. John Bradley (Florence Briggs Thayer) Cumings female  38\n3        1      3                              Miss. Laina Heikkinen female  26\n  Siblings.Spouses.Aboard Parents.Children.Aboard    Fare\n1                       1                       0  7.2500\n2                       1                       0 71.2833\n3                       0                       0  7.9250\n\n\n\n\n\n\n\n\nTéléchargez les données\n\n\nCliquez sur ce lien\nAttention de bien spécifier votre chemin d’accès!"
   },
   {
-    "objectID": "slides.html#explorer-les-données-titanic",
-    "href": "slides.html#explorer-les-données-titanic",
+    "objectID": "slides.html#explorer-la-structure-des-données",
+    "href": "slides.html#explorer-la-structure-des-données",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Explorer les données Titanic",
-    "text": "Explorer les données Titanic\n\n# Informations générales\ndim(titanic)\n\n[1] 887   8\n\nnames(titanic)\n\n[1] \"Survived\"                \"Pclass\"                 \n[3] \"Name\"                    \"Sex\"                    \n[5] \"Age\"                     \"Siblings.Spouses.Aboard\"\n[7] \"Parents.Children.Aboard\" \"Fare\"                   \n\n\n\n\n# Résumé des variables\nsummary(titanic)\n\n    Survived          Pclass          Name               Sex           \n Min.   :0.0000   Min.   :1.000   Length:887         Length:887        \n 1st Qu.:0.0000   1st Qu.:2.000   Class :character   Class :character  \n Median :0.0000   Median :3.000   Mode  :character   Mode  :character  \n Mean   :0.3856   Mean   :2.306                                        \n 3rd Qu.:1.0000   3rd Qu.:3.000                                        \n Max.   :1.0000   Max.   :3.000                                        \n      Age        Siblings.Spouses.Aboard Parents.Children.Aboard\n Min.   : 0.42   Min.   :0.0000          Min.   :0.0000         \n 1st Qu.:20.25   1st Qu.:0.0000          1st Qu.:0.0000         \n Median :28.00   Median :0.0000          Median :0.0000         \n Mean   :29.47   Mean   :0.5254          Mean   :0.3833         \n 3rd Qu.:38.00   3rd Qu.:1.0000          3rd Qu.:0.0000         \n Max.   :80.00   Max.   :8.0000          Max.   :6.0000         \n      Fare        \n Min.   :  0.000  \n 1st Qu.:  7.925  \n Median : 14.454  \n Mean   : 32.305  \n 3rd Qu.: 31.137  \n Max.   :512.329"
+    "section": "Explorer la structure des données",
+    "text": "Explorer la structure des données\n\nToujours commencer par comprendre nos données\n\n# Informations de base\ndim(titanic)          # dimensions (lignes x colonnes)\n\n[1] 887   8\n\nnames(titanic)        # noms des colonnes\n\n[1] \"Survived\"                \"Pclass\"                 \n[3] \"Name\"                    \"Sex\"                    \n[5] \"Age\"                     \"Siblings.Spouses.Aboard\"\n[7] \"Parents.Children.Aboard\" \"Fare\"                   \n\nnrow(titanic)         # nombre de lignes\n\n[1] 887\n\nncol(titanic)         # nombre de colonnes\n\n[1] 8"
   },
   {
-    "objectID": "slides.html#analyse-des-variables",
-    "href": "slides.html#analyse-des-variables",
+    "objectID": "slides.html#examiner-la-structure-détaillée",
+    "href": "slides.html#examiner-la-structure-détaillée",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Analyse des variables",
-    "text": "Analyse des variables\n\n# Compter les survivants\ntable(titanic$Survived)\n\n\n  0   1 \n545 342 \n\n\n\n\n# En pourcentages\nprop.table(table(titanic$Survived)) * 100\n\n\n       0        1 \n61.44307 38.55693 \n\n\n\n\n\n# Survivants par classe\ntable(titanic$Pclass, titanic$Survived)\n\n   \n      0   1\n  1  80 136\n  2  97  87\n  3 368 119"
+    "section": "Examiner la structure détaillée",
+    "text": "Examiner la structure détaillée\n\n\n# Structure complète des données\nstr(titanic)\n\n'data.frame':   887 obs. of  8 variables:\n $ Survived               : int  0 1 1 1 0 0 0 0 1 1 ...\n $ Pclass                 : int  3 1 3 1 3 3 1 3 3 2 ...\n $ Name                   : chr  \"Mr. Owen Harris Braund\" \"Mrs. John Bradley (Florence Briggs Thayer) Cumings\" \"Miss. Laina Heikkinen\" \"Mrs. Jacques Heath (Lily May Peel) Futrelle\" ...\n $ Sex                    : chr  \"male\" \"female\" \"female\" \"female\" ...\n $ Age                    : num  22 38 26 35 35 27 54 2 27 14 ...\n $ Siblings.Spouses.Aboard: int  1 1 0 1 0 0 0 3 0 1 ...\n $ Parents.Children.Aboard: int  0 0 0 0 0 0 0 1 2 0 ...\n $ Fare                   : num  7.25 71.28 7.92 53.1 8.05 ...\n\n\n\n\n# Aperçu moderne avec glimpse (dplyr)\nlibrary(dplyr)\nglimpse(titanic)\n\nRows: 887\nColumns: 8\n$ Survived                &lt;int&gt; 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1…\n$ Pclass                  &lt;int&gt; 3, 1, 3, 1, 3, 3, 1, 3, 3, 2, 3, 1, 3, 3, 3, 2…\n$ Name                    &lt;chr&gt; \"Mr. Owen Harris Braund\", \"Mrs. John Bradley (…\n$ Sex                     &lt;chr&gt; \"male\", \"female\", \"female\", \"female\", \"male\", …\n$ Age                     &lt;dbl&gt; 22, 38, 26, 35, 35, 27, 54, 2, 27, 14, 4, 58, …\n$ Siblings.Spouses.Aboard &lt;int&gt; 1, 1, 0, 1, 0, 0, 0, 3, 0, 1, 1, 0, 0, 1, 0, 0…\n$ Parents.Children.Aboard &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 1, 0, 0, 5, 0, 0…\n$ Fare                    &lt;dbl&gt; 7.2500, 71.2833, 7.9250, 53.1000, 8.0500, 8.45…\n\n\n\nCes fonctions montrent : types de variables, premières valeurs, dimensions"
   },
   {
-    "objectID": "slides.html#analyse-des-variables-1",
-    "href": "slides.html#analyse-des-variables-1",
+    "objectID": "slides.html#résumé-statistique-des-variables",
+    "href": "slides.html#résumé-statistique-des-variables",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Analyse des variables",
-    "text": "Analyse des variables\n\n# Statistiques sur l'âge\nmean(titanic$Age, na.rm = TRUE)   # na.rm = ignore les valeurs manquantes\n\n[1] 29.47144\n\nmedian(titanic$Age, na.rm = TRUE)\n\n[1] 28\n\nsd(titanic$Age, na.rm = TRUE)\n\n[1] 14.12191\n\n\n\n\n# Statistiques sur le prix du billet\nsummary(titanic$Fare)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  0.000   7.925  14.454  32.305  31.137 512.329 \n\n\n\n\n\n\n\n\n\nNote\n\n\nna.rm = TRUE ignore les valeurs manquantes (NA)"
+    "section": "Résumé statistique des variables",
+    "text": "Résumé statistique des variables\n\n\n# Résumé statistique de toutes les variables\nsummary(titanic)\n\n    Survived          Pclass          Name               Sex           \n Min.   :0.0000   Min.   :1.000   Length:887         Length:887        \n 1st Qu.:0.0000   1st Qu.:2.000   Class :character   Class :character  \n Median :0.0000   Median :3.000   Mode  :character   Mode  :character  \n Mean   :0.3856   Mean   :2.306                                        \n 3rd Qu.:1.0000   3rd Qu.:3.000                                        \n Max.   :1.0000   Max.   :3.000                                        \n      Age        Siblings.Spouses.Aboard Parents.Children.Aboard\n Min.   : 0.42   Min.   :0.0000          Min.   :0.0000         \n 1st Qu.:20.25   1st Qu.:0.0000          1st Qu.:0.0000         \n Median :28.00   Median :0.0000          Median :0.0000         \n Mean   :29.47   Mean   :0.5254          Mean   :0.3833         \n 3rd Qu.:38.00   3rd Qu.:1.0000          3rd Qu.:0.0000         \n Max.   :80.00   Max.   :8.0000          Max.   :6.0000         \n      Fare        \n Min.   :  0.000  \n 1st Qu.:  7.925  \n Median : 14.454  \n Mean   : 32.305  \n 3rd Qu.: 31.137  \n Max.   :512.329  \n\n\nCe résumé nous révèle : Moyennes, médianes, quartiles pour les variables numériques | Fréquences pour les variables catégorielles | Présence de valeurs manquantes (NA’s)"
   },
   {
-    "objectID": "slides.html#notre-premier-graphique",
-    "href": "slides.html#notre-premier-graphique",
+    "objectID": "slides.html#gérer-les-valeurs-manquantes",
+    "href": "slides.html#gérer-les-valeurs-manquantes",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Notre premier graphique",
-    "text": "Notre premier graphique\n\n# Graphique des survivants par classe\nggplot(titanic, aes(x = factor(Pclass), fill = factor(Survived))) +\n  geom_bar() +\n  labs(title = \"Survivants par classe sur le Titanic\",\n       x = \"Classe\", y = \"Nombre de passagers\",\n       fill = \"Survécu\") +\n  theme_minimal()"
+    "section": "Gérer les valeurs manquantes",
+    "text": "Gérer les valeurs manquantes\n\n\n# Compter les valeurs manquantes par colonne\ncolSums(is.na(titanic))\n\n               Survived                  Pclass                    Name \n                      0                       0                       0 \n                    Sex                     Age Siblings.Spouses.Aboard \n                      0                       0                       0 \nParents.Children.Aboard                    Fare \n                      0                       0 \n\n\n\n\n# Compter les NA dans une colonne spécifique\nsum(is.na(titanic$Age))\n\n[1] 0\n\n# Voir quels passagers ont un âge manquant\nhead(titanic[is.na(titanic$Age), ])\n\n[1] Survived                Pclass                  Name                   \n[4] Sex                     Age                     Siblings.Spouses.Aboard\n[7] Parents.Children.Aboard Fare                   \n&lt;0 rows&gt; (or 0-length row.names)\n\n\n\n\n\n\n\n\n\nNote\n\n\nna.rm = TRUE dans les fonctions statistiques ignore les valeurs manquantes"
   },
   {
-    "objectID": "slides.html#anatomie-dun-graphique-ggplot",
-    "href": "slides.html#anatomie-dun-graphique-ggplot",
+    "objectID": "slides.html#analyse-des-variables-individuelles",
+    "href": "slides.html#analyse-des-variables-individuelles",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Anatomie d’un graphique ggplot",
-    "text": "Anatomie d’un graphique ggplot\n\nggplot(titanic, aes(x = factor(Pclass), fill = factor(Survived))) +\n  geom_bar() +\n  labs(title = \"Survivants par classe sur le Titanic\",\n       x = \"Classe\", y = \"Nombre de passagers\", \n       fill = \"Survécu\") +\n  theme_minimal()\n\nDécomposition :\n\nggplot() : initialise le graphique\naes() : définit les variables\ngeom_bar() : type de graphique (barres)\nlabs() : titres et étiquettes\ntheme_minimal() : style du graphique"
+    "section": "Analyse des variables individuelles",
+    "text": "Analyse des variables individuelles\n\n\n# Variables catégorielles : compter les occurrences\ntable(titanic$Survived)    # survivants\n\n\n  0   1 \n545 342 \n\ntable(titanic$Pclass)      # classes\n\n\n  1   2   3 \n216 184 487 \n\ntable(titanic$Sex)         # sexe\n\n\nfemale   male \n   314    573 \n\n\n\n\n# En pourcentages\nprop.table(table(titanic$Survived)) * 100\n\n\n       0        1 \n61.44307 38.55693"
   },
   {
-    "objectID": "slides.html#histogramme-des-âges",
-    "href": "slides.html#histogramme-des-âges",
+    "objectID": "slides.html#analyse-des-variables-numériques",
+    "href": "slides.html#analyse-des-variables-numériques",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Histogramme des âges",
-    "text": "Histogramme des âges\n\n# Distribution des âges\nggplot(titanic, aes(x = Age)) +\n  geom_histogram(bins = 20, fill = \"steelblue\", alpha = 0.7) +\n  labs(title = \"Distribution des âges sur le Titanic\",\n       x = \"Âge\", y = \"Nombre de passagers\") +\n  theme_minimal()"
+    "section": "Analyse des variables numériques",
+    "text": "Analyse des variables numériques\n\n\n# Statistiques sur l'âge\nmean(titanic$Age, na.rm = TRUE)     # âge moyen\n\n[1] 29.47144\n\nmedian(titanic$Age, na.rm = TRUE)   # âge médian\n\n[1] 28\n\nsd(titanic$Age, na.rm = TRUE)       # écart-type\n\n[1] 14.12191\n\nrange(titanic$Age, na.rm = TRUE)    # min et max\n\n[1]  0.42 80.00\n\n\n\n\n# Statistiques sur le prix du billet\nsummary(titanic$Fare)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  0.000   7.925  14.454  32.305  31.137 512.329"
   },
   {
-    "objectID": "slides.html#nuage-de-points-âge-vs-prix",
-    "href": "slides.html#nuage-de-points-âge-vs-prix",
+    "objectID": "slides.html#analyse-croisée-de-variables",
+    "href": "slides.html#analyse-croisée-de-variables",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Nuage de points : âge vs prix",
-    "text": "Nuage de points : âge vs prix\n\n# Relation âge-prix du billet\nggplot(titanic, aes(x = Age, y = Fare, color = factor(Survived))) +\n  geom_point(alpha = 0.6) +\n  labs(title = \"Âge vs Prix du billet\",\n       x = \"Âge\", y = \"Prix du billet\", \n       color = \"Survécu\") +\n  theme_minimal()"
+    "section": "Analyse croisée de variables",
+    "text": "Analyse croisée de variables\n\n\n# Croiser deux variables catégorielles\ntable(titanic$Pclass, titanic$Survived)\n\n   \n      0   1\n  1  80 136\n  2  97  87\n  3 368 119\n\n\n\n\n# Ajouter les noms de lignes/colonnes pour clarté\ntable(Classe = titanic$Pclass, Survécu = titanic$Survived)\n\n      Survécu\nClasse   0   1\n     1  80 136\n     2  97  87\n     3 368 119\n\n\n\nCe tableau montre : répartition des survivants selon la classe"
   },
   {
-    "objectID": "slides.html#filtrer-et-sélectionner",
-    "href": "slides.html#filtrer-et-sélectionner",
+    "objectID": "slides.html#manipulation-des-données-avec-dplyr",
+    "href": "slides.html#manipulation-des-données-avec-dplyr",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Filtrer et sélectionner",
-    "text": "Filtrer et sélectionner\n\n# Sélectionner seulement certaines colonnes\ntitanic_simple &lt;- titanic %&gt;%\n  select(Survived, Pclass, Sex, Age, Fare)\n\nhead(titanic_simple, 3)\n\n  Survived Pclass    Sex Age    Fare\n1        0      3   male  22  7.2500\n2        1      1 female  38 71.2833\n3        1      3 female  26  7.9250\n\n\n\n\n# Filtrer les passagers de première classe\npremiere_classe &lt;- titanic %&gt;%\n  filter(Pclass == 1)\n\nnrow(premiere_classe)  # combien de passagers ?\n\n[1] 216"
+    "section": "Manipulation des données avec dplyr",
+    "text": "Manipulation des données avec dplyr\n\nLe package dplyr facilite la manipulation de données\n\n# Charger dplyr (ou tidyverse)\nlibrary(dplyr)\n\nFonctions principales :\n\nselect() : sélectionner des colonnes\nfilter() : filtrer des lignes\nmutate() : créer/modifier des variables\ngroup_by() + summarise() : grouper et résumer"
+  },
+  {
+    "objectID": "slides.html#sélectionner-des-colonnes",
+    "href": "slides.html#sélectionner-des-colonnes",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Sélectionner des colonnes",
+    "text": "Sélectionner des colonnes\n\n\n# Garder seulement certaines colonnes\ntitanic_simple &lt;- titanic %&gt;%\n  select(Survived, Pclass, Sex, Age, Fare)\n\nhead(titanic_simple, 3)\n\n  Survived Pclass    Sex Age    Fare\n1        0      3   male  22  7.2500\n2        1      1 female  38 71.2833\n3        1      3 female  26  7.9250"
+  },
+  {
+    "objectID": "slides.html#filtrer-des-lignes",
+    "href": "slides.html#filtrer-des-lignes",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Filtrer des lignes",
+    "text": "Filtrer des lignes\n\n\n# Filtrer les passagers de première classe\npremiere_classe &lt;- titanic %&gt;%\n  filter(Pclass == 1)\n\nnrow(premiere_classe)  # combien de passagers ?\n\n[1] 216\n\n\n\n\n# Filtres multiples\nadultes_survie &lt;- titanic %&gt;%\n  filter(Age &gt;= 18, Survived == 1)\n\nnrow(adultes_survie)\n\n[1] 277\n\n\n\nOpérateurs de filtre : ==, !=, &gt;, &lt;, &gt;=, &lt;=, %in%"
+  },
+  {
+    "objectID": "slides.html#créer-de-nouvelles-variables",
+    "href": "slides.html#créer-de-nouvelles-variables",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Créer de nouvelles variables",
+    "text": "Créer de nouvelles variables\n\n\n# Créer une variable catégorielle âge\ntitanic &lt;- titanic %&gt;%\n  mutate(groupe_age = ifelse(Age &lt; 18, \"Enfant\", \"Adulte\"))\n\ntable(titanic$groupe_age)\n\n\nAdulte Enfant \n   757    130 \n\n\n\n\n# Créer plusieurs variables en une fois\ntitanic &lt;- titanic %&gt;%\n  mutate(\n    prix_eleve = ifelse(Fare &gt; 50, \"Cher\", \"Abordable\"),\n    taille_famille = Siblings.Spouses.Aboard + Parents.Children.Aboard + 1  # inclure le passager lui-même\n  )\n\n# Visualiser les premières lignes des nouvelles variables\ntitanic_newvars &lt;- titanic %&gt;%\n  select(groupe_age, prix_eleve, taille_famille)\n\nhead(titanic_newvars)\n\n  groupe_age prix_eleve taille_famille\n1     Adulte  Abordable              2\n2     Adulte       Cher              2\n3     Adulte  Abordable              1\n4     Adulte       Cher              2\n5     Adulte  Abordable              1\n6     Adulte  Abordable              1"
+  },
+  {
+    "objectID": "slides.html#nettoyage-de-données-avancé",
+    "href": "slides.html#nettoyage-de-données-avancé",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Nettoyage de données avancé",
+    "text": "Nettoyage de données avancé\n\n\n# Stratégie pour gérer les valeurs manquantes dans la variable Age\n# Étape 1: Remplacer les NA par la médiane des âges existants\ntitanic &lt;- titanic %&gt;%\n  mutate(Age = ifelse(is.na(Age),                    # SI l'âge est manquant (NA)\n                      median(Age, na.rm = TRUE),      # ALORS utiliser la médiane\n                      Age))                           # SINON garder l'âge original\n\n# Étape 2: Vérifier que le remplacement a fonctionné\nsum(is.na(titanic$Age))  # Compter combien de NA restent (devrait être 0)\n\n[1] 0\n\n\n\n\n# Standardiser les noms de colonnes (optionnel)\ntitanic &lt;- titanic %&gt;%\n  rename(\n    survie = Survived,\n    classe = Pclass,\n    sexe = Sex\n  )"
   },
   {
     "objectID": "slides.html#grouper-et-résumer",
     "href": "slides.html#grouper-et-résumer",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Grouper et résumer",
-    "text": "Grouper et résumer\n\n# Taux de survie par classe\ntitanic %&gt;%\n  group_by(Pclass) %&gt;%\n  summarise(\n    nb_passagers = n(),\n    nb_survivants = sum(Survived),\n    taux_survie = mean(Survived) * 100\n  )\n\n# A tibble: 3 × 4\n  Pclass nb_passagers nb_survivants taux_survie\n   &lt;int&gt;        &lt;int&gt;         &lt;int&gt;       &lt;dbl&gt;\n1      1          216           136        63.0\n2      2          184            87        47.3\n3      3          487           119        24.4"
+    "text": "Grouper et résumer\n\n\n# Statistiques par groupe\ntitanic %&gt;%\n  group_by(classe) %&gt;%\n  summarise(\n    nb_passagers = n(),\n    nb_survivants = sum(survie),\n    taux_survie = round(mean(survie) * 100, 1),\n    age_moyen = round(mean(Age, na.rm = TRUE), 1)\n  )\n\n# A tibble: 3 × 5\n  classe nb_passagers nb_survivants taux_survie age_moyen\n   &lt;int&gt;        &lt;int&gt;         &lt;int&gt;       &lt;dbl&gt;     &lt;dbl&gt;\n1      1          216           136        63        38.8\n2      2          184            87        47.3      29.9\n3      3          487           119        24.4      25.2\n\n\nLa fonction n() compte le nombre de lignes dans chaque groupe"
   },
   {
-    "objectID": "slides.html#taux-de-survie-par-sexe",
-    "href": "slides.html#taux-de-survie-par-sexe",
+    "objectID": "slides.html#groupements-multiples",
+    "href": "slides.html#groupements-multiples",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Taux de survie par sexe",
-    "text": "Taux de survie par sexe\n\n# Analyse par sexe\ntitanic %&gt;%\n  group_by(Sex) %&gt;%\n  summarise(\n    nb_passagers = n(),\n    taux_survie = round(mean(Survived) * 100, 1)\n  )\n\n# A tibble: 2 × 3\n  Sex    nb_passagers taux_survie\n  &lt;chr&gt;         &lt;int&gt;       &lt;dbl&gt;\n1 female          314        74.2\n2 male            573        19  \n\n\n\n\n# Graphique correspondant\nggplot(titanic, aes(x = Sex, fill = factor(Survived))) +\n  geom_bar(position = \"fill\") +\n  labs(title = \"Taux de survie par sexe\", \n       y = \"Proportion\", fill = \"Survécu\") +\n  theme_minimal()"
+    "section": "Groupements multiples",
+    "text": "Groupements multiples\n\n\n# Analyser par classe ET sexe\nresume_complet &lt;- titanic %&gt;%\n  group_by(classe, sexe) %&gt;%\n  summarise(\n    nb_passagers = n(),\n    taux_survie = round(mean(survie) * 100, 1)\n  )\n\nresume_complet\n\n# A tibble: 6 × 4\n# Groups:   classe [3]\n  classe sexe   nb_passagers taux_survie\n   &lt;int&gt; &lt;chr&gt;         &lt;int&gt;       &lt;dbl&gt;\n1      1 female           94        96.8\n2      1 male            122        36.9\n3      2 female           76        92.1\n4      2 male            108        15.7\n5      3 female          144        50  \n6      3 male            343        13.7"
+  },
+  {
+    "objectID": "slides.html#graphiques-simples-graphiques-en-barres",
+    "href": "slides.html#graphiques-simples-graphiques-en-barres",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Graphiques simples : graphiques en barres",
+    "text": "Graphiques simples : graphiques en barres\n\nCommençons par le plus simple : compter des catégories\n\nlibrary(ggplot2)\n\n# Nombre de passagers par classe\nggplot(titanic, aes(x = factor(classe))) +\n  geom_bar()"
+  },
+  {
+    "objectID": "slides.html#graphiques-simples-graphiques-en-barres-1",
+    "href": "slides.html#graphiques-simples-graphiques-en-barres-1",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Graphiques simples : graphiques en barres",
+    "text": "Graphiques simples : graphiques en barres\n\nÉléments de base :\n\nggplot() : initialise le graphique avec les données\naes() : spécifie quelles variables utiliser\ngeom_bar() : type de graphique (barres)"
+  },
+  {
+    "objectID": "slides.html#ajouter-des-couleurs-et-labels",
+    "href": "slides.html#ajouter-des-couleurs-et-labels",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Ajouter des couleurs et labels",
+    "text": "Ajouter des couleurs et labels\n\n\n# Même graphique, mais plus joli\nggplot(titanic, aes(x = factor(classe))) +\n  geom_bar(fill = \"steelblue\", color = \"white\") +\n  labs(\n    title = \"Répartition des passagers par classe\",\n    x = \"Classe\", \n    y = \"Nombre de passagers\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides.html#ajouter-des-couleurs-et-labels-1",
+    "href": "slides.html#ajouter-des-couleurs-et-labels-1",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Ajouter des couleurs et labels",
+    "text": "Ajouter des couleurs et labels\n\nNouveaux éléments :\n\nfill : couleur de remplissage des barres\nlabs() : ajouter titres et étiquettes\ntheme_minimal() : style épuré"
+  },
+  {
+    "objectID": "slides.html#graphiques-empilés-deux-variables",
+    "href": "slides.html#graphiques-empilés-deux-variables",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Graphiques empilés : deux variables",
+    "text": "Graphiques empilés : deux variables\n\n\n# Survivants par classe (barres empilées)\nggplot(titanic, aes(x = factor(classe), fill = factor(survie))) +\n  geom_bar() +\n  labs(\n    title = \"Survivants par classe sur le Titanic\",\n    x = \"Classe\", \n    y = \"Nombre de passagers\",\n    fill = \"Survécu\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n## **Nouvelle technique :** `fill = factor(survie)` dans `aes()` crée des couleurs automatiques selon la survie"
+  },
+  {
+    "objectID": "slides.html#graphiques-en-proportions",
+    "href": "slides.html#graphiques-en-proportions",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Graphiques en proportions",
+    "text": "Graphiques en proportions\n\nposition = \"fill\" transforme en proportions (0 à 1) pour comparer les taux\n\n# Proportions plutôt que nombres absolus\nggplot(titanic, aes(x = factor(classe), fill = factor(survie))) +\n  geom_bar(position = \"fill\") +\n  labs(\n    title = \"Taux de survie par classe\",\n    x = \"Classe\", \n    y = \"Proportion\",\n    fill = \"Survécu\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides.html#histogrammes-distribution-dune-variable",
+    "href": "slides.html#histogrammes-distribution-dune-variable",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Histogrammes : distribution d’une variable",
+    "text": "Histogrammes : distribution d’une variable\n\n\n# Distribution des âges\nggplot(titanic, aes(x = Age)) +\n  geom_histogram(bins = 20, fill = \"lightblue\", color = \"white\", alpha = 0.7) +\n  labs(\n    title = \"Distribution des âges sur le Titanic\",\n    x = \"Âge\", \n    y = \"Nombre de passagers\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides.html#histogrammes-distribution-dune-variable-1",
+    "href": "slides.html#histogrammes-distribution-dune-variable-1",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Histogrammes : distribution d’une variable",
+    "text": "Histogrammes : distribution d’une variable\n\nNouveaux éléments :\n\ngeom_histogram() : pour variables numériques continues\nbins = 20 : nombre de barres\nalpha = 0.7 : transparence (0 = invisible, 1 = opaque)"
+  },
+  {
+    "objectID": "slides.html#nuages-de-points",
+    "href": "slides.html#nuages-de-points",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Nuages de points",
+    "text": "Nuages de points\n\ngeom_point() crée un nuage de points pour explorer les relations entre variables numériques\n\n# Relation âge-prix du billet\nggplot(titanic, aes(x = Age, y = Fare)) +\n  geom_point(alpha = 0.6) +\n  labs(\n    title = \"Âge vs Prix du billet\",\n    x = \"Âge\", \n    y = \"Prix du billet\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides.html#nuages-de-points-avec-couleurs",
+    "href": "slides.html#nuages-de-points-avec-couleurs",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Nuages de points avec couleurs",
+    "text": "Nuages de points avec couleurs\n\nLa couleur révèle des patterns : les survivants avaient-ils des billets plus chers ?\n\n# Ajouter la survie comme couleur\nggplot(titanic, aes(x = Age, y = Fare, color = factor(survie))) +\n  geom_point(alpha = 0.6) +\n  labs(\n    title = \"Âge vs Prix du billet selon la survie\",\n    x = \"Âge\", \n    y = \"Prix du billet\",\n    color = \"Survécu\"\n  ) +\n  theme_minimal()"
   },
   {
     "objectID": "slides.html#sauvegarder-notre-travail",
     "href": "slides.html#sauvegarder-notre-travail",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Sauvegarder notre travail",
-    "text": "Sauvegarder notre travail\n\n# Sauvegarder un graphique\nggsave(\"graphique_titanic.png\", width = 10, height = 6)\n\n# Sauvegarder des données nettoyées\nwrite.csv(titanic_simple, \"titanic_nettoye.csv\", row.names = FALSE)\n\n# Sauvegarder notre analyse\nresultats &lt;- titanic %&gt;%\n  group_by(Pclass, Sex) %&gt;%\n  summarise(taux_survie = mean(Survived) * 100)\n\nwrite.csv(resultats, \"analyse_survie.csv\", row.names = FALSE)"
+    "text": "Sauvegarder notre travail\n\n\n# Sauvegarder le dernier graphique\nggsave(\"age_prix_survie.png\", width = 10, height = 6)\n\n# Sauvegarder des données nettoyées\nwrite.csv(titanic, \"titanic_nettoye.csv\", row.names = FALSE)\n\n# Sauvegarder nos résultats d'analyse\nwrite.csv(resume_complet, \"analyse_survie_classe_sexe.csv\", row.names = FALSE)\n\nToujours sauvegarder : scripts, données nettoyées, graphiques, résultats"
   },
   {
     "objectID": "slides.html#messages-derreur-pas-de-panique",
     "href": "slides.html#messages-derreur-pas-de-panique",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Messages d’erreur : pas de panique !",
-    "text": "Messages d’erreur : pas de panique !\nErreurs courantes :\n\n# Objet non trouvé\nmean(donnees$age)\n# Error: object 'donnees' not found\n\n# Parenthèse manquante  \nmean(titanic$Age\n# Error: unexpected end of input\n\n# Colonne inexistante\ntitanic$ages  # au lieu de Age\n# NULL\n\nRéflexes :\n\nLire le message d’erreur\nVérifier l’orthographe\nVérifier les parenthèses/guillemets\nUtiliser names() pour voir les colonnes"
+    "text": "Messages d’erreur : pas de panique !\n\nErreurs courantes et solutions :\n\n# Erreur : objet non trouvé\nmean(donnees$age)\n# Error: object 'donnees' not found\n# → Vérifier le nom de l'objet\n\n# Erreur : colonne inexistante  \ntitanic$ages  # au lieu de Age\n# → Utiliser names(titanic) pour voir les vraies colonnes\n\n# Erreur : parenthèse manquante\nmean(titanic$Age\n# → Vérifier que toutes les parenthèses sont fermées\n\nRéflexes : lire le message, vérifier l’orthographe, tester ligne par ligne"
   },
   {
-    "objectID": "slides.html#quelques-fonctions-très-utiles",
-    "href": "slides.html#quelques-fonctions-très-utiles",
+    "objectID": "slides.html#bonnes-pratiques-pour-lanalyse",
+    "href": "slides.html#bonnes-pratiques-pour-lanalyse",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Quelques fonctions très utiles",
-    "text": "Quelques fonctions très utiles\n\n# Explorer la structure\nstr(titanic)           # structure complète\n\n'data.frame':   887 obs. of  8 variables:\n $ Survived               : int  0 1 1 1 0 0 0 0 1 1 ...\n $ Pclass                 : int  3 1 3 1 3 3 1 3 3 2 ...\n $ Name                   : chr  \"Mr. Owen Harris Braund\" \"Mrs. John Bradley (Florence Briggs Thayer) Cumings\" \"Miss. Laina Heikkinen\" \"Mrs. Jacques Heath (Lily May Peel) Futrelle\" ...\n $ Sex                    : chr  \"male\" \"female\" \"female\" \"female\" ...\n $ Age                    : num  22 38 26 35 35 27 54 2 27 14 ...\n $ Siblings.Spouses.Aboard: int  1 1 0 1 0 0 0 3 0 1 ...\n $ Parents.Children.Aboard: int  0 0 0 0 0 0 0 1 2 0 ...\n $ Fare                   : num  7.25 71.28 7.92 53.1 8.05 ...\n\nglimpse(titanic)       # aperçu moderne (dplyr)\n\nRows: 887\nColumns: 8\n$ Survived                &lt;int&gt; 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1…\n$ Pclass                  &lt;int&gt; 3, 1, 3, 1, 3, 3, 1, 3, 3, 2, 3, 1, 3, 3, 3, 2…\n$ Name                    &lt;chr&gt; \"Mr. Owen Harris Braund\", \"Mrs. John Bradley (…\n$ Sex                     &lt;chr&gt; \"male\", \"female\", \"female\", \"female\", \"male\", …\n$ Age                     &lt;dbl&gt; 22, 38, 26, 35, 35, 27, 54, 2, 27, 14, 4, 58, …\n$ Siblings.Spouses.Aboard &lt;int&gt; 1, 1, 0, 1, 0, 0, 0, 3, 0, 1, 1, 0, 0, 1, 0, 0…\n$ Parents.Children.Aboard &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 1, 0, 0, 5, 0, 0…\n$ Fare                    &lt;dbl&gt; 7.2500, 71.2833, 7.9250, 53.1000, 8.0500, 8.45…"
-  },
-  {
-    "objectID": "slides.html#quelques-fonctions-très-utiles-1",
-    "href": "slides.html#quelques-fonctions-très-utiles-1",
-    "title": "Initiation à l’analyse des données avec R",
-    "section": "Quelques fonctions très utiles",
-    "text": "Quelques fonctions très utiles\n\n\n# Gérer les valeurs manquantes\nsum(is.na(titanic$Age))          # compter les NA\n\n[1] 0\n\ntitanic_sans_na &lt;- na.omit(titanic)  # enlever toutes les lignes avec NA\n\n\n\n\n# Créer de nouvelles variables\ntitanic$est_enfant &lt;- ifelse(titanic$Age &lt; 18, \"Enfant\", \"Adulte\")\ntable(titanic$est_enfant)\n\n\nAdulte Enfant \n   757    130"
-  },
-  {
-    "objectID": "slides.html#bonnes-pratiques",
-    "href": "slides.html#bonnes-pratiques",
-    "title": "Initiation à l’analyse des données avec R",
-    "section": "Bonnes pratiques",
-    "text": "Bonnes pratiques\n\n\n\n\n\n\nConseils pour bien débuter\n\n\n\nOrganisez votre travail : utilisez des projets RStudio\nNommez bien vos objets : donnees_titanic plutôt que df1\nCommentez votre code : utilisez # pour expliquer\nTestez étape par étape : vérifiez chaque ligne\nSauvegardez souvent : scripts ET données nettoyées\n\n\n\n\n\n# Exemple de code bien documenté\n# Charger les données du Titanic\ntitanic &lt;- read.csv(\"titanic.csv\")\n\n# Calculer le taux de survie moyen\ntaux_survie_global &lt;- mean(titanic$Survived, na.rm = TRUE)"
+    "section": "Bonnes pratiques pour l’analyse",
+    "text": "Bonnes pratiques pour l’analyse\n\n\n\n\n\n\n\nWorkflow recommandé\n\n\n\nExplorer d’abord : str(), summary(), glimpse()\nNettoyer ensuite : gérer les NA, corriger les types\nAnalyser pas à pas : une variable, puis des croisements\nVisualiser pour comprendre : graphiques simples puis complexes\nDocumenter et sauvegarder : commenter le code, sauvegarder les résultats\n\n\n\n\n\n# Exemple de code bien structuré\n# 1. Chargement et exploration\ntitanic &lt;- read.csv(\"data/titanic.csv\")\nstr(titanic)\n\n# 2. Nettoyage\ntitanic &lt;- titanic %&gt;% \n  mutate(Age = ifelse(is.na(Age), median(Age, na.rm = TRUE), Age))\n\n# 3. Analyse et visualisation\n# ... votre analyse ..."
   },
   {
     "objectID": "slides.html#ce-quon-a-appris-aujourdhui",
@@ -291,6 +466,349 @@
     "href": "slides.html#questions",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nMerci pour votre attention !\n\n\nContact : Étienne Proulx\nTous les codes sont copiables depuis cette présentation\n\n\n\nProchaines étapes : Continuez avec vos propres données et n’hésitez pas à expérimenter !"
+    "text": "Questions ?\n\n\n\n\n\n\nMerci pour votre attention !\n\n\nContact : etienne.proulx.2@ulaval.ca\nTous les codes sont copiables depuis cette présentation\n\n\n\nProchaines étapes : Continuez avec vos propres données et n’hésitez pas à expérimenter !"
+  },
+  {
+    "objectID": "ancien.html#objectifs-du-cours",
+    "href": "ancien.html#objectifs-du-cours",
+    "title": "Introduction à R",
+    "section": "Objectifs du cours",
+    "text": "Objectifs du cours\n\nIntroduire R pour l’analyse de données.\n\nLes dataframes\nLes fonctions\nLes packages\nLes graphiques\nLes statistiques\n\n\n\nLe but est que vous puissiez sortir d’ici avec une compréhension de base de R et que vous soyez capable d’aller chercher des ressources pour continuer à apprendre."
+  },
+  {
+    "objectID": "ancien.html#quest-ce-que-lanalyse-de-données",
+    "href": "ancien.html#quest-ce-que-lanalyse-de-données",
+    "title": "Introduction à R",
+    "section": "Qu’est-ce que l’analyse de données?",
+    "text": "Qu’est-ce que l’analyse de données?\n\nL’analyse de données vise à explorer, décrire et interpréter des informations recueillies sur les comportements humains, les relations sociales et les phénomènes sociétaux. Ce processus peut inclure des données quantitatives (comme des données issus de sondages) et des données qualitatives (comme des entretiens ou des observations).\n\nPrincipales étapes de l’analyse de données :\n\nAcquisition des données\nPréparation des données\nAnalyse des données\nCommunication des résultats"
+  },
+  {
+    "objectID": "ancien.html#les-outils-danalyse-de-données",
+    "href": "ancien.html#les-outils-danalyse-de-données",
+    "title": "Introduction à R",
+    "section": "Les outils d’analyse de données",
+    "text": "Les outils d’analyse de données"
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r",
+    "href": "ancien.html#pourquoi-r",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\nOpen source\n\nGratuit\nCollaboratif\nCommunauté active\n\nStackExchange\nstackoverflow\nreddit.com/r/Rlanguage\n\nAdapté aux besoins des utilisateurs\n\n\nOpen source c’est un modèle de développement de logiciels où le code est accessible à tous. Dans un logiciel open source, ce code est publié publiquement, permettant à n’importe qui de le lire, le modifier, le partager, et l’améliorer."
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-1",
+    "href": "ancien.html#pourquoi-r-1",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\nPackages\n\nOffre une extension des fonctionnalités de base presque infinie\nPeux répondre à des besoins très spécifiques\n21,744 packages sur CRAN (Comprehensive R Archive Network)\n\nPrincipal dépôt où sont hébergés les packages R\n\nBeaucoup plus sur GitHub\n\nEn plus de CRAN, de nombreux chercheurs publient leurs packages sur GitHub, une plateforme de partage de code\n\n\n\nChaque tâche spécifique lié à l’analyse de donnéees peut être automatisé et facilité par R. Collègue récemment à la CLESSN catégorisé les code postaux à la main."
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-2",
+    "href": "ancien.html#pourquoi-r-2",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\nPackages CLESSN\n\n\nsondr\n\nPermet l’automatisation de plusieurs aspects de l’analyse de données. Nous permet de faire des analyses factorielles en quelques secondes.\n\nclellm\n\nPermet d’utiliser des LLM open-source directement en R et permet d’utiliser des fonctions disponibles seulement en Python, en R.\n\nclessnize\n\nPermet de standardiser le style de nos graphiques rapidement sans avoir à répéter les mêmes étapes à chaque fois."
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-3",
+    "href": "ancien.html#pourquoi-r-3",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\nTidyverse\n\nCollection de packages pour la manipulation de données\ndplyr : manipulation de données\nggplot2 : graphiques\ntidyr : nettoyage de données\nreadr : importation de données\nstringr : manipulation de chaînes de caractères"
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-4",
+    "href": "ancien.html#pourquoi-r-4",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\nReproductibilité\n\nLes scripts R permettent de partager facilement le travail\nRendre les analyses reproductibles\nPermet de retracer les erreurs\nPartager le code (GitHub, GitLab, etc.)\n\nEncourage la transparence et la collaboration dans la recherche"
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-5",
+    "href": "ancien.html#pourquoi-r-5",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\nTrès utilisé en science sociale\n\nBeaucoup de ressources\nBeaucoup de tutoriels orientés vers les sciences sociales\n\nDatacamp\nswirl()\nCoursera\n\n\nBref… important d’utiliser les mêmes outils que les chercheurs dans votre domaine"
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-6",
+    "href": "ancien.html#pourquoi-r-6",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\nExemples d’utilisation par des organisations\n\nUtilisé par AirBnB pour l’analyse de données\nUtilisé par la BBC pour leurs graphiques\nUtilisé par la MLB pour l’analyse de données\nUtilisé par Vox Pop Labs (Boussole électorale) pour l’analyse de données\nUtilisé par Google, Facebook, Amazon, etc."
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-7",
+    "href": "ancien.html#pourquoi-r-7",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\nLa CLESSN\n  Chaire de leadership en enseignement des sciences sociales numériques (CLESSN)\n\n\n\nTitulaire: Yannick Dufresne\n\n\n\nObjectif: Développer des compétences en science des données pour les étudiants en sciences sociales à travers des projets de recherche et des formations"
+  },
+  {
+    "objectID": "ancien.html#datagotchi",
+    "href": "ancien.html#datagotchi",
+    "title": "Introduction à R",
+    "section": "Datagotchi",
+    "text": "Datagotchi\n\n\n\n\nApplication utilisant des variables lifestyles pour prédire le vote\nUtiliser R et l’analyse de données à travers ce projet:\n\nPrototypage en Shiny\nNettoyage des données\nAnalyse factorielle\nRégressions et modèles\nVisualisation"
+  },
+  {
+    "objectID": "ancien.html#analyse-textuelle",
+    "href": "ancien.html#analyse-textuelle",
+    "title": "Introduction à R",
+    "section": "Analyse textuelle",
+    "text": "Analyse textuelle\n\nAnalyse de ton\n\nEst-ce que le texte est positif ou négatif?"
+  },
+  {
+    "objectID": "ancien.html#mais-aussi",
+    "href": "ancien.html#mais-aussi",
+    "title": "Introduction à R",
+    "section": "Mais aussi …",
+    "text": "Mais aussi …\n\nCatégorisation de texte\n\nEst-ce que le texte parle de politique, de santé, de sport?\n\nAnalyse d’image\nTranscription audio"
+  },
+  {
+    "objectID": "ancien.html#r-au-delà-de-lanalyse-de-données",
+    "href": "ancien.html#r-au-delà-de-lanalyse-de-données",
+    "title": "Introduction à R",
+    "section": "R : Au-delà de l’analyse de données",
+    "text": "R : Au-delà de l’analyse de données\n\nR ne se limite pas à l’analyse statistique, il peut aussi être utilisé pour développer des applications web interactives"
+  },
+  {
+    "objectID": "ancien.html#après-r",
+    "href": "ancien.html#après-r",
+    "title": "Introduction à R",
+    "section": "Après R",
+    "text": "Après R\nApprendre R vous permet de comprendre d’autres langages de programmation\n\nPython\nJulia\nSQL\nJavaScript\nHTML/CSS\nBash"
+  },
+  {
+    "objectID": "ancien.html#installer-r-et-rstudio",
+    "href": "ancien.html#installer-r-et-rstudio",
+    "title": "Introduction à R",
+    "section": "Installer R et RStudio",
+    "text": "Installer R et RStudio\n\nC’est quoi la différence entre R et RStudio?\nR est le moteur, RStudio est le véhicule\nR est le langage, RStudio est la feuille de papier\nRStudio facilite l’utilisation de R\nRStudio est un IDE (Integrated Development Environment)\nPersonnalisation de l’environnement de travail\n\n\nÀ télécharger :\n\nInstaller R\nInstaller RStudio"
+  },
+  {
+    "objectID": "ancien.html#avant-de-commencer-concept-important",
+    "href": "ancien.html#avant-de-commencer-concept-important",
+    "title": "Introduction à R",
+    "section": "Avant de commencer : Concept important",
+    "text": "Avant de commencer : Concept important\nLe chemin d’arborescence\n\nÀ tout moment vous devez savoir où vous êtes dans votre ordinateur pour pouvoir importer des données, exporter des graphiques ou mettre des fichiers en relation\nVotre R pointe toujours vers un endroit spécifique dans votre ordinateur. Vous devez savoir où pour pouvoir importer des données\nLa fonction getwd() dans R permet de savoir où vous êtes"
+  },
+  {
+    "objectID": "ancien.html#avant-de-commencer-concept-important-1",
+    "href": "ancien.html#avant-de-commencer-concept-important-1",
+    "title": "Introduction à R",
+    "section": "Avant de commencer : Concept important",
+    "text": "Avant de commencer : Concept important\nPlanifier avant de coder\nLa plus grosse erreur est de commencer à coder sans savoir ce que vous voulez faire\n\n\nClarifer vos objectifs: Qu’est-ce que vous voulez faire?\n\nNettoyer des données?\nFaire un graphique?\n\n\nLes possibilités sont infinies, donc il est important de savoir où vous voulez aller"
+  },
+  {
+    "objectID": "ancien.html#avant-de-commencer-concept-important-2",
+    "href": "ancien.html#avant-de-commencer-concept-important-2",
+    "title": "Introduction à R",
+    "section": "Avant de commencer : Concept important",
+    "text": "Avant de commencer : Concept important\nDécomposer le problème\n\nUne fois que vous savez ce que vous voulez faire, il est important de décomposer le problème en petites étapes\nUn script R pour une seule tâche\n\nBien nommer vos scripts pour savoir ce qu’ils font\nExemples:\n\n1_collecte.R\n2_nettoyage.R\n3_analyse.R\n4_graphique.R\n\n\nChaque script doit être clair et facile à comprendre\nCommenter votre code avec des #"
+  },
+  {
+    "objectID": "ancien.html#importer-des-données",
+    "href": "ancien.html#importer-des-données",
+    "title": "Introduction à R",
+    "section": "Importer des données",
+    "text": "Importer des données\n\nLes données sont souvent dans des fichiers Excel, CSV, ou autres\n\nOn utilise des fonctions comme read.csv() pour lire les fichiers\n\n\n\ndf &lt;- read.csv(\"chemin/vers/data.csv\")\n\n\nDans cette ligne de code il y a plusieurs éléments importants:\n\nLe nom de l’objet : df dans ce cas-ci, c’est un dataframe\nL’opérateur d’assignation : &lt;-\nLa fonction qui permet de lire le fichier : read.csv()\nLe chemin vers le fichier : \"chemin/vers/data.csv\""
+  },
+  {
+    "objectID": "ancien.html#chemins-darborescence",
+    "href": "ancien.html#chemins-darborescence",
+    "title": "Introduction à R",
+    "section": "Chemins d’arborescence",
+    "text": "Chemins d’arborescence\nImportant de comprendre comment spécifier le chemin vers un fichier\nVoici les deux façons de spécifier le chemin :\n\nAbsolu: /Users/username/Documents/projet/data/data.csv\n\nUtile seulement sur votre ordinateur, un autre utilisateur ne pourra pas utiliser le même chemin\n\nRelatif: data/data.csv\n\nUtile pour partager le code avec d’autres utilisateurs\n\n\n\nDifférence entre mac et windows\n\nMac: /\nWindows: \\ (il faut s’assurer de changer les \\ pour des /)"
+  },
+  {
+    "objectID": "ancien.html#importer-des-données-1",
+    "href": "ancien.html#importer-des-données-1",
+    "title": "Introduction à R",
+    "section": "Importer des données",
+    "text": "Importer des données\nAutres fonctions pour importer des données dépendamment du format:\n\ndf &lt;- readxl::read_excel(\"chemin/vers/data.xlsx\")\ndf &lt;- readRDS(\"chemin/vers/data.rds\")"
+  },
+  {
+    "objectID": "ancien.html#anatomie-dune-ligne-de-code",
+    "href": "ancien.html#anatomie-dune-ligne-de-code",
+    "title": "Introduction à R",
+    "section": "Anatomie d’une ligne de code",
+    "text": "Anatomie d’une ligne de code\nPrenons un exemple simple :\nresultat &lt;- mean(df$age, na.rm = TRUE)\nDécomposons cette ligne :\n\nresultat : nom de l’objet où on stocke le résultat\n&lt;- : opérateur d’assignation\nmean() : fonction qui calcule la moyenne\ndf$age : variable ‘age’ du dataframe ‘df’\nna.rm = TRUE : argument de la fonction (ignorer les NA)\n\n\nCette ligne de code calcule la moyenne de la variable ‘age’ en ignorant les valeurs manquantes (NA) et stocke le résultat dans un objet nommé ‘resultat’"
+  },
+  {
+    "objectID": "ancien.html#les-types-de-données-dans-r",
+    "href": "ancien.html#les-types-de-données-dans-r",
+    "title": "Introduction à R",
+    "section": "Les types de données dans R",
+    "text": "Les types de données dans R\nTypes de base :\n\nnumeric : nombres (avec ou sans décimales)\n\nage &lt;- 25        # integer\ntaille &lt;- 1.75   # double\n\ncharacter : texte (chaînes de caractères)\n\nnom &lt;- \"Pierre\"\nville &lt;- 'Montréal'  # simple ou double quotes\n\nlogical : TRUE ou FALSE\n\nest_etudiant &lt;- TRUE\na_un_emploi &lt;- FALSE"
+  },
+  {
+    "objectID": "ancien.html#les-types-de-données-dans-r-1",
+    "href": "ancien.html#les-types-de-données-dans-r-1",
+    "title": "Introduction à R",
+    "section": "Les types de données dans R",
+    "text": "Les types de données dans R\nTypes spéciaux :\n\nfactor : catégories\n\nniveau &lt;- factor(c(\"Débutant\", \"Intermédiaire\", \"Avancé\"))\n\nDate : dates\n\ndate &lt;- as.Date(\"2025-01-14\")\n\nNA : valeurs manquantes\n\ndonnees &lt;- c(1, NA, 3, NA, 5)"
+  },
+  {
+    "objectID": "ancien.html#parenthèses-guillemets-et-virgules",
+    "href": "ancien.html#parenthèses-guillemets-et-virgules",
+    "title": "Introduction à R",
+    "section": "Parenthèses, guillemets et virgules",
+    "text": "Parenthèses, guillemets et virgules\nLes parenthèses () :\n\nDélimitent les arguments d’une fonction\nDoivent toujours être fermées\n\n# Correct\nmoyenne &lt;- mean(donnees)\n\n# Incorrect - parenthèse manquante\nmoyenne &lt;- mean(donnees\nLes virgules :\n\nSéparent les arguments d’une fonction\n\n# Correct\nresultat &lt;- sum(1, 2, 3, na.rm = TRUE)\n\n# Incorrect - virgule manquante\nresultat &lt;- sum(1 2 3, na.rm = TRUE)"
+  },
+  {
+    "objectID": "ancien.html#assignation-vs--",
+    "href": "ancien.html#assignation-vs--",
+    "title": "Introduction à R",
+    "section": "Assignation : = vs <-",
+    "text": "Assignation : = vs &lt;-\nL’opérateur &lt;- :\n\nRecommandé pour l’assignation de variables\nPlus clair et explicite\nStandard dans la communauté R\n\nage &lt;- 25\nnom &lt;- \"Alice\"\nL’opérateur = :\n\nUtilisé principalement pour les arguments de fonctions\nPeut créer de la confusion\n\n# Pour les arguments de fonction\nmean(x = donnees, na.rm = TRUE)\n\n# Éviter pour l'assignation\nage = 25  # Fonctionne mais non recommandé"
+  },
+  {
+    "objectID": "ancien.html#messages-derreur-courants",
+    "href": "ancien.html#messages-derreur-courants",
+    "title": "Introduction à R",
+    "section": "Messages d’erreur courants",
+    "text": "Messages d’erreur courants\nErreur de syntaxe\n# Message d'erreur\nError: unexpected symbol in \"mon code\"\n\n# Cause probable\n# Parenthèse ou guillemet manquant\nObjet non trouvé\n# Message d'erreur\nError: object 'data' not found\n\n# Causes probables\n# - Faute de frappe dans le nom\n# - Objet non créé\n# - Mauvais working directory"
+  },
+  {
+    "objectID": "ancien.html#messages-derreur-suite",
+    "href": "ancien.html#messages-derreur-suite",
+    "title": "Introduction à R",
+    "section": "Messages d’erreur (suite)",
+    "text": "Messages d’erreur (suite)\nComment réagir aux erreurs :\n\nNe pas paniquer ! Les erreurs sont normales\nLire attentivement le message d’erreur\nVérifier la ligne indiquée dans le message\nPoints à vérifier :\n\nParenthèses fermées ?\nGuillemets fermés ?\nVirgules aux bons endroits ?\nNoms d’objets corrects ?\nPackage chargé (library()) ?\n\n\n\nEncourager les étudiants à voir les erreurs comme des opportunités d’apprentissage"
+  },
+  {
+    "objectID": "ancien.html#nous-allons-utiliser-le-dataframe-swiss",
+    "href": "ancien.html#nous-allons-utiliser-le-dataframe-swiss",
+    "title": "Introduction à R",
+    "section": "Nous allons utiliser le dataframe swiss",
+    "text": "Nous allons utiliser le dataframe swiss\n# Charger les packages nécessaires\nlibrary(dplyr) # Manipulation de données\nlibrary(ggplot2) # Graphiques\n\n# Importer les données swiss (jeu de données intégré)\ndf &lt;- swiss\n\n# Explorer les données\nView(df)\nsummary(df)\nnames(df)\nhead(df)\nncol(df)\nnrow(df)"
+  },
+  {
+    "objectID": "ancien.html#analyse-rapide-dune-variable",
+    "href": "ancien.html#analyse-rapide-dune-variable",
+    "title": "Introduction à R",
+    "section": "Analyse rapide d’une variable",
+    "text": "Analyse rapide d’une variable\n# Voir le nombre de valeurs pour chaque élément d'une variable\ntable(df$Fertility)\n\n# Histogramme de la variable 'Fertility'\nhist(df$Fertility)\n\n# Obtenir la moyenne de la variable 'Fertility'\nmean(df$Fertility)\n\n$ permet d’accéder à une variable dans un dataframe.\nOn accède à la variable Fertility dans le dataframe df avec df$Fertility"
+  },
+  {
+    "objectID": "ancien.html#filter-et-sélectionner-des-variables",
+    "href": "ancien.html#filter-et-sélectionner-des-variables",
+    "title": "Introduction à R",
+    "section": "Filter et sélectionner des variables",
+    "text": "Filter et sélectionner des variables\n# Sélectionner des colonnes \n# (par exemple, Fertility, Education et Agriculture)\n\ndf_selected &lt;- df %&gt;%\n  select(Fertility, Education, Agriculture)\n\n# Filtrer les lignes pour inclure uniquement les cantons \n# avec une fertilité supérieure à la moyenne\n\nmean_fertility &lt;- mean(df_selected$Fertility, na.rm = TRUE)\n\ndf_filtered &lt;- df_selected %&gt;%\n  filter(Fertility &gt; mean_fertility)"
+  },
+  {
+    "objectID": "ancien.html#modifier-des-variables",
+    "href": "ancien.html#modifier-des-variables",
+    "title": "Introduction à R",
+    "section": "Modifier des variables",
+    "text": "Modifier des variables\n# Créer une nouvelle variable binaire \"high_agriculture\" \n# indiquant si le pourcentage d'agriculture est supérieur à 50\n\ndf_mutated &lt;- df_filtered %&gt;%\n  mutate(high_agriculture = ifelse(Agriculture &gt; 50, 1, 0))\n\n# Regrouper par \"high_agriculture\" et calculer la moyenne de l'éducation\n\ndf_summarized &lt;- df_mutated %&gt;%\n  group_by(high_agriculture) %&gt;%\n  summarize(moyenne_education = mean(Education, na.rm = TRUE))\n\n# Afficher le résultat final\nprint(df_summarized)"
+  },
+  {
+    "objectID": "ancien.html#représentation-graphique-des-données",
+    "href": "ancien.html#représentation-graphique-des-données",
+    "title": "Introduction à R",
+    "section": "Représentation graphique des données",
+    "text": "Représentation graphique des données\nPrincipes généraux de la visualisation\n\nMontrer les données\n\nÉvitez les distractions inutiles\n\nChoisir des visualisations appropriées\n\nQuelles informations seront utiles ?\n\nÉviter les graphiques « spaghetti »\n\nÉvitez les lignes trop complexes qui se chevauchent et s’entremêlent\n\nCommencer en noir et blanc\n\nUtiliser les couleurs de manière efficace"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2",
+    "href": "ancien.html#visualisation-avec-ggplot2",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\nInitialiser un graphique\nggplot(df, aes(x = Agriculture, y = Fertility, color = Education)) \n\ndf est le dataframe\naes() est la fonction qui permet de spécifier les variables à utiliser\nx et y sont les variables à utiliser pour les axes x et y\ncolor est la variable à utiliser pour la couleur"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2-1",
+    "href": "ancien.html#visualisation-avec-ggplot2-1",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\nAjouter un geom_()\nggplot(df, aes(x = Agriculture, y = Fertility, color = Education)) +\n  geom_point(alpha = 0.8) # Le alpha est la transparence\n\nIl existe plusieurs geom_() pour différents types de graphiques\n\ngeom_point() est pour un nuage de points\ngeom_line() est pour un graphique en ligne\ngeom_bar() est pour un graphique en barres\ngeom_histogram() est pour un histogramme"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2-2",
+    "href": "ancien.html#visualisation-avec-ggplot2-2",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\nAjouter une échelle de couleur\nggplot(df, aes(x = Agriculture, y = Fertility, color = Education)) +\n  geom_point(alpha = 0.8) + # Le alpha est la transparence\n  scale_color_gradient(low = \"blue\", high = \"red\", name = \"Éducation\") \n\nscale_color_gradient() permet de spécifier les couleurs pour la variable Education\nlow et high sont les couleurs pour les valeurs les plus basses et les plus hautes\nname est le nom de la légende\nVous pouvez utiliser les hexcodes pour les couleurs"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2-3",
+    "href": "ancien.html#visualisation-avec-ggplot2-3",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\nAjouter des titres et des labels\nggplot(df, aes(x = Agriculture, y = Fertility, color = Education)) +\n  geom_point(alpha = 0.8) + # Le alpha est la transparence\n  scale_color_gradient(low = \"blue\", high = \"red\", name = \"Éducation\") +\n  labs(\n    title = \"Relation entre l'agriculture et la fertilité en Suisse\",\n    x = \"Pourcentage d'agriculture\",\n    y = \"Fertilité\"\n  )"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2-4",
+    "href": "ancien.html#visualisation-avec-ggplot2-4",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\nAjouter un thème\nggplot(df, aes(x = Agriculture, y = Fertility, color = Education)) +\n  geom_point(alpha = 0.8) + # Le alpha est la transparence\n  scale_color_gradient(low = \"blue\", high = \"red\", name = \"Éducation\") +\n  labs(\n    title = \"Relation entre l'agriculture et la fertilité en Suisse\",\n    x = \"Pourcentage d'agriculture\",\n    y = \"Fertilité\"\n  ) +\n  theme_minimal()\n\ntheme_minimal() est un thème minimaliste\nIl existe plusieurs thèmes prédéfinis dans ggplot2\nVous pouvez aussi créer votre propre thème"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2-5",
+    "href": "ancien.html#visualisation-avec-ggplot2-5",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\nSauvegarder le graphique\nggplot(df, aes(x = Agriculture, y = Fertility, color = Education)) +\n  geom_point(alpha = 0.8) + # Le alpha est la transparence\n  scale_color_gradient(low = \"blue\", high = \"red\", name = \"Éducation\") +\n  labs(\n    title = \"Relation entre l'agriculture et la fertilité en Suisse\",\n    x = \"Pourcentage d'agriculture\",\n    y = \"Fertilité\"\n  ) +\n  theme_minimal()\n\nggsave(\"nom_du_graphique.png\", width = 10, height = 6)\n\nVous pouvez spécifier le format du graphique (png, pdf, etc.) ainsi que le chemin pour sauvegarder le graphique"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2-6",
+    "href": "ancien.html#visualisation-avec-ggplot2-6",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\nUn histogramme de la variable Fertility\nggplot(df, aes(x = Fertility)) +\n  geom_histogram(fill = \"skyblue\", color = \"white\", bins = 5) +\n  labs(\n    title = \"Distribution de la fertilité en Suisse\",\n    x = \"Fertilité\",\n    y = \"Nombre de cantons\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "ancien.html#analyse-statistique",
+    "href": "ancien.html#analyse-statistique",
+    "title": "Introduction à R",
+    "section": "Analyse statistique",
+    "text": "Analyse statistique\n# Calculer la corrélation entre Fertility et Agriculture\n\ncorrelation &lt;- cor(df$Fertility, df$Agriculture)\nprint(paste(\"Corrélation entre Fertility et Agriculture:\", round(correlation, 2)))\n\n# Effectuer une régression linéaire avec Fertility comme variable dépendante\n\nmodele &lt;- lm(Fertility ~ Agriculture, data = df)\n\n# Afficher le résumé du modèle de régression\n\nsummary(modele)"
+  },
+  {
+    "objectID": "ancien.html#bonnes-pratiques",
+    "href": "ancien.html#bonnes-pratiques",
+    "title": "Introduction à R",
+    "section": "Bonnes pratiques",
+    "text": "Bonnes pratiques\nstyle.tidyverse.org\n\nUtilisé par la communauté R pour standardiser le style du code\nUtilisé par Google\nUtilisé par des packages populaires comme stylr et lintr"
+  },
+  {
+    "objectID": "ancien.html#bonnes-pratiques-1",
+    "href": "ancien.html#bonnes-pratiques-1",
+    "title": "Introduction à R",
+    "section": "Bonnes pratiques",
+    "text": "Bonnes pratiques\nRègles générales :\n\nNommer vos fichiers de manière descriptive\nUtiliser des minuscules seulement et aucun caractère spécial comme é ou à\nSi vos fichiers contiennent plusieurs mots, les séparer par des underscores _\nExemple: nettoyage_donnees.R\nUtiliser des chiffres pour ordonner vos scripts\nÉvitez d’écrire des lignes de code trop longues\nUtiliser la convention snake_case plutôt que camelCase\nNommez vous dataframe de façon standard. df_ ou data_"
+  },
+  {
+    "objectID": "ancien.html#organiser-votre-environnement-de-travail",
+    "href": "ancien.html#organiser-votre-environnement-de-travail",
+    "title": "Introduction à R",
+    "section": "Organiser votre environnement de travail",
+    "text": "Organiser votre environnement de travail\n/votre_projet\n├── data\n│   ├── processed\n│   │   └── data_clean.csv\n│   └── raw\n│       └── data_raw.csv\n├── docs\n│   └── article\n│       ├── articles.qmd\n│       └── references.bib\n├── R\n│   ├── 2_analysis.R\n│   └── 3_graph.R\n├── README.md\n└── results\n    └── graphs\n        └── 1_bar_graph.png"
+  },
+  {
+    "objectID": "ancien.html#en-apprendre-plus",
+    "href": "ancien.html#en-apprendre-plus",
+    "title": "Introduction à R",
+    "section": "En apprendre plus",
+    "text": "En apprendre plus\n\nswirl\nDatacamp\nR4DS (R for Data Science)\nAdvanced R"
+  },
+  {
+    "objectID": "ancien.html#ressources",
+    "href": "ancien.html#ressources",
+    "title": "Introduction à R",
+    "section": "Ressources",
+    "text": "Ressources\nQuoi faire quand ça ne fonctionne pas?\n\nChatGPT\n\nÊtre clair et précis dans vos requêtes\nExpliquer la structure de vos données\nCopier-coller le message d’erreur\nCopier-coller la documentation d’un package\n\nRéessayer ChatGPT\n\nC’est rare que ChatGPT ne trouve pas la réponse\n\nLa documentation de R (ex: ?mean() dans votre console)\nGoogle\n\nStackoverflow\nStackexchange"
+  },
+  {
+    "objectID": "ancien.html#conclusion",
+    "href": "ancien.html#conclusion",
+    "title": "Introduction à R",
+    "section": "Conclusion",
+    "text": "Conclusion"
   }
 ]
