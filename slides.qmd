@@ -78,7 +78,7 @@ library(readr)
 
 ## Pourquoi R en sciences sociales ? {.smaller background-color="#2C5F77"}
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1024px-R_logo.svg.png){.absolute top=0 left=900 width="20%"}
+![](images/Rlogo.png){.absolute top=0 left=900 width="20%"}
 
 ::: {style="color: white;"}
 
