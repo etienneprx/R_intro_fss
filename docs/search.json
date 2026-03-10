@@ -109,7 +109,7 @@
     "href": "slides.html#où-travaille-r-en-ce-moment",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Où travaille R en ce moment ?",
-    "text": "Où travaille R en ce moment ?\n\n\n\n\n\n\nÀ tester maintenant !\n\n\n\n\n\n\n\n# Où suis-je actuellement ?\ngetwd()  # \"get working directory\" = obtenir le dossier de travail\n\n[1] \"/home/etienne_prx/Dropbox/travail/enseignements/R_intro_fss\"\n\n\n\n\n# Qu'est-ce qu'il y a dans ce dossier ?\nlist.files()  # lister tous les fichiers\n\n [1] \"_freeze\"          \"_quarto.yml\"      \"ancien.qmd\"       \"custom.scss\"     \n [5] \"data\"             \"docs\"             \"exercices.qmd\"    \"images\"          \n [9] \"index.qmd\"        \"README.md\"        \"script\"           \"slides_files\"    \n[13] \"slides.qmd\"       \"slides.rmarkdown\"\n\n\n\nR travaille toujours dans UN dossier à la fois !\nC’est son “bureau” où il cherche vos fichiers par défaut."
+    "text": "Où travaille R en ce moment ?\n\n\n\n\n\n\nÀ tester maintenant !\n\n\n\n\n\n\n\n# Où suis-je actuellement ?\ngetwd()  # \"get working directory\" = obtenir le dossier de travail\n\n[1] \"/home/etienne_prx/Dropbox/travail/enseignements/R_intro_fss\"\n\n\n\n\n# Qu'est-ce qu'il y a dans ce dossier ?\nlist.files()  # lister tous les fichiers\n\n [1] \"_freeze\"          \"_quarto.yml\"      \"ancien.qmd\"       \"custom.scss\"     \n [5] \"data\"             \"docs\"             \"exercices.qmd\"    \"images\"          \n [9] \"index.qmd\"        \"R_decouverte_fss\" \"README.md\"        \"script\"          \n[13] \"slides_files\"     \"slides.qmd\"       \"slides.rmarkdown\"\n\n\n\nR travaille toujours dans UN dossier à la fois !\nC’est son “bureau” où il cherche vos fichiers par défaut."
   },
   {
     "objectID": "slides.html#bien-organiser-son-projet-r",
@@ -227,7 +227,7 @@
     "objectID": "slides.html#sauvegarder-notre-travail",
     "href": "slides.html#sauvegarder-notre-travail",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Sauvegarder notre travail",
+    "section": " Sauvegarder notre travail",
     "text": "Sauvegarder notre travail\n\n\n# Sauvegarder le dernier graphique\nggsave(\"age_prix_survie.png\", width = 10, height = 6)\n\n# Sauvegarder des données nettoyées\nwrite.csv(titanic, \"titanic_nettoye.csv\", row.names = FALSE)\n\n# Sauvegarder nos résultats d'analyse\nwrite.csv(resume_complet, \"analyse_survie_classe_sexe.csv\", row.names = FALSE)\n\nToujours sauvegarder : scripts, données nettoyées, graphiques, résultats"
   },
   {
@@ -276,8 +276,8 @@
     "objectID": "slides.html#questions",
     "href": "slides.html#questions",
     "title": "Initiation à l’analyse des données avec R",
-    "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nMerci pour votre attention !\n\n\nContact : etienne.proulx.2@ulaval.ca\nTous les codes sont copiables depuis cette présentation\n\n\n\nProchaines étapes : Continuez avec vos propres données et n’hésitez pas à expérimenter !\n\n\n\n\nFaculté des sciences sociales"
+    "section": " Questions ?",
+    "text": "Questions ?\n\n\n\n\n\n\nMerci pour votre attention !\n\n\nContact : etienne.proulx.2@ulaval.ca\nTous les codes sont copiables depuis cette présentation\n\n\n\nProchaines étapes : Continuez avec vos propres données et n’hésitez pas à expérimenter !\n\n\n\n\nFaculté des sciences sociales | Université Laval"
   },
   {
     "objectID": "index.html",
@@ -733,5 +733,75 @@
     "title": "Exercices pratiques",
     "section": "🌍 Exercice 2 : Explorer le dataset",
     "text": "🌍 Exercice 2 : Explorer le dataset\nObjectif : Explorer des vraies données internationales\n\nConsignes\n\nChargez les packages nécessaires (readr, dplyr, ggplot2)\nChargez les données depuis le fichier CSV avec read_csv()\nExplorez la structure des données (dim(), head(), str(), summary())\nIdentifiez les variables disponibles\n\n\nÀ vous de jouer !Solution\n\n\nSuivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.\n\n\n\n# 1. Charger les packages nécessaires\nlibrary(readr)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# 2. Charger les données depuis le fichier CSV\ndonnees &lt;- read_csv(\"donnees_pays.csv\")\n\n# 3. Explorer la structure\ndim(donnees)        # dimensions\nhead(donnees)       # premiers cas\nstr(donnees)        # structure détaillée\nsummary(donnees)    # résumé statistique\n\n# 4. Voir les noms des colonnes\nnames(donnees)"
+  },
+  {
+    "objectID": "slides.html#bienvenue",
+    "href": "slides.html#bienvenue",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Bienvenue !",
+    "text": "Bienvenue !\n\n\nAu programme aujourd’hui :\n\n Bases : Objets, fonctions et packages\n Données : Importer et formater (Tidyverse)\n Quantitatif : Statistiques descriptives et visualisation\n Qualitatif : Analyse de texte et nuages de mots\n\nLogistique : -  9h - 12h : Formation théorique (Hybride) -  12h - 13h : Pause dîner -  13h - 15h : Atelier pratique (Présentiel BNF-4285)\n\n\n\n\n\n\n\nMatériel requis\n\n\n\nR et RStudio installés\nJeu de données téléchargé\nMotivation !\n\n\n\n\n\n\n\n\n\n\nAide & Mentorat\n\n\nN’hésitez pas à poser vos questions sur Zoom ou en classe ! Nos mentors sont là pour vous aider."
+  },
+  {
+    "objectID": "slides.html#rstudio-votre-tableau-de-bord",
+    "href": "slides.html#rstudio-votre-tableau-de-bord",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "RStudio : Votre tableau de bord",
+    "text": "RStudio : Votre tableau de bord\n\n\n1. Script\nC’est votre recette. On écrit ici pour pouvoir tout relancer plus tard.\n\n\n2. Environnement\nC’est votre garde-manger. Vos données et objets y sont stockés.\n\n\n3. Console\nC’est le four. Le code s’y exécute réellement.\n\n\n4. Fichiers/Graphiques\nC’est votre fenêtre sur le monde. On y voit nos dossiers et nos résultats."
+  },
+  {
+    "objectID": "slides.html#rappel-r-comme-calculatrice",
+    "href": "slides.html#rappel-r-comme-calculatrice",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Rappel : R comme calculatrice",
+    "text": "Rappel : R comme calculatrice\n\n\n\n\n\n\nÀ tester dans la console\n\n\nEssayez ces commandes pour vous dégourdir les doigts.\n\n\n\n\n# Opérations de base\n(10 + 5) * 2\n\n[1] 30\n\nsqrt(16)\n\n[1] 4\n\n2^3  # puissance\n\n[1] 8"
+  },
+  {
+    "objectID": "slides.html#distribution-histogrammes",
+    "href": "slides.html#distribution-histogrammes",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Distribution : Histogrammes",
+    "text": "Distribution : Histogrammes\n\n\nObjectif : Visualiser la répartition d’une variable numérique.\n\nggplot(titanic, aes(x = Age)) +\n  geom_histogram(bins = 20, fill = \"#003875\", color = \"white\") +\n  labs(title = \"Âge des passagers\", x = \"Âge\", y = \"Nombre\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nAnatomie du code : - geom_histogram() : l’outil de distribution. - bins = 20 : ajuste la précision. - fill & color : l’esthétique."
+  },
+  {
+    "objectID": "slides.html#relation-nuages-de-points",
+    "href": "slides.html#relation-nuages-de-points",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Relation : Nuages de points",
+    "text": "Relation : Nuages de points\n\n\nggplot(titanic, aes(x = Age, y = Fare, color = factor(survie))) +\n  geom_point(alpha = 0.6, size = 3) +\n  scale_color_manual(values = c(\"#C31E39\", \"#28a745\")) +\n  labs(title = \"Relation Âge vs Prix du billet\", color = \"Survécu\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n Observation\n\n\nOn voit clairement que les billets plus chers (en haut) ont une plus forte concentration de survivants (vert)."
+  },
+  {
+    "objectID": "slides.html#r-pour-le-texte",
+    "href": "slides.html#r-pour-le-texte",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "R pour le texte ?",
+    "text": "R pour le texte ?\nR n’est pas seulement pour les chiffres ! Il permet aussi d’analyser du texte (entretiens, documents, médias sociaux).\nLes étapes clés : 1.  Nettoyage : Retirer la ponctuation, les chiffres et les “mots vides” (le, la, de…). 2.  Fréquence : Transformer le texte en tableau de comptage. 3.  Nuage de mots : Visualiser l’importance relative des concepts."
+  },
+  {
+    "objectID": "slides.html#visualisation-le-nuage-de-mots",
+    "href": "slides.html#visualisation-le-nuage-de-mots",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": "Visualisation : Le nuage de mots",
+    "text": "Visualisation : Le nuage de mots\n\n\nPourquoi ? Pour identifier les thèmes dominants d’un corpus en un coup d’œil.\nLe code type :\n\nlibrary(wordcloud)\n# Supposons un tableau 'frequences'\nwordcloud(words = frequences$mot, \n          freq = frequences$n, \n          min.freq = 5,\n          colors = brewer.pal(8, \"Dark2\"))"
+  },
+  {
+    "objectID": "slides.html#pas-de-panique",
+    "href": "slides.html#pas-de-panique",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": " Pas de panique !",
+    "text": "Pas de panique !\n\nErreurs courantes et solutions :\n\n# Erreur : objet non trouvé\nmean(donnees$age)\n# Error: object 'donnees' not found\n# → Vérifier le nom de l'objet\n\n# Erreur : colonne inexistante  \ntitanic$ages  # au lieu de Age\n# → Utiliser names(titanic) pour voir les vraies colonnes\n\n# Erreur : parenthèse manquante\nmean(titanic$Age\n# → Vérifier que toutes les parenthèses sont fermées\n\nRéflexes : lire le message, vérifier l’orthographe, tester ligne par ligne"
+  },
+  {
+    "objectID": "slides.html#récapitulatif",
+    "href": "slides.html#récapitulatif",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": " Récapitulatif",
+    "text": "Récapitulatif\n\n\n\n\n\n\nRécapitulatif\n\n\n✅ Interface RStudio et console\n✅ Objets, vecteurs et data frames\n✅ Types de données et fonctions\n✅ Import et exploration de données\n✅ Analyse descriptive (moyennes, tableaux)\n✅ Premiers graphiques avec ggplot2\n✅ Manipulation avec dplyr (filter, select, group_by)\n\n\n\nVous pouvez maintenant :\n\nCharger des données\nLes explorer et les résumer\nCréer des graphiques de base\nFaire des analyses descriptives simples"
+  },
+  {
+    "objectID": "slides.html#ressources",
+    "href": "slides.html#ressources",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": " Ressources",
+    "text": "Ressources\nDocumentation et aide :\n\n?fonction dans R (ex: ?mean)\nR Documentation\nRStudio Cheatsheets\n\nApprentissage :\n\nswirl - apprendre R dans R\nR for Data Science (gratuit en ligne)\nChatGPT pour déboguer vos erreurs !\n\nCommunauté :\n\nStack Overflow\nRStudio Community"
   }
 ]

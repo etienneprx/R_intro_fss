@@ -1,23 +1,30 @@
 ---
 title: "Initiation à l'analyse des données avec R"
 subtitle: "Formation théorique | 9h à 12h"
-author: "Étienne Proulx"
-date: today
-date-format: "D MMMM YYYY"
+author: 
+  - "**Étienne Proulx** (Formateur)"
+  - "Laurence-Olivier M. Foisy (Accompagnateur)"
+  - "Camille Pelletier (Accompagnatrice)"
+date: "11 mars 2026"
 lang: fr
 format:
   revealjs:
-    theme: simple
+    theme: [simple, custom.scss]
     logo: images/ulaval_logo.svg
-    footer: "[Faculté des sciences sociales](https://www.fss.ulaval.ca)"
-    transition: slide
-    transition-speed: fast
+    title-slide-attributes:
+      data-background-color: "#003875"
+    footer: "Faculté des sciences sociales | Université Laval"
+    transition: fade
     code-fold: false
-    code-overflow: wrap
+    code-summary: "Voir le code"
     code-copy: true
-    incremental: false
     slide-number: true
     show-slide-number: all
+    width: 1600
+    height: 900
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 execute:
   echo: true
@@ -31,272 +38,83 @@ execute:
 library(ggplot2)
 library(dplyr)
 library(readr)
+library(tidyverse)
 ```
 
-## Objectifs de l'atelier {.smaller}
-
-- Introduire R pour l'analyse de données
-  - Interface RStudio et console
-  - Les objets et types de données
-  - Les fonctions et packages
-  - Import et manipulation de données
-  - Analyse descriptive et graphiques
-
-> Le but est que vous puissiez sortir d'ici avec une compréhension de base de R et que vous soyez capable d'aller chercher des ressources pour continuer à apprendre.
-
----
-
-## Qu'est-ce que R ? {.smaller}
+## Bienvenue ! {.smaller}
 
 ::: {.columns}
-::: {.column width="50%"}
-**R c'est :**
+::: {.column width="60%"}
+**Au programme aujourd'hui :**
 
-- Un langage de programmation pour l'analyse de données
-- Gratuit et open-source
-- Une communauté active mondiale
-- Plus de 21,000 packages spécialisés
+- <i class="fa-solid fa-screwdriver-wrench"></i> **Bases** : Objets, fonctions et packages
+- <i class="fa-solid fa-file-import"></i> **Données** : Importer et formater (Tidyverse)
+- <i class="fa-solid fa-chart-line"></i> **Quantitatif** : Statistiques descriptives et visualisation
+- <i class="fa-solid fa-cloud"></i> **Qualitatif** : Analyse de texte et nuages de mots
 
+**Logistique :**
+- <i class="fa-solid fa-clock"></i> **9h - 12h** : Formation théorique (Hybride)
+- <i class="fa-solid fa-utensils"></i> **12h - 13h** : Pause dîner
+- <i class="fa-solid fa-laptop-code"></i> **13h - 15h** : Atelier pratique (Présentiel BNF-4285)
 :::
 
-::: {.column width="50%"}
-**Pourquoi l'utiliser ?**
-
-- Adapté aux sciences sociales
-- Analyses reproductibles et transparentes
-- Visualisations de qualité professionnelle
-- Compétence recherchée en recherche et industrie
-
-:::
-:::
-
-<br>
-
-> Aujourd'hui nous allons apprendre les bases pour analyser de vraies données
-
----
-
-## Pourquoi R en sciences sociales ? {.smaller background-color="#2C5F77"}
-
-![](images/Rlogo.png){.absolute top=0 left=900 width="20%"}
-
-::: {style="color: white;"}
-
-**R est utilisé dans la vraie vie :**
-
-::: {.columns}
-::: {.column width="50%"}
-**Organisations :**
-
-- [AirBnB](https://medium.com/airbnb-engineering/using-r-packages-and-education-to-scale-data-science-at-airbnb-906faa58e12d) - analyse de données
-- [BBC](https://bbc.github.io/rcookbook/) - graphiques journalistiques
-- Google, Facebook, Amazon - data science
-
-:::
-
-::: {.column width="50%"}
-**Recherche au Québec :**
-
-- [Vox Pop Labs](https://github.com/voxpoplabs) (Boussole électorale)
-- CLESSN (Université Laval)
-- Nombreux chercheurs en sciences sociales
-
-:::
-:::
-:::
-
----
-
-## Visualisations avancées avec R {.smaller background-color="#4A90A4"}
-
-::: {style="color: white;"}
-
-**Suivi quotidien des intentions de vote - Élections fédérales 2025**
-
-:::
-
-![](https://github.com/clessn/agregateur_data/blob/main/img/daily_gif_fr.gif?raw=true){fig-align="center" width="80%"}
-
+::: {.column width="40%"}
 ::: {.callout-note}
-Animation générée automatiquement chaque jour avec R - Centre d'analyse des politiques publiques
+## Matériel requis
+- R et RStudio installés
+- Jeu de données téléchargé
+- Motivation !
 :::
-
----
-
-## Au-delà des chiffres {.smaller background-color="#2C5F77"}
-
-::: {style="color: white;"}
-
-**R s'adapte à tous types de données**
-
-::: {.columns}
-::: {.column width="50%"}
-**Texte :**
-
-- Analyse de sentiment
-- Classification de documents
-- Transcription audio
-- Extraction d'informations
-
-:::
-
-::: {.column width="50%"}
-**Multimédia :**
-
-- Analyse d'images
-- Création de vidéos
-- Infographies automatisées
-- Présentations interactives
-
-:::
-:::
-:::
-
----
-
-## Applications web interactives avec Shiny {.smaller background-color="#4A90A4"}
-
-::: {style="color: white;"}
-
-**Explorez vos données de manière interactive**
-
-:::
-
-[![](images/shiny.png){width="80%"}](https://nz-stefan.shinyapps.io/commute-explorer-2/)
 
 ::: {.callout-tip}
-Cliquez sur l'image pour voir l'[application en action](https://nz-stefan.shinyapps.io/commute-explorer-2/)
+## Aide & Mentorat
+N'hésitez pas à poser vos questions sur Zoom ou en classe ! Nos mentors sont là pour vous aider.
+:::
+:::
+:::
+
+# <i class="fa-solid fa-layer-group"></i> Fondations : R & RStudio
+
+## RStudio : Votre tableau de bord {.smaller}
+
+![](images/rstudio.png){.absolute top="150" left="0" width="100%" height="75%"}
+
+::: {.absolute top="300" left="80" style="background-color: rgba(255,255,255,0.95); padding: 15px; border-left: 5px solid #FFB81C; border-radius: 5px; max-width: 300px;"}
+**1. Script**  
+C'est votre recette. On écrit ici pour pouvoir tout relancer plus tard.
+:::
+
+::: {.absolute top="250" left="1200" style="background-color: rgba(255,255,255,0.95); padding: 15px; border-left: 5px solid #FFB81C; border-radius: 5px; max-width: 300px;"}
+**2. Environnement**  
+C'est votre garde-manger. Vos données et objets y sont stockés.
+:::
+
+::: {.absolute top="650" left="80" style="background-color: rgba(255,255,255,0.95); padding: 15px; border-left: 5px solid #FFB81C; border-radius: 5px; max-width: 300px;"}
+**3. Console**  
+C'est le four. Le code s'y exécute réellement.
+:::
+
+::: {.absolute top="600" left="1200" style="background-color: rgba(255,255,255,0.95); padding: 15px; border-left: 5px solid #FFB81C; border-radius: 5px; max-width: 300px;"}
+**4. Fichiers/Graphiques**  
+C'est votre fenêtre sur le monde. On y voit nos dossiers et nos résultats.
 :::
 
 ---
 
-## Applications Shiny : possibilités infinies {.smaller background-color="#5B4E77"}
-
-::: {style="color: white;"}
-
-**Transformez vos analyses en outils accessibles**
-**Exemples d'utilisation :**
-
-- Tableaux de bord de suivi
-- Explorateurs de données interactifs
-- Outils de collecte de données
-- Simulateurs et calculateurs
-- Rapports personnalisés
-
-::: {.callout-note}
-Aucune connaissance en développement web nécessaire
-:::
-:::
-
----
-
-## Et après R ? {.smaller background-color="#2C5F77"}
-
-::: {style="color: white;"}
-
-**Apprendre R ouvre la porte à d'autres langages**
-
-Les concepts appris en R se transfèrent facilement :
-
-::: {.columns}
-::: {.column width="50%"}
-**Analyse de données :**
-
-- Python (data science)
-- Julia (calcul scientifique)
-- SQL (bases de données)
-
-:::
-
-::: {.column width="50%"}
-**Développement :**
-
-- JavaScript (web interactif)
-- HTML/CSS (présentation)
-- Bash (automatisation)
-
-:::
-:::
-
-::: {.callout-note}
-Une fois qu'on maîtrise un langage de programmation, les autres deviennent beaucoup plus faciles à apprendre
-:::
-:::
-
----
-
-## Installer R et RStudio {.smaller}
-
-::: {.columns}
-::: {.column width="50%"}
-**Quelle est la différence ?**
-
-- R est le moteur, RStudio est le véhicule
-- R est le langage, RStudio est la feuille de papier
-- RStudio facilite l'utilisation de R
-- RStudio est un IDE (Integrated Development Environment)
-- Personnalisation de l'environnement de travail
-:::
-
-::: {.column width="50%"}
-**Liens de téléchargement :**
-
-- [Installer R](https://cran.r-project.org/)
-- [Installer RStudio](https://www.rstudio.com/products/rstudio/download/)
-:::
-:::
-
----
-
-## Avant de commencer à coder : RStudio {.smaller}
-
-![](images/rstudio.png){.absolute top="100" left="0" width="100%" height="80%"}
-
-::: {.absolute top="250" left="80" style="background-color: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; max-width: 280px;"}
-**Script**  
-Où on écrit notre code
-:::
-
-::: {.absolute top="200" left="600" style="background-color: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; max-width: 280px;"}
-**Environment**  
-Nos objets et données
-:::
-
-::: {.absolute top="500" left="80" style="background-color: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; max-width: 280px;"}
-**Console**  
-Où s'exécutent les commandes
-:::
-
-::: {.absolute top="450" left="600" style="background-color: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; max-width: 280px;"}
-**Files/Plots**  
-Fichiers et graphiques
-:::
-
----
-
-## R comme calculatrice {.smaller}
+## Rappel : R comme calculatrice {.smaller}
 
 ::: {.callout-tip}
 ## À tester dans la console
+Essayez ces commandes pour vous dégourdir les doigts.
 :::
 
 ```{r}
 #| code-copy: true
 # Opérations de base
-2 + 3
-10 * 5
-15 / 3
-sqrt(16)
-```
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Un peu plus complexe
 (10 + 5) * 2
+sqrt(16)
 2^3  # puissance
 ```
-:::
 
 
 ---
@@ -733,7 +551,7 @@ donnees <- read.csv("data/titanic.csv")  # charger depuis le dossier data
 
 ---
 
-## Charger de vraies données {.smaller background-color="#4A90A4"}
+## Charger de vraies données {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -758,7 +576,7 @@ Attention de bien spécifier votre chemin d'accès!
 
 ---
 
-## Explorer la structure des données {.smaller background-color="#4A90A4"}
+## Explorer la structure des données {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -776,7 +594,7 @@ ncol(titanic)         # nombre de colonnes
 
 ---
 
-## Examiner la structure détaillée {.smaller background-color="#4A90A4"}
+## Examiner la structure détaillée {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -800,7 +618,7 @@ glimpse(titanic)
 
 ---
 
-## Résumé statistique des variables {.smaller background-color="#4A90A4"}
+## Résumé statistique des variables {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -816,7 +634,7 @@ Moyennes, médianes, quartiles pour les variables numériques | Fréquences pour
 
 ---
 
-## Gérer les valeurs manquantes {.smaller background-color="#4A90A4"}
+## Gérer les valeurs manquantes {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -844,7 +662,7 @@ head(titanic[is.na(titanic$Age), ])
 
 ---
 
-## Analyse des variables individuelles {.smaller background-color="#4A90A4"}
+## Analyse des variables individuelles {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -867,7 +685,7 @@ prop.table(table(titanic$Survived)) * 100
 
 ---
 
-## Analyse des variables numériques {.smaller background-color="#4A90A4"}
+## Analyse des variables numériques {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -891,7 +709,7 @@ summary(titanic$Fare)
 
 ---
 
-## Analyse croisée de variables {.smaller background-color="#4A90A4"}
+## Analyse croisée de variables {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -914,7 +732,7 @@ table(Classe = titanic$Pclass, Survécu = titanic$Survived)
 
 ---
 
-## Manipulation des données avec dplyr {.smaller background-color="#4A90A4"}
+## Manipulation des données avec dplyr {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -936,7 +754,7 @@ library(dplyr)
 
 ---
 
-## Sélectionner des colonnes {.smaller background-color="#4A90A4"}
+## Sélectionner des colonnes {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -953,7 +771,7 @@ head(titanic_simple, 3)
 
 ---
 
-## Filtrer des lignes {.smaller background-color="#4A90A4"}
+## Filtrer des lignes {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -982,7 +800,7 @@ nrow(adultes_survie)
 
 ---
 
-## Créer de nouvelles variables {.smaller background-color="#4A90A4"}
+## Créer de nouvelles variables {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1016,7 +834,7 @@ head(titanic_newvars)
 
 ---
 
-## Nettoyage de données avancé {.smaller background-color="#4A90A4"}
+## Nettoyage de données avancé {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1049,7 +867,7 @@ titanic <- titanic %>%
 
 ---
 
-## Grouper et résumer {.smaller background-color="#4A90A4"}
+## Grouper et résumer {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1071,7 +889,7 @@ titanic %>%
 
 ---
 
-## Groupements multiples {.smaller background-color="#4A90A4"}
+## Groupements multiples {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1091,7 +909,7 @@ resume_complet
 
 ---
 
-## Graphiques simples : graphiques en barres {.smaller background-color="#4A90A4"}
+## Graphiques simples : graphiques en barres {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1152,7 +970,7 @@ class(factor(titanic$classe))  # "factor"
 
 ---
 
-## Graphiques simples : graphiques en barres {.smaller background-color="#4A90A4"}
+## Graphiques simples : graphiques en barres {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1165,7 +983,7 @@ class(factor(titanic$classe))  # "factor"
 
 ---
 
-## Ajouter des couleurs et labels {.smaller background-color="#4A90A4"}
+## Ajouter des couleurs et labels {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1187,7 +1005,7 @@ ggplot(titanic, aes(x = factor(classe))) +
 
 ---
 
-## Ajouter des couleurs et labels {.smaller background-color="#4A90A4"}
+## Ajouter des couleurs et labels {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1200,7 +1018,7 @@ ggplot(titanic, aes(x = factor(classe))) +
 
 ---
 
-## Graphiques empilés : deux variables {.smaller background-color="#4A90A4"}
+## Graphiques empilés : deux variables {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1227,7 +1045,7 @@ ggplot(titanic, aes(x = factor(classe), fill = factor(survie))) +
 
 ---
 
-## Graphiques en proportions {.smaller background-color="#4A90A4"}
+## Graphiques en proportions {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1253,7 +1071,7 @@ ggplot(titanic, aes(x = factor(classe), fill = factor(survie))) +
 
 ---
 
-## Histogrammes : distribution d'une variable {.smaller background-color="#4A90A4"}
+## Histogrammes : distribution d'une variable {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1275,7 +1093,7 @@ ggplot(titanic, aes(x = Age)) +
 
 ---
 
-## Histogrammes : distribution d'une variable {.smaller background-color="#4A90A4"}
+## Histogrammes : distribution d'une variable {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1286,60 +1104,92 @@ ggplot(titanic, aes(x = Age)) +
 - `alpha = 0.7` : transparence (0 = invisible, 1 = opaque)
 :::
 
----
+# <i class="fa-solid fa-chart-column"></i> Analyse Quantitative
 
-## Nuages de points {.smaller background-color="#4A90A4"}
+## Distribution : Histogrammes {.smaller}
 
-::: {style="color: #333;"}
-
-**`geom_point()`** crée un nuage de points pour explorer les relations entre variables numériques
+::: {.columns}
+::: {.column width="50%"}
+**Objectif** : Visualiser la répartition d'une variable numérique.
 
 ```{r}
-#| code-copy: true
-#| fig-height: 4
-#| fig-align: center
-# Relation âge-prix du billet
-ggplot(titanic, aes(x = Age, y = Fare)) +
-  geom_point(alpha = 0.6) +
-  labs(
-    title = "Âge vs Prix du billet",
-    x = "Âge", 
-    y = "Prix du billet"
-  ) +
+#| fig-height: 5
+ggplot(titanic, aes(x = Age)) +
+  geom_histogram(bins = 20, fill = "#003875", color = "white") +
+  labs(title = "Âge des passagers", x = "Âge", y = "Nombre") +
   theme_minimal()
 ```
+:::
 
+::: {.column width="50%"}
+**Anatomie du code** :
+- `geom_histogram()` : l'outil de distribution.
+- `bins = 20` : ajuste la précision.
+- `fill` & `color` : l'esthétique.
+:::
 :::
 
 ---
 
-## Nuages de points avec couleurs {.smaller background-color="#4A90A4"}
+## Relation : Nuages de points {.smaller}
 
-::: {style="color: #333;"}
-
-**La couleur révèle des patterns :** les survivants avaient-ils des billets plus chers ?
-
+::: {.cell layout-align="center"}
 ```{r}
-#| code-copy: true
-#| fig-height: 4
+#| fig-height: 5
 #| fig-align: center
-# Ajouter la survie comme couleur
 ggplot(titanic, aes(x = Age, y = Fare, color = factor(survie))) +
-  geom_point(alpha = 0.6) +
-  labs(
-    title = "Âge vs Prix du billet selon la survie",
-    x = "Âge", 
-    y = "Prix du billet",
-    color = "Survécu"
-  ) +
+  geom_point(alpha = 0.6, size = 3) +
+  scale_color_manual(values = c("#C31E39", "#28a745")) +
+  labs(title = "Relation Âge vs Prix du billet", color = "Survécu") +
   theme_minimal()
 ```
-
 :::
+
+::: {.callout-tip}
+## <i class="fa-solid fa-magnifying-glass-chart"></i> Observation
+On voit clairement que les billets plus chers (en haut) ont une plus forte concentration de survivants (vert).
+:::
+
+# <i class="fa-solid fa-quote-left"></i> Analyse Qualitative
+
+## R pour le texte ? {.smaller}
+
+R n'est pas seulement pour les chiffres ! Il permet aussi d'analyser du texte (entretiens, documents, médias sociaux).
+
+**Les étapes clés :**
+1. <i class="fa-solid fa-broom"></i> **Nettoyage** : Retirer la ponctuation, les chiffres et les "mots vides" (le, la, de...).
+2. <i class="fa-solid fa-list-ol"></i> **Fréquence** : Transformer le texte en tableau de comptage.
+3. <i class="fa-solid fa-cloud"></i> **Nuage de mots** : Visualiser l'importance relative des concepts.
 
 ---
 
-## Sauvegarder notre travail {.smaller background-color="#4A90A4"}
+## Visualisation : Le nuage de mots {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**Pourquoi ?** 
+Pour identifier les thèmes dominants d'un corpus en un coup d'œil.
+
+**Le code type :**
+```{r}
+#| eval: false
+library(wordcloud)
+# Supposons un tableau 'frequences'
+wordcloud(words = frequences$mot, 
+          freq = frequences$n, 
+          min.freq = 5,
+          colors = brewer.pal(8, "Dark2"))
+```
+:::
+
+::: {.column width="50%"}
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Word_Cloud_of_R_Language.png/800px-Word_Cloud_of_R_Language.png){width="100%"}
+:::
+:::
+
+# <i class="fa-solid fa-floppy-disk"></i> Sauvegarde & Bonnes pratiques
+
+## <i class="fa-solid fa-floppy-disk"></i> Sauvegarder notre travail {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1361,7 +1211,7 @@ write.csv(resume_complet, "analyse_survie_classe_sexe.csv", row.names = FALSE)
 
 ---
 
-## Messages d'erreur : pas de panique ! {.smaller background-color="#4A90A4"}
+## <i class="fa-solid fa-triangle-exclamation"></i> Pas de panique ! {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1389,7 +1239,7 @@ mean(titanic$Age
 
 ---
 
-## Bonnes pratiques pour l'analyse {.smaller background-color="#4A90A4"}
+## Bonnes pratiques pour l'analyse {.smaller background-color="#003875"}
 
 ::: {style="color: #333;"}
 
@@ -1422,7 +1272,7 @@ titanic <- titanic %>%
 
 ---
 
-## Ce qu'on a appris aujourd'hui {.smaller}
+## <i class="fa-solid fa-graduation-cap"></i> Récapitulatif {.smaller}
 
 ::: {.callout-note}
 ## Récapitulatif
@@ -1445,7 +1295,7 @@ titanic <- titanic %>%
 
 ---
 
-## Ressources pour continuer {.smaller}
+## <i class="fa-solid fa-book-open-reader"></i> Ressources {.smaller}
 
 **Documentation et aide :**
 
@@ -1466,7 +1316,7 @@ titanic <- titanic %>%
 
 ---
 
-## Questions ? {.smaller}
+## <i class="fa-solid fa-comments-question"></i> Questions ? {.smaller}
 
 ::: {.callout-tip appearance="simple"}
 ## Merci pour votre attention !

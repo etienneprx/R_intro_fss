@@ -1,61 +1,91 @@
 /*-- scss:defaults --*/
 
-// Couleurs Université Laval
-$primary: #C31E39;
-$secondary: #003875;
-$light: #f8f9fa;
-$dark: #343a40;
+// Couleurs Université Laval & Data Science
+$ul-red: #C31E39;
+$ul-gold: #FFB81C;
+$ul-blue: #003875;
+$body-bg: #ffffff;
+$body-color: #2c3e50;
+$link-color: $ul-blue;
+$selection-bg: lighten($ul-gold, 30%);
 
-// Police
-$font-family-sans-serif: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+// Polices
+$font-family-sans-serif: "Inter", "Segoe UI", Roboto, sans-serif;
+$presentation-title-font-family: "Inter", sans-serif;
+$code-font-family: "Fira Code", monospace;
 
 /*-- scss:rules --*/
 
-// Style pour les callouts
-.callout {
-  border-left: 4px solid $primary;
-  margin: 1rem 0;
+.reveal {
+  .slides {
+    font-size: 32px;
+    font-weight: 400;
+    color: $body-color;
+  }
+
+  // Titres de slides
+  h1, h2, h3 {
+    color: $ul-blue;
+    text-transform: none;
+    font-weight: 700;
+  }
+
+  h2 {
+    border-bottom: 3px solid $ul-gold;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  // Logo en bas à droite
+  .slide-logo {
+    max-height: 60px !important;
+    max-width: 150px !important;
+  }
+
+  // Blocs de code
+  pre.code-wrapper code {
+    background: #fdfdfd;
+    color: #2c3e50;
+    border: 1px solid #edf2f7;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  // Callouts stylisés
+  .callout {
+    border-radius: 10px;
+    border-left-width: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    
+    &.callout-tip { background-color: rgba(40, 167, 69, 0.05); border-left-color: #28a745; }
+    &.callout-note { background-color: rgba(0, 123, 255, 0.05); border-left-color: #007bff; }
+    &.callout-important { background-color: rgba(220, 53, 69, 0.05); border-left-color: #dc3545; }
+  }
+
+  // Footer
+  .footer {
+    font-size: 0.5em;
+    color: #95a5a6;
+  }
 }
 
-.callout-tip {
-  border-left-color: #28a745;
-}
-
-.callout-important {
-  border-left-color: #dc3545;
-}
-
-.callout-note {
-  border-left-color: #007bff;
-}
-
-// Style pour le code
-pre {
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 0.25rem;
-}
-
-// Navigation
-.navbar {
-  background-color: $secondary !important;
-}
-
-.navbar-brand {
+// Slide de titre personnalisée
+.title-slide {
+  text-align: left !important;
+  background-image: linear-gradient(135deg, $ul-blue 0%, #001a3d 100%);
   color: white !important;
+
+  h1, h2, h3, .author, .date {
+    color: white !important;
+  }
+  
+  h1 { font-size: 2.2em; margin-bottom: 0.2em; }
+  .subtitle { color: $ul-gold !important; font-weight: 600; }
 }
 
-// Footer
-.page-footer {
-  background-color: $secondary;
-  color: white;
-  margin-top: 2rem;
-}
-
-.page-footer a {
-  color: #ccc;
-}
-
-.page-footer a:hover {
-  color: white;
+// Mise en évidence
+.highlight {
+  color: $ul-red;
+  font-weight: 600;
 }
