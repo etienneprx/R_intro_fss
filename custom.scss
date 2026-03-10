@@ -30,10 +30,27 @@ $code-font-family: "Fira Code", monospace;
     font-weight: 700;
   }
 
+  // Correction pour les fonds foncés
+  section.has-dark-background {
+    &, h1, h2, h3, p, li, ul, ol {
+      color: white !important;
+    }
+    h2 { border-bottom-color: $ul-gold; }
+    .callout { background-color: rgba(255,255,255,0.1); }
+  }
+
   h2 {
     border-bottom: 3px solid $ul-gold;
     padding-bottom: 10px;
     margin-bottom: 20px;
+  }
+
+  // Correction pour les listes
+  ul, ol {
+    margin-bottom: 1em;
+    li {
+      margin-bottom: 0.5em;
+    }
   }
 
   // Logo en bas à droite

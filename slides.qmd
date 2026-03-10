@@ -4,7 +4,6 @@ subtitle: "Formation théorique | 9h à 12h"
 author: 
   - "**Étienne Proulx** (Formateur)"
   - "Laurence-Olivier M. Foisy (Accompagnateur)"
-  - "Camille Pelletier (Accompagnatrice)"
 date: "11 mars 2026"
 lang: fr
 format:
@@ -18,6 +17,8 @@ format:
     code-fold: false
     code-summary: "Voir le code"
     code-copy: true
+    execute:
+      echo: true
     slide-number: true
     show-slide-number: all
     width: 1600
@@ -39,6 +40,7 @@ library(ggplot2)
 library(dplyr)
 library(readr)
 library(tidyverse)
+library(wordcloud)
 ```
 
 ## Bienvenue ! {.smaller}
@@ -212,7 +214,7 @@ Toujours vérifier le type de vos variables avec `class()` avant de faire des ca
 
 ---
 
-## Notre premier tableau de données
+## <i class="fa-solid fa-table"></i> Notre premier tableau de données
 
 Un **data frame** = tableau avec lignes et colonnes
 
@@ -233,7 +235,7 @@ cinema
 
 ---
 
-## Explorer un data frame
+## <i class="fa-solid fa-microscope"></i> Explorer un data frame
 
 ```{r}
 # Informations générales
@@ -245,17 +247,7 @@ names(cinema)     # noms des colonnes
 
 ---
 
-## Explorer un data frame
-
-```{r}
-# Aperçu du contenu
-head(cinema, 3)   # premiers films
-str(cinema)       # structure détaillée
-```
-
----
-
-## Accéder aux colonnes
+## <i class="fa-solid fa-columns"></i> Accéder aux colonnes
 
 ### Avec le symbole `$` (recommandé)
 
@@ -267,842 +259,171 @@ mean(cinema$note)  # note moyenne
 
 ---
 
-## Accéder aux colonnes
-### Avec les crochets `[ ]`
-
-```{r}
-cinema[, "titre"]          # par nom
-cinema[, 1]                # par position
-cinema[, c("titre", "genre")] # plusieurs colonnes
-```
-
----
-
-## Les fonctions : nos outils
+## <i class="fa-solid fa-toolbox"></i> Les fonctions : nos outils
 
 Une **fonction** fait une tâche : `fonction(argument1, argument2)`
 
 ```{r}
 # Fonctions statistiques essentielles
-mean(cinema$note)      # note moyenne
-median(cinema$note)    # note médiane
+mean(cinema$note)      # moyenne
+median(cinema$note)    # médiane
 sd(cinema$note)        # écart-type
-min(cinema$note)       # note minimale
-max(cinema$note)       # note maximale
+min(cinema$note)       # minimum
+max(cinema$note)       # maximum
 ```
 
 ---
 
-## Les fonctions : nos outils
-
-```{r}
-# Résumé complet d'une variable
-summary(cinema$note)
-```
-
-```{r}
-# Compter les occurrences
-table(cinema$genre)    # combien de films par genre ?
-```
-
----
-
-## Les packages : étendre R {.smaller}
-
-**Les packages sont comme des applications pour R**
-
-- R de base = fonctions essentielles
-- Packages = fonctions spécialisées créées par la communauté
-- Plus de 21,000 packages disponibles sur CRAN
-- Chaque package résout des problèmes spécifiques
+## <i class="fa-solid fa-box-archive"></i> Les packages : étendre R
 
 ::: {.callout-tip}
 ## Analogie
-R de base = téléphone vide  
-Packages = applications qu'on télécharge
-:::
-
----
-
-## Le Tidyverse : votre boîte à outils {.smaller}
-
-**Collection de packages pour l'analyse de données moderne**
-
-::: {.columns}
-::: {.column width="50%"}
-**Packages principaux :**
-
-- `readr` : importer des données
-- `dplyr` : manipuler des données
-- `ggplot2` : créer des graphiques
-- `tidyr` : nettoyer des données
-:::
-
-::: {.column width="50%"}
-**Avantages :**
-
-- Syntaxe cohérente et intuitive
-- Très utilisé en sciences sociales
-- Documentation excellente
-- S'installe en un seul package !
-:::
+R de base = téléphone vide. Packages = applications qu'on télécharge.
 :::
 
 ```{r}
 #| eval: false
 #| code-copy: true
-# Installer le Tidyverse (contient plusieurs packages)
+# 1. INSTALLER (une seule fois)
 install.packages("tidyverse")
-```
 
----
-
-## Installation vs Chargement {.smaller}
-
-::: {.callout-important}
-## Différence cruciale
-- `install.packages("nom")` : télécharger le package (1 seule fois)
-- `library(nom)` : activer le package (à chaque session R)
-:::
-
-**Installer des packages**
-
-```{r}
-#| eval: false
-#| code-copy: true
-# Exemples d'installation (à faire une fois)
-install.packages("tidyverse")
-install.packages("readxl")
-install.packages("janitor")
-```
-
-::: {.fragment}
-**Charger des packages**
-
-```{r}
-#| code-copy: true
-# À faire au début de chaque script
+# 2. CHARGER (à chaque nouveau script)
 library(tidyverse)
-library(readxl)
 ```
-:::
-
-::: {.callout-tip}
-## Bonne pratique
-Mettez toujours vos `library()` au début de votre script
-:::
 
 ---
 
-
-## Comprendre l'organisation de votre ordinateur {.smaller}
+## <i class="fa-solid fa-folder-tree"></i> Organisation & Dossiers
 
 ::: {.callout-important}
 ## Votre ordinateur = une grande bibliothèque
-Chaque fichier a une **adresse précise** pour le retrouver !
-:::
-
-**Exemple d'organisation :**
-```
-📁 Mon ordinateur
-  📁 Documents
-    📁 Université
-      📁 Session_Hiver2024
-        📁 Cours_R
-          📄 donnees.csv
-          📄 mon_script.R
-```
-
-**L'adresse complète (chemin) :**
-
-- Windows : `C:/Documents/Université/Session_Hiver2024/Cours_R/`
-- Mac : `/Users/votrenom/Documents/Université/Session_Hiver2024/Cours_R/`
-
----
-
-## Où travaille R en ce moment ? {.smaller}
-
-::: {.callout-tip}
-## À tester maintenant !
+Chaque fichier a une **adresse précise** (chemin) pour le retrouver !
 :::
 
 ```{r}
 #| code-copy: true
-# Où suis-je actuellement ?
-getwd()  # "get working directory" = obtenir le dossier de travail
+getwd()  # "get working directory" = Où suis-je actuellement ?
+list.files()  # Qu'est-ce qu'il y a dans ce dossier ?
 ```
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Qu'est-ce qu'il y a dans ce dossier ?
-list.files()  # lister tous les fichiers
-```
-:::
-
-**R travaille toujours dans UN dossier à la fois !**  
-C'est son "bureau" où il cherche vos fichiers par défaut.
 
 ---
 
-## Bien organiser son projet R {.smaller}
-
-::: {.callout-note}
-## Structure recommandée
-```
-📁 Mon_Projet_R/
-  📁 code/              # tous vos scripts R
-    📄 analyse.R
-    📄 graphiques.R
-  📁 data/              # tous vos fichiers CSV, Excel
-    📄 titanic.csv
-    📄 sondage.xlsx  
-  📁 graphs/            # vos graphiques exportés
-    📄 histogram_ages.png
-  📁 outputs/           # vos résultats et rapports
-    📄 resultats.csv
-```
-:::
-
-**Pourquoi c'est important ?**
-
-- Tout est au même endroit
-- Facile de retrouver ses fichiers
-- On peut partager le dossier complet à quelqu'un
-
----
-
-## Changer le dossier de travail de R {.smaller}
-
-**Méthode 1 : Avec du code**
-```{r}
-#| eval: false
-#| code-copy: true
-# Changer vers mon dossier de projet
-setwd("C:/Documents/Université/Mon_Projet_R")   # Windows
-setwd("/Users/nom/Documents/Mon_Projet_R")      # Mac
-
-# Vérifier que ça a marché
-getwd()
-```
-
-::: {.fragment}
-**Méthode 2 : Menu RStudio**
-`Session` → `Set Working Directory` → `Choose Directory...`
-:::
-
-::: {.callout-warning}
-**Attention :** Il faut refaire `setwd()` à chaque fois qu'on ouvre RStudio !
-:::
-
----
-
-## Lien entre RStudio et votre dossier {.smaller}
-
-::: {.columns}
-::: {.column width="50%"}
-**Dans RStudio :**
-
-- **Console** : `getwd()` montre où on est
-- **Panneau Files** (bas-droite) : navigue dans les dossiers
-- **Environment** : vos objets R en mémoire
-
-:::
-
-::: {.column width="50%"}
-**Sur votre ordinateur :**
-
-- **Explorateur de fichiers** (Windows) ou **Finder** (Mac)
-- Même structure de dossiers
-- Les fichiers existent vraiment !
-
-:::
-:::
-
-::: {.callout-tip}
-## Astuce
-Le panneau **Files** de RStudio montre le même contenu que `list.files()` !
-:::
-
----
-
-## Maintenant on peut charger nos données ! {.smaller}
-
-::: {.callout-success}
-**Méthode propre**
-
-1. Créez un dossier pour votre projet
-2. Mettez-y vos fichiers de données  
-3. Utilisez `setwd()` pour y aller
-4. Maintenant R trouve vos fichiers !
-:::
-
-```{r}
-#| eval: false
-#| code-copy: true
-# Étapes pratiques :
-setwd("C:/Mon_Projet_R")              # Remplacer par cotre propre chemin
-list.files()                          # voir mes dossiers : code, data, graphs...
-donnees <- read.csv("data/titanic.csv")  # charger depuis le dossier data
-```
-
-**Prochaine slide :** On va charger les vraies données du Titanic !
-
-
----
-
-## Charger de vraies données {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-Utilisons les données **Titanic** pour pratiquer !
+## <i class="fa-solid fa-file-import"></i> Charger de vraies données {.smaller background-color="#003875"}
 
 ```{r}
 #| code-copy: true
-# Charger les données Titanic
+# Charger les données Titanic depuis un dossier 'data'
 titanic <- read.csv("data/titanic.csv")
 
-# Premier coup d'œil
+# Premier coup d'œil (3 premières lignes)
 head(titanic, 3)
 ```
 
-::: {.callout-tip}
-## Téléchargez les données
-Cliquez sur ce [lien](https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv) 
-
-Attention de bien spécifier votre chemin d'accès!
-:::
-:::
-
 ---
 
-## Explorer la structure des données {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-**Toujours commencer par comprendre nos données**
+## <i class="fa-solid fa-filter"></i> Manipulation avec dplyr {.smaller background-color="#003875"}
 
 ```{r}
 #| code-copy: true
-# Informations de base
-dim(titanic)          # dimensions (lignes x colonnes)
-names(titanic)        # noms des colonnes
-nrow(titanic)         # nombre de lignes
-ncol(titanic)         # nombre de colonnes
-```
-:::
-
----
-
-## Examiner la structure détaillée {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-```{r}
-#| code-copy: true
-# Structure complète des données
-str(titanic)
-```
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Aperçu moderne avec glimpse (dplyr)
-library(dplyr)
-glimpse(titanic)
-```
-:::
-
-**Ces fonctions montrent :** types de variables, premières valeurs, dimensions
-:::
-
----
-
-## Résumé statistique des variables {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-```{r}
-#| code-copy: true
-# Résumé statistique de toutes les variables
-summary(titanic)
-```
-
-**Ce résumé nous révèle :**
-Moyennes, médianes, quartiles pour les variables numériques | Fréquences pour les variables catégorielles | Présence de valeurs manquantes (NA's)
-:::
-
----
-
-## Gérer les valeurs manquantes {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-```{r}
-#| code-copy: true
-# Compter les valeurs manquantes par colonne
-colSums(is.na(titanic))
-```
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Compter les NA dans une colonne spécifique
-sum(is.na(titanic$Age))
-
-# Voir quels passagers ont un âge manquant
-head(titanic[is.na(titanic$Age), ])
-```
-:::
-
-::: {.callout-note}
-**na.rm = TRUE** dans les fonctions statistiques ignore les valeurs manquantes
-:::
-:::
-
----
-
-## Analyse des variables individuelles {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-```{r}
-#| code-copy: true
-# Variables catégorielles : compter les occurrences
-table(titanic$Survived)    # survivants
-table(titanic$Pclass)      # classes
-table(titanic$Sex)         # sexe
-```
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# En pourcentages
-prop.table(table(titanic$Survived)) * 100
-```
-:::
-:::
-
----
-
-## Analyse des variables numériques {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-```{r}
-#| code-copy: true
-# Statistiques sur l'âge
-mean(titanic$Age, na.rm = TRUE)     # âge moyen
-median(titanic$Age, na.rm = TRUE)   # âge médian
-sd(titanic$Age, na.rm = TRUE)       # écart-type
-range(titanic$Age, na.rm = TRUE)    # min et max
-```
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Statistiques sur le prix du billet
-summary(titanic$Fare)
-```
-:::
-:::
-
----
-
-## Analyse croisée de variables {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-```{r}
-#| code-copy: true
-# Croiser deux variables catégorielles
-table(titanic$Pclass, titanic$Survived)
-```
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Ajouter les noms de lignes/colonnes pour clarté
-table(Classe = titanic$Pclass, Survécu = titanic$Survived)
-```
-:::
-
-**Ce tableau montre :** répartition des survivants selon la classe
-:::
-
----
-
-## Manipulation des données avec dplyr {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-**Le package dplyr facilite la manipulation de données**
-
-```{r}
-#| code-copy: true
-# Charger dplyr (ou tidyverse)
-library(dplyr)
-```
-
-**Fonctions principales :**
-
-- `select()` : sélectionner des colonnes
-- `filter()` : filtrer des lignes
-- `mutate()` : créer/modifier des variables
-- `group_by()` + `summarise()` : grouper et résumer
-:::
-
----
-
-## Sélectionner des colonnes {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-```{r}
-#| code-copy: true
-# Garder seulement certaines colonnes
+# SÉLECTIONNER des colonnes
 titanic_simple <- titanic %>%
   select(Survived, Pclass, Sex, Age, Fare)
 
-head(titanic_simple, 3)
-```
-
-:::
-
----
-
-## Filtrer des lignes {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-```{r}
-#| code-copy: true
-# Filtrer les passagers de première classe
+# FILTRER des lignes (ex: seulement la 1ère classe)
 premiere_classe <- titanic %>%
   filter(Pclass == 1)
-
-nrow(premiere_classe)  # combien de passagers ?
 ```
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Filtres multiples
-adultes_survie <- titanic %>%
-  filter(Age >= 18, Survived == 1)
-
-nrow(adultes_survie)
-```
-:::
-
-**Opérateurs de filtre :** `==`, `!=`, `>`, `<`, `>=`, `<=`, `%in%`
-:::
 
 ---
 
-## Créer de nouvelles variables {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
+## <i class="fa-solid fa-plus"></i> Créer de nouvelles variables {.smaller background-color="#003875"}
 
 ```{r}
 #| code-copy: true
-# Créer une variable catégorielle âge
-titanic <- titanic %>%
-  mutate(groupe_age = ifelse(Age < 18, "Enfant", "Adulte"))
-
-table(titanic$groupe_age)
-```
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Créer plusieurs variables en une fois
+#mutate() permet de créer ou modifier des colonnes
 titanic <- titanic %>%
   mutate(
-    prix_eleve = ifelse(Fare > 50, "Cher", "Abordable"),
-    taille_famille = Siblings.Spouses.Aboard + Parents.Children.Aboard + 1  # inclure le passager lui-même
+    # ifelse(CONDITION, SI_VRAI, SI_FAUX)
+    groupe_age = ifelse(Age < 18, "Enfant", "Adulte"),
+    taille_famille = Siblings.Spouses.Aboard + Parents.Children.Aboard + 1
   )
-
-# Visualiser les premières lignes des nouvelles variables
-titanic_newvars <- titanic %>%
-  select(groupe_age, prix_eleve, taille_famille)
-
-head(titanic_newvars)
 ```
-:::
-:::
 
 ---
 
-## Nettoyage de données avancé {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
+## <i class="fa-solid fa-broom"></i> Nettoyage de données avancé {.smaller background-color="#003875"}
 
 ```{r}
 #| code-copy: true
-# Stratégie pour gérer les valeurs manquantes dans la variable Age
-# Étape 1: Remplacer les NA par la médiane des âges existants
+# Gérer les valeurs manquantes (NA)
 titanic <- titanic %>%
-  mutate(Age = ifelse(is.na(Age),                    # SI l'âge est manquant (NA)
+  mutate(Age = ifelse(is.na(Age),                    # SI l'âge est manquant
                       median(Age, na.rm = TRUE),      # ALORS utiliser la médiane
-                      Age))                           # SINON garder l'âge original
+                      Age))                           # SINON garder l'original
 
-# Étape 2: Vérifier que le remplacement a fonctionné
-sum(is.na(titanic$Age))  # Compter combien de NA restent (devrait être 0)
-```
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# Standardiser les noms de colonnes (optionnel)
+# Renommer des colonnes pour plus de clarté
 titanic <- titanic %>%
-  rename(
-    survie = Survived,
-    classe = Pclass,
-    sexe = Sex
-  )
+  rename(survie = Survived, classe = Pclass, sexe = Sex)
 ```
-:::
-:::
 
 ---
 
-## Grouper et résumer {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
+## <i class="fa-solid fa-users-rectangle"></i> Grouper et résumer {.smaller background-color="#003875"}
 
 ```{r}
 #| code-copy: true
-# Statistiques par groupe
+# ANALYSE PAR GROUPE
 titanic %>%
-  group_by(classe) %>%
-  summarise(
-    nb_passagers = n(),
-    nb_survivants = sum(survie),
-    taux_survie = round(mean(survie) * 100, 1),
-    age_moyen = round(mean(Age, na.rm = TRUE), 1)
+  group_by(classe) %>%           # 1. GROUPE par classe
+  summarise(                     # 2. CALCULE des statistiques :
+    nb_passagers = n(),          #    - Compte le nombre de lignes
+    nb_survivants = sum(survie), #    - Somme les survivants
+    taux_survie = mean(survie)*100 #  - Moyenne de survie (%)
   )
 ```
 
-**La fonction `n()` compte le nombre de lignes dans chaque groupe**
-:::
-
 ---
 
-## Groupements multiples {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-```{r}
-#| code-copy: true
-# Analyser par classe ET sexe
-resume_complet <- titanic %>%
-  group_by(classe, sexe) %>%
-  summarise(
-    nb_passagers = n(),
-    taux_survie = round(mean(survie) * 100, 1)
-  )
-
-resume_complet
-```
-:::
-
----
-
-## Graphiques simples : graphiques en barres {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-**Commençons par le plus simple : compter des catégories**
+## <i class="fa-solid fa-chart-bar"></i> Graphiques simples {.smaller background-color="#003875"}
 
 ```{r}
 #| code-copy: true
 #| fig-height: 4
 #| fig-align: center
-library(ggplot2)
-
 # Nombre de passagers par classe
 ggplot(titanic, aes(x = factor(classe))) +
-  geom_bar()
+  geom_bar(fill = "#FFB81C", color = "white") + # Or ULaval
+  theme_minimal()
 ```
-:::
 
 ---
 
-## Observation: la fonction factor() : transformer en catégories {.smaller background-color="rgba(206, 87, 87, 1)"}
+## <i class="fa-solid fa-tags"></i> La fonction factor() {.smaller background-color="#003875"}
 
-::: {style="color: #333;"}
+**Pourquoi transformer en catégories ?**
 
-**Pourquoi `factor(classe)` dans nos graphiques ?**
-
-```{r}
-#| code-copy: true
-# Notre variable classe contient des chiffres
-class(titanic$classe)  # "numeric" 
-table(titanic$classe)  # 1, 2, 3
-```
-
-::: {.fragment}
-```{r}
-#| code-copy: true
-# R peut les voir comme des NOMBRES ou comme des CATÉGORIES
-# factor() dit à R : "Traite ça comme des catégories !"
-class(factor(titanic$classe))  # "factor"
-```
-:::
-:::
-
----
-
-## Observation: la fonction factor() : transformer en catégories {.smaller background-color="rgba(206, 87, 87, 1)"}
-
-::: {style="color: #333;"}
-
-**Différence visuelle dans les graphiques :**
-
-- Sans `factor()` : axe continu avec espaces bizarres
-- Avec `factor()` : barres bien distinctes pour chaque classe
+- Sans `factor()` : R croit que c'est un nombre continu (axe 1.0, 1.5, 2.0).
+- Avec `factor()` : R crée des catégories distinctes (1, 2, 3).
 
 ::: {.callout-tip}
-**Character vs Factor :** `as.character()` marche aussi, mais `factor()` nous donne plus de contrôle sur l'ordre d'affichage !
-:::
-:::
-
----
-
-## Graphiques simples : graphiques en barres {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-**Éléments de base :**
-
-- `ggplot()` : initialise le graphique avec les données
-- `aes()` : spécifie quelles variables utiliser
-- `geom_bar()` : type de graphique (barres)
+## Conseil
+Utilisez toujours `factor()` pour vos variables catégorielles avant de les mettre dans un graphique.
 :::
 
 ---
 
-## Ajouter des couleurs et labels {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
+## <i class="fa-solid fa-percent"></i> Graphiques en proportions {.smaller background-color="#003875"}
 
 ```{r}
 #| code-copy: true
 #| fig-height: 4
 #| fig-align: center
-# Même graphique, mais plus joli
-ggplot(titanic, aes(x = factor(classe))) +
-  geom_bar(fill = "steelblue", color = "white") +
-  labs(
-    title = "Répartition des passagers par classe",
-    x = "Classe", 
-    y = "Nombre de passagers"
-  ) +
-  theme_minimal()
-```
-:::
-
----
-
-## Ajouter des couleurs et labels {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-**Nouveaux éléments :**
-
-- `fill` : couleur de remplissage des barres
-- `labs()` : ajouter titres et étiquettes
-- `theme_minimal()` : style épuré
-:::
-
----
-
-## Graphiques empilés : deux variables {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-**Nouvelle technique :** `fill = factor(survie)` dans `aes()` crée des couleurs automatiques selon la survie
-
-```{r}
-#| code-copy: true
-#| fig-height: 4
-#| fig-align: center
-# Survivants par classe (barres empilées)
+# Taux de survie par classe
 ggplot(titanic, aes(x = factor(classe), fill = factor(survie))) +
-  geom_bar() +
-  labs(
-    title = "Survivants par classe sur le Titanic",
-    x = "Classe", 
-    y = "Nombre de passagers",
-    fill = "Survécu"
-  ) +
-  theme_minimal()
-
-```
-
-:::
-
----
-
-## Graphiques en proportions {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-**`position = "fill"`** transforme en proportions (0 à 1) pour comparer les taux
-
-```{r}
-#| code-copy: true
-#| fig-height: 4
-#| fig-align: center
-# Proportions plutôt que nombres absolus
-ggplot(titanic, aes(x = factor(classe), fill = factor(survie))) +
-  geom_bar(position = "fill") +
-  labs(
-    title = "Taux de survie par classe",
-    x = "Classe", 
-    y = "Proportion",
-    fill = "Survécu"
-  ) +
+  geom_bar(position = "fill") + # POSITION FILL : pour voir les pourcentages
+  labs(title = "Taux de survie par classe", x = "Classe", y = "Proportion") +
   theme_minimal()
 ```
-
-:::
-
----
-
-## Histogrammes : distribution d'une variable {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-```{r}
-#| code-copy: true
-#| fig-height: 4
-#| fig-align: center
-# Distribution des âges
-ggplot(titanic, aes(x = Age)) +
-  geom_histogram(bins = 20, fill = "lightblue", color = "white", alpha = 0.7) +
-  labs(
-    title = "Distribution des âges sur le Titanic",
-    x = "Âge", 
-    y = "Nombre de passagers"
-  ) +
-  theme_minimal()
-```
-:::
-
----
-
-## Histogrammes : distribution d'une variable {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-**Nouveaux éléments :**
-
-- `geom_histogram()` : pour variables numériques continues
-- `bins = 20` : nombre de barres
-- `alpha = 0.7` : transparence (0 = invisible, 1 = opaque)
-:::
 
 # <i class="fa-solid fa-chart-column"></i> Analyse Quantitative
 
@@ -1110,22 +431,24 @@ ggplot(titanic, aes(x = Age)) +
 
 ::: {.columns}
 ::: {.column width="50%"}
-**Objectif** : Visualiser la répartition d'une variable numérique.
-
 ```{r}
 #| fig-height: 5
+# DISTRIBUTION DE L'ÂGE
 ggplot(titanic, aes(x = Age)) +
-  geom_histogram(bins = 20, fill = "#003875", color = "white") +
+  geom_histogram(bins = 20, fill = "#003875", color = "white") + 
   labs(title = "Âge des passagers", x = "Âge", y = "Nombre") +
   theme_minimal()
 ```
 :::
 
 ::: {.column width="50%"}
+
 **Anatomie du code** :
+
 - `geom_histogram()` : l'outil de distribution.
 - `bins = 20` : ajuste la précision.
 - `fill` & `color` : l'esthétique.
+
 :::
 :::
 
@@ -1133,186 +456,136 @@ ggplot(titanic, aes(x = Age)) +
 
 ## Relation : Nuages de points {.smaller}
 
-::: {.cell layout-align="center"}
 ```{r}
 #| fig-height: 5
 #| fig-align: center
+# RELATION ENTRE DEUX VARIABLES
 ggplot(titanic, aes(x = Age, y = Fare, color = factor(survie))) +
-  geom_point(alpha = 0.6, size = 3) +
-  scale_color_manual(values = c("#C31E39", "#28a745")) +
-  labs(title = "Relation Âge vs Prix du billet", color = "Survécu") +
+  geom_point(alpha = 0.6, size = 3) + # points (alpha = transparence)
+  scale_color_manual(values = c("#C31E39", "#28a745")) + # couleurs manuelles
+  labs(title = "Relation Âge vs Prix du billet", color = "Survécu") + 
   theme_minimal()
 ```
-:::
 
-::: {.callout-tip}
-## <i class="fa-solid fa-magnifying-glass-chart"></i> Observation
-On voit clairement que les billets plus chers (en haut) ont une plus forte concentration de survivants (vert).
-:::
+---
+
+## <i class="fa-solid fa-forward-step"></i> Aller plus loin en quantitatif {.smaller}
+
+Ce que nous avons vu est la base. Voici ce que R permet de faire ensuite :
+
+- <i class="fa-solid fa-chart-line"></i> **Modélisation (Régression)** : Analyser l'effet d'une variable sur une autre (ex: OLS, logistique).
+- <i class="fa-solid fa-scissors"></i> **Inférence statistique** : Tester si vos résultats sont dus au hasard (tests de Student, Chi-deux).
+- <i class="fa-solid fa-box-open"></i> **Analyses dimensionnelles** : Réduire la complexité de vos données (Analyse en composantes principales, factorielle).
+- <i class="fa-solid fa-robot"></i> **Machine Learning** : Prédire des comportements à partir de grands jeux de données.
 
 # <i class="fa-solid fa-quote-left"></i> Analyse Qualitative
 
 ## R pour le texte ? {.smaller}
 
-R n'est pas seulement pour les chiffres ! Il permet aussi d'analyser du texte (entretiens, documents, médias sociaux).
-
 **Les étapes clés :**
-1. <i class="fa-solid fa-broom"></i> **Nettoyage** : Retirer la ponctuation, les chiffres et les "mots vides" (le, la, de...).
-2. <i class="fa-solid fa-list-ol"></i> **Fréquence** : Transformer le texte en tableau de comptage.
-3. <i class="fa-solid fa-cloud"></i> **Nuage de mots** : Visualiser l'importance relative des concepts.
+
+1. <i class="fa-solid fa-broom"></i> **Nettoyage** : Retirer la ponctuation et les "mots vides".
+2. <i class="fa-solid fa-list-ol"></i> **Fréquence** : Compter l'importance des mots.
+3. <i class="fa-solid fa-cloud"></i> **Nuage de mots** : Visualiser les concepts.
 
 ---
 
-## Visualisation : Le nuage de mots {.smaller}
+## <i class="fa-solid fa-cloud"></i> Visualisation : Le nuage de mots {.smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
-**Pourquoi ?** 
-Pour identifier les thèmes dominants d'un corpus en un coup d'œil.
-
-**Le code type :**
+**Exemple de code fonctionnel :**
 ```{r}
-#| eval: false
+#| fig-height: 6
 library(wordcloud)
-# Supposons un tableau 'frequences'
-wordcloud(words = frequences$mot, 
-          freq = frequences$n, 
-          min.freq = 5,
+mots <- c("R", "Analyse", "Données", "Sociologie", "Science Politique", 
+          "Statistiques", "Université", "Laval", "Recherche", "Tableau")
+freq <- c(100, 80, 75, 60, 55, 50, 45, 40, 35, 30)
+
+wordcloud(words = mots, freq = freq, min.freq = 1,
+          max.words = 50, random.order = FALSE, 
           colors = brewer.pal(8, "Dark2"))
 ```
 :::
 
 ::: {.column width="50%"}
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Word_Cloud_of_R_Language.png/800px-Word_Cloud_of_R_Language.png){width="100%"}
+::: {.callout-note}
+## <i class="fa-solid fa-gears"></i> Paramètres clés
+- **min.freq** : Ignore les mots trop rares (ex: moins de 5 apparitions).
+- **max.words** : Limite le nuage aux $N$ mots les plus fréquents pour éviter le désordre.
+- **random.order = FALSE** : Force les mots les plus gros au centre (plus lisible).
+- **colors** : Définit une palette (ici "Dark2" pour un look pro).
+:::
+
+::: {.callout-tip}
+## À quoi ça sert ?
+C'est un outil d'exploration rapide pour identifier les thèmes dominants d'un corpus avant de coder vos entretiens.
 :::
 :::
+:::
+
+---
+
+## <i class="fa-solid fa-forward-step"></i> Aller plus loin en qualitatif {.smaller}
+
+L'analyse textuelle avec R est un domaine en pleine explosion :
+
+- <i class="fa-solid fa-diagram-project"></i> **Topic Modeling** : Découvrir automatiquement les thèmes cachés dans des milliers de documents (LDA).
+- <i class="fa-solid fa-face-smile"></i> **Analyse de sentiment** : Classer les textes comme positifs, négatifs ou neutres.
+- <i class="fa-solid fa-brain"></i> **LLMs & Classifieurs** : Utiliser l'IA pour catégoriser des verbatim d'entretiens.
+- <i class="fa-solid fa-book-atlas"></i> **Dictionnaires** : Mesurer la présence de concepts théoriques spécifiques.
 
 # <i class="fa-solid fa-floppy-disk"></i> Sauvegarde & Bonnes pratiques
 
-## <i class="fa-solid fa-floppy-disk"></i> Sauvegarder notre travail {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
+## <i class="fa-solid fa-floppy-disk"></i> Sauvegarder votre travail {.smaller background-color="#003875"}
 
 ```{r}
 #| eval: false
 #| code-copy: true
-# Sauvegarder le dernier graphique
-ggsave("age_prix_survie.png", width = 10, height = 6)
+# 1. Sauvegarder le graphique
+ggsave("mon_graphique.png", width = 10, height = 6)
 
-# Sauvegarder des données nettoyées
+# 2. Sauvegarder les données
 write.csv(titanic, "titanic_nettoye.csv", row.names = FALSE)
-
-# Sauvegarder nos résultats d'analyse
-write.csv(resume_complet, "analyse_survie_classe_sexe.csv", row.names = FALSE)
 ```
-
-**Toujours sauvegarder :** scripts, données nettoyées, graphiques, résultats
-:::
 
 ---
 
 ## <i class="fa-solid fa-triangle-exclamation"></i> Pas de panique ! {.smaller background-color="#003875"}
 
-::: {style="color: #333;"}
-
-**Erreurs courantes et solutions :**
+**Erreurs courantes :**
 
 ```{r}
 #| eval: false
 #| code-copy: true
-# Erreur : objet non trouvé
-mean(donnees$age)
-# Error: object 'donnees' not found
-# → Vérifier le nom de l'objet
-
-# Erreur : colonne inexistante  
-titanic$ages  # au lieu de Age
-# → Utiliser names(titanic) pour voir les vraies colonnes
-
-# Erreur : parenthèse manquante
-mean(titanic$Age
-# → Vérifier que toutes les parenthèses sont fermées
+# Erreur : objet non trouvé -> Vérifier l'orthographe
+# Erreur : colonne inexistante -> Utiliser names()
+# Erreur : parenthèse manquante -> Vérifier les fermetures
 ```
 
-**Réflexes :** lire le message, vérifier l'orthographe, tester ligne par ligne
-:::
-
----
-
-## Bonnes pratiques pour l'analyse {.smaller background-color="#003875"}
-
-::: {style="color: #333;"}
-
-::: {.callout-tip}
-## Workflow recommandé
-
-1. **Explorer d'abord :** `str()`, `summary()`, `glimpse()`
-2. **Nettoyer ensuite :** gérer les NA, corriger les types
-3. **Analyser pas à pas :** une variable, puis des croisements
-4. **Visualiser pour comprendre :** graphiques simples puis complexes
-5. **Documenter et sauvegarder :** commenter le code, sauvegarder les résultats
-:::
-
-```{r}
-#| eval: false
-#| code-copy: true
-# Exemple de code bien structuré
-# 1. Chargement et exploration
-titanic <- read.csv("data/titanic.csv")
-str(titanic)
-
-# 2. Nettoyage
-titanic <- titanic %>% 
-  mutate(Age = ifelse(is.na(Age), median(Age, na.rm = TRUE), Age))
-
-# 3. Analyse et visualisation
-# ... votre analyse ...
-```
-:::
+**Réflexes :** lire le message, tester ligne par ligne, utiliser l'aide (`?`).
 
 ---
 
 ## <i class="fa-solid fa-graduation-cap"></i> Récapitulatif {.smaller}
 
 ::: {.callout-note}
-## Récapitulatif
-
-✅ Interface RStudio et console  
-✅ Objets, vecteurs et data frames  
-✅ Types de données et fonctions  
-✅ Import et exploration de données  
-✅ Analyse descriptive (moyennes, tableaux)  
-✅ Premiers graphiques avec ggplot2  
-✅ Manipulation avec dplyr (filter, select, group_by)
+## Ce que vous maîtrisez maintenant
+✅ L'interface RStudio  
+✅ La création d'objets et de vecteurs  
+✅ L'importation de données CSV  
+✅ La manipulation avec **dplyr**  
+✅ La visualisation avec **ggplot2**  
+✅ Les bases de l'analyse textuelle
 :::
-
-**Vous pouvez maintenant :**
-
-- Charger des données
-- Les explorer et les résumer
-- Créer des graphiques de base
-- Faire des analyses descriptives simples
 
 ---
 
 ## <i class="fa-solid fa-book-open-reader"></i> Ressources {.smaller}
 
-**Documentation et aide :**
-
-- `?fonction` dans R (ex: `?mean`)
-- [R Documentation](https://www.rdocumentation.org/)
-- [RStudio Cheatsheets](https://posit.co/resources/cheatsheets/)
-
-**Apprentissage :**
-
-- [swirl](https://swirlstats.com/) - apprendre R dans R
-- [R for Data Science](https://r4ds.hadley.nz/) (gratuit en ligne)
-- ChatGPT pour déboguer vos erreurs !
-
-**Communauté :**
-
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/r)
-- [RStudio Community](https://community.rstudio.com/)
+- <i class="fa-solid fa-book"></i> [R for Data Science](https://r4ds.hadley.nz/)
+- <i class="fa-solid fa-lightbulb"></i> [RStudio Cheatsheets](https://posit.co/resources/cheatsheets/)
+- <i class="fa-solid fa-comments"></i> IA générative (pour déboguer !)
 
 ---
 
@@ -1320,11 +593,7 @@ titanic <- titanic %>%
 
 ::: {.callout-tip appearance="simple"}
 ## Merci pour votre attention !
-
-**Contact :** etienne.proulx.2@ulaval.ca
-
-**Tous les codes sont copiables depuis cette présentation**
+**Contact :** etienne.proulx.2@ulaval.ca  
 :::
 
-
-**Prochaines étapes :** Continuez avec vos propres données et n'hésitez pas à expérimenter !
+> **Pratiquez, expérimentez, et n'ayez pas peur des erreurs !**

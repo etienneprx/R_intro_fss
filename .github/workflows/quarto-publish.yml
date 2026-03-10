@@ -24,7 +24,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          install.packages(c("rmarkdown", "readr", "dplyr", "ggplot2", "knitr", "tidyverse"))
+          install.packages(c("rmarkdown", "readr", "dplyr", "ggplot2", "knitr", "tidyverse", "wordcloud"))
         shell: Rscript {0}
 
       - name: Publish to GitHub Pages
