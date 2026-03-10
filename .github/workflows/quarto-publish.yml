@@ -24,11 +24,12 @@ jobs:
 
       - name: Install R packages
         run: |
-          install.packages(c("rmarkdown", "readr", "dplyr", "ggplot2", "knitr"))
+          install.packages(c("rmarkdown", "readr", "dplyr", "ggplot2", "knitr", "tidyverse"))
         shell: Rscript {0}
 
       - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
