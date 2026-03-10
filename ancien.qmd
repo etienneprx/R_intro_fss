@@ -9,7 +9,7 @@ format:
     mermaid: 
       theme: dark
     theme: simple
-    logo: https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Ulaval_Shield.svg/800px-Ulaval_Shield.svg.png
+    logo: images/ulaval_logo.svg
     footer: "[CAPP](https://www.capp.ulaval.ca)"
     transition: slide
     transition-speed: fast

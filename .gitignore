@@ -32,7 +32,6 @@ Thumbs.db
 
 # Output files (keep docs/ for GitHub Pages)
 # docs/ is needed for GitHub Pages deployment
-
 # R packages
 *.tar.gz
 
@@ -46,5 +45,12 @@ Thumbs.db
 *.pdf
 !assets/*.png
 !assets/*.jpg
-!docs/images/*.png
-!docs/images/*.jpg
+!images/*.png
+!images/*.jpg
+!images/*.svg
+!images/*.gif
+!docs/**/*.png
+!docs/**/*.jpg
+!docs/**/*.svg
+!_freeze/**/*.png
+!_freeze/**/*.jpg
