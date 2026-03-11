@@ -829,75 +829,199 @@ C’est votre fenêtre sur le monde. On y voit nos dossiers et nos résultats.</
 </div>
 </div>
 </section>
-<section id="manipulation-avec-dplyr" class="slide level2 smaller" data-background-color="#003875">
-<h2><i class="fa-solid fa-filter"></i> Manipulation avec dplyr</h2>
+<section id="la-grammaire-dplyr" class="slide level2 smaller" data-background-color="#003875">
+<h2><i class="fa-solid fa-screwdriver-wrench"></i> La grammaire dplyr</h2>
+<p><strong>dplyr</strong> est construit sur une idée simple : chaque action est un <strong>verbe</strong>.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="les-6-verbes-dor">Les 6 verbes d’or :</h3>
+<ul>
+<li><code>select()</code> : Choisir des colonnes</li>
+<li><code>filter()</code> : Choisir des lignes</li>
+<li><code>mutate()</code> : Créer/modifier des colonnes</li>
+<li><code>arrange()</code> : Trier les lignes</li>
+<li><code>summarise()</code> : Résumer les données</li>
+<li><code>group_by()</code> : Créer des groupes</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="le-pipe-ctrlmajm">Le Pipe <code>%&gt;%</code> (Ctrl+Maj+M)</h3>
+<p>C’est le connecteur universel. Il signifie : <strong>“Prend ce qui est à gauche et passe-le comme premier argument à la fonction à droite.”</strong></p>
+<p><em>Analogie :</em> <code>Pâte %&gt;% Étaler() %&gt;% Garnir() %&gt;% Cuire()</code></p>
+</div></div>
+</section>
+<section id="select-lentonnoir-à-colonnes" class="slide level2 smaller" data-background-color="#003875">
+<h2><i class="fa-solid fa-columns"></i> select() : L’entonnoir à colonnes</h2>
+<p>On l’utilise pour ne garder que les variables qui nous intéressent.</p>
 <div class="cell" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a><span class="co"># SÉLECTIONNER des colonnes</span></span>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a><span class="co"># Garder seulement quelques colonnes</span></span>
 <span id="cb73-2"><a></a>titanic_simple <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
-<span id="cb73-3"><a></a>  <span class="fu">select</span>(Survived, Pclass, Sex, Age, Fare)</span>
+<span id="cb73-3"><a></a>  <span class="fu">select</span>(Survived, Pclass, Sex, Age)</span>
 <span id="cb73-4"><a></a></span>
-<span id="cb73-5"><a></a><span class="co"># FILTRER des lignes (ex: seulement la 1ère classe)</span></span>
-<span id="cb73-6"><a></a>premiere_classe <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
-<span id="cb73-7"><a></a>  <span class="fu">filter</span>(Pclass <span class="sc">==</span> <span class="dv">1</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb73-5"><a></a><span class="co"># Exclure une colonne précise avec le signe moins (-)</span></span>
+<span id="cb73-6"><a></a>titanic_sans_nom <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
+<span id="cb73-7"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>Name)</span>
+<span id="cb73-8"><a></a></span>
+<span id="cb73-9"><a></a><span class="co"># Sélectionner une plage de colonnes</span></span>
+<span id="cb73-10"><a></a><span class="co"># titanic %&gt;% select(Survived:Age)</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Astuce</strong></p>
+</div>
+<div class="callout-content">
+<p><code>select()</code> permet aussi de réordonner vos colonnes ! Les colonnes citées en premier apparaîtront à gauche.</p>
+</div>
+</div>
 </div>
 </section>
-<section id="créer-de-nouvelles-variables" class="slide level2 smaller" data-background-color="#003875">
-<h2><i class="fa-solid fa-plus"></i> Créer de nouvelles variables</h2>
+<section id="filter-le-tamis-à-données" class="slide level2 smaller" data-background-color="#003875">
+<h2><i class="fa-solid fa-filter"></i> filter() : Le tamis à données</h2>
+<p>On l’utilise pour extraire des sous-ensembles de lignes selon des critères.</p>
 <div class="cell" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a></a><span class="co">#mutate() permet de créer ou modifier des colonnes</span></span>
-<span id="cb74-2"><a></a>titanic <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
-<span id="cb74-3"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb74-4"><a></a>    <span class="co"># ifelse(CONDITION, SI_VRAI, SI_FAUX)</span></span>
-<span id="cb74-5"><a></a>    <span class="at">groupe_age =</span> <span class="fu">ifelse</span>(Age <span class="sc">&lt;</span> <span class="dv">18</span>, <span class="st">"Enfant"</span>, <span class="st">"Adulte"</span>),</span>
-<span id="cb74-6"><a></a>    <span class="at">taille_famille =</span> Siblings.Spouses.Aboard <span class="sc">+</span> Parents.Children.Aboard <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb74-7"><a></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a></a><span class="co"># Un seul critère : les femmes</span></span>
+<span id="cb74-2"><a></a>femmes <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
+<span id="cb74-3"><a></a>  <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb74-4"><a></a></span>
+<span id="cb74-5"><a></a><span class="co"># Critères multiples (ET) : les femmes de 1ère classe</span></span>
+<span id="cb74-6"><a></a>femmes_1ere <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
+<span id="cb74-7"><a></a>  <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="st">"female"</span>, Pclass <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb74-8"><a></a></span>
+<span id="cb74-9"><a></a><span class="co"># Critères multiples (OU) : 1ère classe OU 2e classe</span></span>
+<span id="cb74-10"><a></a>classes_sup <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
+<span id="cb74-11"><a></a>  <span class="fu">filter</span>(Pclass <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> Pclass <span class="sc">==</span> <span class="dv">2</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Attention</strong></p>
+</div>
+<div class="callout-content">
+<p>Utilisez toujours le double égal <code>==</code> pour comparer (tester l’égalité) et non un seul <code>=</code> !</p>
+</div>
+</div>
 </div>
 </section>
-<section id="nettoyage-de-données-avancé" class="slide level2 smaller" data-background-color="#003875">
-<h2><i class="fa-solid fa-broom"></i> Nettoyage de données avancé</h2>
+<section id="arrange-lorganisateur" class="slide level2 smaller" data-background-color="#003875">
+<h2><i class="fa-solid fa-arrow-down-wide-short"></i> arrange() : L’organisateur</h2>
+<p>Permet de trier votre tableau selon une ou plusieurs variables.</p>
 <div class="cell" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a><span class="co"># Gérer les valeurs manquantes (NA)</span></span>
-<span id="cb75-2"><a></a>titanic <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
-<span id="cb75-3"><a></a>  <span class="fu">mutate</span>(<span class="at">Age =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(Age),                    <span class="co"># SI l'âge est manquant</span></span>
-<span id="cb75-4"><a></a>                      <span class="fu">median</span>(Age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),      <span class="co"># ALORS utiliser la médiane</span></span>
-<span id="cb75-5"><a></a>                      Age))                           <span class="co"># SINON garder l'original</span></span>
-<span id="cb75-6"><a></a></span>
-<span id="cb75-7"><a></a><span class="co"># Renommer des colonnes pour plus de clarté</span></span>
-<span id="cb75-8"><a></a>titanic <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
-<span id="cb75-9"><a></a>  <span class="fu">rename</span>(<span class="at">survie =</span> Survived, <span class="at">classe =</span> Pclass, <span class="at">sexe =</span> Sex)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a><span class="co"># Trier par âge (du plus jeune au plus vieux)</span></span>
+<span id="cb75-2"><a></a>titanic_age <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
+<span id="cb75-3"><a></a>  <span class="fu">arrange</span>(Age)</span>
+<span id="cb75-4"><a></a></span>
+<span id="cb75-5"><a></a><span class="co"># Trier par prix du billet (du plus CHER au moins cher)</span></span>
+<span id="cb75-6"><a></a>titanic_prix <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
+<span id="cb75-7"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Fare))</span>
+<span id="cb75-8"><a></a></span>
+<span id="cb75-9"><a></a><span class="co"># Trier par classe, puis par âge</span></span>
+<span id="cb75-10"><a></a>titanic_multi <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
+<span id="cb75-11"><a></a>  <span class="fu">arrange</span>(Pclass, Age)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="grouper-et-résumer" class="slide level2 smaller" data-background-color="#003875">
-<h2><i class="fa-solid fa-users-rectangle"></i> Grouper et résumer</h2>
+<section id="mutate-la-boîte-à-outils" class="slide level2 smaller" data-background-color="#003875">
+<h2><i class="fa-solid fa-plus"></i> mutate() : La boîte à outils</h2>
+<p>Sert à créer de nouvelles colonnes basées sur les existantes ou à modifier des colonnes.</p>
 <div class="cell" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a></a><span class="co"># ANALYSE PAR GROUPE</span></span>
-<span id="cb76-2"><a></a>titanic <span class="sc">%&gt;%</span></span>
-<span id="cb76-3"><a></a>  <span class="fu">group_by</span>(classe) <span class="sc">%&gt;%</span>           <span class="co"># 1. GROUPE par classe</span></span>
-<span id="cb76-4"><a></a>  <span class="fu">summarise</span>(                     <span class="co"># 2. CALCULE des statistiques :</span></span>
-<span id="cb76-5"><a></a>    <span class="at">nb_passagers =</span> <span class="fu">n</span>(),          <span class="co">#    - Compte le nombre de lignes</span></span>
-<span id="cb76-6"><a></a>    <span class="at">nb_survivants =</span> <span class="fu">sum</span>(survie), <span class="co">#    - Somme les survivants</span></span>
-<span id="cb76-7"><a></a>    <span class="at">taux_survie =</span> <span class="fu">mean</span>(survie)<span class="sc">*</span><span class="dv">100</span> <span class="co">#  - Moyenne de survie (%)</span></span>
-<span id="cb76-8"><a></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a></a>titanic <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
+<span id="cb76-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb76-3"><a></a>    <span class="co"># 1. Créer une variable binaire enfant/adulte</span></span>
+<span id="cb76-4"><a></a>    <span class="at">est_enfant =</span> <span class="fu">ifelse</span>(Age <span class="sc">&lt;</span> <span class="dv">18</span>, <span class="st">"Enfant"</span>, <span class="st">"Adulte"</span>),</span>
+<span id="cb76-5"><a></a>    </span>
+<span id="cb76-6"><a></a>    <span class="co"># 2. Calculer la taille de la famille (soi-même + frères/sœurs + parents/enfants)</span></span>
+<span id="cb76-7"><a></a>    <span class="at">taille_famille =</span> Siblings.Spouses.Aboard <span class="sc">+</span> Parents.Children.Aboard <span class="sc">+</span> <span class="dv">1</span>,</span>
+<span id="cb76-8"><a></a>    </span>
+<span id="cb76-9"><a></a>    <span class="co"># 3. Convertir le prix en Dollars constants (exemple fictif)</span></span>
+<span id="cb76-10"><a></a>    <span class="at">fare_ajuste =</span> Fare <span class="sc">*</span> <span class="fl">1.2</span></span>
+<span id="cb76-11"><a></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="rename-pour-plus-de-clarté" class="slide level2 smaller" data-background-color="#003875">
+<h2><i class="fa-solid fa-pen-to-square"></i> rename() : Pour plus de clarté</h2>
+<p>Parce que les noms de colonnes originaux sont parfois cryptiques ou mal formatés.</p>
+<div class="cell" data-code-copy="true">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a></a><span class="co"># rename(NOUVEAU_NOM = ANCIEN_NOM)</span></span>
+<span id="cb77-2"><a></a>titanic <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
+<span id="cb77-3"><a></a>  <span class="fu">rename</span>(</span>
+<span id="cb77-4"><a></a>    <span class="at">survie =</span> Survived,</span>
+<span id="cb77-5"><a></a>    <span class="at">classe =</span> Pclass,</span>
+<span id="cb77-6"><a></a>    <span class="at">sexe =</span> Sex,</span>
+<span id="cb77-7"><a></a>    <span class="at">age =</span> Age,</span>
+<span id="cb77-8"><a></a>    <span class="at">prix =</span> Fare</span>
+<span id="cb77-9"><a></a>  )</span>
+<span id="cb77-10"><a></a></span>
+<span id="cb77-11"><a></a><span class="fu">names</span>(titanic)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 4
-  classe nb_passagers nb_survivants taux_survie
-   &lt;int&gt;        &lt;int&gt;         &lt;int&gt;       &lt;dbl&gt;
-1      1          216           136        63.0
-2      2          184            87        47.3
-3      3          487           119        24.4</code></pre>
+<pre><code> [1] "survie"                  "classe"                 
+ [3] "Name"                    "sexe"                   
+ [5] "age"                     "Siblings.Spouses.Aboard"
+ [7] "Parents.Children.Aboard" "prix"                   
+ [9] "est_enfant"              "taille_famille"         
+[11] "fare_ajuste"            </code></pre>
+</div>
+</div>
+</section>
+<section id="group_by-summarise" class="slide level2 smaller" data-background-color="#003875">
+<h2><i class="fa-solid fa-users-rectangle"></i> group_by() + summarise()</h2>
+<p>C’est la puissance ultime de <strong>dplyr</strong>. On découpe, on calcule, on recolle.</p>
+<div class="cell" data-code-copy="true">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a><span class="co"># Quelle est la survie moyenne par sexe et par classe ?</span></span>
+<span id="cb79-2"><a></a>statistiques_titanic <span class="ot">&lt;-</span> titanic <span class="sc">%&gt;%</span></span>
+<span id="cb79-3"><a></a>  <span class="fu">group_by</span>(sexe, classe) <span class="sc">%&gt;%</span></span>
+<span id="cb79-4"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb79-5"><a></a>    <span class="at">nb_passagers =</span> <span class="fu">n</span>(),</span>
+<span id="cb79-6"><a></a>    <span class="at">age_moyen =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb79-7"><a></a>    <span class="at">taux_survie =</span> <span class="fu">mean</span>(survie) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb79-8"><a></a>  )</span>
+<span id="cb79-9"><a></a></span>
+<span id="cb79-10"><a></a>statistiques_titanic</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+# Groups:   sexe [2]
+  sexe   classe nb_passagers age_moyen taux_survie
+  &lt;chr&gt;   &lt;int&gt;        &lt;int&gt;     &lt;dbl&gt;       &lt;dbl&gt;
+1 female      1           94      35.3        96.8
+2 female      2           76      29.0        92.1
+3 female      3          144      22.1        50  
+4 male        1          122      41.5        36.9
+5 male        2          108      30.5        15.7
+6 male        3          343      26.5        13.7</code></pre>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Logique Split-Apply-Combine</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><strong>Split</strong> : On divise les données en groupes (ex: Hommes vs Femmes).</li>
+<li><strong>Apply</strong> : On applique un calcul sur chaque groupe (ex: moyenne).</li>
+<li><strong>Combine</strong> : On rassemble les résultats dans un nouveau tableau.</li>
+</ol>
+</div>
 </div>
 </div>
 </section>
 <section id="graphiques-simples" class="slide level2 smaller" data-background-color="#003875">
 <h2><i class="fa-solid fa-chart-bar"></i> Graphiques simples</h2>
 <div class="cell" data-layout-align="center" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a><span class="co"># Nombre de passagers par classe</span></span>
-<span id="cb78-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(classe))) <span class="sc">+</span></span>
-<span id="cb78-3"><a></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"#FFB81C"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span> <span class="co"># Or ULaval</span></span>
-<span id="cb78-4"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="co"># Nombre de passagers par classe</span></span>
+<span id="cb81-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(classe))) <span class="sc">+</span></span>
+<span id="cb81-3"><a></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"#FFB81C"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span> <span class="co"># Or ULaval</span></span>
+<span id="cb81-4"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="la-fonction-factor" class="slide level2 smaller" data-background-color="#003875">
 <h2><i class="fa-solid fa-tags"></i> La fonction factor()</h2>
 <p><strong>Pourquoi transformer en catégories ?</strong></p>
@@ -922,14 +1046,14 @@ C’est votre fenêtre sur le monde. On y voit nos dossiers et nos résultats.</
 <section id="graphiques-en-proportions" class="slide level2 smaller" data-background-color="#003875">
 <h2><i class="fa-solid fa-percent"></i> Graphiques en proportions</h2>
 <div class="cell" data-layout-align="center" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a><span class="co"># Taux de survie par classe</span></span>
-<span id="cb79-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(classe), <span class="at">fill =</span> <span class="fu">factor</span>(survie))) <span class="sc">+</span></span>
-<span id="cb79-3"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span> <span class="co"># POSITION FILL : pour voir les pourcentages</span></span>
-<span id="cb79-4"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Taux de survie par classe"</span>, <span class="at">x =</span> <span class="st">"Classe"</span>, <span class="at">y =</span> <span class="st">"Proportion"</span>) <span class="sc">+</span></span>
-<span id="cb79-5"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a><span class="co"># Taux de survie par classe</span></span>
+<span id="cb82-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(classe), <span class="at">fill =</span> <span class="fu">factor</span>(survie))) <span class="sc">+</span></span>
+<span id="cb82-3"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span> <span class="co"># POSITION FILL : pour voir les pourcentages</span></span>
+<span id="cb82-4"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Taux de survie par classe"</span>, <span class="at">x =</span> <span class="st">"Classe"</span>, <span class="at">y =</span> <span class="st">"Proportion"</span>) <span class="sc">+</span></span>
+<span id="cb82-5"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
 <section>
 <section id="analyse-quantitative" class="title-slide slide level1 center">
 <h1><i class="fa-solid fa-chart-column"></i> Analyse Quantitative</h1>
@@ -940,15 +1064,15 @@ C’est votre fenêtre sur le monde. On y voit nos dossiers et nos résultats.</
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a><span class="co"># DISTRIBUTION DE L'ÂGE</span></span>
-<span id="cb80-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> Age)) <span class="sc">+</span></span>
-<span id="cb80-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>, <span class="at">fill =</span> <span class="st">"#003875"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span> </span>
-<span id="cb80-4"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Âge des passagers"</span>, <span class="at">x =</span> <span class="st">"Âge"</span>, <span class="at">y =</span> <span class="st">"Nombre"</span>) <span class="sc">+</span></span>
-<span id="cb80-5"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a><span class="co"># DISTRIBUTION DE L'ÂGE</span></span>
+<span id="cb83-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> age)) <span class="sc">+</span></span>
+<span id="cb83-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>, <span class="at">fill =</span> <span class="st">"#003875"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span> </span>
+<span id="cb83-4"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Âge des passagers"</span>, <span class="at">x =</span> <span class="st">"Âge"</span>, <span class="at">y =</span> <span class="st">"Nombre"</span>) <span class="sc">+</span></span>
+<span id="cb83-5"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-24-1.png" width="960"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -965,15 +1089,15 @@ C’est votre fenêtre sur le monde. On y voit nos dossiers et nos résultats.</
 <section id="relation-nuages-de-points" class="slide level2 smaller">
 <h2>Relation : Nuages de points</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="co"># RELATION ENTRE DEUX VARIABLES</span></span>
-<span id="cb81-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> Fare, <span class="at">color =</span> <span class="fu">factor</span>(survie))) <span class="sc">+</span></span>
-<span id="cb81-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> <span class="co"># points (alpha = transparence)</span></span>
-<span id="cb81-4"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#C31E39"</span>, <span class="st">"#28a745"</span>)) <span class="sc">+</span> <span class="co"># couleurs manuelles</span></span>
-<span id="cb81-5"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relation Âge vs Prix du billet"</span>, <span class="at">color =</span> <span class="st">"Survécu"</span>) <span class="sc">+</span> </span>
-<span id="cb81-6"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a></a><span class="co"># RELATION ENTRE DEUX VARIABLES</span></span>
+<span id="cb84-2"><a></a><span class="fu">ggplot</span>(titanic, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> prix, <span class="at">color =</span> <span class="fu">factor</span>(survie))) <span class="sc">+</span></span>
+<span id="cb84-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> <span class="co"># points (alpha = transparence)</span></span>
+<span id="cb84-4"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#C31E39"</span>, <span class="st">"#28a745"</span>)) <span class="sc">+</span> <span class="co"># couleurs manuelles</span></span>
+<span id="cb84-5"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relation Âge vs Prix du billet"</span>, <span class="at">color =</span> <span class="st">"Survécu"</span>, <span class="at">x =</span> <span class="st">"Âge"</span>, <span class="at">y =</span> <span class="st">"Prix ($)"</span>) <span class="sc">+</span> </span>
+<span id="cb84-6"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="aller-plus-loin-en-quantitatif" class="slide level2 smaller">
 <h2><i class="fa-solid fa-forward-step"></i> Aller plus loin en quantitatif</h2>
 <p>Ce que nous avons vu est la base. Voici ce que R permet de faire ensuite :</p>
@@ -1004,18 +1128,18 @@ C’est votre fenêtre sur le monde. On y voit nos dossiers et nos résultats.</
 <div class="column" style="width:50%;">
 <p><strong>Exemple de code fonctionnel :</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a><span class="fu">library</span>(wordcloud)</span>
-<span id="cb82-2"><a></a>mots <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"R"</span>, <span class="st">"Analyse"</span>, <span class="st">"Données"</span>, <span class="st">"Sociologie"</span>, <span class="st">"Science Politique"</span>, </span>
-<span id="cb82-3"><a></a>          <span class="st">"Statistiques"</span>, <span class="st">"Université"</span>, <span class="st">"Laval"</span>, <span class="st">"Recherche"</span>, <span class="st">"Tableau"</span>)</span>
-<span id="cb82-4"><a></a>freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">80</span>, <span class="dv">75</span>, <span class="dv">60</span>, <span class="dv">55</span>, <span class="dv">50</span>, <span class="dv">45</span>, <span class="dv">40</span>, <span class="dv">35</span>, <span class="dv">30</span>)</span>
-<span id="cb82-5"><a></a></span>
-<span id="cb82-6"><a></a><span class="fu">wordcloud</span>(<span class="at">words =</span> mots, <span class="at">freq =</span> freq, <span class="at">min.freq =</span> <span class="dv">1</span>,</span>
-<span id="cb82-7"><a></a>          <span class="at">max.words =</span> <span class="dv">50</span>, <span class="at">random.order =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb82-8"><a></a>          <span class="at">colors =</span> <span class="fu">brewer.pal</span>(<span class="dv">8</span>, <span class="st">"Dark2"</span>))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a></a><span class="fu">library</span>(wordcloud)</span>
+<span id="cb85-2"><a></a>mots <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"R"</span>, <span class="st">"Analyse"</span>, <span class="st">"Données"</span>, <span class="st">"Sociologie"</span>, <span class="st">"Science Politique"</span>, </span>
+<span id="cb85-3"><a></a>          <span class="st">"Statistiques"</span>, <span class="st">"Université"</span>, <span class="st">"Laval"</span>, <span class="st">"Recherche"</span>, <span class="st">"Tableau"</span>)</span>
+<span id="cb85-4"><a></a>freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">80</span>, <span class="dv">75</span>, <span class="dv">60</span>, <span class="dv">55</span>, <span class="dv">50</span>, <span class="dv">45</span>, <span class="dv">40</span>, <span class="dv">35</span>, <span class="dv">30</span>)</span>
+<span id="cb85-5"><a></a></span>
+<span id="cb85-6"><a></a><span class="fu">wordcloud</span>(<span class="at">words =</span> mots, <span class="at">freq =</span> freq, <span class="at">min.freq =</span> <span class="dv">1</span>,</span>
+<span id="cb85-7"><a></a>          <span class="at">max.words =</span> <span class="dv">50</span>, <span class="at">random.order =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb85-8"><a></a>          <span class="at">colors =</span> <span class="fu">brewer.pal</span>(<span class="dv">8</span>, <span class="st">"Dark2"</span>))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-28-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1072,20 +1196,20 @@ C’est votre fenêtre sur le monde. On y voit nos dossiers et nos résultats.</
 <section id="sauvegarder-votre-travail" class="slide level2 smaller" data-background-color="#003875">
 <h2><i class="fa-solid fa-floppy-disk"></i> Sauvegarder votre travail</h2>
 <div class="cell" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a><span class="co"># 1. Sauvegarder le graphique</span></span>
-<span id="cb83-2"><a></a><span class="fu">ggsave</span>(<span class="st">"mon_graphique.png"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
-<span id="cb83-3"><a></a></span>
-<span id="cb83-4"><a></a><span class="co"># 2. Sauvegarder les données</span></span>
-<span id="cb83-5"><a></a><span class="fu">write.csv</span>(titanic, <span class="st">"titanic_nettoye.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a></a><span class="co"># 1. Sauvegarder le graphique</span></span>
+<span id="cb86-2"><a></a><span class="fu">ggsave</span>(<span class="st">"mon_graphique.png"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb86-3"><a></a></span>
+<span id="cb86-4"><a></a><span class="co"># 2. Sauvegarder les données</span></span>
+<span id="cb86-5"><a></a><span class="fu">write.csv</span>(titanic, <span class="st">"titanic_nettoye.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="pas-de-panique" class="slide level2 smaller" data-background-color="#003875">
 <h2><i class="fa-solid fa-triangle-exclamation"></i> Pas de panique !</h2>
 <p><strong>Erreurs courantes :</strong></p>
 <div class="cell" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a></a><span class="co"># Erreur : objet non trouvé -&gt; Vérifier l'orthographe</span></span>
-<span id="cb84-2"><a></a><span class="co"># Erreur : colonne inexistante -&gt; Utiliser names()</span></span>
-<span id="cb84-3"><a></a><span class="co"># Erreur : parenthèse manquante -&gt; Vérifier les fermetures</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a></a><span class="co"># Erreur : objet non trouvé -&gt; Vérifier l'orthographe</span></span>
+<span id="cb87-2"><a></a><span class="co"># Erreur : colonne inexistante -&gt; Utiliser names()</span></span>
+<span id="cb87-3"><a></a><span class="co"># Erreur : parenthèse manquante -&gt; Vérifier les fermetures</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Réflexes :</strong> lire le message, tester ligne par ligne, utiliser l’aide (<code>?</code>).</p>
 </section>

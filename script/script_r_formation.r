@@ -79,10 +79,13 @@ mean(cinema$note)
 # titanic <- read.csv("data/titanic.csv")
 titanic <- read.csv("https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv")
 
+
+titanic %>%
+  filter(Survived == 1, Sex == "female", Pclass == 1)
 # Nettoyage avec dplyr
 titanic <- titanic %>%
   # 1. Gérer les valeurs manquantes (NA)
-  mutate(Age = ifelse(is.na(Age), median(Age, na.rm = TRUE), Age)) %>%
+  mutate(Age = ifelse(Age = NA, median(Age, na.rm = TRUE), Age)) %>%
   # 2. Renommer pour la clarté
   rename(survie = Survived, classe = Pclass, sexe = Sex) %>%
   # 3. Créer de nouvelles variables

@@ -760,14 +760,14 @@
     "href": "slides.html#distribution-histogrammes",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Distribution : Histogrammes",
-    "text": "Distribution : Histogrammes\n\n\n\n# DISTRIBUTION DE L'ÂGE\nggplot(titanic, aes(x = Age)) +\n  geom_histogram(bins = 20, fill = \"#003875\", color = \"white\") + \n  labs(title = \"Âge des passagers\", x = \"Âge\", y = \"Nombre\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nAnatomie du code :\n\ngeom_histogram() : l’outil de distribution.\nbins = 20 : ajuste la précision.\nfill & color : l’esthétique."
+    "text": "Distribution : Histogrammes\n\n\n\n# DISTRIBUTION DE L'ÂGE\nggplot(titanic, aes(x = age)) +\n  geom_histogram(bins = 20, fill = \"#003875\", color = \"white\") + \n  labs(title = \"Âge des passagers\", x = \"Âge\", y = \"Nombre\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nAnatomie du code :\n\ngeom_histogram() : l’outil de distribution.\nbins = 20 : ajuste la précision.\nfill & color : l’esthétique."
   },
   {
     "objectID": "slides.html#relation-nuages-de-points",
     "href": "slides.html#relation-nuages-de-points",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Relation : Nuages de points",
-    "text": "Relation : Nuages de points\n\n# RELATION ENTRE DEUX VARIABLES\nggplot(titanic, aes(x = Age, y = Fare, color = factor(survie))) +\n  geom_point(alpha = 0.6, size = 3) + # points (alpha = transparence)\n  scale_color_manual(values = c(\"#C31E39\", \"#28a745\")) + # couleurs manuelles\n  labs(title = \"Relation Âge vs Prix du billet\", color = \"Survécu\") + \n  theme_minimal()"
+    "text": "Relation : Nuages de points\n\n# RELATION ENTRE DEUX VARIABLES\nggplot(titanic, aes(x = age, y = prix, color = factor(survie))) +\n  geom_point(alpha = 0.6, size = 3) + # points (alpha = transparence)\n  scale_color_manual(values = c(\"#C31E39\", \"#28a745\")) + # couleurs manuelles\n  labs(title = \"Relation Âge vs Prix du billet\", color = \"Survécu\", x = \"Âge\", y = \"Prix ($)\") + \n  theme_minimal()"
   },
   {
     "objectID": "slides.html#r-pour-le-texte",
@@ -1251,5 +1251,54 @@
     "title": "Introduction à R",
     "section": "Conclusion",
     "text": "Conclusion"
+  },
+  {
+    "objectID": "slides.html#la-grammaire-dplyr",
+    "href": "slides.html#la-grammaire-dplyr",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": " La grammaire dplyr",
+    "text": "La grammaire dplyr\ndplyr est construit sur une idée simple : chaque action est un verbe.\n\n\nLes 6 verbes d’or :\n\nselect() : Choisir des colonnes\nfilter() : Choisir des lignes\nmutate() : Créer/modifier des colonnes\narrange() : Trier les lignes\nsummarise() : Résumer les données\ngroup_by() : Créer des groupes\n\n\nLe Pipe %&gt;% (Ctrl+Maj+M)\nC’est le connecteur universel. Il signifie : “Prend ce qui est à gauche et passe-le comme premier argument à la fonction à droite.”\nAnalogie : Pâte %&gt;% Étaler() %&gt;% Garnir() %&gt;% Cuire()"
+  },
+  {
+    "objectID": "slides.html#select-lentonnoir-à-colonnes",
+    "href": "slides.html#select-lentonnoir-à-colonnes",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": " select() : L’entonnoir à colonnes",
+    "text": "select() : L’entonnoir à colonnes\nOn l’utilise pour ne garder que les variables qui nous intéressent.\n\n# Garder seulement quelques colonnes\ntitanic_simple &lt;- titanic %&gt;%\n  select(Survived, Pclass, Sex, Age)\n\n# Exclure une colonne précise avec le signe moins (-)\ntitanic_sans_nom &lt;- titanic %&gt;%\n  select(-Name)\n\n# Sélectionner une plage de colonnes\n# titanic %&gt;% select(Survived:Age)\n\n\n\n\n\n\n\nAstuce\n\n\nselect() permet aussi de réordonner vos colonnes ! Les colonnes citées en premier apparaîtront à gauche."
+  },
+  {
+    "objectID": "slides.html#filter-le-tamis-à-données",
+    "href": "slides.html#filter-le-tamis-à-données",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": " filter() : Le tamis à données",
+    "text": "filter() : Le tamis à données\nOn l’utilise pour extraire des sous-ensembles de lignes selon des critères.\n\n# Un seul critère : les femmes\nfemmes &lt;- titanic %&gt;%\n  filter(Sex == \"female\")\n\n# Critères multiples (ET) : les femmes de 1ère classe\nfemmes_1ere &lt;- titanic %&gt;%\n  filter(Sex == \"female\", Pclass == 1)\n\n# Critères multiples (OU) : 1ère classe OU 2e classe\nclasses_sup &lt;- titanic %&gt;%\n  filter(Pclass == 1 | Pclass == 2)\n\n\n\n\n\n\n\nAttention\n\n\nUtilisez toujours le double égal == pour comparer (tester l’égalité) et non un seul = !"
+  },
+  {
+    "objectID": "slides.html#arrange-lorganisateur",
+    "href": "slides.html#arrange-lorganisateur",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": " arrange() : L’organisateur",
+    "text": "arrange() : L’organisateur\nPermet de trier votre tableau selon une ou plusieurs variables.\n\n# Trier par âge (du plus jeune au plus vieux)\ntitanic_age &lt;- titanic %&gt;%\n  arrange(Age)\n\n# Trier par prix du billet (du plus CHER au moins cher)\ntitanic_prix &lt;- titanic %&gt;%\n  arrange(desc(Fare))\n\n# Trier par classe, puis par âge\ntitanic_multi &lt;- titanic %&gt;%\n  arrange(Pclass, Age)"
+  },
+  {
+    "objectID": "slides.html#mutate-la-boîte-à-outils",
+    "href": "slides.html#mutate-la-boîte-à-outils",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": " mutate() : La boîte à outils",
+    "text": "mutate() : La boîte à outils\nSert à créer de nouvelles colonnes basées sur les existantes ou à modifier des colonnes.\n\ntitanic &lt;- titanic %&gt;%\n  mutate(\n    # 1. Créer une variable binaire enfant/adulte\n    est_enfant = ifelse(Age &lt; 18, \"Enfant\", \"Adulte\"),\n    \n    # 2. Calculer la taille de la famille (soi-même + frères/sœurs + parents/enfants)\n    taille_famille = Siblings.Spouses.Aboard + Parents.Children.Aboard + 1,\n    \n    # 3. Convertir le prix en Dollars constants (exemple fictif)\n    fare_ajuste = Fare * 1.2\n  )"
+  },
+  {
+    "objectID": "slides.html#rename-pour-plus-de-clarté",
+    "href": "slides.html#rename-pour-plus-de-clarté",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": " rename() : Pour plus de clarté",
+    "text": "rename() : Pour plus de clarté\nParce que les noms de colonnes originaux sont parfois cryptiques ou mal formatés.\n\n# rename(NOUVEAU_NOM = ANCIEN_NOM)\ntitanic &lt;- titanic %&gt;%\n  rename(\n    survie = Survived,\n    classe = Pclass,\n    sexe = Sex,\n    age = Age,\n    prix = Fare\n  )\n\nnames(titanic)\n\n [1] \"survie\"                  \"classe\"                 \n [3] \"Name\"                    \"sexe\"                   \n [5] \"age\"                     \"Siblings.Spouses.Aboard\"\n [7] \"Parents.Children.Aboard\" \"prix\"                   \n [9] \"est_enfant\"              \"taille_famille\"         \n[11] \"fare_ajuste\""
+  },
+  {
+    "objectID": "slides.html#group_by-summarise",
+    "href": "slides.html#group_by-summarise",
+    "title": "Initiation à l’analyse des données avec R",
+    "section": " group_by() + summarise()",
+    "text": "group_by() + summarise()\nC’est la puissance ultime de dplyr. On découpe, on calcule, on recolle.\n\n# Quelle est la survie moyenne par sexe et par classe ?\nstatistiques_titanic &lt;- titanic %&gt;%\n  group_by(sexe, classe) %&gt;%\n  summarise(\n    nb_passagers = n(),\n    age_moyen = mean(age, na.rm = TRUE),\n    taux_survie = mean(survie) * 100\n  )\n\nstatistiques_titanic\n\n# A tibble: 6 × 5\n# Groups:   sexe [2]\n  sexe   classe nb_passagers age_moyen taux_survie\n  &lt;chr&gt;   &lt;int&gt;        &lt;int&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 female      1           94      35.3        96.8\n2 female      2           76      29.0        92.1\n3 female      3          144      22.1        50  \n4 male        1          122      41.5        36.9\n5 male        2          108      30.5        15.7\n6 male        3          343      26.5        13.7\n\n\n\n\n\n\n\n\nLogique Split-Apply-Combine\n\n\n\nSplit : On divise les données en groupes (ex: Hommes vs Femmes).\nApply : On applique un calcul sur chaque groupe (ex: moyenne).\nCombine : On rassemble les résultats dans un nouveau tableau."
   }
 ]
