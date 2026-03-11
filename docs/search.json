@@ -739,7 +739,7 @@
     "href": "slides.html#bienvenue",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Bienvenue !",
-    "text": "Bienvenue !\n\n\nAu programme aujourd’hui :\n\n Bases : Objets, fonctions et packages\n Données : Importer et formater (Tidyverse)\n Quantitatif : Statistiques descriptives et visualisation\n Qualitatif : Analyse de texte et nuages de mots\n\nLogistique : -  9h - 12h : Formation théorique (Hybride) -  12h - 13h : Pause dîner -  13h - 15h : Atelier pratique (Présentiel BNF-4285)\n\n\n\n\n\n\n\nMatériel requis\n\n\n\nR et RStudio installés\nJeu de données téléchargé\nMotivation !\n\n\n\n\n\n\n\n\n\n\nAide & Mentorat\n\n\nN’hésitez pas à poser vos questions sur Zoom ou en classe ! Nos mentors sont là pour vous aider."
+    "text": "Bienvenue !\n\n\nAu programme aujourd’hui :\n\n Bases : Objets, fonctions et packages\n Données : Importer et formater (Tidyverse)\n Quantitatif : Statistiques descriptives et visualisation\n Qualitatif : Analyse de texte et nuages de mots\n\nLogistique : -  9h - 12h : Formation théorique (Hybride) -  12h - 13h : Pause dîner -  13h - 15h : Atelier pratique (Présentiel BNF-4285)\n\n\n\n\n\n\n\n Site de la formation\n\n\nwww.etienneproulx.org/R_intro_fss/\n\n\n\n\n\n\n\n\n\nMatériel requis\n\n\n\nR et RStudio installés\nJeu de données téléchargé\nMotivation !\n\n\n\n\n\n\n\n\n\n\nAide & Mentorat\n\n\nN’hésitez pas à poser vos questions sur Zoom ou en classe ! Nos mentors sont là pour vous aider."
   },
   {
     "objectID": "slides.html#rstudio-votre-tableau-de-bord",
