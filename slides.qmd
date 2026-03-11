@@ -69,7 +69,7 @@ library(wordcloud)
 ::: {.callout-note}
 ## Matériel requis
 - R et RStudio installés
-- Jeu de données téléchargé
+- **[Télécharger : Données Titanic (CSV)](data/titanic.csv)**
 - Motivation !
 :::
 
