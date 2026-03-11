@@ -4,7 +4,7 @@
     "href": "slides.html#bienvenue",
     "title": "Initiation à l’analyse des données avec R",
     "section": "Bienvenue !",
-    "text": "Bienvenue !\n\n\nAu programme aujourd’hui :\n\n Bases : Objets, fonctions et packages\n Données : Importer et formater (Tidyverse)\n Quantitatif : Statistiques descriptives et visualisation\n Qualitatif : Analyse de texte et nuages de mots\n\nLogistique : -  9h - 12h : Formation théorique (Hybride) -  12h - 13h : Pause dîner -  13h - 15h : Atelier pratique (Présentiel BNF-4285)\n\n\n\n\n\n\n\n Site de la formation\n\n\nwww.etienneproulx.org/R_intro_fss/\n\n\n\n\n\n\n\n\n\nMatériel requis\n\n\n\nR et RStudio installés\nJeu de données téléchargé\nMotivation !\n\n\n\n\n\n\n\n\n\n\nAide & Mentorat\n\n\nN’hésitez pas à poser vos questions sur Zoom ou en classe ! Nos mentors sont là pour vous aider."
+    "text": "Bienvenue !\n\n\nAu programme aujourd’hui :\n\n Bases : Objets, fonctions et packages\n Données : Importer et formater (Tidyverse)\n Quantitatif : Statistiques descriptives et visualisation\n Qualitatif : Analyse de texte et nuages de mots\n\nLogistique : -  9h - 12h : Formation théorique (Hybride) -  12h - 13h : Pause dîner -  13h - 15h : Atelier pratique (Présentiel BNF-4285)\n\n\n\n\n\n\n\n Site de la formation\n\n\nwww.etienneproulx.org/R_intro_fss/\n\n\n\n\n\n\n\n\n\nMatériel requis\n\n\n\nR et RStudio installés\nTélécharger : Données Titanic (CSV)\nMotivation !\n\n\n\n\n\n\n\n\n\n\nAide & Mentorat\n\n\nN’hésitez pas à poser vos questions sur Zoom ou en classe ! Nos mentors sont là pour vous aider."
   },
   {
     "objectID": "slides.html#rstudio-votre-tableau-de-bord",
@@ -95,7 +95,7 @@
     "href": "slides.html#organisation-dossiers",
     "title": "Initiation à l’analyse des données avec R",
     "section": " Organisation & Dossiers",
-    "text": "Organisation & Dossiers\n\n\n\n\n\n\nVotre ordinateur = une grande bibliothèque\n\n\nChaque fichier a une adresse précise (chemin) pour le retrouver !\n\n\n\n\ngetwd()  # \"get working directory\" = Où suis-je actuellement ?\n\n[1] \"/home/etienne_prx/Dropbox/travail/enseignements/R_intro_fss\"\n\nlist.files()  # Qu'est-ce qu'il y a dans ce dossier ?\n\n [1] \"_freeze\"          \"_quarto.yml\"      \"ancien.qmd\"       \"custom.scss\"     \n [5] \"data\"             \"docs\"             \"exercices.qmd\"    \"images\"          \n [9] \"index.qmd\"        \"README.md\"        \"script\"           \"slides_files\"    \n[13] \"slides.qmd\"       \"slides.rmarkdown\""
+    "text": "Organisation & Dossiers\n\n\n\n\n\n\nVotre ordinateur = une grande bibliothèque\n\n\nChaque fichier a une adresse précise (chemin) pour le retrouver !\n\n\n\n\ngetwd()  # \"get working directory\" = Où suis-je actuellement ?\n\n[1] \"/home/runner/work/R_intro_fss/R_intro_fss\"\n\nlist.files()  # Qu'est-ce qu'il y a dans ce dossier ?\n\n [1] \"_freeze\"          \"_quarto.yml\"      \"ancien.html\"      \"ancien.qmd\"      \n [5] \"custom.scss\"      \"data\"             \"docs\"             \"exercices_files\" \n [9] \"exercices.html\"   \"exercices.qmd\"    \"images\"           \"index.html\"      \n[13] \"index.qmd\"        \"README.md\"        \"script\"           \"site_libs\"       \n[17] \"slides_files\"     \"slides.qmd\"       \"slides.rmarkdown\""
   },
   {
     "objectID": "slides.html#charger-de-vraies-données",
@@ -312,14 +312,14 @@
     "href": "index.html",
     "title": "Initiation à l’analyse des données avec R",
     "section": "",
-    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\nImportant📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\nScript R complet : Tous les exemples de code de la formation à télécharger\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
+    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\nImportant📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\nDonnées Titanic (CSV) : Jeu de données utilisé pour les exemples\nScript R complet : Tous les exemples de code de la formation à télécharger\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
   },
   {
     "objectID": "index.html#bienvenue",
     "href": "index.html#bienvenue",
     "title": "Initiation à l’analyse des données avec R",
     "section": "",
-    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\nImportant📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\nScript R complet : Tous les exemples de code de la formation à télécharger\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
+    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\nImportant📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\nDonnées Titanic (CSV) : Jeu de données utilisé pour les exemples\nScript R complet : Tous les exemples de code de la formation à télécharger\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
   },
   {
     "objectID": "ancien.html#objectifs-du-cours",
