@@ -61,6 +61,11 @@ library(wordcloud)
 :::
 
 ::: {.column width="40%"}
+::: {.callout-important}
+## <i class="fa-solid fa-link"></i> Site de la formation
+**[www.etienneproulx.org/R_intro_fss/](https://www.etienneproulx.org/R_intro_fss/)**
+:::
+
 ::: {.callout-note}
 ## Matériel requis
 - R et RStudio installés
