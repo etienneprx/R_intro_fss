@@ -2,9 +2,9 @@
   {
     "objectID": "exercices.html",
     "href": "exercices.html",
-    "title": "Exercices pratiques",
+    "title": "Exercices de mise en pratique",
     "section": "",
-    "text": "Cet exercice pratique vous permettra de mettre en application tous les concepts vus dans la formation R. Vous travaillerez avec des vraies données sur l’espérance de vie et l’économie des pays du monde.\n\n\n\nManipuler des objets et vecteurs R\nExplorer un dataset réel\nUtiliser les fonctions de base et dplyr\nCréer des visualisations avec ggplot2\nAnalyser des tendances dans les données\n\n\n\n\n\nTéléchargez les fichiers nécessaires :\n\nScript R de l’exercice\nDonnées CSV\n\nPlacez les deux fichiers dans le même dossier sur votre ordinateur\nOuvrez le script dans RStudio\nDéfinissez votre dossier de travail (instructions dans le script)\nSuivez les instructions dans le script (zones à compléter marquées par # À COMPLÉTER)\nExécutez votre code au fur et à mesure\nConsultez les solutions ci-dessous si vous êtes bloqué\n\n\n\n\n\n\n\n📖 Données utilisées\n\n\n\nLe fichier donnees_pays.csv contient des données sur l’espérance de vie, la population et le PIB par habitant pour 142 pays de 1952 à 2007. Ces données proviennent du célèbre dataset Gapminder utilisé mondialement pour l’enseignement de l’analyse de données.\nVariables disponibles : - country : Nom du pays - continent : Continent (Africa, Americas, Asia, Europe, Oceania) - year : Année (1952 à 2007, par intervalles de 5 ans) - lifeExp : Espérance de vie à la naissance (années) - pop : Population totale - gdpPercap : PIB par habitant (dollars US, ajusté inflation)"
+    "text": "Cet exercice pratique vous permet de consolider les notions vues en formation. Vous travaillerez avec des données réelles sur l’espérance de vie, la population et le PIB par habitant pour 142 pays (1952-2007).\n\n\n\n Manipuler des objets et des vecteurs\n Importer et explorer un jeu de données réel\n Effectuer des opérations de nettoyage avec dplyr\n Créer des visualisations professionnelles avec ggplot2\n\n\n\n\n\nFichiers requis : Téléchargez le Script R et les Données CSV.\nOrganisation : Placez ces fichiers dans votre dossier de travail.\nAction : Ouvrez le script dans RStudio et complétez les sections marquées par # À COMPLÉTER.\n\n\n\n\n\n\n\nJeu de données : Gapminder\n\n\n\nLe fichier donnees_pays.csv contient des indicateurs mondiaux provenant du projet Gapminder. Il inclut des variables comme le continent, l’année, l’espérance de vie (lifeExp) et le PIB par habitant (gdpPercap)."
   },
   {
     "objectID": "exercices.html#exercices-pour-débutants",
@@ -284,14 +284,14 @@
     "href": "index.html",
     "title": "Initiation à l’analyse des données avec R",
     "section": "",
-    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\n📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
+    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\n📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\nScript R complet : Tous les exemples de code de la formation à télécharger\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
   },
   {
     "objectID": "index.html#bienvenue",
     "href": "index.html#bienvenue",
     "title": "Initiation à l’analyse des données avec R",
     "section": "",
-    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\n📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
+    "text": "Cette formation offre une introduction complète à l’analyse des données avec R.\n\n\n\n\n\n\n📋 Présence obligatoire\n\n\n\nParticipants : Veuillez remplir le formulaire de présence avant le début de la formation.\n\n\n\n\n\nSlides de présentation : Contenu théorique de la formation\nExercices pratiques : Exercices pour mettre en pratique les concepts\nScript R complet : Tous les exemples de code de la formation à télécharger\n\n\n\n\nFormation développée pour la Faculté des sciences sociales de l’Université Laval.\nDurée : 3 heures (9h à 12h) Format : Présentation théorique avec exercices pratiques Niveau : Débutant"
   },
   {
     "objectID": "slides.html#section",
@@ -852,5 +852,404 @@
     "title": "Initiation à l’analyse des données avec R",
     "section": " Aller plus loin en qualitatif",
     "text": "Aller plus loin en qualitatif\nL’analyse textuelle avec R est un domaine en pleine explosion :\n\n Topic Modeling : Découvrir automatiquement les thèmes cachés dans des milliers de documents (LDA).\n Analyse de sentiment : Classer les textes comme positifs, négatifs ou neutres.\n LLMs & Classifieurs : Utiliser l’IA pour catégoriser des verbatim d’entretiens.\n Dictionnaires : Mesurer la présence de concepts théoriques spécifiques."
+  },
+  {
+    "objectID": "exercices.html#introduction",
+    "href": "exercices.html#introduction",
+    "title": "Exercices de mise en pratique",
+    "section": "",
+    "text": "Cet exercice pratique vous permet de consolider les notions vues en formation. Vous travaillerez avec des données réelles sur l’espérance de vie, la population et le PIB par habitant pour 142 pays (1952-2007).\n\n\n\n Manipuler des objets et des vecteurs\n Importer et explorer un jeu de données réel\n Effectuer des opérations de nettoyage avec dplyr\n Créer des visualisations professionnelles avec ggplot2\n\n\n\n\n\nFichiers requis : Téléchargez le Script R et les Données CSV.\nOrganisation : Placez ces fichiers dans votre dossier de travail.\nAction : Ouvrez le script dans RStudio et complétez les sections marquées par # À COMPLÉTER.\n\n\n\n\n\n\n\nJeu de données : Gapminder\n\n\n\nLe fichier donnees_pays.csv contient des indicateurs mondiaux provenant du projet Gapminder. Il inclut des variables comme le continent, l’année, l’espérance de vie (lifeExp) et le PIB par habitant (gdpPercap)."
+  },
+  {
+    "objectID": "exercices.html#exercice-1-objets-et-vecteurs",
+    "href": "exercices.html#exercice-1-objets-et-vecteurs",
+    "title": "Exercices de mise en pratique",
+    "section": "Exercice 1 : Objets et Vecteurs",
+    "text": "Exercice 1 : Objets et Vecteurs\nConsigne : Familiarisez-vous avec la création d’objets dans R.\n\nCréez un objet pays_prefere (type texte).\nCréez un vecteur continents contenant les 5 noms de continents.\nCréez un vecteur populations (valeurs numériques).\nUtilisez la fonction class() pour vérifier le type de vos objets.\n\n\nInstructionsSolution\n\n\nUtilisez l’opérateur &lt;- pour l’assignation.\n\n\n\n# 1. Créer un objet\npays_prefere &lt;- \"Québec\"\n\n# 2. Créer un vecteur\ncontinents &lt;- c(\"Afrique\", \"Amérique\", \"Asie\", \"Europe\", \"Océanie\")\n\n# 3. Créer un vecteur numérique\npopulations &lt;- c(1200, 580, 4600, 750, 45)\n\n# 4. Vérification\nclass(pays_prefere)\n\n[1] \"character\"\n\nclass(populations)\n\n[1] \"numeric\""
+  },
+  {
+    "objectID": "exercices.html#exercice-2-exploration-du-jeu-de-données",
+    "href": "exercices.html#exercice-2-exploration-du-jeu-de-données",
+    "title": "Exercices de mise en pratique",
+    "section": "Exercice 2 : Exploration du jeu de données",
+    "text": "Exercice 2 : Exploration du jeu de données\nConsigne : Chargez les données et analysez leur structure.\n\nChargez les packages readr, dplyr et ggplot2.\nImportez le fichier donnees_pays.csv.\nAffichez les dimensions du tableau et le nom des colonnes.\n\n\nInstructionsSolution\n\n\nUtilisez read_csv() pour l’importation.\n\n\n\nlibrary(readr)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Importation\ndonnees &lt;- read_csv(\"data/donnees_pays.csv\")\n\n# Exploration\ndim(donnees)\n\n[1] 1704    6\n\nnames(donnees)\n\n[1] \"country\"   \"continent\" \"year\"      \"lifeExp\"   \"pop\"       \"gdpPercap\"\n\nhead(donnees)\n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786."
+  },
+  {
+    "objectID": "exercices.html#exercice-3-manipulation-avec-dplyr",
+    "href": "exercices.html#exercice-3-manipulation-avec-dplyr",
+    "title": "Exercices de mise en pratique",
+    "section": "Exercice 3 : Manipulation avec dplyr",
+    "text": "Exercice 3 : Manipulation avec dplyr\nConsigne : Nettoyez et filtrez les données pour l’analyse.\n\nFiltrez les données pour ne garder que l’année 2007.\nSélectionnez les colonnes : pays, continent et espérance de vie.\nTriez les résultats par espérance de vie décroissante.\n\n\nInstructionsSolution\n\n\nUtilisez l’opérateur “pipe” %&gt;%.\n\n\n\n# Manipulation en chaîne\ndonnees_2007 &lt;- donnees %&gt;%\n  filter(year == 2007) %&gt;%\n  select(country, continent, lifeExp) %&gt;%\n  arrange(desc(lifeExp))\n\nhead(donnees_2007)\n\n# A tibble: 6 × 3\n  country          continent lifeExp\n  &lt;chr&gt;            &lt;chr&gt;       &lt;dbl&gt;\n1 Japan            Asia         82.6\n2 Hong Kong, China Asia         82.2\n3 Iceland          Europe       81.8\n4 Switzerland      Europe       81.7\n5 Australia        Oceania      81.2\n6 Spain            Europe       80.9"
+  },
+  {
+    "objectID": "exercices.html#exercice-4-analyses-par-groupe",
+    "href": "exercices.html#exercice-4-analyses-par-groupe",
+    "title": "Exercices de mise en pratique",
+    "section": "Exercice 4 : Analyses par groupe",
+    "text": "Exercice 4 : Analyses par groupe\nConsigne : Calculez des statistiques descriptives par continent.\n\nCalculez l’espérance de vie moyenne par continent en 2007.\nIdentifiez le nombre de pays par continent dans le jeu de données.\n\n\nInstructionsSolution\n\n\nCombinez group_by() et summarise().\n\n\n\n# Statistiques groupées\nesperance_continent &lt;- donnees %&gt;%\n  filter(year == 2007) %&gt;%\n  group_by(continent) %&gt;%\n  summarise(\n    moyenne_vie = mean(lifeExp),\n    nb_pays = n()\n  )\n\nprint(esperance_continent)\n\n# A tibble: 5 × 3\n  continent moyenne_vie nb_pays\n  &lt;chr&gt;           &lt;dbl&gt;   &lt;int&gt;\n1 Africa           54.8      52\n2 Americas         73.6      25\n3 Asia             70.7      33\n4 Europe           77.6      30\n5 Oceania          80.7       2"
+  },
+  {
+    "objectID": "exercices.html#exercice-5-visualisation-de-données",
+    "href": "exercices.html#exercice-5-visualisation-de-données",
+    "title": "Exercices de mise en pratique",
+    "section": "Exercice 5 : Visualisation de données",
+    "text": "Exercice 5 : Visualisation de données\nConsigne : Produisez des graphiques de qualité professionnelle.\n\nCréez un histogramme de la distribution du PIB par habitant en 2007.\nCréez un nuage de points montrant la relation entre le PIB et l’espérance de vie.\nAjoutez une couleur différente pour chaque continent.\n\n\nInstructionsSolution\n\n\nUtilisez geom_histogram() et geom_point().\n\n\n\n# 1. Distribution\nggplot(donnees %&gt;% filter(year == 2007), aes(x = gdpPercap)) +\n  geom_histogram(bins = 20, fill = \"#003875\", color = \"white\") +\n  labs(title = \"Distribution du PIB par habitant (2007)\", x = \"PIB\", y = \"Fréquence\") +\n  theme_minimal()\n\n\n\n\n\n\n\n# 2. Relation\nggplot(donnees %&gt;% filter(year == 2007), \n       aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point(size = 3, alpha = 0.7) +\n  labs(title = \"PIB vs Espérance de vie\", x = \"PIB par habitant\", y = \"Espérance de vie\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "exercices.html#conclusion",
+    "href": "exercices.html#conclusion",
+    "title": "Exercices de mise en pratique",
+    "section": "Conclusion",
+    "text": "Conclusion\nVous avez complété le cycle complet d’une analyse descriptive sous R : de l’importation à la visualisation.\n\nRécapitulatif des acquis\n\n Maîtrise des objets et types de données.\n Utilisation des fonctions de base de manipulation (dplyr).\n Création de graphiques informatifs (ggplot2).\n\nPour aller plus loin, explorez la documentation officielle du Tidyverse."
+  },
+  {
+    "objectID": "ancien.html",
+    "href": "ancien.html",
+    "title": "Introduction à R",
+    "section": "",
+    "text": "Introduire R pour l’analyse de données.\n\nLes dataframes\nLes fonctions\nLes packages\nLes graphiques\nLes statistiques\n\n\n\nLe but est que vous puissiez sortir d’ici avec une compréhension de base de R et que vous soyez capable d’aller chercher des ressources pour continuer à apprendre."
+  },
+  {
+    "objectID": "ancien.html#objectifs-du-cours",
+    "href": "ancien.html#objectifs-du-cours",
+    "title": "Introduction à R",
+    "section": "",
+    "text": "Introduire R pour l’analyse de données.\n\nLes dataframes\nLes fonctions\nLes packages\nLes graphiques\nLes statistiques\n\n\n\nLe but est que vous puissiez sortir d’ici avec une compréhension de base de R et que vous soyez capable d’aller chercher des ressources pour continuer à apprendre."
+  },
+  {
+    "objectID": "ancien.html#quest-ce-que-lanalyse-de-données",
+    "href": "ancien.html#quest-ce-que-lanalyse-de-données",
+    "title": "Introduction à R",
+    "section": "Qu’est-ce que l’analyse de données?",
+    "text": "Qu’est-ce que l’analyse de données?\n\nL’analyse de données vise à explorer, décrire et interpréter des informations recueillies sur les comportements humains, les relations sociales et les phénomènes sociétaux. Ce processus peut inclure des données quantitatives (comme des données issus de sondages) et des données qualitatives (comme des entretiens ou des observations).\n\n\nPrincipales étapes de l’analyse de données :\n\nAcquisition des données\nPréparation des données\nAnalyse des données\nCommunication des résultats"
+  },
+  {
+    "objectID": "ancien.html#les-outils-danalyse-de-données",
+    "href": "ancien.html#les-outils-danalyse-de-données",
+    "title": "Introduction à R",
+    "section": "Les outils d’analyse de données",
+    "text": "Les outils d’analyse de données"
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r",
+    "href": "ancien.html#pourquoi-r",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\n\nOpen source\n\nGratuit\nCollaboratif\nCommunauté active\n\nStackExchange\nstackoverflow\nreddit.com/r/Rlanguage\n\nAdapté aux besoins des utilisateurs\n\n\nOpen source c’est un modèle de développement de logiciels où le code est accessible à tous. Dans un logiciel open source, ce code est publié publiquement, permettant à n’importe qui de le lire, le modifier, le partager, et l’améliorer."
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-1",
+    "href": "ancien.html#pourquoi-r-1",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\n\nPackages\n\nOffre une extension des fonctionnalités de base presque infinie\nPeux répondre à des besoins très spécifiques\n21,744 packages sur CRAN (Comprehensive R Archive Network)\n\nPrincipal dépôt où sont hébergés les packages R\n\nBeaucoup plus sur GitHub\n\nEn plus de CRAN, de nombreux chercheurs publient leurs packages sur GitHub, une plateforme de partage de code\n\n\n\nChaque tâche spécifique lié à l’analyse de donnéees peut être automatisé et facilité par R. Collègue récemment à la CLESSN catégorisé les code postaux à la main."
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-2",
+    "href": "ancien.html#pourquoi-r-2",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\n\nPackages CLESSN\n\n\nsondr\n\nPermet l’automatisation de plusieurs aspects de l’analyse de données. Nous permet de faire des analyses factorielles en quelques secondes.\n\nclellm\n\nPermet d’utiliser des LLM open-source directement en R et permet d’utiliser des fonctions disponibles seulement en Python, en R.\n\nclessnize\n\nPermet de standardiser le style de nos graphiques rapidement sans avoir à répéter les mêmes étapes à chaque fois."
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-3",
+    "href": "ancien.html#pourquoi-r-3",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\n\nTidyverse\n\nCollection de packages pour la manipulation de données\ndplyr : manipulation de données\nggplot2 : graphiques\ntidyr : nettoyage de données\nreadr : importation de données\nstringr : manipulation de chaînes de caractères"
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-4",
+    "href": "ancien.html#pourquoi-r-4",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\n\nReproductibilité\n\nLes scripts R permettent de partager facilement le travail\nRendre les analyses reproductibles\nPermet de retracer les erreurs\nPartager le code (GitHub, GitLab, etc.)\n\nEncourage la transparence et la collaboration dans la recherche"
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-5",
+    "href": "ancien.html#pourquoi-r-5",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\n\nTrès utilisé en science sociale\n\nBeaucoup de ressources\nBeaucoup de tutoriels orientés vers les sciences sociales\n\nDatacamp\nswirl()\nCoursera\n\n\n\nBref… important d’utiliser les mêmes outils que les chercheurs dans votre domaine"
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-6",
+    "href": "ancien.html#pourquoi-r-6",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\n\n\nExemples d’utilisation par des organisations\n\nUtilisé par AirBnB pour l’analyse de données\nUtilisé par la BBC pour leurs graphiques\nUtilisé par la MLB pour l’analyse de données\nUtilisé par Vox Pop Labs (Boussole électorale) pour l’analyse de données\nUtilisé par Google, Facebook, Amazon, etc."
+  },
+  {
+    "objectID": "ancien.html#pourquoi-r-7",
+    "href": "ancien.html#pourquoi-r-7",
+    "title": "Introduction à R",
+    "section": "Pourquoi R?",
+    "text": "Pourquoi R?\n\nLa CLESSN\n  Chaire de leadership en enseignement des sciences sociales numériques (CLESSN)\n\n\n\nTitulaire: Yannick Dufresne\n\n\n\nObjectif: Développer des compétences en science des données pour les étudiants en sciences sociales à travers des projets de recherche et des formations"
+  },
+  {
+    "objectID": "ancien.html#datagotchi",
+    "href": "ancien.html#datagotchi",
+    "title": "Introduction à R",
+    "section": "Datagotchi",
+    "text": "Datagotchi\n\n\n\n\nApplication utilisant des variables lifestyles pour prédire le vote\nUtiliser R et l’analyse de données à travers ce projet:\n\nPrototypage en Shiny\nNettoyage des données\nAnalyse factorielle\nRégressions et modèles\nVisualisation"
+  },
+  {
+    "objectID": "ancien.html#analyse-textuelle",
+    "href": "ancien.html#analyse-textuelle",
+    "title": "Introduction à R",
+    "section": "Analyse textuelle",
+    "text": "Analyse textuelle\n\nAnalyse de ton\n\nEst-ce que le texte est positif ou négatif?"
+  },
+  {
+    "objectID": "ancien.html#mais-aussi",
+    "href": "ancien.html#mais-aussi",
+    "title": "Introduction à R",
+    "section": "Mais aussi …",
+    "text": "Mais aussi …\n\nCatégorisation de texte\n\nEst-ce que le texte parle de politique, de santé, de sport?\n\nAnalyse d’image\nTranscription audio"
+  },
+  {
+    "objectID": "ancien.html#r-au-delà-de-lanalyse-de-données",
+    "href": "ancien.html#r-au-delà-de-lanalyse-de-données",
+    "title": "Introduction à R",
+    "section": "R : Au-delà de l’analyse de données",
+    "text": "R : Au-delà de l’analyse de données\n\nR ne se limite pas à l’analyse statistique, il peut aussi être utilisé pour développer des applications web interactives"
+  },
+  {
+    "objectID": "ancien.html#après-r",
+    "href": "ancien.html#après-r",
+    "title": "Introduction à R",
+    "section": "Après R",
+    "text": "Après R\n\nApprendre R vous permet de comprendre d’autres langages de programmation\n\nPython\nJulia\nSQL\nJavaScript\nHTML/CSS\nBash"
+  },
+  {
+    "objectID": "ancien.html#installer-r-et-rstudio",
+    "href": "ancien.html#installer-r-et-rstudio",
+    "title": "Introduction à R",
+    "section": "Installer R et RStudio",
+    "text": "Installer R et RStudio\n\nC’est quoi la différence entre R et RStudio?\nR est le moteur, RStudio est le véhicule\nR est le langage, RStudio est la feuille de papier\nRStudio facilite l’utilisation de R\nRStudio est un IDE (Integrated Development Environment)\nPersonnalisation de l’environnement de travail\n\n\n\nÀ télécharger :\n\nInstaller R\nInstaller RStudio"
+  },
+  {
+    "objectID": "ancien.html#avant-de-commencer-concept-important",
+    "href": "ancien.html#avant-de-commencer-concept-important",
+    "title": "Introduction à R",
+    "section": "Avant de commencer : Concept important",
+    "text": "Avant de commencer : Concept important\n\nLe chemin d’arborescence\n\nÀ tout moment vous devez savoir où vous êtes dans votre ordinateur pour pouvoir importer des données, exporter des graphiques ou mettre des fichiers en relation\nVotre R pointe toujours vers un endroit spécifique dans votre ordinateur. Vous devez savoir où pour pouvoir importer des données\nLa fonction getwd() dans R permet de savoir où vous êtes"
+  },
+  {
+    "objectID": "ancien.html#avant-de-commencer-concept-important-1",
+    "href": "ancien.html#avant-de-commencer-concept-important-1",
+    "title": "Introduction à R",
+    "section": "Avant de commencer : Concept important",
+    "text": "Avant de commencer : Concept important\n\nPlanifier avant de coder\n\nLa plus grosse erreur est de commencer à coder sans savoir ce que vous voulez faire\n\n\nClarifer vos objectifs: Qu’est-ce que vous voulez faire?\n\nNettoyer des données?\nFaire un graphique?\n\n\nLes possibilités sont infinies, donc il est important de savoir où vous voulez aller"
+  },
+  {
+    "objectID": "ancien.html#avant-de-commencer-concept-important-2",
+    "href": "ancien.html#avant-de-commencer-concept-important-2",
+    "title": "Introduction à R",
+    "section": "Avant de commencer : Concept important",
+    "text": "Avant de commencer : Concept important\n\nDécomposer le problème\n\nUne fois que vous savez ce que vous voulez faire, il est important de décomposer le problème en petites étapes\nUn script R pour une seule tâche\n\nBien nommer vos scripts pour savoir ce qu’ils font\nExemples:\n\n1_collecte.R\n2_nettoyage.R\n3_analyse.R\n4_graphique.R\n\n\nChaque script doit être clair et facile à comprendre\nCommenter votre code avec des #"
+  },
+  {
+    "objectID": "ancien.html#importer-des-données",
+    "href": "ancien.html#importer-des-données",
+    "title": "Introduction à R",
+    "section": "Importer des données",
+    "text": "Importer des données\n\nLes données sont souvent dans des fichiers Excel, CSV, ou autres\n\nOn utilise des fonctions comme read.csv() pour lire les fichiers\n\n\n\ndf &lt;- read.csv(\"chemin/vers/data.csv\")\n\n\nDans cette ligne de code il y a plusieurs éléments importants:\n\nLe nom de l’objet : df dans ce cas-ci, c’est un dataframe\nL’opérateur d’assignation : &lt;-\nLa fonction qui permet de lire le fichier : read.csv()\nLe chemin vers le fichier : \"chemin/vers/data.csv\""
+  },
+  {
+    "objectID": "ancien.html#chemins-darborescence",
+    "href": "ancien.html#chemins-darborescence",
+    "title": "Introduction à R",
+    "section": "Chemins d’arborescence",
+    "text": "Chemins d’arborescence\n\nImportant de comprendre comment spécifier le chemin vers un fichier\nVoici les deux façons de spécifier le chemin :\n\nAbsolu: /Users/username/Documents/projet/data/data.csv\n\nUtile seulement sur votre ordinateur, un autre utilisateur ne pourra pas utiliser le même chemin\n\nRelatif: data/data.csv\n\nUtile pour partager le code avec d’autres utilisateurs\n\n\n\n\n\nDifférence entre mac et windows\n\nMac: /\nWindows: \\ (il faut s’assurer de changer les \\ pour des /)"
+  },
+  {
+    "objectID": "ancien.html#importer-des-données-1",
+    "href": "ancien.html#importer-des-données-1",
+    "title": "Introduction à R",
+    "section": "Importer des données",
+    "text": "Importer des données\nAutres fonctions pour importer des données dépendamment du format:\n\ndf &lt;- readxl::read_excel(\"chemin/vers/data.xlsx\")\ndf &lt;- readRDS(\"chemin/vers/data.rds\")"
+  },
+  {
+    "objectID": "ancien.html#anatomie-dune-ligne-de-code",
+    "href": "ancien.html#anatomie-dune-ligne-de-code",
+    "title": "Introduction à R",
+    "section": "Anatomie d’une ligne de code",
+    "text": "Anatomie d’une ligne de code\nPrenons un exemple simple :\nresultat &lt;- mean(df$age, na.rm = TRUE)\nDécomposons cette ligne :\n\nresultat : nom de l’objet où on stocke le résultat\n&lt;- : opérateur d’assignation\nmean() : fonction qui calcule la moyenne\ndf$age : variable ‘age’ du dataframe ‘df’\nna.rm = TRUE : argument de la fonction (ignorer les NA)\n\n\nCette ligne de code calcule la moyenne de la variable ‘age’ en ignorant les valeurs manquantes (NA) et stocke le résultat dans un objet nommé ‘resultat’"
+  },
+  {
+    "objectID": "ancien.html#les-types-de-données-dans-r",
+    "href": "ancien.html#les-types-de-données-dans-r",
+    "title": "Introduction à R",
+    "section": "Les types de données dans R",
+    "text": "Les types de données dans R\n\nTypes de base :\n\nnumeric : nombres (avec ou sans décimales)\n\nage &lt;- 25        # integer\ntaille &lt;- 1.75   # double\n\ncharacter : texte (chaînes de caractères)\n\nnom &lt;- \"Pierre\"\nville &lt;- 'Montréal'  # simple ou double quotes\n\nlogical : TRUE ou FALSE\n\nest_etudiant &lt;- TRUE\na_un_emploi &lt;- FALSE"
+  },
+  {
+    "objectID": "ancien.html#les-types-de-données-dans-r-1",
+    "href": "ancien.html#les-types-de-données-dans-r-1",
+    "title": "Introduction à R",
+    "section": "Les types de données dans R",
+    "text": "Les types de données dans R\n\nTypes spéciaux :\n\nfactor : catégories\n\nniveau &lt;- factor(c(\"Débutant\", \"Intermédiaire\", \"Avancé\"))\n\nDate : dates\n\ndate &lt;- as.Date(\"2025-01-14\")\n\nNA : valeurs manquantes\n\ndonnees &lt;- c(1, NA, 3, NA, 5)"
+  },
+  {
+    "objectID": "ancien.html#parenthèses-guillemets-et-virgules",
+    "href": "ancien.html#parenthèses-guillemets-et-virgules",
+    "title": "Introduction à R",
+    "section": "Parenthèses, guillemets et virgules",
+    "text": "Parenthèses, guillemets et virgules\n\nLes parenthèses () :\n\nDélimitent les arguments d’une fonction\nDoivent toujours être fermées\n\n# Correct\nmoyenne &lt;- mean(donnees)\n\n# Incorrect - parenthèse manquante\nmoyenne &lt;- mean(donnees\n\n\nLes virgules :\n\nSéparent les arguments d’une fonction\n\n# Correct\nresultat &lt;- sum(1, 2, 3, na.rm = TRUE)\n\n# Incorrect - virgule manquante\nresultat &lt;- sum(1 2 3, na.rm = TRUE)"
+  },
+  {
+    "objectID": "ancien.html#assignation-vs--",
+    "href": "ancien.html#assignation-vs--",
+    "title": "Introduction à R",
+    "section": "Assignation : = vs <-",
+    "text": "Assignation : = vs &lt;-\n\nL’opérateur &lt;- :\n\nRecommandé pour l’assignation de variables\nPlus clair et explicite\nStandard dans la communauté R\n\nage &lt;- 25\nnom &lt;- \"Alice\"\n\n\nL’opérateur = :\n\nUtilisé principalement pour les arguments de fonctions\nPeut créer de la confusion\n\n# Pour les arguments de fonction\nmean(x = donnees, na.rm = TRUE)\n\n# Éviter pour l'assignation\nage = 25  # Fonctionne mais non recommandé"
+  },
+  {
+    "objectID": "ancien.html#messages-derreur-courants",
+    "href": "ancien.html#messages-derreur-courants",
+    "title": "Introduction à R",
+    "section": "Messages d’erreur courants",
+    "text": "Messages d’erreur courants\n\nErreur de syntaxe\n# Message d'erreur\nError: unexpected symbol in \"mon code\"\n\n# Cause probable\n# Parenthèse ou guillemet manquant\n\n\nObjet non trouvé\n# Message d'erreur\nError: object 'data' not found\n\n# Causes probables\n# - Faute de frappe dans le nom\n# - Objet non créé\n# - Mauvais working directory"
+  },
+  {
+    "objectID": "ancien.html#messages-derreur-suite",
+    "href": "ancien.html#messages-derreur-suite",
+    "title": "Introduction à R",
+    "section": "Messages d’erreur (suite)",
+    "text": "Messages d’erreur (suite)\n\nComment réagir aux erreurs :\n\nNe pas paniquer ! Les erreurs sont normales\nLire attentivement le message d’erreur\nVérifier la ligne indiquée dans le message\nPoints à vérifier :\n\nParenthèses fermées ?\nGuillemets fermés ?\nVirgules aux bons endroits ?\nNoms d’objets corrects ?\nPackage chargé (library()) ?\n\n\n\nEncourager les étudiants à voir les erreurs comme des opportunités d’apprentissage"
+  },
+  {
+    "objectID": "ancien.html#nous-allons-utiliser-le-dataframe-swiss",
+    "href": "ancien.html#nous-allons-utiliser-le-dataframe-swiss",
+    "title": "Introduction à R",
+    "section": "Nous allons utiliser le dataframe swiss",
+    "text": "Nous allons utiliser le dataframe swiss\n# Charger les packages nécessaires\nlibrary(dplyr) # Manipulation de données\nlibrary(ggplot2) # Graphiques\n\n# Importer les données swiss (jeu de données intégré)\ndf &lt;- swiss\n\n# Explorer les données\nView(df)\nsummary(df)\nnames(df)\nhead(df)\nncol(df)\nnrow(df)"
+  },
+  {
+    "objectID": "ancien.html#analyse-rapide-dune-variable",
+    "href": "ancien.html#analyse-rapide-dune-variable",
+    "title": "Introduction à R",
+    "section": "Analyse rapide d’une variable",
+    "text": "Analyse rapide d’une variable\n# Voir le nombre de valeurs pour chaque élément d'une variable\ntable(df$Fertility)\n\n# Histogramme de la variable 'Fertility'\nhist(df$Fertility)\n\n# Obtenir la moyenne de la variable 'Fertility'\nmean(df$Fertility)\n\n$ permet d’accéder à une variable dans un dataframe.\nOn accède à la variable Fertility dans le dataframe df avec df$Fertility"
+  },
+  {
+    "objectID": "ancien.html#filter-et-sélectionner-des-variables",
+    "href": "ancien.html#filter-et-sélectionner-des-variables",
+    "title": "Introduction à R",
+    "section": "Filter et sélectionner des variables",
+    "text": "Filter et sélectionner des variables\n# Sélectionner des colonnes \n# (par exemple, Fertility, Education et Agriculture)\n\ndf_selected &lt;- df %&gt;%\n  select(Fertility, Education, Agriculture)\n\n# Filtrer les lignes pour inclure uniquement les cantons \n# avec une fertilité supérieure à la moyenne\n\nmean_fertility &lt;- mean(df_selected$Fertility, na.rm = TRUE)\n\ndf_filtered &lt;- df_selected %&gt;%\n  filter(Fertility &gt; mean_fertility)"
+  },
+  {
+    "objectID": "ancien.html#modifier-des-variables",
+    "href": "ancien.html#modifier-des-variables",
+    "title": "Introduction à R",
+    "section": "Modifier des variables",
+    "text": "Modifier des variables\n# Créer une nouvelle variable binaire \"high_agriculture\" \n# indiquant si le pourcentage d'agriculture est supérieur à 50\n\ndf_mutated &lt;- df_filtered %&gt;%\n  mutate(high_agriculture = ifelse(Agriculture &gt; 50, 1, 0))\n\n# Regrouper par \"high_agriculture\" et calculer la moyenne de l'éducation\n\ndf_summarized &lt;- df_mutated %&gt;%\n  group_by(high_agriculture) %&gt;%\n  summarize(moyenne_education = mean(Education, na.rm = TRUE))\n\n# Afficher le résultat final\nprint(df_summarized)"
+  },
+  {
+    "objectID": "ancien.html#représentation-graphique-des-données",
+    "href": "ancien.html#représentation-graphique-des-données",
+    "title": "Introduction à R",
+    "section": "Représentation graphique des données",
+    "text": "Représentation graphique des données\n\nPrincipes généraux de la visualisation\n\nMontrer les données\n\nÉvitez les distractions inutiles\n\nChoisir des visualisations appropriées\n\nQuelles informations seront utiles ?\n\nÉviter les graphiques « spaghetti »\n\nÉvitez les lignes trop complexes qui se chevauchent et s’entremêlent\n\nCommencer en noir et blanc\n\nUtiliser les couleurs de manière efficace"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2",
+    "href": "ancien.html#visualisation-avec-ggplot2",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\n\nInitialiser un graphique\nggplot(df, aes(x = Agriculture, y = Fertility, color = Education)) \n\ndf est le dataframe\naes() est la fonction qui permet de spécifier les variables à utiliser\nx et y sont les variables à utiliser pour les axes x et y\ncolor est la variable à utiliser pour la couleur"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2-1",
+    "href": "ancien.html#visualisation-avec-ggplot2-1",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\n\nAjouter un geom_()\nggplot(df, aes(x = Agriculture, y = Fertility, color = Education)) +\n  geom_point(alpha = 0.8) # Le alpha est la transparence\n\nIl existe plusieurs geom_() pour différents types de graphiques\n\ngeom_point() est pour un nuage de points\ngeom_line() est pour un graphique en ligne\ngeom_bar() est pour un graphique en barres\ngeom_histogram() est pour un histogramme"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2-2",
+    "href": "ancien.html#visualisation-avec-ggplot2-2",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\n\nAjouter une échelle de couleur\nggplot(df, aes(x = Agriculture, y = Fertility, color = Education)) +\n  geom_point(alpha = 0.8) + # Le alpha est la transparence\n  scale_color_gradient(low = \"blue\", high = \"red\", name = \"Éducation\") \n\nscale_color_gradient() permet de spécifier les couleurs pour la variable Education\nlow et high sont les couleurs pour les valeurs les plus basses et les plus hautes\nname est le nom de la légende\nVous pouvez utiliser les hexcodes pour les couleurs"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2-3",
+    "href": "ancien.html#visualisation-avec-ggplot2-3",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\n\nAjouter des titres et des labels\nggplot(df, aes(x = Agriculture, y = Fertility, color = Education)) +\n  geom_point(alpha = 0.8) + # Le alpha est la transparence\n  scale_color_gradient(low = \"blue\", high = \"red\", name = \"Éducation\") +\n  labs(\n    title = \"Relation entre l'agriculture et la fertilité en Suisse\",\n    x = \"Pourcentage d'agriculture\",\n    y = \"Fertilité\"\n  )"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2-4",
+    "href": "ancien.html#visualisation-avec-ggplot2-4",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\n\nAjouter un thème\nggplot(df, aes(x = Agriculture, y = Fertility, color = Education)) +\n  geom_point(alpha = 0.8) + # Le alpha est la transparence\n  scale_color_gradient(low = \"blue\", high = \"red\", name = \"Éducation\") +\n  labs(\n    title = \"Relation entre l'agriculture et la fertilité en Suisse\",\n    x = \"Pourcentage d'agriculture\",\n    y = \"Fertilité\"\n  ) +\n  theme_minimal()\n\ntheme_minimal() est un thème minimaliste\nIl existe plusieurs thèmes prédéfinis dans ggplot2\nVous pouvez aussi créer votre propre thème"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2-5",
+    "href": "ancien.html#visualisation-avec-ggplot2-5",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\n\nSauvegarder le graphique\nggplot(df, aes(x = Agriculture, y = Fertility, color = Education)) +\n  geom_point(alpha = 0.8) + # Le alpha est la transparence\n  scale_color_gradient(low = \"blue\", high = \"red\", name = \"Éducation\") +\n  labs(\n    title = \"Relation entre l'agriculture et la fertilité en Suisse\",\n    x = \"Pourcentage d'agriculture\",\n    y = \"Fertilité\"\n  ) +\n  theme_minimal()\n\nggsave(\"nom_du_graphique.png\", width = 10, height = 6)\n\nVous pouvez spécifier le format du graphique (png, pdf, etc.) ainsi que le chemin pour sauvegarder le graphique"
+  },
+  {
+    "objectID": "ancien.html#visualisation-avec-ggplot2-6",
+    "href": "ancien.html#visualisation-avec-ggplot2-6",
+    "title": "Introduction à R",
+    "section": "Visualisation avec ggplot2",
+    "text": "Visualisation avec ggplot2\n\nUn histogramme de la variable Fertility\nggplot(df, aes(x = Fertility)) +\n  geom_histogram(fill = \"skyblue\", color = \"white\", bins = 5) +\n  labs(\n    title = \"Distribution de la fertilité en Suisse\",\n    x = \"Fertilité\",\n    y = \"Nombre de cantons\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "ancien.html#analyse-statistique",
+    "href": "ancien.html#analyse-statistique",
+    "title": "Introduction à R",
+    "section": "Analyse statistique",
+    "text": "Analyse statistique\n# Calculer la corrélation entre Fertility et Agriculture\n\ncorrelation &lt;- cor(df$Fertility, df$Agriculture)\nprint(paste(\"Corrélation entre Fertility et Agriculture:\", round(correlation, 2)))\n\n# Effectuer une régression linéaire avec Fertility comme variable dépendante\n\nmodele &lt;- lm(Fertility ~ Agriculture, data = df)\n\n# Afficher le résumé du modèle de régression\n\nsummary(modele)"
+  },
+  {
+    "objectID": "ancien.html#bonnes-pratiques",
+    "href": "ancien.html#bonnes-pratiques",
+    "title": "Introduction à R",
+    "section": "Bonnes pratiques",
+    "text": "Bonnes pratiques\n\nstyle.tidyverse.org\n\nUtilisé par la communauté R pour standardiser le style du code\nUtilisé par Google\nUtilisé par des packages populaires comme stylr et lintr"
+  },
+  {
+    "objectID": "ancien.html#bonnes-pratiques-1",
+    "href": "ancien.html#bonnes-pratiques-1",
+    "title": "Introduction à R",
+    "section": "Bonnes pratiques",
+    "text": "Bonnes pratiques\n\nRègles générales :\n\nNommer vos fichiers de manière descriptive\nUtiliser des minuscules seulement et aucun caractère spécial comme é ou à\nSi vos fichiers contiennent plusieurs mots, les séparer par des underscores _\nExemple: nettoyage_donnees.R\nUtiliser des chiffres pour ordonner vos scripts\nÉvitez d’écrire des lignes de code trop longues\nUtiliser la convention snake_case plutôt que camelCase\nNommez vous dataframe de façon standard. df_ ou data_"
+  },
+  {
+    "objectID": "ancien.html#organiser-votre-environnement-de-travail",
+    "href": "ancien.html#organiser-votre-environnement-de-travail",
+    "title": "Introduction à R",
+    "section": "Organiser votre environnement de travail",
+    "text": "Organiser votre environnement de travail\n/votre_projet\n├── data\n│   ├── processed\n│   │   └── data_clean.csv\n│   └── raw\n│       └── data_raw.csv\n├── docs\n│   └── article\n│       ├── articles.qmd\n│       └── references.bib\n├── R\n│   ├── 2_analysis.R\n│   └── 3_graph.R\n├── README.md\n└── results\n    └── graphs\n        └── 1_bar_graph.png"
+  },
+  {
+    "objectID": "ancien.html#en-apprendre-plus",
+    "href": "ancien.html#en-apprendre-plus",
+    "title": "Introduction à R",
+    "section": "En apprendre plus",
+    "text": "En apprendre plus\n\nswirl\nDatacamp\nR4DS (R for Data Science)\nAdvanced R"
+  },
+  {
+    "objectID": "ancien.html#ressources",
+    "href": "ancien.html#ressources",
+    "title": "Introduction à R",
+    "section": "Ressources",
+    "text": "Ressources\nQuoi faire quand ça ne fonctionne pas?\n\nChatGPT\n\nÊtre clair et précis dans vos requêtes\nExpliquer la structure de vos données\nCopier-coller le message d’erreur\nCopier-coller la documentation d’un package\n\nRéessayer ChatGPT\n\nC’est rare que ChatGPT ne trouve pas la réponse\n\nLa documentation de R (ex: ?mean() dans votre console)\nGoogle\n\nStackoverflow\nStackexchange"
+  },
+  {
+    "objectID": "ancien.html#conclusion",
+    "href": "ancien.html#conclusion",
+    "title": "Introduction à R",
+    "section": "Conclusion",
+    "text": "Conclusion"
   }
 ]

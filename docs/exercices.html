@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Université Laval">
 
-<title>Exercices pratiques – Initiation à l’analyse des données avec R</title>
+<title>Exercices de mise en pratique – Initiation à l’analyse des données avec R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -100,6 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Recherche"
   }
 }</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 
 </head>
@@ -155,42 +157,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#instructions-générales" id="toc-instructions-générales" class="nav-link active" data-scroll-target="#instructions-générales">📋 Instructions générales</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
-  <li><a href="#objectifs-de-lexercice" id="toc-objectifs-de-lexercice" class="nav-link" data-scroll-target="#objectifs-de-lexercice">🎯 Objectifs de l’exercice</a></li>
-  <li><a href="#comment-procéder" id="toc-comment-procéder" class="nav-link" data-scroll-target="#comment-procéder">💾 Comment procéder</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link" data-scroll-target="#objectifs-dapprentissage">Objectifs d’apprentissage</a></li>
+  <li><a href="#préparation" id="toc-préparation" class="nav-link" data-scroll-target="#préparation">Préparation</a></li>
   </ul></li>
-  <li><a href="#exercice-1-premiers-pas-avec-les-objets" id="toc-exercice-1-premiers-pas-avec-les-objets" class="nav-link" data-scroll-target="#exercice-1-premiers-pas-avec-les-objets">🏁 Exercice 1 : Premiers pas avec les objets</a>
+  <li><a href="#exercice-1-objets-et-vecteurs" id="toc-exercice-1-objets-et-vecteurs" class="nav-link" data-scroll-target="#exercice-1-objets-et-vecteurs">Exercice 1 : Objets et Vecteurs</a></li>
+  <li><a href="#exercice-2-exploration-du-jeu-de-données" id="toc-exercice-2-exploration-du-jeu-de-données" class="nav-link" data-scroll-target="#exercice-2-exploration-du-jeu-de-données">Exercice 2 : Exploration du jeu de données</a></li>
+  <li><a href="#exercice-3-manipulation-avec-dplyr" id="toc-exercice-3-manipulation-avec-dplyr" class="nav-link" data-scroll-target="#exercice-3-manipulation-avec-dplyr">Exercice 3 : Manipulation avec dplyr</a></li>
+  <li><a href="#exercice-4-analyses-par-groupe" id="toc-exercice-4-analyses-par-groupe" class="nav-link" data-scroll-target="#exercice-4-analyses-par-groupe">Exercice 4 : Analyses par groupe</a></li>
+  <li><a href="#exercice-5-visualisation-de-données" id="toc-exercice-5-visualisation-de-données" class="nav-link" data-scroll-target="#exercice-5-visualisation-de-données">Exercice 5 : Visualisation de données</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a>
   <ul class="collapse">
-  <li><a href="#consignes" id="toc-consignes" class="nav-link" data-scroll-target="#consignes">Consignes</a></li>
-  </ul></li>
-  <li><a href="#exercice-2-explorer-le-dataset" id="toc-exercice-2-explorer-le-dataset" class="nav-link" data-scroll-target="#exercice-2-explorer-le-dataset">🌍 Exercice 2 : Explorer le dataset</a>
-  <ul class="collapse">
-  <li><a href="#consignes-1" id="toc-consignes-1" class="nav-link" data-scroll-target="#consignes-1">Consignes</a></li>
-  </ul></li>
-  <li><a href="#exercice-3-analyse-descriptive" id="toc-exercice-3-analyse-descriptive" class="nav-link" data-scroll-target="#exercice-3-analyse-descriptive">🔍 Exercice 3 : Analyse descriptive</a>
-  <ul class="collapse">
-  <li><a href="#consignes-2" id="toc-consignes-2" class="nav-link" data-scroll-target="#consignes-2">Consignes</a></li>
-  </ul></li>
-  <li><a href="#exercice-4-manipulation-avec-dplyr" id="toc-exercice-4-manipulation-avec-dplyr" class="nav-link" data-scroll-target="#exercice-4-manipulation-avec-dplyr">🛠️ Exercice 4 : Manipulation avec dplyr</a>
-  <ul class="collapse">
-  <li><a href="#consignes-3" id="toc-consignes-3" class="nav-link" data-scroll-target="#consignes-3">Consignes</a></li>
-  </ul></li>
-  <li><a href="#exercice-5-analyses-par-groupe" id="toc-exercice-5-analyses-par-groupe" class="nav-link" data-scroll-target="#exercice-5-analyses-par-groupe">📊 Exercice 5 : Analyses par groupe</a>
-  <ul class="collapse">
-  <li><a href="#consignes-4" id="toc-consignes-4" class="nav-link" data-scroll-target="#consignes-4">Consignes</a></li>
-  </ul></li>
-  <li><a href="#exercice-6-visualisations" id="toc-exercice-6-visualisations" class="nav-link" data-scroll-target="#exercice-6-visualisations">📈 Exercice 6 : Visualisations</a>
-  <ul class="collapse">
-  <li><a href="#consignes-5" id="toc-consignes-5" class="nav-link" data-scroll-target="#consignes-5">Consignes</a></li>
-  </ul></li>
-  <li><a href="#exercice-bonus-analyse-temporelle" id="toc-exercice-bonus-analyse-temporelle" class="nav-link" data-scroll-target="#exercice-bonus-analyse-temporelle">🎯 Exercice bonus : Analyse temporelle</a>
-  <ul class="collapse">
-  <li><a href="#consignes-6" id="toc-consignes-6" class="nav-link" data-scroll-target="#consignes-6">Consignes</a></li>
-  </ul></li>
-  <li><a href="#félicitations" id="toc-félicitations" class="nav-link" data-scroll-target="#félicitations">🏆 Félicitations !</a>
-  <ul class="collapse">
-  <li><a href="#pour-aller-plus-loin" id="toc-pour-aller-plus-loin" class="nav-link" data-scroll-target="#pour-aller-plus-loin">📚 Pour aller plus loin</a></li>
+  <li><a href="#récapitulatif-des-acquis" id="toc-récapitulatif-des-acquis" class="nav-link" data-scroll-target="#récapitulatif-des-acquis">Récapitulatif des acquis</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -204,15 +183,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exercices pratiques</h1>
-<p class="subtitle lead">Mise en pratique des concepts R</p>
+<h1 class="title">Exercices de mise en pratique</h1>
+<p class="subtitle lead">Analyse de données avec R - Faculté des sciences sociales</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Université Laval </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">11 mars 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -222,183 +213,165 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="instructions-générales" class="level2">
-<h2 class="anchored" data-anchor-id="instructions-générales">📋 Instructions générales</h2>
-<p>Cet exercice pratique vous permettra de mettre en application tous les concepts vus dans la formation R. Vous travaillerez avec des <strong>vraies données</strong> sur l’espérance de vie et l’économie des pays du monde.</p>
-<section id="objectifs-de-lexercice" class="level3">
-<h3 class="anchored" data-anchor-id="objectifs-de-lexercice">🎯 Objectifs de l’exercice</h3>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Cet exercice pratique vous permet de consolider les notions vues en formation. Vous travaillerez avec des données réelles sur l’espérance de vie, la population et le PIB par habitant pour 142 pays (1952-2007).</p>
+<section id="objectifs-dapprentissage" class="level3">
+<h3 class="anchored" data-anchor-id="objectifs-dapprentissage">Objectifs d’apprentissage</h3>
 <ul>
-<li>Manipuler des objets et vecteurs R</li>
-<li>Explorer un dataset réel</li>
-<li>Utiliser les fonctions de base et dplyr</li>
-<li>Créer des visualisations avec ggplot2</li>
-<li>Analyser des tendances dans les données</li>
+<li><i class="fa-solid fa-check"></i> Manipuler des objets et des vecteurs</li>
+<li><i class="fa-solid fa-check"></i> Importer et explorer un jeu de données réel</li>
+<li><i class="fa-solid fa-check"></i> Effectuer des opérations de nettoyage avec dplyr</li>
+<li><i class="fa-solid fa-check"></i> Créer des visualisations professionnelles avec ggplot2</li>
 </ul>
 </section>
-<section id="comment-procéder" class="level3">
-<h3 class="anchored" data-anchor-id="comment-procéder">💾 Comment procéder</h3>
+<section id="préparation" class="level3">
+<h3 class="anchored" data-anchor-id="préparation">Préparation</h3>
 <ol type="1">
-<li><strong>Téléchargez les fichiers nécessaires</strong> :
-<ul>
-<li><a href="script/exercice_etudiant.R"><strong>Script R de l’exercice</strong></a></li>
-<li><a href="data/donnees_pays.csv"><strong>Données CSV</strong></a></li>
-</ul></li>
-<li><strong>Placez les deux fichiers</strong> dans le même dossier sur votre ordinateur</li>
-<li><strong>Ouvrez le script</strong> dans RStudio</li>
-<li><strong>Définissez votre dossier de travail</strong> (instructions dans le script)</li>
-<li><strong>Suivez les instructions</strong> dans le script (zones à compléter marquées par <code># À COMPLÉTER</code>)</li>
-<li><strong>Exécutez votre code</strong> au fur et à mesure</li>
-<li><strong>Consultez les solutions</strong> ci-dessous si vous êtes bloqué</li>
+<li><strong>Fichiers requis</strong> : Téléchargez le <a href="script/exercice_etudiant.R">Script R</a> et les <a href="data/donnees_pays.csv">Données CSV</a>.</li>
+<li><strong>Organisation</strong> : Placez ces fichiers dans votre dossier de travail.</li>
+<li><strong>Action</strong> : Ouvrez le script dans RStudio et complétez les sections marquées par <code># À COMPLÉTER</code>.</li>
 </ol>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-📖 Données utilisées
+Jeu de données : Gapminder
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Le fichier <strong>donnees_pays.csv</strong> contient des données sur l’espérance de vie, la population et le PIB par habitant pour <strong>142 pays</strong> de 1952 à 2007. Ces données proviennent du célèbre dataset Gapminder utilisé mondialement pour l’enseignement de l’analyse de données.</p>
-<p><strong>Variables disponibles :</strong> - <code>country</code> : Nom du pays - <code>continent</code> : Continent (Africa, Americas, Asia, Europe, Oceania) - <code>year</code> : Année (1952 à 2007, par intervalles de 5 ans) - <code>lifeExp</code> : Espérance de vie à la naissance (années) - <code>pop</code> : Population totale - <code>gdpPercap</code> : PIB par habitant (dollars US, ajusté inflation)</p>
+<p>Le fichier <code>donnees_pays.csv</code> contient des indicateurs mondiaux provenant du projet Gapminder. Il inclut des variables comme le continent, l’année, l’espérance de vie (<code>lifeExp</code>) et le PIB par habitant (<code>gdpPercap</code>).</p>
 </div>
 </div>
 <hr>
 </section>
 </section>
-<section id="exercice-1-premiers-pas-avec-les-objets" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-1-premiers-pas-avec-les-objets">🏁 Exercice 1 : Premiers pas avec les objets</h2>
-<p><strong>Objectif</strong> : Créer des objets et vecteurs pour vous familiariser avec R</p>
-<section id="consignes" class="level3">
-<h3 class="anchored" data-anchor-id="consignes">Consignes</h3>
+<section id="exercice-1-objets-et-vecteurs" class="level2">
+<h2 class="anchored" data-anchor-id="exercice-1-objets-et-vecteurs">Exercice 1 : Objets et Vecteurs</h2>
+<p><strong>Consigne</strong> : Familiarisez-vous avec la création d’objets dans R.</p>
 <ol type="1">
-<li>Créez un objet <code>pays_prefere</code> avec le nom de votre pays favori</li>
-<li>Créez un vecteur <code>continents</code> avec les 5 continents principaux</li>
-<li>Créez un vecteur <code>populations</code> avec des populations fictives (en millions)</li>
-<li>Vérifiez les types de données avec <code>class()</code></li>
+<li>Créez un objet <code>pays_prefere</code> (type texte).</li>
+<li>Créez un vecteur <code>continents</code> contenant les 5 noms de continents.</li>
+<li>Créez un vecteur <code>populations</code> (valeurs numériques).</li>
+<li>Utilisez la fonction <code>class()</code> pour vérifier le type de vos objets.</li>
 </ol>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">À vous de jouer !</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Solution</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Instructions</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.</p>
+<p>Utilisez l’opérateur <code>&lt;-</code> pour l’assignation.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Créer un objet</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pays_prefere <span class="ot">&lt;-</span> <span class="st">"Quebec"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pays_prefere <span class="ot">&lt;-</span> <span class="st">"Québec"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Créer un vecteur de continents</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Créer un vecteur</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>continents <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Afrique"</span>, <span class="st">"Amérique"</span>, <span class="st">"Asie"</span>, <span class="st">"Europe"</span>, <span class="st">"Océanie"</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Créer un vecteur de populations (en millions)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Créer un vecteur numérique</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>populations <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1200</span>, <span class="dv">580</span>, <span class="dv">4600</span>, <span class="dv">750</span>, <span class="dv">45</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Vérifier les types</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(pays_prefere)   <span class="co"># character</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(continents)     <span class="co"># character</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(populations)    <span class="co"># numeric</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Vérification</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(pays_prefere)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(populations)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
 </div>
 </div>
 </div>
 </div>
 <hr>
 </section>
-</section>
-<section id="exercice-2-explorer-le-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-2-explorer-le-dataset">🌍 Exercice 2 : Explorer le dataset</h2>
-<p><strong>Objectif</strong> : Explorer des vraies données internationales</p>
-<section id="consignes-1" class="level3">
-<h3 class="anchored" data-anchor-id="consignes-1">Consignes</h3>
+<section id="exercice-2-exploration-du-jeu-de-données" class="level2">
+<h2 class="anchored" data-anchor-id="exercice-2-exploration-du-jeu-de-données">Exercice 2 : Exploration du jeu de données</h2>
+<p><strong>Consigne</strong> : Chargez les données et analysez leur structure.</p>
 <ol type="1">
-<li>Chargez les packages nécessaires (<code>readr</code>, <code>dplyr</code>, <code>ggplot2</code>)</li>
-<li>Chargez les données depuis le fichier CSV avec <code>read_csv()</code></li>
-<li>Explorez la structure des données (<code>dim()</code>, <code>head()</code>, <code>str()</code>, <code>summary()</code>)</li>
-<li>Identifiez les variables disponibles</li>
+<li>Chargez les packages <code>readr</code>, <code>dplyr</code> et <code>ggplot2</code>.</li>
+<li>Importez le fichier <code>donnees_pays.csv</code>.</li>
+<li>Affichez les dimensions du tableau et le nom des colonnes.</li>
 </ol>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">À vous de jouer !</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Solution</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Instructions</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.</p>
+<p>Utilisez <code>read_csv()</code> pour l’importation.</p>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Charger les packages nécessaires</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Charger les données depuis le fichier CSV</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"donnees_pays.csv"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Explorer la structure</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(donnees)        <span class="co"># dimensions</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(donnees)       <span class="co"># premiers cas</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(donnees)        <span class="co"># structure détaillée</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(donnees)    <span class="co"># résumé statistique</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Voir les noms des colonnes</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(donnees)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Importation</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/donnees_pays.csv"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Exploration</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(donnees)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1704    6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(donnees)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "country"   "continent" "year"      "lifeExp"   "pop"       "gdpPercap"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(donnees)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  country     continent  year lifeExp      pop gdpPercap
+  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 Afghanistan Asia       1952    28.8  8425333      779.
+2 Afghanistan Asia       1957    30.3  9240934      821.
+3 Afghanistan Asia       1962    32.0 10267083      853.
+4 Afghanistan Asia       1967    34.0 11537966      836.
+5 Afghanistan Asia       1972    36.1 13079460      740.
+6 Afghanistan Asia       1977    38.4 14880372      786.</code></pre>
+</div>
 </div>
 </div>
 </div>
 </div>
 <hr>
 </section>
-</section>
-<section id="exercice-3-analyse-descriptive" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-3-analyse-descriptive">🔍 Exercice 3 : Analyse descriptive</h2>
-<p><strong>Objectif</strong> : Analyser les variables avec des fonctions statistiques</p>
-<section id="consignes-2" class="level3">
-<h3 class="anchored" data-anchor-id="consignes-2">Consignes</h3>
+<section id="exercice-3-manipulation-avec-dplyr" class="level2">
+<h2 class="anchored" data-anchor-id="exercice-3-manipulation-avec-dplyr">Exercice 3 : Manipulation avec dplyr</h2>
+<p><strong>Consigne</strong> : Nettoyez et filtrez les données pour l’analyse.</p>
 <ol type="1">
-<li>Calculez l’espérance de vie moyenne mondiale</li>
-<li>Trouvez le PIB par habitant minimum et maximum</li>
-<li>Comptez combien de pays uniques sont dans le dataset</li>
-<li>Identifiez les années disponibles dans les données</li>
+<li>Filtrez les données pour ne garder que l’année 2007.</li>
+<li>Sélectionnez les colonnes : pays, continent et espérance de vie.</li>
+<li>Triez les résultats par espérance de vie décroissante.</li>
 </ol>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">À vous de jouer !</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Solution</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Instructions</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<p>Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.</p>
+<p>Utilisez l’opérateur “pipe” <code>%&gt;%</code>.</p>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger les données pour les solutions</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/donnees_pays.csv"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Espérance de vie moyenne</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(donnees<span class="sc">$</span>lifeExp)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Manipulation en chaîne</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>donnees_2007 <span class="ot">&lt;-</span> donnees <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, continent, lifeExp) <span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(lifeExp))</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(donnees_2007)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 59.47444</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. PIB par habitant min et max</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(donnees<span class="sc">$</span>gdpPercap)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 241.1659</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(donnees<span class="sc">$</span>gdpPercap)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 113523.1</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Nombre de pays uniques</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(donnees<span class="sc">$</span>country))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 142</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Années disponibles</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(donnees<span class="sc">$</span>year)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 2002 2007</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">unique</span>(donnees<span class="sc">$</span>year))  <span class="co"># pour les avoir en ordre</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 2002 2007</code></pre>
+<pre><code># A tibble: 6 × 3
+  country          continent lifeExp
+  &lt;chr&gt;            &lt;chr&gt;       &lt;dbl&gt;
+1 Japan            Asia         82.6
+2 Hong Kong, China Asia         82.2
+3 Iceland          Europe       81.8
+4 Switzerland      Europe       81.7
+5 Australia        Oceania      81.2
+6 Spain            Europe       80.9</code></pre>
 </div>
 </div>
 </div>
@@ -406,56 +379,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-</section>
-<section id="exercice-4-manipulation-avec-dplyr" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-4-manipulation-avec-dplyr">🛠️ Exercice 4 : Manipulation avec dplyr</h2>
-<p><strong>Objectif</strong> : Filtrer, sélectionner et transformer les données</p>
-<section id="consignes-3" class="level3">
-<h3 class="anchored" data-anchor-id="consignes-3">Consignes</h3>
+<section id="exercice-4-analyses-par-groupe" class="level2">
+<h2 class="anchored" data-anchor-id="exercice-4-analyses-par-groupe">Exercice 4 : Analyses par groupe</h2>
+<p><strong>Consigne</strong> : Calculez des statistiques descriptives par continent.</p>
 <ol type="1">
-<li>Filtrez les données pour l’année 2007 seulement</li>
-<li>Sélectionnez uniquement les colonnes pays, continent et espérance de vie</li>
-<li>Créez une nouvelle variable <code>esperance_vie_mois</code> (en mois au lieu d’années)</li>
-<li>Triez les pays par espérance de vie décroissante</li>
+<li>Calculez l’espérance de vie moyenne par continent en 2007.</li>
+<li>Identifiez le nombre de pays par continent dans le jeu de données.</li>
 </ol>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">À vous de jouer !</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Solution</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Instructions</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
-<p>Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.</p>
+<p>Combinez <code>group_by()</code> et <code>summarise()</code>.</p>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Filtrer pour 2007</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>donnees_2007 <span class="ot">&lt;-</span> donnees <span class="sc">%&gt;%</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Sélectionner certaines colonnes</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>donnees_select <span class="ot">&lt;-</span> donnees_2007 <span class="sc">%&gt;%</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, continent, lifeExp)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Créer nouvelle variable (espérance de vie en mois)</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>donnees_mois <span class="ot">&lt;-</span> donnees_select <span class="sc">%&gt;%</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">esperance_vie_mois =</span> lifeExp <span class="sc">*</span> <span class="dv">12</span>)</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Trier par espérance de vie décroissante</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>donnees_triees <span class="ot">&lt;-</span> donnees_mois <span class="sc">%&gt;%</span></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(lifeExp))</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Voir le résultat</span></span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(donnees_triees)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Statistiques groupées</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>esperance_continent <span class="ot">&lt;-</span> donnees <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">moyenne_vie =</span> <span class="fu">mean</span>(lifeExp),</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">nb_pays =</span> <span class="fu">n</span>()</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(esperance_continent)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 4
-  country          continent lifeExp esperance_vie_mois
-  &lt;chr&gt;            &lt;chr&gt;       &lt;dbl&gt;              &lt;dbl&gt;
-1 Japan            Asia         82.6               991.
-2 Hong Kong, China Asia         82.2               986.
-3 Iceland          Europe       81.8               981.
-4 Switzerland      Europe       81.7               980.
-5 Australia        Oceania      81.2               975.
-6 Spain            Europe       80.9               971.</code></pre>
+<pre><code># A tibble: 5 × 3
+  continent moyenne_vie nb_pays
+  &lt;chr&gt;           &lt;dbl&gt;   &lt;int&gt;
+1 Africa           54.8      52
+2 Americas         73.6      25
+3 Asia             70.7      33
+4 Europe           77.6      30
+5 Oceania          80.7       2</code></pre>
 </div>
 </div>
 </div>
@@ -463,167 +420,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-</section>
-<section id="exercice-5-analyses-par-groupe" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-5-analyses-par-groupe">📊 Exercice 5 : Analyses par groupe</h2>
-<p><strong>Objectif</strong> : Utiliser <code>group_by()</code> et <code>summarise()</code> pour des analyses par continent</p>
-<section id="consignes-4" class="level3">
-<h3 class="anchored" data-anchor-id="consignes-4">Consignes</h3>
+<section id="exercice-5-visualisation-de-données" class="level2">
+<h2 class="anchored" data-anchor-id="exercice-5-visualisation-de-données">Exercice 5 : Visualisation de données</h2>
+<p><strong>Consigne</strong> : Produisez des graphiques de qualité professionnelle.</p>
 <ol type="1">
-<li>Calculez l’espérance de vie moyenne par continent en 2007</li>
-<li>Trouvez le PIB par habitant médian par continent</li>
-<li>Comptez le nombre de pays par continent</li>
-<li>Identifiez le continent avec la plus haute espérance de vie moyenne</li>
+<li>Créez un histogramme de la distribution du PIB par habitant en 2007.</li>
+<li>Créez un nuage de points montrant la relation entre le PIB et l’espérance de vie.</li>
+<li>Ajoutez une couleur différente pour chaque continent.</li>
 </ol>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">À vous de jouer !</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Solution</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Instructions</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
-<p>Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.</p>
+<p>Utilisez <code>geom_histogram()</code> et <code>geom_point()</code>.</p>
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Espérance de vie moyenne par continent (2007)</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>esperance_continent <span class="ot">&lt;-</span> donnees <span class="sc">%&gt;%</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">esperance_moy =</span> <span class="fu">mean</span>(lifeExp))</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(esperance_continent)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-  continent esperance_moy
-  &lt;chr&gt;             &lt;dbl&gt;
-1 Africa             54.8
-2 Americas           73.6
-3 Asia               70.7
-4 Europe             77.6
-5 Oceania            80.7</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. PIB médian par continent</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>pib_continent <span class="ot">&lt;-</span> donnees <span class="sc">%&gt;%</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">pib_median =</span> <span class="fu">median</span>(gdpPercap))</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pib_continent)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-  continent pib_median
-  &lt;chr&gt;          &lt;dbl&gt;
-1 Africa         1452.
-2 Americas       8948.
-3 Asia           4471.
-4 Europe        28054.
-5 Oceania       29810.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Nombre de pays par continent</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>nb_pays <span class="ot">&lt;-</span> donnees <span class="sc">%&gt;%</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nombre_pays =</span> <span class="fu">n</span>())</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(nb_pays)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-  continent nombre_pays
-  &lt;chr&gt;           &lt;int&gt;
-1 Africa             52
-2 Americas           25
-3 Asia               33
-4 Europe             30
-5 Oceania             2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Continent avec plus haute espérance de vie</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>esperance_continent <span class="sc">%&gt;%</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(esperance_moy)) <span class="sc">%&gt;%</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">1</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 2
-  continent esperance_moy
-  &lt;chr&gt;             &lt;dbl&gt;
-1 Oceania            80.7</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="exercice-6-visualisations" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-6-visualisations">📈 Exercice 6 : Visualisations</h2>
-<p><strong>Objectif</strong> : Créer des graphiques pour explorer les tendances</p>
-<section id="consignes-5" class="level3">
-<h3 class="anchored" data-anchor-id="consignes-5">Consignes</h3>
-<ol type="1">
-<li>Créez un graphique en barres de l’espérance de vie par continent (2007)</li>
-<li>Créez un histogramme du PIB par habitant en 2007</li>
-<li>Créez un nuage de points PIB vs espérance de vie (2007)</li>
-<li>Ajoutez des couleurs par continent au nuage de points</li>
-</ol>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">À vous de jouer !</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Solution</a></li></ul>
-<div class="tab-content">
-<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
-<p>Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.</p>
-</div>
-<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Préparer les données pour 2007</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>donnees_2007 <span class="ot">&lt;-</span> donnees <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Graphique en barres par continent</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>donnees_2007 <span class="sc">%&gt;%</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">esperance_moy =</span> <span class="fu">mean</span>(lifeExp)) <span class="sc">%&gt;%</span></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> esperance_moy)) <span class="sc">+</span></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Espérance de vie moyenne par continent (2007)"</span>,</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Continent"</span>, <span class="at">y =</span> <span class="st">"Espérance de vie (années)"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Distribution</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(donnees <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>), <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>, <span class="at">fill =</span> <span class="st">"#003875"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution du PIB par habitant (2007)"</span>, <span class="at">x =</span> <span class="st">"PIB"</span>, <span class="at">y =</span> <span class="st">"Fréquence"</span>) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="exercices_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="exercices_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="768"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Histogramme du PIB par habitant</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(donnees_2007, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>, <span class="at">fill =</span> <span class="st">"lightcoral"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution du PIB par habitant (2007)"</span>,</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"PIB par habitant"</span>, <span class="at">y =</span> <span class="st">"Nombre de pays"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Relation</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(donnees <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>), </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"PIB vs Espérance de vie"</span>, <span class="at">x =</span> <span class="st">"PIB par habitant"</span>, <span class="at">y =</span> <span class="st">"Espérance de vie"</span>) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="exercices_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid figure-img" width="768"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Nuage de points PIB vs espérance de vie</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(donnees_2007, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relation PIB - Espérance de vie (2007)"</span>,</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"PIB par habitant"</span>, <span class="at">y =</span> <span class="st">"Espérance de vie (années)"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="exercices_files/figure-html/unnamed-chunk-6-3.png" class="img-fluid figure-img" width="768"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Nuage de points avec couleurs par continent</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(donnees_2007, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relation PIB - Espérance de vie par continent (2007)"</span>,</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"PIB par habitant"</span>, <span class="at">y =</span> <span class="st">"Espérance de vie (années)"</span>,</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continent"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="exercices_files/figure-html/unnamed-chunk-6-4.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="exercices_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="768"></p>
 </figure>
 </div>
 </div>
@@ -633,111 +467,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-</section>
-<section id="exercice-bonus-analyse-temporelle" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-bonus-analyse-temporelle">🎯 Exercice bonus : Analyse temporelle</h2>
-<p><strong>Objectif</strong> : Explorer l’évolution dans le temps</p>
-<section id="consignes-6" class="level3">
-<h3 class="anchored" data-anchor-id="consignes-6">Consignes</h3>
-<ol type="1">
-<li>Calculez l’évolution de l’espérance de vie moyenne mondiale par décennie</li>
-<li>Identifiez le pays avec la plus forte croissance d’espérance de vie entre 1952 et 2007</li>
-<li>Créez un graphique linéaire de l’évolution du PIB moyen par continent</li>
-</ol>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">À vous de jouer !</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Solution</a></li></ul>
-<div class="tab-content">
-<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
-<p>Suivez les consignes ci-dessus et utilisez le script téléchargé pour compléter cet exercice.</p>
-</div>
-<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Évolution par décennie</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>evolution_decennie <span class="ot">&lt;-</span> donnees <span class="sc">%&gt;%</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">esperance_mondiale =</span> <span class="fu">mean</span>(lifeExp))</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(evolution_decennie)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 12 × 2
-    year esperance_mondiale
-   &lt;dbl&gt;              &lt;dbl&gt;
- 1  1952               49.1
- 2  1957               51.5
- 3  1962               53.6
- 4  1967               55.7
- 5  1972               57.6
- 6  1977               59.6
- 7  1982               61.5
- 8  1987               63.2
- 9  1992               64.2
-10  1997               65.0
-11  2002               65.7
-12  2007               67.0</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Plus forte croissance d'espérance de vie</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>croissance_pays <span class="ot">&lt;-</span> donnees <span class="sc">%&gt;%</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1952</span>, <span class="dv">2007</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">croissance =</span> lifeExp[year <span class="sc">==</span> <span class="dv">2007</span>] <span class="sc">-</span> lifeExp[year <span class="sc">==</span> <span class="dv">1952</span>]</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(croissance))</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(croissance_pays))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 2
-  country      croissance
-  &lt;chr&gt;             &lt;dbl&gt;
-1 Oman               38.1
-2 Vietnam            33.8
-3 Indonesia          33.2
-4 Saudi Arabia       32.9
-5 Libya              31.2
-6 Korea, Rep.        31.2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Graphique évolution PIB par continent</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>donnees <span class="sc">%&gt;%</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent, year) <span class="sc">%&gt;%</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">pib_moyen =</span> <span class="fu">mean</span>(gdpPercap)) <span class="sc">%&gt;%</span></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> pib_moyen, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Évolution du PIB moyen par continent"</span>,</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Année"</span>, <span class="at">y =</span> <span class="st">"PIB par habitant moyen"</span>,</span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continent"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="exercices_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="félicitations" class="level2">
-<h2 class="anchored" data-anchor-id="félicitations">🏆 Félicitations !</h2>
-<p>Vous avez terminé tous les exercices ! Vous maîtrisez maintenant :</p>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Vous avez complété le cycle complet d’une analyse descriptive sous R : de l’importation à la visualisation.</p>
+<section id="récapitulatif-des-acquis" class="level3">
+<h3 class="anchored" data-anchor-id="récapitulatif-des-acquis">Récapitulatif des acquis</h3>
 <ul>
-<li>✅ La création d’objets et vecteurs</li>
-<li>✅ L’exploration de datasets réels</li>
-<li>✅ Les fonctions statistiques de base</li>
-<li>✅ La manipulation de données avec dplyr</li>
-<li>✅ Les visualisations avec ggplot2</li>
-<li>✅ L’analyse de tendances temporelles</li>
+<li><i class="fa-solid fa-check-double"></i> Maîtrise des objets et types de données.</li>
+<li><i class="fa-solid fa-check-double"></i> Utilisation des fonctions de base de manipulation (<code>dplyr</code>).</li>
+<li><i class="fa-solid fa-check-double"></i> Création de graphiques informatifs (<code>ggplot2</code>).</li>
 </ul>
-<section id="pour-aller-plus-loin" class="level3">
-<h3 class="anchored" data-anchor-id="pour-aller-plus-loin">📚 Pour aller plus loin</h3>
-<ul>
-<li>Explorez d’autres datasets avec <code>data()</code></li>
-<li>Essayez de nouveaux types de graphiques</li>
-<li>Apprenez à importer vos propres données Excel/CSV</li>
-<li>Découvrez les analyses statistiques avancées</li>
-</ul>
+<p>Pour aller plus loin, explorez la documentation officielle du <a href="https://www.tidyverse.org/">Tidyverse</a>.</p>
 
 
 </section>

@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jérémie Drouin Camille Pelletier">
+
+<title>Introduction à R – Initiation à l’analyse des données avec R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Intro R - FSS</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./slides.html"> 
+<span class="menu-text">Slides</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./exercices.html"> 
+<span class="menu-text">Exercices</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/etienneprx/R_intro_fss"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#objectifs-du-cours" id="toc-objectifs-du-cours" class="nav-link active" data-scroll-target="#objectifs-du-cours">Objectifs du cours</a></li>
+  <li><a href="#quest-ce-que-lanalyse-de-données" id="toc-quest-ce-que-lanalyse-de-données" class="nav-link" data-scroll-target="#quest-ce-que-lanalyse-de-données">Qu’est-ce que l’analyse de données?</a></li>
+  <li><a href="#les-outils-danalyse-de-données" id="toc-les-outils-danalyse-de-données" class="nav-link" data-scroll-target="#les-outils-danalyse-de-données">Les outils d’analyse de données</a></li>
+  <li><a href="#pourquoi-r" id="toc-pourquoi-r" class="nav-link" data-scroll-target="#pourquoi-r">Pourquoi R?</a>
+  <ul class="collapse">
+  <li><a href="#open-source" id="toc-open-source" class="nav-link" data-scroll-target="#open-source">Open source</a></li>
+  </ul></li>
+  <li><a href="#pourquoi-r-1" id="toc-pourquoi-r-1" class="nav-link" data-scroll-target="#pourquoi-r-1">Pourquoi R?</a>
+  <ul class="collapse">
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  </ul></li>
+  <li><a href="#pourquoi-r-2" id="toc-pourquoi-r-2" class="nav-link" data-scroll-target="#pourquoi-r-2">Pourquoi R?</a>
+  <ul class="collapse">
+  <li><a href="#packages-clessn" id="toc-packages-clessn" class="nav-link" data-scroll-target="#packages-clessn">Packages CLESSN</a></li>
+  </ul></li>
+  <li><a href="#pourquoi-r-3" id="toc-pourquoi-r-3" class="nav-link" data-scroll-target="#pourquoi-r-3">Pourquoi R?</a>
+  <ul class="collapse">
+  <li><a href="#tidyverse" id="toc-tidyverse" class="nav-link" data-scroll-target="#tidyverse">Tidyverse</a></li>
+  </ul></li>
+  <li><a href="#pourquoi-r-4" id="toc-pourquoi-r-4" class="nav-link" data-scroll-target="#pourquoi-r-4">Pourquoi R?</a>
+  <ul class="collapse">
+  <li><a href="#reproductibilité" id="toc-reproductibilité" class="nav-link" data-scroll-target="#reproductibilité">Reproductibilité</a></li>
+  </ul></li>
+  <li><a href="#pourquoi-r-5" id="toc-pourquoi-r-5" class="nav-link" data-scroll-target="#pourquoi-r-5">Pourquoi R?</a>
+  <ul class="collapse">
+  <li><a href="#très-utilisé-en-science-sociale" id="toc-très-utilisé-en-science-sociale" class="nav-link" data-scroll-target="#très-utilisé-en-science-sociale">Très utilisé en science sociale</a></li>
+  </ul></li>
+  <li><a href="#pourquoi-r-6" id="toc-pourquoi-r-6" class="nav-link" data-scroll-target="#pourquoi-r-6">Pourquoi R?</a>
+  <ul class="collapse">
+  <li><a href="#exemples-dutilisation-par-des-organisations" id="toc-exemples-dutilisation-par-des-organisations" class="nav-link" data-scroll-target="#exemples-dutilisation-par-des-organisations">Exemples d’utilisation par des organisations</a></li>
+  </ul></li>
+  <li><a href="#pourquoi-r-7" id="toc-pourquoi-r-7" class="nav-link" data-scroll-target="#pourquoi-r-7">Pourquoi R?</a>
+  <ul class="collapse">
+  <li><a href="#la-clessn" id="toc-la-clessn" class="nav-link" data-scroll-target="#la-clessn">La CLESSN</a></li>
+  </ul></li>
+  <li><a href="#datagotchi" id="toc-datagotchi" class="nav-link" data-scroll-target="#datagotchi">Datagotchi</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#analyse-textuelle" id="toc-analyse-textuelle" class="nav-link" data-scroll-target="#analyse-textuelle">Analyse textuelle</a></li>
+  <li><a href="#mais-aussi" id="toc-mais-aussi" class="nav-link" data-scroll-target="#mais-aussi">Mais aussi …</a></li>
+  <li><a href="#r-au-delà-de-lanalyse-de-données" id="toc-r-au-delà-de-lanalyse-de-données" class="nav-link" data-scroll-target="#r-au-delà-de-lanalyse-de-données">R : Au-delà de l’analyse de données</a></li>
+  <li><a href="#après-r" id="toc-après-r" class="nav-link" data-scroll-target="#après-r">Après R</a>
+  <ul class="collapse">
+  <li><a href="#apprendre-r-vous-permet-de-comprendre-dautres-langages-de-programmation" id="toc-apprendre-r-vous-permet-de-comprendre-dautres-langages-de-programmation" class="nav-link" data-scroll-target="#apprendre-r-vous-permet-de-comprendre-dautres-langages-de-programmation">Apprendre R vous permet de comprendre d’autres langages de programmation</a></li>
+  </ul></li>
+  <li><a href="#installer-r-et-rstudio" id="toc-installer-r-et-rstudio" class="nav-link" data-scroll-target="#installer-r-et-rstudio">Installer R et RStudio</a>
+  <ul class="collapse">
+  <li><a href="#à-télécharger" id="toc-à-télécharger" class="nav-link" data-scroll-target="#à-télécharger">À télécharger :</a></li>
+  </ul></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"></a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5"></a></li>
+  <li><a href="#avant-de-commencer-concept-important" id="toc-avant-de-commencer-concept-important" class="nav-link" data-scroll-target="#avant-de-commencer-concept-important">Avant de commencer : Concept important</a>
+  <ul class="collapse">
+  <li><a href="#le-chemin-darborescence" id="toc-le-chemin-darborescence" class="nav-link" data-scroll-target="#le-chemin-darborescence">Le chemin d’arborescence</a></li>
+  </ul></li>
+  <li><a href="#avant-de-commencer-concept-important-1" id="toc-avant-de-commencer-concept-important-1" class="nav-link" data-scroll-target="#avant-de-commencer-concept-important-1">Avant de commencer : Concept important</a>
+  <ul class="collapse">
+  <li><a href="#planifier-avant-de-coder" id="toc-planifier-avant-de-coder" class="nav-link" data-scroll-target="#planifier-avant-de-coder">Planifier avant de coder</a></li>
+  </ul></li>
+  <li><a href="#avant-de-commencer-concept-important-2" id="toc-avant-de-commencer-concept-important-2" class="nav-link" data-scroll-target="#avant-de-commencer-concept-important-2">Avant de commencer : Concept important</a>
+  <ul class="collapse">
+  <li><a href="#décomposer-le-problème" id="toc-décomposer-le-problème" class="nav-link" data-scroll-target="#décomposer-le-problème">Décomposer le problème</a></li>
+  </ul></li>
+  <li><a href="#importer-des-données" id="toc-importer-des-données" class="nav-link" data-scroll-target="#importer-des-données">Importer des données</a></li>
+  <li><a href="#chemins-darborescence" id="toc-chemins-darborescence" class="nav-link" data-scroll-target="#chemins-darborescence">Chemins d’arborescence</a></li>
+  <li><a href="#importer-des-données-1" id="toc-importer-des-données-1" class="nav-link" data-scroll-target="#importer-des-données-1">Importer des données</a></li>
+  <li><a href="#anatomie-dune-ligne-de-code" id="toc-anatomie-dune-ligne-de-code" class="nav-link" data-scroll-target="#anatomie-dune-ligne-de-code">Anatomie d’une ligne de code</a></li>
+  <li><a href="#les-types-de-données-dans-r" id="toc-les-types-de-données-dans-r" class="nav-link" data-scroll-target="#les-types-de-données-dans-r">Les types de données dans R</a>
+  <ul class="collapse">
+  <li><a href="#types-de-base" id="toc-types-de-base" class="nav-link" data-scroll-target="#types-de-base">Types de base :</a></li>
+  </ul></li>
+  <li><a href="#les-types-de-données-dans-r-1" id="toc-les-types-de-données-dans-r-1" class="nav-link" data-scroll-target="#les-types-de-données-dans-r-1">Les types de données dans R</a>
+  <ul class="collapse">
+  <li><a href="#types-spéciaux" id="toc-types-spéciaux" class="nav-link" data-scroll-target="#types-spéciaux">Types spéciaux :</a></li>
+  </ul></li>
+  <li><a href="#parenthèses-guillemets-et-virgules" id="toc-parenthèses-guillemets-et-virgules" class="nav-link" data-scroll-target="#parenthèses-guillemets-et-virgules">Parenthèses, guillemets et virgules</a>
+  <ul class="collapse">
+  <li><a href="#les-parenthèses" id="toc-les-parenthèses" class="nav-link" data-scroll-target="#les-parenthèses">Les parenthèses () :</a></li>
+  <li><a href="#les-virgules" id="toc-les-virgules" class="nav-link" data-scroll-target="#les-virgules">Les virgules :</a></li>
+  </ul></li>
+  <li><a href="#assignation-vs--" id="toc-assignation-vs--" class="nav-link" data-scroll-target="#assignation-vs--">Assignation : = vs &lt;-</a>
+  <ul class="collapse">
+  <li><a href="#lopérateur--" id="toc-lopérateur--" class="nav-link" data-scroll-target="#lopérateur--">L’opérateur &lt;- :</a></li>
+  <li><a href="#lopérateur" id="toc-lopérateur" class="nav-link" data-scroll-target="#lopérateur">L’opérateur = :</a></li>
+  </ul></li>
+  <li><a href="#messages-derreur-courants" id="toc-messages-derreur-courants" class="nav-link" data-scroll-target="#messages-derreur-courants">Messages d’erreur courants</a>
+  <ul class="collapse">
+  <li><a href="#erreur-de-syntaxe" id="toc-erreur-de-syntaxe" class="nav-link" data-scroll-target="#erreur-de-syntaxe">Erreur de syntaxe</a></li>
+  <li><a href="#objet-non-trouvé" id="toc-objet-non-trouvé" class="nav-link" data-scroll-target="#objet-non-trouvé">Objet non trouvé</a></li>
+  </ul></li>
+  <li><a href="#messages-derreur-suite" id="toc-messages-derreur-suite" class="nav-link" data-scroll-target="#messages-derreur-suite">Messages d’erreur (suite)</a>
+  <ul class="collapse">
+  <li><a href="#comment-réagir-aux-erreurs" id="toc-comment-réagir-aux-erreurs" class="nav-link" data-scroll-target="#comment-réagir-aux-erreurs">Comment réagir aux erreurs :</a></li>
+  </ul></li>
+  <li><a href="#codons" id="toc-codons" class="nav-link" data-scroll-target="#codons">Codons!</a>
+  <ul class="collapse">
+  <li><a href="#nous-allons-utiliser-le-dataframe-swiss" id="toc-nous-allons-utiliser-le-dataframe-swiss" class="nav-link" data-scroll-target="#nous-allons-utiliser-le-dataframe-swiss">Nous allons utiliser le dataframe <code class="smaller">swiss</code></a></li>
+  <li><a href="#analyse-rapide-dune-variable" id="toc-analyse-rapide-dune-variable" class="nav-link" data-scroll-target="#analyse-rapide-dune-variable">Analyse rapide d’une variable</a></li>
+  <li><a href="#filter-et-sélectionner-des-variables" id="toc-filter-et-sélectionner-des-variables" class="nav-link" data-scroll-target="#filter-et-sélectionner-des-variables">Filter et sélectionner des variables</a></li>
+  <li><a href="#modifier-des-variables" id="toc-modifier-des-variables" class="nav-link" data-scroll-target="#modifier-des-variables">Modifier des variables</a></li>
+  <li><a href="#représentation-graphique-des-données" id="toc-représentation-graphique-des-données" class="nav-link" data-scroll-target="#représentation-graphique-des-données">Représentation graphique des données</a>
+  <ul class="collapse">
+  <li><a href="#principes-généraux-de-la-visualisation" id="toc-principes-généraux-de-la-visualisation" class="nav-link" data-scroll-target="#principes-généraux-de-la-visualisation">Principes généraux de la visualisation</a></li>
+  </ul></li>
+  <li><a href="#visualisation-avec-ggplot2" id="toc-visualisation-avec-ggplot2" class="nav-link" data-scroll-target="#visualisation-avec-ggplot2">Visualisation avec ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#initialiser-un-graphique" id="toc-initialiser-un-graphique" class="nav-link" data-scroll-target="#initialiser-un-graphique">Initialiser un graphique</a></li>
+  </ul></li>
+  <li><a href="#visualisation-avec-ggplot2-1" id="toc-visualisation-avec-ggplot2-1" class="nav-link" data-scroll-target="#visualisation-avec-ggplot2-1">Visualisation avec ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#ajouter-un-geom_" id="toc-ajouter-un-geom_" class="nav-link" data-scroll-target="#ajouter-un-geom_">Ajouter un geom_()</a></li>
+  </ul></li>
+  <li><a href="#visualisation-avec-ggplot2-2" id="toc-visualisation-avec-ggplot2-2" class="nav-link" data-scroll-target="#visualisation-avec-ggplot2-2">Visualisation avec ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#ajouter-une-échelle-de-couleur" id="toc-ajouter-une-échelle-de-couleur" class="nav-link" data-scroll-target="#ajouter-une-échelle-de-couleur">Ajouter une échelle de couleur</a></li>
+  </ul></li>
+  <li><a href="#visualisation-avec-ggplot2-3" id="toc-visualisation-avec-ggplot2-3" class="nav-link" data-scroll-target="#visualisation-avec-ggplot2-3">Visualisation avec ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#ajouter-des-titres-et-des-labels" id="toc-ajouter-des-titres-et-des-labels" class="nav-link" data-scroll-target="#ajouter-des-titres-et-des-labels">Ajouter des titres et des labels</a></li>
+  </ul></li>
+  <li><a href="#visualisation-avec-ggplot2-4" id="toc-visualisation-avec-ggplot2-4" class="nav-link" data-scroll-target="#visualisation-avec-ggplot2-4">Visualisation avec ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#ajouter-un-thème" id="toc-ajouter-un-thème" class="nav-link" data-scroll-target="#ajouter-un-thème">Ajouter un thème</a></li>
+  </ul></li>
+  <li><a href="#visualisation-avec-ggplot2-5" id="toc-visualisation-avec-ggplot2-5" class="nav-link" data-scroll-target="#visualisation-avec-ggplot2-5">Visualisation avec ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#sauvegarder-le-graphique" id="toc-sauvegarder-le-graphique" class="nav-link" data-scroll-target="#sauvegarder-le-graphique">Sauvegarder le graphique</a></li>
+  </ul></li>
+  <li><a href="#visualisation-avec-ggplot2-6" id="toc-visualisation-avec-ggplot2-6" class="nav-link" data-scroll-target="#visualisation-avec-ggplot2-6">Visualisation avec ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#un-histogramme-de-la-variable-fertility" id="toc-un-histogramme-de-la-variable-fertility" class="nav-link" data-scroll-target="#un-histogramme-de-la-variable-fertility">Un histogramme de la variable Fertility</a></li>
+  </ul></li>
+  <li><a href="#analyse-statistique" id="toc-analyse-statistique" class="nav-link" data-scroll-target="#analyse-statistique">Analyse statistique</a></li>
+  <li><a href="#bonnes-pratiques" id="toc-bonnes-pratiques" class="nav-link" data-scroll-target="#bonnes-pratiques">Bonnes pratiques</a>
+  <ul class="collapse">
+  <li><a href="#style.tidyverse.org" id="toc-style.tidyverse.org" class="nav-link" data-scroll-target="#style.tidyverse.org">style.tidyverse.org</a></li>
+  </ul></li>
+  <li><a href="#bonnes-pratiques-1" id="toc-bonnes-pratiques-1" class="nav-link" data-scroll-target="#bonnes-pratiques-1">Bonnes pratiques</a>
+  <ul class="collapse">
+  <li><a href="#règles-générales" id="toc-règles-générales" class="nav-link" data-scroll-target="#règles-générales">Règles générales :</a></li>
+  </ul></li>
+  <li><a href="#organiser-votre-environnement-de-travail" id="toc-organiser-votre-environnement-de-travail" class="nav-link" data-scroll-target="#organiser-votre-environnement-de-travail">Organiser votre environnement de travail</a></li>
+  <li><a href="#en-apprendre-plus" id="toc-en-apprendre-plus" class="nav-link" data-scroll-target="#en-apprendre-plus">En apprendre plus</a></li>
+  <li><a href="#ressources" id="toc-ressources" class="nav-link" data-scroll-target="#ressources">Ressources</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="ancien.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introduction à R</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Auteur·rice</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Jérémie Drouin<br>Camille Pelletier </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Faculté des sciences sociales
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="objectifs-du-cours" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="objectifs-du-cours">Objectifs du cours</h2>
+<ul>
+<li>Introduire R pour l’analyse de données.
+<ul>
+<li>Les dataframes</li>
+<li>Les fonctions</li>
+<li>Les packages</li>
+<li>Les graphiques</li>
+<li>Les statistiques</li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>Le but est que vous puissiez sortir d’ici avec une compréhension de base de R et que vous soyez capable d’aller chercher des ressources pour continuer à apprendre.</p>
+</blockquote>
+</section>
+<section id="quest-ce-que-lanalyse-de-données" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="quest-ce-que-lanalyse-de-données">Qu’est-ce que l’analyse de données?</h2>
+<blockquote class="blockquote">
+<p>L’analyse de données vise à explorer, décrire et interpréter des informations recueillies sur les comportements humains, les relations sociales et les phénomènes sociétaux. <strong>Ce processus peut inclure des données quantitatives (comme des données issus de sondages) et des données qualitatives (comme des entretiens ou des observations)</strong>.</p>
+</blockquote>
+<div class="incremental">
+<p>Principales étapes de l’analyse de données :</p>
+<ol class="incremental" type="1">
+<li>Acquisition des données</li>
+<li>Préparation des données</li>
+<li>Analyse des données</li>
+<li>Communication des résultats</li>
+</ol>
+</div>
+</section>
+<section id="les-outils-danalyse-de-données" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="les-outils-danalyse-de-données">Les outils d’analyse de données</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/SPSS_logo.svg" class="absolute img-fluid" style="width:20.0%" data-top="400" data-left="100"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Stata_logo_med_blue.png" class="absolute img-fluid" style="width:20.0%" data-top="150" data-left="800"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/800px-Python-logo-notext.svg.png" class="absolute img-fluid" style="width:20.0%" data-top="400" data-left="800"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Julia_Programming_Language_Logo.svg/1024px-Julia_Programming_Language_Logo.svg.png" class="absolute img-fluid" style="width:20.0%" data-top="100" data-left="100"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1024px-R_logo.svg.png" class="absolute img-fluid" style="width:40.0%" data-top="200" data-left="330"></p>
+</section>
+<section id="pourquoi-r" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="pourquoi-r">Pourquoi R?</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1024px-R_logo.svg.png" class="absolute img-fluid" style="width:20.0%" data-top="0" data-left="800"></p>
+<p><br><br></p>
+<section id="open-source" class="level3">
+<h3 class="anchored" data-anchor-id="open-source">Open source</h3>
+<ul>
+<li>Gratuit</li>
+<li>Collaboratif</li>
+<li>Communauté active
+<ul>
+<li>StackExchange</li>
+<li>stackoverflow</li>
+<li>reddit.com/r/Rlanguage</li>
+</ul></li>
+<li>Adapté aux besoins des utilisateurs</li>
+</ul>
+<div class="notes">
+<p>Open source c’est un modèle de développement de logiciels où le code est accessible à tous. Dans un logiciel open source, ce code est publié publiquement, permettant à n’importe qui de le lire, le modifier, le partager, et l’améliorer.</p>
+</div>
+</section>
+</section>
+<section id="pourquoi-r-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="pourquoi-r-1">Pourquoi R?</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1024px-R_logo.svg.png" class="absolute img-fluid" style="width:20.0%" data-top="0" data-left="800"></p>
+<p><br><br></p>
+<section id="packages" class="level3">
+<h3 class="anchored" data-anchor-id="packages">Packages</h3>
+<ul>
+<li>Offre une extension des fonctionnalités de base presque infinie</li>
+<li>Peux répondre à des besoins très spécifiques</li>
+<li>21,744 packages sur CRAN (Comprehensive R Archive Network)
+<ul>
+<li>Principal dépôt où sont hébergés les packages R</li>
+</ul></li>
+<li>Beaucoup plus sur GitHub
+<ul>
+<li>En plus de CRAN, de nombreux chercheurs publient leurs packages sur GitHub, une plateforme de partage de code</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>Chaque tâche spécifique lié à l’analyse de donnéees peut être automatisé et facilité par R. Collègue récemment à la CLESSN catégorisé les code postaux à la main.</p>
+</div>
+</section>
+</section>
+<section id="pourquoi-r-2" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="pourquoi-r-2">Pourquoi R?</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1024px-R_logo.svg.png" class="absolute img-fluid" style="width:20.0%" data-top="0" data-left="800"></p>
+<p><br><br></p>
+<section id="packages-clessn" class="level3">
+<h3 class="anchored" data-anchor-id="packages-clessn">Packages CLESSN</h3>
+<!-- NOTE: Ajouter descriptions packages -->
+<ul>
+<li><a href="https://github.com/clessnverse/sondr">sondr</a>
+<ul>
+<li>Permet l’automatisation de plusieurs aspects de l’analyse de données. Nous permet de faire des analyses factorielles en quelques secondes.</li>
+</ul></li>
+<li><a href="https://github.com/clessn/clellm">clellm</a>
+<ul>
+<li>Permet d’utiliser des LLM open-source directement en R et permet d’utiliser des fonctions disponibles seulement en Python, en R.</li>
+</ul></li>
+<li><a href="https://github.com/clessnverse/clessnize">clessnize</a>
+<ul>
+<li>Permet de standardiser le style de nos graphiques rapidement sans avoir à répéter les mêmes étapes à chaque fois.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="pourquoi-r-3" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="pourquoi-r-3">Pourquoi R?</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1024px-R_logo.svg.png" class="absolute img-fluid" style="width:20.0%" data-top="0" data-left="800"></p>
+<p><br><br></p>
+<section id="tidyverse" class="level3">
+<h3 class="anchored" data-anchor-id="tidyverse">Tidyverse</h3>
+<ul>
+<li><p>Collection de packages pour la manipulation de données</p></li>
+<li><p><code>dplyr</code> : manipulation de données</p></li>
+<li><p><code>ggplot2</code> : graphiques</p></li>
+<li><p><code>tidyr</code> : nettoyage de données</p></li>
+<li><p><code>readr</code> : importation de données</p></li>
+<li><p><code>stringr</code> : manipulation de chaînes de caractères</p></li>
+</ul>
+</section>
+</section>
+<section id="pourquoi-r-4" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="pourquoi-r-4">Pourquoi R?</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1024px-R_logo.svg.png" class="absolute img-fluid" style="width:20.0%" data-top="0" data-left="800"></p>
+<p><br><br></p>
+<section id="reproductibilité" class="level3">
+<h3 class="anchored" data-anchor-id="reproductibilité">Reproductibilité</h3>
+<ul>
+<li>Les scripts R permettent de partager facilement le travail</li>
+<li>Rendre les analyses reproductibles</li>
+<li>Permet de retracer les erreurs</li>
+<li>Partager le code <a href="https://github.com/clessn/beyond_multiple_choices">(GitHub, GitLab, etc.)</a>
+<ul>
+<li>Encourage la transparence et la collaboration dans la recherche</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="pourquoi-r-5" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="pourquoi-r-5">Pourquoi R?</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1024px-R_logo.svg.png" class="absolute img-fluid" style="width:20.0%" data-top="0" data-left="800"></p>
+<p><br><br></p>
+<section id="très-utilisé-en-science-sociale" class="level3">
+<h3 class="anchored" data-anchor-id="très-utilisé-en-science-sociale">Très utilisé en science sociale</h3>
+<ul>
+<li>Beaucoup de ressources</li>
+<li>Beaucoup de tutoriels orientés vers les sciences sociales
+<ul>
+<li>Datacamp</li>
+<li>swirl()</li>
+<li>Coursera</li>
+</ul></li>
+</ul>
+<section id="bref-important-dutiliser-les-mêmes-outils-que-les-chercheurs-dans-votre-domaine" class="level4">
+<h4 class="anchored" data-anchor-id="bref-important-dutiliser-les-mêmes-outils-que-les-chercheurs-dans-votre-domaine">Bref… important d’utiliser les mêmes outils que les chercheurs dans votre domaine</h4>
+</section>
+</section>
+</section>
+<section id="pourquoi-r-6" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="pourquoi-r-6">Pourquoi R?</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1024px-R_logo.svg.png" class="absolute img-fluid" style="width:20.0%" data-top="0" data-left="800"></p>
+<p><br><br></p>
+<section id="exemples-dutilisation-par-des-organisations" class="level3">
+<h3 class="anchored" data-anchor-id="exemples-dutilisation-par-des-organisations">Exemples d’utilisation par des organisations</h3>
+<ul>
+<li><p><a href="https://medium.com/airbnb-engineering/using-r-packages-and-education-to-scale-data-science-at-airbnb-906faa58e12d">Utilisé par AirBnB pour l’analyse de données</a></p></li>
+<li><p><a href="https://bbc.github.io/rcookbook/">Utilisé par la BBC pour leurs graphiques</a></p></li>
+<li><p><a href="https://billpetti.github.io/baseballr/">Utilisé par la MLB pour l’analyse de données</a></p></li>
+<li><p><a href="https://github.com/voxpoplabs">Utilisé par Vox Pop Labs (Boussole électorale) pour l’analyse de données</a></p></li>
+<li><p><a href="https://makemeanalyst.com/companies-using-r/">Utilisé par Google, Facebook, Amazon, etc.</a></p></li>
+</ul>
+</section>
+</section>
+<section id="pourquoi-r-7" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="pourquoi-r-7">Pourquoi R?</h2>
+<section id="la-clessn" class="level3">
+<h3 class="anchored" data-anchor-id="la-clessn">La CLESSN</h3>
+<p><img src="https://www.clessn.com/assets/img/logo-black.svg" class="absolute img-fluid" style="width:30.0%" data-top="420" data-left="630"> <img src="img/yaduf.png" class="absolute img-fluid" style="width:35.0%" data-top="300" data-left="0"> Chaire de leadership en enseignement des sciences sociales numériques (CLESSN)</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Titulaire: Yannick Dufresne</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Objectif: Développer des compétences en science des données pour les étudiants en sciences sociales à travers des projets de recherche et des formations</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="datagotchi" class="level2">
+<h2 class="anchored" data-anchor-id="datagotchi"><a href="https://usa.datagotchi.com" class="smaller">Datagotchi</a></h2>
+<p><img src="img/datagotchi_usa.png" class="absolute img-fluid" style="width:30.0%" data-top="0" data-left="850"></p>
+<div class="columns">
+<div class="column" style="width:80%;">
+<ul>
+<li>Application utilisant des variables lifestyles pour prédire le vote</li>
+<li>Utiliser R et l’analyse de données à travers ce projet:
+<ul>
+<li>Prototypage en Shiny</li>
+<li>Nettoyage des données</li>
+<li>Analyse factorielle</li>
+<li>Régressions et modèles</li>
+<li>Visualisation</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:20%;">
+
+</div>
+</div>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<p><img src="img/datagotchi_graph.png" class="absolute img-fluid" style="width:200.0%" data-top="0" data-left="0"></p>
+<div class="r-stack">
+<p><img src="img/cartogram.png" class="fragment absolute img-fluid" style="width:200.0%" data-top="0" data-left="0"></p>
+<p><img src="img/turnout.png" class="fragment absolute img-fluid" style="width:200.0%" data-top="0" data-left="0"></p>
+</div>
+</section>
+<section id="analyse-textuelle" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="analyse-textuelle">Analyse textuelle</h2>
+<ul>
+<li>Analyse de ton
+<ul>
+<li>Est-ce que le texte est positif ou négatif?</li>
+</ul></li>
+</ul>
+<p><img src="img/time_series_by_article.png" class="absolute img-fluid" style="width:80.0%" data-top="200" data-left="70"></p>
+</section>
+<section id="mais-aussi" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="mais-aussi">Mais aussi …</h2>
+<ul>
+<li>Catégorisation de texte
+<ul>
+<li>Est-ce que le texte parle de politique, de santé, de sport?</li>
+</ul></li>
+<li>Analyse d’image</li>
+<li>Transcription audio</li>
+</ul>
+</section>
+<section id="r-au-delà-de-lanalyse-de-données" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="r-au-delà-de-lanalyse-de-données">R : Au-delà de l’analyse de données</h2>
+<ul>
+<li>R ne se limite pas à l’analyse statistique, il peut aussi être utilisé pour développer des <a href="https://mdubel.shinyapps.io/shark-attack/">applications web interactives</a></li>
+</ul>
+<p><img src="img/shinygotchi_front.png" class="img-fluid"></p>
+</section>
+<section id="après-r" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="après-r">Après R</h2>
+<section id="apprendre-r-vous-permet-de-comprendre-dautres-langages-de-programmation" class="level3">
+<h3 class="anchored" data-anchor-id="apprendre-r-vous-permet-de-comprendre-dautres-langages-de-programmation">Apprendre R vous permet de comprendre d’autres langages de programmation</h3>
+<ul>
+<li>Python</li>
+<li>Julia</li>
+<li>SQL</li>
+<li>JavaScript</li>
+<li>HTML/CSS</li>
+<li>Bash</li>
+</ul>
+</section>
+</section>
+<section id="installer-r-et-rstudio" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="installer-r-et-rstudio">Installer R et RStudio</h2>
+<ul>
+<li>C’est quoi la différence entre R et RStudio?</li>
+<li>R est le moteur, RStudio est le véhicule</li>
+<li>R est le langage, RStudio est la feuille de papier</li>
+<li>RStudio facilite l’utilisation de R</li>
+<li>RStudio est un IDE (Integrated Development Environment)</li>
+<li>Personnalisation de l’environnement de travail</li>
+</ul>
+<p><br><br></p>
+<section id="à-télécharger" class="level3">
+<h3 class="anchored" data-anchor-id="à-télécharger">À télécharger :</h3>
+<ul>
+<li><a href="https://cran.r-project.org/">Installer R</a></li>
+<li><a href="https://www.rstudio.com/products/rstudio/download/">Installer RStudio</a></li>
+</ul>
+</section>
+</section>
+<section id="section-1" class="level2" data-background-image="img/rstudio.png">
+<h2 data-background-image="img/rstudio.png" class="anchored" data-anchor-id="section-1"></h2>
+</section>
+<section id="section-2" class="level2" data-background-image="img/rstudio_script.png">
+<h2 data-background-image="img/rstudio_script.png" class="anchored" data-anchor-id="section-2"></h2>
+</section>
+<section id="section-3" class="level2" data-background-image="img/rstudio_console.png">
+<h2 data-background-image="img/rstudio_console.png" class="anchored" data-anchor-id="section-3"></h2>
+</section>
+<section id="section-4" class="level2" data-background-image="img/rstudio_files.png">
+<h2 data-background-image="img/rstudio_files.png" class="anchored" data-anchor-id="section-4"></h2>
+</section>
+<section id="section-5" class="level2" data-background-image="img/rstudio_env.png">
+<h2 data-background-image="img/rstudio_env.png" class="anchored" data-anchor-id="section-5"></h2>
+</section>
+<section id="avant-de-commencer-concept-important" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="avant-de-commencer-concept-important">Avant de commencer : Concept important</h2>
+<section id="le-chemin-darborescence" class="level3">
+<h3 class="anchored" data-anchor-id="le-chemin-darborescence">Le chemin d’arborescence</h3>
+<ul>
+<li>À tout moment vous devez savoir où vous êtes dans votre ordinateur pour pouvoir importer des données, exporter des graphiques ou mettre des fichiers en relation</li>
+<li>Votre R pointe toujours vers un endroit spécifique dans votre ordinateur. Vous devez savoir où pour pouvoir importer des données</li>
+<li>La fonction <code>getwd()</code> dans R permet de savoir où vous êtes</li>
+</ul>
+<p><img src="https://habefast.ch/wp-content/uploads/2022/03/habefast-infographies-web-arborescence.png" class="absolute img-fluid" style="width:80.0%" data-top="400" data-left="75"></p>
+</section>
+</section>
+<section id="avant-de-commencer-concept-important-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="avant-de-commencer-concept-important-1">Avant de commencer : Concept important</h2>
+<section id="planifier-avant-de-coder" class="level3">
+<h3 class="anchored" data-anchor-id="planifier-avant-de-coder">Planifier avant de coder</h3>
+<section id="la-plus-grosse-erreur-est-de-commencer-à-coder-sans-savoir-ce-que-vous-voulez-faire" class="level4">
+<h4 class="anchored" data-anchor-id="la-plus-grosse-erreur-est-de-commencer-à-coder-sans-savoir-ce-que-vous-voulez-faire">La plus grosse erreur est de commencer à coder sans savoir ce que vous voulez faire</h4>
+<p><br></p>
+<ul>
+<li>Clarifer vos objectifs: Qu’est-ce que vous voulez faire?
+<ul>
+<li>Nettoyer des données?</li>
+<li>Faire un graphique?</li>
+</ul></li>
+</ul>
+<p>Les possibilités sont infinies, donc il est important de savoir où vous voulez aller</p>
+</section>
+</section>
+</section>
+<section id="avant-de-commencer-concept-important-2" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="avant-de-commencer-concept-important-2">Avant de commencer : Concept important</h2>
+<section id="décomposer-le-problème" class="level3">
+<h3 class="anchored" data-anchor-id="décomposer-le-problème">Décomposer le problème</h3>
+<ul>
+<li>Une fois que vous savez ce que vous voulez faire, il est important de décomposer le problème en petites étapes</li>
+<li>Un script R pour une seule tâche
+<ul>
+<li>Bien nommer vos scripts pour savoir ce qu’ils font</li>
+<li>Exemples:
+<ul>
+<li><code>1_collecte.R</code></li>
+<li><code>2_nettoyage.R</code></li>
+<li><code>3_analyse.R</code></li>
+<li><code>4_graphique.R</code></li>
+</ul></li>
+</ul></li>
+<li>Chaque script doit être clair et facile à comprendre</li>
+<li>Commenter votre code avec des <code>#</code></li>
+</ul>
+</section>
+</section>
+<section id="importer-des-données" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="importer-des-données">Importer des données</h2>
+<ul>
+<li>Les données sont souvent dans des fichiers Excel, CSV, ou autres
+<ul>
+<li>On utilise des fonctions comme <code>read.csv()</code> pour lire les fichiers</li>
+</ul></li>
+</ul>
+<p><br></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"chemin/vers/data.csv"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<ul>
+<li>Dans cette ligne de code il y a plusieurs éléments importants:
+<ul>
+<li>Le nom de l’objet : <code>df</code> dans ce cas-ci, c’est un dataframe</li>
+<li>L’opérateur d’assignation : <code>&lt;-</code></li>
+<li>La fonction qui permet de lire le fichier : <code>read.csv()</code></li>
+<li>Le chemin vers le fichier : <code>"chemin/vers/data.csv"</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="chemins-darborescence" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="chemins-darborescence">Chemins d’arborescence</h2>
+<section id="important-de-comprendre-comment-spécifier-le-chemin-vers-un-fichier" class="level4">
+<h4 class="anchored" data-anchor-id="important-de-comprendre-comment-spécifier-le-chemin-vers-un-fichier">Important de comprendre comment spécifier le chemin vers un fichier</h4>
+<p>Voici les deux façons de spécifier le chemin :</p>
+<ul>
+<li>Absolu: <code>/Users/username/Documents/projet/data/data.csv</code>
+<ul>
+<li>Utile seulement sur votre ordinateur, un autre utilisateur ne pourra pas utiliser le même chemin</li>
+</ul></li>
+<li>Relatif: <code>data/data.csv</code>
+<ul>
+<li>Utile pour partager le code avec d’autres utilisateurs</li>
+</ul></li>
+</ul>
+<p><br></p>
+</section>
+<section id="différence-entre-mac-et-windows" class="level4">
+<h4 class="anchored" data-anchor-id="différence-entre-mac-et-windows">Différence entre mac et windows</h4>
+<ul>
+<li>Mac: <code>/</code></li>
+<li>Windows: <code>\</code> (il faut s’assurer de changer les <code>\</code> pour des <code>/</code>)</li>
+</ul>
+</section>
+</section>
+<section id="importer-des-données-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="importer-des-données-1">Importer des données</h2>
+<p>Autres fonctions pour importer des données dépendamment du format:</p>
+<ul>
+<li><code>df &lt;- readxl::read_excel("chemin/vers/data.xlsx")</code></li>
+<li><code>df &lt;- readRDS("chemin/vers/data.rds")</code></li>
+</ul>
+<p><img src="img/df_in_env.png" class="absolute img-fluid" style="width:70.0%" data-top="300" data-left="150"></p>
+</section>
+<section id="anatomie-dune-ligne-de-code" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="anatomie-dune-ligne-de-code">Anatomie d’une ligne de code</h2>
+<p>Prenons un exemple simple :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>resultat <span class="ot">&lt;-</span> <span class="fu">mean</span>(df<span class="sc">$</span>age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Décomposons cette ligne :</p>
+<ul>
+<li><code>resultat</code> : nom de l’objet où on stocke le résultat</li>
+<li><code>&lt;-</code> : opérateur d’assignation</li>
+<li><code>mean()</code> : fonction qui calcule la moyenne</li>
+<li><code>df$age</code> : variable ‘age’ du dataframe ‘df’</li>
+<li><code>na.rm = TRUE</code> : argument de la fonction (ignorer les NA)</li>
+</ul>
+<div class="notes">
+<p>Cette ligne de code calcule la moyenne de la variable ‘age’ en ignorant les valeurs manquantes (NA) et stocke le résultat dans un objet nommé ‘resultat’</p>
+</div>
+</section>
+<section id="les-types-de-données-dans-r" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="les-types-de-données-dans-r">Les types de données dans R</h2>
+<section id="types-de-base" class="level3">
+<h3 class="anchored" data-anchor-id="types-de-base">Types de base :</h3>
+<ul>
+<li><code>numeric</code> : nombres (avec ou sans décimales)</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="dv">25</span>        <span class="co"># integer</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>taille <span class="ot">&lt;-</span> <span class="fl">1.75</span>   <span class="co"># double</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>character</code> : texte (chaînes de caractères)</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nom <span class="ot">&lt;-</span> <span class="st">"Pierre"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ville <span class="ot">&lt;-</span> <span class="st">'Montréal'</span>  <span class="co"># simple ou double quotes</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>logical</code> : TRUE ou FALSE</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>est_etudiant <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>a_un_emploi <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="les-types-de-données-dans-r-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="les-types-de-données-dans-r-1">Les types de données dans R</h2>
+<section id="types-spéciaux" class="level3">
+<h3 class="anchored" data-anchor-id="types-spéciaux">Types spéciaux :</h3>
+<ul>
+<li><code>factor</code> : catégories</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>niveau <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Débutant"</span>, <span class="st">"Intermédiaire"</span>, <span class="st">"Avancé"</span>))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>Date</code> : dates</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2025-01-14"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>NA</code> : valeurs manquantes</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">5</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="parenthèses-guillemets-et-virgules" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="parenthèses-guillemets-et-virgules">Parenthèses, guillemets et virgules</h2>
+<section id="les-parenthèses" class="level3">
+<h3 class="anchored" data-anchor-id="les-parenthèses">Les parenthèses () :</h3>
+<ul>
+<li>Délimitent les arguments d’une fonction</li>
+<li>Doivent toujours être fermées</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>moyenne <span class="ot">&lt;-</span> <span class="fu">mean</span>(donnees)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrect - parenthèse manquante</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>moyenne <span class="ot">&lt;-</span> <span class="fu">mean</span>(donnees</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="les-virgules" class="level3">
+<h3 class="anchored" data-anchor-id="les-virgules">Les virgules :</h3>
+<ul>
+<li>Séparent les arguments d’une fonction</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>resultat <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrect - virgule manquante</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>resultat <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="assignation-vs--" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="assignation-vs--">Assignation : = vs &lt;-</h2>
+<section id="lopérateur--" class="level3">
+<h3 class="anchored" data-anchor-id="lopérateur--">L’opérateur &lt;- :</h3>
+<ul>
+<li>Recommandé pour l’assignation de variables</li>
+<li>Plus clair et explicite</li>
+<li>Standard dans la communauté R</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>nom <span class="ot">&lt;-</span> <span class="st">"Alice"</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="lopérateur" class="level3">
+<h3 class="anchored" data-anchor-id="lopérateur">L’opérateur = :</h3>
+<ul>
+<li>Utilisé principalement pour les arguments de fonctions</li>
+<li>Peut créer de la confusion</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour les arguments de fonction</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> donnees, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Éviter pour l'assignation</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>age <span class="ot">=</span> <span class="dv">25</span>  <span class="co"># Fonctionne mais non recommandé</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="messages-derreur-courants" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="messages-derreur-courants">Messages d’erreur courants</h2>
+<section id="erreur-de-syntaxe" class="level3">
+<h3 class="anchored" data-anchor-id="erreur-de-syntaxe">Erreur de syntaxe</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Message d'erreur</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> unexpected symbol <span class="cf">in</span> <span class="st">"mon code"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cause probable</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Parenthèse ou guillemet manquant</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="objet-non-trouvé" class="level3">
+<h3 class="anchored" data-anchor-id="objet-non-trouvé">Objet non trouvé</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Message d'erreur</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> object <span class="st">'data'</span> not found</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Causes probables</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># - Faute de frappe dans le nom</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># - Objet non créé</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># - Mauvais working directory</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="messages-derreur-suite" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="messages-derreur-suite">Messages d’erreur (suite)</h2>
+<section id="comment-réagir-aux-erreurs" class="level3">
+<h3 class="anchored" data-anchor-id="comment-réagir-aux-erreurs">Comment réagir aux erreurs :</h3>
+<ol type="1">
+<li>Ne pas paniquer ! Les erreurs sont normales</li>
+<li>Lire attentivement le message d’erreur</li>
+<li>Vérifier la ligne indiquée dans le message</li>
+<li>Points à vérifier :
+<ul>
+<li>Parenthèses fermées ?</li>
+<li>Guillemets fermés ?</li>
+<li>Virgules aux bons endroits ?</li>
+<li>Noms d’objets corrects ?</li>
+<li>Package chargé (<code>library()</code>) ?</li>
+</ul></li>
+</ol>
+<div class="notes">
+<p>Encourager les étudiants à voir les erreurs comme des opportunités d’apprentissage</p>
+</div>
+</section>
+</section>
+<section id="codons" class="level1">
+<h1>Codons!</h1>
+<section id="nous-allons-utiliser-le-dataframe-swiss" class="level2">
+<h2 class="anchored" data-anchor-id="nous-allons-utiliser-le-dataframe-swiss">Nous allons utiliser le dataframe <code class="smaller">swiss</code></h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger les packages nécessaires</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># Manipulation de données</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># Graphiques</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Importer les données swiss (jeu de données intégré)</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> swiss</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Explorer les données</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(df)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(df)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(df)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="analyse-rapide-dune-variable" class="level2">
+<h2 class="anchored" data-anchor-id="analyse-rapide-dune-variable">Analyse rapide d’une variable</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voir le nombre de valeurs pour chaque élément d'une variable</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(df<span class="sc">$</span>Fertility)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogramme de la variable 'Fertility'</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df<span class="sc">$</span>Fertility)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtenir la moyenne de la variable 'Fertility'</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>Fertility)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>$</code> permet d’accéder à une variable dans un dataframe.</li>
+<li>On accède à la variable <code>Fertility</code> dans le dataframe <code>df</code> avec <code>df$Fertility</code></li>
+</ul>
+</section>
+<section id="filter-et-sélectionner-des-variables" class="level2">
+<h2 class="anchored" data-anchor-id="filter-et-sélectionner-des-variables">Filter et sélectionner des variables</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sélectionner des colonnes </span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (par exemple, Fertility, Education et Agriculture)</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>df_selected <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Fertility, Education, Agriculture)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrer les lignes pour inclure uniquement les cantons </span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># avec une fertilité supérieure à la moyenne</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>mean_fertility <span class="ot">&lt;-</span> <span class="fu">mean</span>(df_selected<span class="sc">$</span>Fertility, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="ot">&lt;-</span> df_selected <span class="sc">%&gt;%</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Fertility <span class="sc">&gt;</span> mean_fertility)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="modifier-des-variables" class="level2">
+<h2 class="anchored" data-anchor-id="modifier-des-variables">Modifier des variables</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer une nouvelle variable binaire "high_agriculture" </span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># indiquant si le pourcentage d'agriculture est supérieur à 50</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>df_mutated <span class="ot">&lt;-</span> df_filtered <span class="sc">%&gt;%</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">high_agriculture =</span> <span class="fu">ifelse</span>(Agriculture <span class="sc">&gt;</span> <span class="dv">50</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Regrouper par "high_agriculture" et calculer la moyenne de l'éducation</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>df_summarized <span class="ot">&lt;-</span> df_mutated <span class="sc">%&gt;%</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(high_agriculture) <span class="sc">%&gt;%</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">moyenne_education =</span> <span class="fu">mean</span>(Education, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le résultat final</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df_summarized)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="représentation-graphique-des-données" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="représentation-graphique-des-données">Représentation graphique des données</h2>
+<section id="principes-généraux-de-la-visualisation" class="level3">
+<h3 class="anchored" data-anchor-id="principes-généraux-de-la-visualisation">Principes généraux de la visualisation</h3>
+<ul>
+<li>Montrer les données
+<ul>
+<li>Évitez les distractions inutiles</li>
+</ul></li>
+<li>Choisir des visualisations appropriées
+<ul>
+<li>Quelles informations seront utiles ?</li>
+</ul></li>
+<li>Éviter les graphiques « spaghetti »
+<ul>
+<li>Évitez les lignes trop complexes qui se chevauchent et s’entremêlent</li>
+</ul></li>
+<li>Commencer en noir et blanc
+<ul>
+<li>Utiliser les couleurs de manière efficace</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="visualisation-avec-ggplot2" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="visualisation-avec-ggplot2">Visualisation avec ggplot2</h2>
+<section id="initialiser-un-graphique" class="level3">
+<h3 class="anchored" data-anchor-id="initialiser-un-graphique">Initialiser un graphique</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Agriculture, <span class="at">y =</span> Fertility, <span class="at">color =</span> Education)) </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>df</code> est le dataframe</li>
+<li><code>aes()</code> est la fonction qui permet de spécifier les variables à utiliser</li>
+<li><code>x</code> et <code>y</code> sont les variables à utiliser pour les axes x et y</li>
+<li><code>color</code> est la variable à utiliser pour la couleur</li>
+</ul>
+</section>
+</section>
+<section id="visualisation-avec-ggplot2-1" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="visualisation-avec-ggplot2-1">Visualisation avec ggplot2</h2>
+<section id="ajouter-un-geom_" class="level3">
+<h3 class="anchored" data-anchor-id="ajouter-un-geom_">Ajouter un geom_()</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Agriculture, <span class="at">y =</span> Fertility, <span class="at">color =</span> Education)) <span class="sc">+</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="co"># Le alpha est la transparence</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Il existe plusieurs <code>geom_()</code> pour différents types de graphiques
+<ul>
+<li><code>geom_point()</code> est pour un nuage de points</li>
+<li><code>geom_line()</code> est pour un graphique en ligne</li>
+<li><code>geom_bar()</code> est pour un graphique en barres</li>
+<li><code>geom_histogram()</code> est pour un histogramme</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="visualisation-avec-ggplot2-2" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="visualisation-avec-ggplot2-2">Visualisation avec ggplot2</h2>
+<section id="ajouter-une-échelle-de-couleur" class="level3">
+<h3 class="anchored" data-anchor-id="ajouter-une-échelle-de-couleur">Ajouter une échelle de couleur</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Agriculture, <span class="at">y =</span> Fertility, <span class="at">color =</span> Education)) <span class="sc">+</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span> <span class="co"># Le alpha est la transparence</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"blue"</span>, <span class="at">high =</span> <span class="st">"red"</span>, <span class="at">name =</span> <span class="st">"Éducation"</span>) </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>scale_color_gradient()</code> permet de spécifier les couleurs pour la variable <code>Education</code></li>
+<li><code>low</code> et <code>high</code> sont les couleurs pour les valeurs les plus basses et les plus hautes</li>
+<li><code>name</code> est le nom de la légende</li>
+<li>Vous pouvez utiliser les hexcodes pour les couleurs</li>
+</ul>
+</section>
+</section>
+<section id="visualisation-avec-ggplot2-3" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="visualisation-avec-ggplot2-3">Visualisation avec ggplot2</h2>
+<section id="ajouter-des-titres-et-des-labels" class="level3">
+<h3 class="anchored" data-anchor-id="ajouter-des-titres-et-des-labels">Ajouter des titres et des labels</h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Agriculture, <span class="at">y =</span> Fertility, <span class="at">color =</span> Education)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span> <span class="co"># Le alpha est la transparence</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"blue"</span>, <span class="at">high =</span> <span class="st">"red"</span>, <span class="at">name =</span> <span class="st">"Éducation"</span>) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">labs</span>(</span>
+<span id="cb22-5"><a href="#cb22-5"></a>    <span class="at">title =</span> <span class="st">"Relation entre l'agriculture et la fertilité en Suisse"</span>,</span>
+<span id="cb22-6"><a href="#cb22-6"></a>    <span class="at">x =</span> <span class="st">"Pourcentage d'agriculture"</span>,</span>
+<span id="cb22-7"><a href="#cb22-7"></a>    <span class="at">y =</span> <span class="st">"Fertilité"</span></span>
+<span id="cb22-8"><a href="#cb22-8"></a>  ) </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="visualisation-avec-ggplot2-4" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="visualisation-avec-ggplot2-4">Visualisation avec ggplot2</h2>
+<section id="ajouter-un-thème" class="level3">
+<h3 class="anchored" data-anchor-id="ajouter-un-thème">Ajouter un thème</h3>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Agriculture, <span class="at">y =</span> Fertility, <span class="at">color =</span> Education)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span> <span class="co"># Le alpha est la transparence</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"blue"</span>, <span class="at">high =</span> <span class="st">"red"</span>, <span class="at">name =</span> <span class="st">"Éducation"</span>) <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-5"><a href="#cb23-5"></a>    <span class="at">title =</span> <span class="st">"Relation entre l'agriculture et la fertilité en Suisse"</span>,</span>
+<span id="cb23-6"><a href="#cb23-6"></a>    <span class="at">x =</span> <span class="st">"Pourcentage d'agriculture"</span>,</span>
+<span id="cb23-7"><a href="#cb23-7"></a>    <span class="at">y =</span> <span class="st">"Fertilité"</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>theme_minimal()</code> est un thème minimaliste</li>
+<li>Il existe plusieurs thèmes prédéfinis dans ggplot2</li>
+<li>Vous pouvez aussi créer votre propre thème</li>
+</ul>
+</section>
+</section>
+<section id="visualisation-avec-ggplot2-5" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="visualisation-avec-ggplot2-5">Visualisation avec ggplot2</h2>
+<section id="sauvegarder-le-graphique" class="level3">
+<h3 class="anchored" data-anchor-id="sauvegarder-le-graphique">Sauvegarder le graphique</h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Agriculture, <span class="at">y =</span> Fertility, <span class="at">color =</span> Education)) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span> <span class="co"># Le alpha est la transparence</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"blue"</span>, <span class="at">high =</span> <span class="st">"red"</span>, <span class="at">name =</span> <span class="st">"Éducation"</span>) <span class="sc">+</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">labs</span>(</span>
+<span id="cb24-5"><a href="#cb24-5"></a>    <span class="at">title =</span> <span class="st">"Relation entre l'agriculture et la fertilité en Suisse"</span>,</span>
+<span id="cb24-6"><a href="#cb24-6"></a>    <span class="at">x =</span> <span class="st">"Pourcentage d'agriculture"</span>,</span>
+<span id="cb24-7"><a href="#cb24-7"></a>    <span class="at">y =</span> <span class="st">"Fertilité"</span></span>
+<span id="cb24-8"><a href="#cb24-8"></a>  ) <span class="sc">+</span></span>
+<span id="cb24-9"><a href="#cb24-9"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb24-10"><a href="#cb24-10"></a></span>
+<span id="cb24-11"><a href="#cb24-11"></a><span class="fu">ggsave</span>(<span class="st">"nom_du_graphique.png"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">6</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Vous pouvez spécifier le format du graphique (png, pdf, etc.) ainsi que le chemin pour sauvegarder le graphique</li>
+</ul>
+</section>
+</section>
+<section id="visualisation-avec-ggplot2-6" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="visualisation-avec-ggplot2-6">Visualisation avec ggplot2</h2>
+<section id="un-histogramme-de-la-variable-fertility" class="level3">
+<h3 class="anchored" data-anchor-id="un-histogramme-de-la-variable-fertility">Un histogramme de la variable Fertility</h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Fertility)) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">bins =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution de la fertilité en Suisse"</span>,</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Fertilité"</span>,</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Nombre de cantons"</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="analyse-statistique" class="level2">
+<h2 class="anchored" data-anchor-id="analyse-statistique">Analyse statistique</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer la corrélation entre Fertility et Agriculture</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>correlation <span class="ot">&lt;-</span> <span class="fu">cor</span>(df<span class="sc">$</span>Fertility, df<span class="sc">$</span>Agriculture)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Corrélation entre Fertility et Agriculture:"</span>, <span class="fu">round</span>(correlation, <span class="dv">2</span>)))</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Effectuer une régression linéaire avec Fertility comme variable dépendante</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>modele <span class="ot">&lt;-</span> <span class="fu">lm</span>(Fertility <span class="sc">~</span> Agriculture, <span class="at">data =</span> df)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le résumé du modèle de régression</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="bonnes-pratiques" class="level2">
+<h2 class="anchored" data-anchor-id="bonnes-pratiques">Bonnes pratiques</h2>
+<section id="style.tidyverse.org" class="level3">
+<h3 class="anchored" data-anchor-id="style.tidyverse.org"><a href="https://style.tidyverse.org/">style.tidyverse.org</a></h3>
+<ul>
+<li>Utilisé par la communauté R pour standardiser le style du code</li>
+<li>Utilisé par <a href="https://google.github.io/styleguide/Rguide.html">Google</a></li>
+<li>Utilisé par des packages populaires comme <a href="https://styler.r-lib.org/">stylr</a> et <a href="https://lintr.r-lib.org/">lintr</a></li>
+</ul>
+</section>
+</section>
+<section id="bonnes-pratiques-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="bonnes-pratiques-1">Bonnes pratiques</h2>
+<section id="règles-générales" class="level3">
+<h3 class="anchored" data-anchor-id="règles-générales">Règles générales :</h3>
+<ul>
+<li>Nommer vos fichiers de manière descriptive</li>
+<li>Utiliser des minuscules seulement et aucun caractère spécial comme é ou à</li>
+<li>Si vos fichiers contiennent plusieurs mots, les séparer par des underscores <code>_</code></li>
+<li>Exemple: <code>nettoyage_donnees.R</code></li>
+<li>Utiliser des chiffres pour ordonner vos scripts</li>
+<li>Évitez d’écrire des lignes de code trop longues</li>
+<li>Utiliser la convention <code>snake_case</code> plutôt que <code>camelCase</code></li>
+<li>Nommez vous dataframe de façon standard. <code>df_</code> ou <code>data_</code></li>
+</ul>
+</section>
+</section>
+<section id="organiser-votre-environnement-de-travail" class="level2">
+<h2 class="anchored" data-anchor-id="organiser-votre-environnement-de-travail">Organiser votre environnement de travail</h2>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/votre_projet</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> data</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── processed</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> │&nbsp;&nbsp; └── data_clean.csv</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── raw</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span>     └── data_raw.csv</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> docs</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── article</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span>     ├── articles.qmd</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span>     └── references.bib</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> R</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── 2_analysis.R</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── 3_graph.R</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> README.md</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> results</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a> <span class="ex">&nbsp;&nbsp;</span> └── graphs</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a> <span class="ex">&nbsp;&nbsp;</span>  &nbsp;&nbsp; └── 1_bar_graph.png</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a> </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="en-apprendre-plus" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="en-apprendre-plus">En apprendre plus</h2>
+<ul>
+<li><a href="https://swirlstats.com/students.html">swirl</a></li>
+<li><a href="https://www.datacamp.com/">Datacamp</a></li>
+<li><a href="https://r4ds.had.co.nz/">R4DS (R for Data Science)</a></li>
+<li><a href="https://adv-r.hadley.nz/">Advanced R</a></li>
+</ul>
+</section>
+<section id="ressources" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="ressources">Ressources</h2>
+<p>Quoi faire quand ça ne fonctionne pas?</p>
+<ul>
+<li>ChatGPT
+<ul>
+<li>Être clair et précis dans vos requêtes</li>
+<li>Expliquer la structure de vos données</li>
+<li>Copier-coller le message d’erreur</li>
+<li>Copier-coller la documentation d’un package</li>
+</ul></li>
+<li>Réessayer ChatGPT
+<ul>
+<li>C’est rare que ChatGPT ne trouve pas la réponse</li>
+</ul></li>
+<li>La documentation de R (ex: <code>?mean()</code> dans votre console)</li>
+<li>Google
+<ul>
+<li>Stackoverflow</li>
+<li>Stackexchange</li>
+</ul></li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/etienneprx\.github\.io\/R_intro_fss");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2025 Étienne Proulx - Université Laval</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/etienneprx/R_intro_fss">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

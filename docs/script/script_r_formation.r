@@ -28,7 +28,7 @@ library(wordcloud) # Pour l'analyse qualitative
 sqrt(16)
 2^3
 
-# Création d'objets 
+# Création d'objets (Garde-manger)
 film_prefere <- "Dune"
 annee_sortie <- 2021
 note_imdb <- 8.0
